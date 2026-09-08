@@ -1,0 +1,32 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# エディタ
+.vscode/
+.idea/
+
+# 一時ファイル
+*.tmp
+*.log
+
+# Airtable のトークン（このリポジトリは Public なので絶対にコミットしない）
+airtable.local.json
+.env
+.env.*
+
+# スカウト管理画面（手元でだけ動かす。公開サイトには置かない）
+admin/
+スカウト管理画面.bat
+
+# Airtableから取り直せる作業用スナップショット（56MB）。
+# 掲載する求人の実体は data/jobs/<求人ID>.json 側にコミットしてある。
+# 両方入れるとPublicリポジトリが1回の更新で100MB増えるので、こちらは追跡しない。
+# ⚠ この端末に jobs.json が無いときは、rebuild.js が data/jobs/*.json から復元する。
+#    新しい求人を取り込むときは node fetch-jobs.js を回す。
+data/jobs.json
+data/jobs.json.bak_*

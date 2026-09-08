@@ -1,0 +1,832 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+<title>転職支援サービスに申し込む — 財政課転職</title>
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="assets/icon-192.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="canonical" href="https://zaiseikatenshoku.com/apply.html">
+<meta name="description" content="株式会社エージェントベストの転職支援サービス（無料）へのお申し込みフォームです。ご登録後、担当エージェントからご連絡し、求人のご紹介や選考のご支援を行います。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="財政課転職">
+<meta property="og:title" content="転職支援サービスに申し込む — 財政課転職">
+<meta property="og:description" content="株式会社エージェントベストの転職支援サービス（無料）へのお申し込みフォームです。">
+<meta property="og:url" content="https://zaiseikatenshoku.com/apply.html">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1XXMP8Y1B4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1XXMP8Y1B4');
+</script>
+<style>
+  :root{
+    --paper:#F5F7FA; --surface:#FFFFFF; --surface-2:#EEF1F6;
+    --ink:#161A26; --ink-2:#4A5261; --ink-3:#6E7686;
+    --line:#DDE2EA; --line-2:#EAEEF4;
+    --accent:#1E3A8A; --accent-strong:#2A4CAE; --accent-soft:#E9EDF9; --accent-ink:#1B3374;
+    --gold:#C1841F; --gold-soft:#FBF1DE;
+    --good:#0F7B57; --good-soft:#E2F2EB;
+    --bad:#C0392B;
+    --focus:#2A4CAE;
+    --cta:#D6362A; --cta-ink:#FFFFFF; --cta-hover:#B22A20;
+    --shadow-sm:0 1px 2px rgba(21,26,40,.05), 0 1px 3px rgba(21,26,40,.06);
+    --shadow-md:0 4px 12px rgba(21,26,40,.08), 0 2px 4px rgba(21,26,40,.05);
+    --r-card:14px; --r-input:10px; --r-pill:999px;
+    --sans:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","YuGothic","Noto Sans JP",Meiryo,system-ui,sans-serif;
+    --mono:ui-monospace,"SF Mono","Cascadia Mono","Roboto Mono",Consolas,monospace;
+    --maxw:1300px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#0F131A; --surface:#171C26; --surface-2:#1F2530;
+      --ink:#EAEEF5; --ink-2:#B4BCCA; --ink-3:#828C9E;
+      --line:#2A313D; --line-2:#232A35;
+      --accent:#8FA6F0; --accent-strong:#AFC0F8; --accent-soft:#1B2338; --accent-ink:#BFCDFA;
+      --gold:#E0AE5E; --gold-soft:#2A2416; --good:#4FBE8E; --good-soft:#12241B; --bad:#F1948A;
+      --focus:#8FA6F0; --cta:#D6392C; --cta-ink:#FFFFFF; --cta-hover:#E44D3D;
+      --shadow-sm:0 1px 2px rgba(0,0,0,.3); --shadow-md:0 6px 18px rgba(0,0,0,.4);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0F131A; --surface:#171C26; --surface-2:#1F2530;
+    --ink:#EAEEF5; --ink-2:#B4BCCA; --ink-3:#828C9E;
+    --line:#2A313D; --line-2:#232A35;
+    --accent:#8FA6F0; --accent-strong:#AFC0F8; --accent-soft:#1B2338; --accent-ink:#BFCDFA;
+    --gold:#E0AE5E; --gold-soft:#2A2416; --good:#4FBE8E; --good-soft:#12241B; --bad:#F1948A;
+    --focus:#8FA6F0; --cta:#D6392C; --cta-ink:#FFFFFF; --cta-hover:#E44D3D;
+    --shadow-sm:0 1px 2px rgba(0,0,0,.3); --shadow-md:0 6px 18px rgba(0,0,0,.4);
+  }
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--sans); font-size:15px; line-height:1.7;
+    -webkit-font-smoothing:antialiased; font-feature-settings:"palt" 1;
+  }
+  a{color:inherit}
+  button{font-family:inherit; cursor:pointer}
+  :focus-visible{outline:2px solid var(--focus); outline-offset:2px; border-radius:4px}
+
+  /* ---------- ヘッダー ---------- */
+  .topbar{position:sticky; top:0; z-index:40; background:color-mix(in srgb, var(--paper) 90%, transparent); backdrop-filter:saturate(180%) blur(12px); border-bottom:1px solid var(--line)}
+  .topbar__inner{max-width:var(--maxw); margin:0 auto; padding:14px 24px; display:flex; align-items:center; gap:20px}
+  .brand{display:flex; align-items:center; gap:11px; text-decoration:none; flex-shrink:0}
+  .brand__mark{width:auto; height:30px; flex-shrink:0}
+  .brand__txt{display:flex; flex-direction:column; gap:2px}
+  .brand__name{font-weight:800; letter-spacing:.02em; font-size:16px; line-height:1.1}
+  .brand__sub{font-size:10.5px; letter-spacing:.22em; color:var(--ink-3); text-transform:uppercase; font-weight:600}
+  .gnav{display:flex; align-items:center; gap:20px; font-size:13.5px; font-weight:700; margin-left:6px}
+  .gnav a{color:var(--ink-2); text-decoration:none; white-space:nowrap}
+  .gnav a:hover{color:var(--accent)}
+  .gnav a[aria-current="page"]{color:var(--accent)}
+  .topbar__actions{display:flex; align-items:center; gap:8px; margin-left:auto}
+  .iconbtn{display:inline-grid; place-items:center; width:40px; height:40px; border:1px solid var(--line); border-radius:10px; background:var(--surface); color:var(--ink-2)}
+  .iconbtn:hover{background:var(--surface-2); color:var(--ink)}
+  @media (max-width:760px){ .gnav{display:none} .brand__sub{display:none} .topbar__inner{padding:10px 16px} }
+
+  /* ---------- レイアウト ---------- */
+  .wrap{max-width:820px; margin:0 auto; padding:0 24px 90px}
+  .crumb{display:flex; align-items:center; flex-wrap:wrap; gap:7px; padding:14px 0 0; font-size:12px; color:var(--ink-3)}
+  .crumb a{color:var(--ink-3); text-decoration:none}
+  .crumb a:hover{color:var(--accent); text-decoration:underline; text-underline-offset:2px}
+  .crumb .cur{color:var(--ink-2); font-weight:700}
+
+  .head{padding:26px 0 18px}
+  .head h1{margin:0 0 10px; font-size:clamp(1.5rem,3.4vw,2rem); line-height:1.3; font-weight:800; display:flex; align-items:center; gap:12px; flex-wrap:wrap}
+  .head .free{font-size:12px; font-weight:800; letter-spacing:.08em; padding:5px 11px; border-radius:var(--r-pill); background:var(--good-soft); color:var(--good); border:1px solid color-mix(in srgb, var(--good) 30%, transparent)}
+  .head p{margin:0 0 8px; color:var(--ink-2); font-size:15px}
+  .head .caution{
+    display:flex; gap:9px; margin-top:14px; padding:12px 15px; border-radius:var(--r-card);
+    background:var(--surface-2); border:1px solid var(--line);
+    font-size:13px; line-height:1.8; color:var(--ink-2);
+  }
+  .head .caution svg{flex:none; margin-top:3px; color:var(--ink-3)}
+
+  /* 応募対象の求人 */
+  .jobref{
+    border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:var(--r-card);
+    background:var(--surface); padding:16px 18px; margin-bottom:22px;
+  }
+  .jobref__lbl{font-size:11px; font-weight:800; letter-spacing:.12em; color:var(--ink-3); margin:0 0 6px}
+  .jobref__co{font-size:13px; font-weight:700; color:var(--accent); margin:0 0 2px}
+  .jobref__title{margin:0 0 6px; font-size:16.5px; font-weight:800; line-height:1.5}
+  .jobref__sal{font-family:var(--mono); font-weight:800; font-size:14px; color:var(--ink)}
+  .jobref__back{display:inline-block; margin-top:8px; font-size:12.5px; color:var(--accent); text-decoration:underline; text-underline-offset:3px}
+
+  /* ---------- ステップ表示 ---------- */
+  .steps{display:flex; align-items:center; gap:6px; margin-bottom:6px}
+  .steps i{flex:1; height:6px; border-radius:3px; background:var(--line); transition:background .25s}
+  .steps i.is-on{background:var(--accent)}
+  .steps i.is-done{background:color-mix(in srgb,var(--accent) 55%, var(--line))}
+  .stepno{font-size:12px; font-weight:700; color:var(--ink-3); letter-spacing:.06em; margin-bottom:18px}
+
+  /* ---------- フォーム ---------- */
+  .card{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-card); padding:26px 28px 24px; box-shadow:var(--shadow-sm)}
+  .step{display:none}
+  .step.on{display:block}
+  .step > h2{margin:0 0 6px; font-size:19px; font-weight:800; line-height:1.5}
+  .step > .sub{margin:0 0 22px; font-size:13px; color:var(--ink-3); line-height:1.8}
+
+  .f{margin-bottom:20px}
+  .f__t{display:flex; align-items:center; gap:8px; font-size:13.5px; font-weight:700; margin-bottom:7px}
+  .req,.opt{font-size:10.5px; font-weight:800; letter-spacing:.06em; padding:2px 6px; border-radius:4px}
+  .req{background:var(--bad); color:#fff}
+  :root[data-theme="dark"] .req{color:#2A0F0B}
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .req{color:#2A0F0B} }
+  .opt{background:var(--surface-2); color:var(--ink-3)}
+  .f__hint{margin:6px 0 0; font-size:12px; color:var(--ink-3); line-height:1.7}
+  .f__err{margin:6px 0 0; font-size:12.5px; color:var(--bad); font-weight:700}
+
+  input[type=text],input[type=email],input[type=tel],select,textarea{
+    width:100%; padding:12px 13px; font-family:inherit; font-size:16px; color:var(--ink);
+    border:1px solid var(--line); border-radius:var(--r-input); background:var(--surface);
+  }
+  textarea{min-height:110px; resize:vertical; line-height:1.8}
+  select{
+    appearance:none; cursor:pointer; padding-right:34px;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23787C8C' stroke-width='2.5'><path d='M6 9l6 6 6-6'/></svg>");
+    background-repeat:no-repeat; background-position:right 12px center;
+  }
+  input:focus,select:focus,textarea:focus{outline:none; border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft)}
+  .f.ng input,.f.ng select,.f.ng textarea{border-color:var(--bad)}
+  .row{display:flex; gap:10px}
+  .row > *{flex:1; min-width:0}
+  .birth{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:8px}
+
+  /* 選択肢（ラジオ） */
+  .choices{display:flex; flex-direction:column; gap:9px}
+  .choice{display:flex; align-items:flex-start; gap:11px; padding:13px 15px; border:1px solid var(--line); border-radius:var(--r-input); background:var(--surface); cursor:pointer; transition:border-color .15s, background .15s}
+  .choice:hover{background:var(--surface-2)}
+  .choice input{position:absolute; opacity:0; width:0; height:0}
+  .choice .dot{flex:none; width:19px; height:19px; margin-top:2px; border:2px solid var(--line); border-radius:50%; display:grid; place-items:center; transition:border-color .15s}
+  .choice .dot::after{content:""; width:9px; height:9px; border-radius:50%; background:var(--accent); transform:scale(0); transition:transform .15s}
+  .choice input:checked ~ .dot{border-color:var(--accent)}
+  .choice input:checked ~ .dot::after{transform:scale(1)}
+  .choice:has(input:checked){border-color:var(--accent); background:var(--accent-soft)}
+  .choice input:focus-visible ~ .dot{box-shadow:0 0 0 3px var(--accent-soft)}
+  .choice .txt{min-width:0}
+  .choice .txt b{display:block; font-size:14.5px; font-weight:700; line-height:1.5}
+  .choice .txt small{display:block; font-size:12px; color:var(--ink-3); line-height:1.7; margin-top:2px}
+
+  /* 同意 */
+  .agree{display:flex; gap:11px; align-items:flex-start; padding:15px 16px; border:1px solid var(--line); border-radius:var(--r-input); background:var(--surface-2); font-size:13px; line-height:1.85; cursor:pointer}
+  .agree input{flex:none; width:19px; height:19px; margin:2px 0 0; accent-color:var(--accent); cursor:pointer}
+  .agree a{color:var(--accent); text-decoration:underline; text-underline-offset:2px}
+  .f.ng .agree{border-color:var(--bad)}
+
+  /* ハニーポット（人間には見えない。埋まっていたら送らない） */
+  .hp{position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden}
+
+  /* ボタン */
+  .nav{display:flex; gap:10px; align-items:center; margin-top:26px; padding-top:20px; border-top:1px solid var(--line-2)}
+  .btn-next{
+    flex:1; display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:15px 22px; border:0; border-radius:var(--r-pill);
+    background:var(--cta); color:var(--cta-ink); font-weight:800; font-size:15.5px; box-shadow:var(--shadow-sm);
+  }
+  .btn-next:hover{background:var(--cta-hover)}
+  .btn-next[disabled]{opacity:.6; cursor:default}
+  .btn-next small{font-weight:700; font-size:11.5px; opacity:.85}
+  .btn-prev{
+    padding:15px 20px; border:1px solid var(--line); border-radius:var(--r-pill);
+    background:var(--surface); color:var(--ink-2); font-weight:700; font-size:14px; white-space:nowrap;
+  }
+  .btn-prev:hover{background:var(--surface-2); color:var(--ink)}
+  .sendmsg{margin:14px 0 0; font-size:13px; font-weight:700}
+  .sendmsg.ng{color:var(--bad)}
+
+  /* ---------- 完了画面 ---------- */
+  .done{text-align:center; padding:40px 24px 34px}
+  .done__mark{width:64px; height:64px; margin:0 auto 18px; border-radius:50%; display:grid; place-items:center; background:var(--good-soft); color:var(--good)}
+  .done h2{margin:0 0 12px; font-size:22px; font-weight:800}
+  .done p{margin:0 auto 14px; max-width:52ch; color:var(--ink-2); font-size:14.5px; line-height:1.9; text-align:left}
+  .done__acts{display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:24px}
+  .btn-primary{display:inline-flex; align-items:center; gap:8px; padding:13px 24px; border:0; border-radius:var(--r-pill); background:var(--accent); color:#fff; font-weight:800; font-size:14.5px; text-decoration:none}
+  .btn-primary:hover{background:var(--accent-strong)}
+  .btn-ghost{display:inline-flex; align-items:center; gap:8px; padding:13px 22px; border:1px solid var(--line); border-radius:var(--r-pill); background:var(--surface); color:var(--ink); font-weight:700; font-size:14.5px; text-decoration:none}
+  .btn-ghost:hover{background:var(--surface-2)}
+
+  /* ---------- 安心材料 ---------- */
+  .trust{margin-top:26px; display:grid; gap:12px}
+  .trust div{display:flex; gap:10px; align-items:flex-start; font-size:13px; color:var(--ink-2); line-height:1.8}
+  .trust svg{flex:none; margin-top:3px; color:var(--good)}
+
+  /* ---------- フッター ---------- */
+  .line-badge{display:inline-block; line-height:0}
+  .line-badge img{display:block; width:116px; height:36px}
+  .line-badge:hover{opacity:.82}
+  .foot__line{display:flex; flex-direction:column; gap:8px; align-items:flex-start; margin:18px 0 4px}
+  .foot__line p{margin:0; font-size:12.5px; color:var(--ink-3)}
+  /* ---- LINEで相談する導線 ----
+     LINE公式アカウントへの入口は2種類ある。
+       ・友だち追加        https://line.me/R/ti/p/@697nxhbt?oat_content=url&ts=08302134
+       ・本文つきで開く    https://line.me/R/oaMessage/%40697nxhbt/?本文
+     未追加の人が「本文つき」を開くと友だち追加画面が出るだけで本文は残らない。
+     なので必ず「①友だち追加 → ②この求人について送る」の順に2つ並べる。片方だけにしないこと。 */
+  .pd-line{margin:16px 0 0; padding:16px 18px; border:1px solid color-mix(in srgb,#06c755 36%, var(--line)); border-left:4px solid #06c755; border-radius:12px; background:color-mix(in srgb,#06c755 7%, var(--surface))}
+  .pd-line__ttl{display:flex; align-items:center; gap:8px; margin:0 0 6px; font-size:15.5px; font-weight:800; color:var(--ink)}
+  .pd-line__ttl svg{flex:none; color:#06c755}
+  .pd-line__lead{margin:0 0 12px; font-size:13.5px; line-height:1.8; color:var(--ink-2)}
+  .pd-line__lead b{color:var(--ink); font-weight:700}
+  .pd-line__btns{display:flex; flex-wrap:wrap; gap:9px}
+  .pd-line__btn{display:inline-flex; align-items:center; justify-content:center; gap:7px; padding:12px 20px; border:1px solid #06c755; border-radius:var(--r-pill); background:#06c755; color:#fff; font-weight:800; font-size:14px; text-decoration:none; line-height:1.2; box-shadow:var(--shadow-sm); transition:background .15s, border-color .15s}
+  .pd-line__btn:hover{background:#05b34c; border-color:#05b34c}
+  .pd-line__btn svg{flex:none}
+  .pd-line__btn--sub{background:var(--surface); color:var(--ink); box-shadow:none}
+  .pd-line__btn--sub:hover{background:color-mix(in srgb,#06c755 12%, var(--surface)); border-color:#06c755}
+  .pd-line__steps{counter-reset:ls; display:flex; flex-wrap:wrap; gap:6px 16px; margin:12px 0 0; padding:0; list-style:none; font-size:12.5px; font-weight:700; color:var(--ink-2)}
+  .pd-line__steps li{counter-increment:ls; display:flex; align-items:center; gap:6px}
+  .pd-line__steps li::before{content:counter(ls); display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:#06c755; color:#fff; font-size:11px; font-weight:800; font-family:var(--mono)}
+  .pd-line__note{margin:10px 0 0; font-size:12px; line-height:1.7; color:var(--ink-3)}
+  .pd-line__note b{color:var(--ink-2); user-select:all}
+  .apply-line{margin:0 0 22px}
+  @media (max-width:640px){
+    .pd-line{padding:14px}
+    .pd-line__btn{width:100%; font-size:15px; padding:14px 18px}
+  }
+  .site-foot{border-top:1px solid var(--line); padding:30px 0 60px; color:var(--ink-3); font-size:12.5px; background:var(--surface)}
+  .foot__inner{max-width:var(--maxw); margin:0 auto; padding:0 24px; display:grid; gap:16px}
+  .foot__brand{display:flex; flex-direction:column; gap:4px}
+  .foot__brand strong{color:var(--ink); font-size:13.5px}
+  /* 縦並びのflexなので align-self を指定しないと画像が幅いっぱいに伸びる */
+  .foot__logo{display:block; align-self:flex-start; height:32px; width:auto; max-width:100%; margin-bottom:4px}
+  .foot__logo--dark{display:none}
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .foot__logo--light{display:none} :root:not([data-theme="light"]) .foot__logo--dark{display:block} }
+  :root[data-theme="dark"] .foot__logo--light{display:none}
+  :root[data-theme="dark"] .foot__logo--dark{display:block}
+  .foot__meta{display:grid; grid-template-columns:auto 1fr; gap:4px 14px; margin:0; max-width:70ch}
+  .foot__meta dt{font-weight:700}
+  .foot__meta dd{margin:0; color:var(--ink-2)}
+  .foot__links{display:flex; flex-wrap:wrap; gap:6px 18px}
+  .foot__links a{color:var(--accent); text-decoration:underline; text-underline-offset:2px}
+  .foot__copy{margin:0; padding-top:4px; border-top:1px solid var(--line-2)}
+
+  @media (max-width:700px){
+    body{font-size:16px}
+    .wrap{padding-left:16px; padding-right:16px}
+    .card{padding:20px 17px 20px; border-radius:12px}
+    .step > h2{font-size:18px}
+    .birth{grid-template-columns:1fr; gap:8px}
+    .nav{flex-direction:column-reverse; gap:8px}
+    .btn-prev,.btn-next{width:100%}
+    .foot__inner{padding-left:16px; padding-right:16px}
+    .foot__meta{grid-template-columns:1fr; gap:2px}
+    .foot__meta dt{margin-top:8px; color:var(--ink-3)}
+  }
+  @media (prefers-reduced-motion:reduce){ *{transition:none!important; animation:none!important} }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar__inner">
+    <a class="brand" href="./" aria-label="求人検索トップ">
+      <img class="brand__mark" src="assets/mark.png" alt="" aria-hidden="true" width="156" height="120">
+      <span class="brand__txt">
+        <span class="brand__name">財政課転職</span>
+        <span class="brand__sub">Public &rarr; Private</span>
+      </span>
+    </a>
+    <nav class="gnav" aria-label="メインメニュー">
+      <a href="./">求人を探す</a>
+      <a href="zukan.html">公務員のお仕事図鑑</a>
+      <a href="apply.html" aria-current="page">転職支援サービス</a>
+    </nav>
+    <div class="topbar__actions">
+      <button class="iconbtn" id="themeBtn" aria-label="テーマ切り替え">
+        <svg id="themeIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="crumb" aria-label="パンくず">
+    <!-- トップ（/）＝求人情報一覧なので、根は「ホーム」1つ。求人を見に戻る導線はヘッダーの「求人を探す」 -->
+    <a href="/">ホーム</a>
+    <span>›</span><span class="cur">転職支援サービスに申し込む</span>
+  </nav>
+
+  <div class="head">
+    <h1>転職支援サービスに申し込む<span class="free">無料</span></h1>
+    <p>ご登録いただくと、担当のキャリアアドバイザーからご連絡します。<b>ご利用は最後まで無料</b>です（紹介手数料は採用企業からいただきます）。</p>
+    <p class="caution">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg>
+      <span>ご経験やご希望の内容によっては、面談・求人のご紹介などのサービスをご提供できない場合がございます。あらかじめご了承ください。</span>
+    </p>
+  </div>
+
+  <div class="jobref" id="jobref" hidden></div>
+
+  <!-- フォームが面倒な人の受け皿。LINEなら求人名を送るだけで受け付ける。
+       ②の本文（求人名入り）は下のスクリプトで入れる。求人が特定できないときは②を消す。 -->
+  <div class="pd-line apply-line">
+    <p class="pd-line__ttl"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>LINEで送るほうが早い方へ</p>
+    <p class="pd-line__lead">このフォームに入力しなくても、<b>LINEで「この求人について聞きたい」と送るだけ</b>で受け付けます。担当（松岡）が直接お返事します。<b>質問だけでもかまいません。</b></p>
+    <div class="pd-line__btns">
+      <a class="pd-line__btn" href="https://line.me/R/ti/p/@697nxhbt?oat_content=url&ts=08302134" target="_blank" rel="noopener noreferrer" data-line-cta="jobs-apply-add"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>① 友だち追加する</a>
+      <a class="pd-line__btn pd-line__btn--sub" id="lineMsg" href="https://line.me/R/oaMessage/%40697nxhbt/" target="_blank" rel="noopener noreferrer" data-line-cta="jobs-apply-msg">② この求人について送る</a>
+    </div>
+    <p class="pd-line__note">すでに友だちの方は②だけでかまいません。うまく開かないときは、LINEで ID <b>@697nxhbt</b> を検索してください。</p>
+  </div>
+
+  <form class="card" id="form" novalidate>
+    <div class="steps" id="steps" aria-hidden="true"></div>
+    <p class="stepno" id="stepno"></p>
+
+    <!-- ===== STEP 1 ===== -->
+    <section class="step" data-step="1">
+      <h2>お名前と生年月日を教えてください。</h2>
+      <p class="sub">ご登録内容は、担当者からのご連絡と求人のご紹介にのみ使用します。</p>
+
+      <div class="f" data-f="name">
+        <span class="f__t">お名前<span class="req">必須</span></span>
+        <input type="text" id="name" name="name" autocomplete="name" placeholder="例）山田 太郎">
+        <p class="f__err" hidden></p>
+      </div>
+      <div class="f" data-f="kana">
+        <span class="f__t">フリガナ<span class="opt">任意</span></span>
+        <input type="text" id="kana" name="kana" placeholder="例）ヤマダ タロウ">
+        <p class="f__err" hidden></p>
+      </div>
+      <div class="f" data-f="birth">
+        <span class="f__t">生年月日<span class="req">必須</span></span>
+        <div class="birth">
+          <select id="by" aria-label="生まれた年"></select>
+          <select id="bm" aria-label="生まれた月"></select>
+          <select id="bd" aria-label="生まれた日"></select>
+        </div>
+        <p class="f__hint">ご経験年数の目安として伺っています。年齢だけで判断することはありません。</p>
+        <p class="f__err" hidden></p>
+      </div>
+    </section>
+
+    <!-- ===== STEP 2 ===== -->
+    <section class="step" data-step="2">
+      <h2>直近の経験職種と、お住まいの都道府県を教えてください。</h2>
+      <p class="sub">近いものを選んでください。細かいご経験は面談でうかがいます。</p>
+
+      <div class="f" data-f="expJob">
+        <span class="f__t">直近の経験職種<span class="req">必須</span></span>
+        <select id="expJob"></select>
+        <p class="f__err" hidden></p>
+      </div>
+      <div class="f" data-f="pref">
+        <span class="f__t">お住まいの都道府県<span class="req">必須</span></span>
+        <select id="pref"></select>
+        <p class="f__err" hidden></p>
+      </div>
+      <div class="f" data-f="salary">
+        <span class="f__t">現在の年収<span class="opt">任意</span></span>
+        <select id="salary"></select>
+        <p class="f__hint">おおよそで構いません。ご紹介する求人の目安にします。</p>
+      </div>
+    </section>
+
+    <!-- ===== STEP 3 ===== -->
+    <section class="step" data-step="3">
+      <h2>ご連絡先を教えてください。</h2>
+      <p class="sub">日中につながりやすい連絡先をご記入ください。</p>
+
+      <div class="f" data-f="email">
+        <span class="f__t">メールアドレス<span class="req">必須</span></span>
+        <input type="email" id="email" name="email" autocomplete="email" inputmode="email" placeholder="例）taro@example.com">
+        <p class="f__err" hidden></p>
+      </div>
+      <div class="f" data-f="phone">
+        <span class="f__t">携帯電話番号<span class="req">必須</span></span>
+        <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="例）09012345678">
+        <p class="f__hint">在職中の方には、事前に「連絡してよい時間帯」をうかがってからお電話します。</p>
+        <p class="f__err" hidden></p>
+      </div>
+    </section>
+
+    <!-- ===== STEP 4 ===== -->
+    <section class="step" data-step="4">
+      <h2>ご希望の面談方法と、いまの状況を教えてください。</h2>
+      <p class="sub">面談は30〜45分ほど、オンラインまたはお電話で行います。履歴書・職務経歴書のご用意は不要です。</p>
+
+      <div class="f" data-f="meeting">
+        <span class="f__t">ご希望の面談方法<span class="req">必須</span></span>
+        <div class="choices" id="meeting"></div>
+        <p class="f__err" hidden></p>
+      </div>
+      <div class="f" data-f="timing">
+        <span class="f__t">ご希望の転職時期<span class="req">必須</span></span>
+        <select id="timing"></select>
+        <p class="f__err" hidden></p>
+      </div>
+      <div class="f" data-f="status">
+        <span class="f__t">いまの転職活動の状況<span class="opt">任意</span></span>
+        <select id="status"></select>
+      </div>
+      <div class="f" data-f="message">
+        <span class="f__t">ご要望・ご質問<span class="opt">任意</span></span>
+        <textarea id="message" placeholder="例）まだ転職を決めたわけではないので、まず話を聞きたいです。&#10;例）連絡は平日19時以降だと助かります。"></textarea>
+      </div>
+      <div class="f" data-f="agree">
+        <label class="agree">
+          <input type="checkbox" id="agree">
+          <span><a href="terms.html" target="_blank" rel="noopener">利用規約</a>と<a href="privacy.html" target="_blank" rel="noopener">プライバシーポリシー（人材紹介）</a>に同意します。<br>
+          <b>ご入力いただいた情報は、当社が転職支援を行う目的で利用します。</b>ご本人の同意なく、企業へ経歴をお渡しすることはありません。</span>
+        </label>
+        <p class="f__err" hidden></p>
+      </div>
+      <div class="hp" aria-hidden="true">
+        <label>この欄は入力しないでください<input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></label>
+      </div>
+      <p class="sendmsg" id="sendmsg" hidden></p>
+    </section>
+
+    <div class="nav">
+      <button type="button" class="btn-prev" id="prev" hidden>戻る</button>
+      <button type="button" class="btn-next" id="next"></button>
+    </div>
+  </form>
+
+  <div class="card done" id="done" hidden>
+    <div class="done__mark">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+    </div>
+    <h2>お申し込みありがとうございました。</h2>
+    <p>担当のキャリアアドバイザーより、<b>2営業日以内</b>にご連絡します。<br>
+      在職中で日中の連絡が難しい場合は、いただいたメールアドレスあてにご連絡します。</p>
+    <p><b>お急ぎの場合は、下から面談日時をそのままお選びいただけます。</b>空いている枠がその場で確定します。</p>
+    <div class="done__acts">
+      <a class="btn-primary" href="https://calendly.com/r_matsuoka" target="_blank" rel="noopener">面談日時を選ぶ
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn-ghost" href="./">ほかの求人も見る</a>
+    </div>
+  </div>
+
+  <div class="trust">
+    <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 3v6c0 4.4-3 7.6-7 9-4-1.4-7-4.6-7-9V6l7-3z"/></svg>
+      <span>株式会社エージェントベスト（厚生労働大臣許可 有料職業紹介事業 13-ユ-316964）が運営しています。</span></div>
+    <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+      <span>ご本人の同意なく、現在の勤務先や第三者へ情報を開示することはありません。</span></div>
+    <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+      <span>入力は1〜2分。途中で閉じても、同じ端末なら入力内容は残ります。</span></div>
+  </div>
+</div>
+
+<footer class="site-foot">
+  <div class="foot__inner">
+    <div class="foot__brand">
+      <img class="foot__logo foot__logo--light" src="assets/logo.png" alt="株式会社エージェントベスト" width="508" height="120">
+      <img class="foot__logo foot__logo--dark" src="assets/logo-white.png" alt="" aria-hidden="true" width="508" height="120">
+      <strong>財政課転職</strong>
+      <span>人材紹介サービス「エージェントベスト」が運営しています。ご利用はすべて無料です（紹介手数料は採用企業からいただきます）。</span>
+    </div>
+    <dl class="foot__meta">
+      <dt>運営会社</dt><dd>株式会社エージェントベスト</dd>
+      <dt>所在地</dt><dd>東京都港区六本木4-8-7 嶋田ビル5階</dd>
+      <dt>許可番号</dt><dd>有料職業紹介事業 13-ユ-316964</dd>
+    </dl>
+    <nav class="foot__links">
+      <a href="./">求人を探す</a>
+      <a href="https://www.agent-best.net/" target="_blank" rel="noopener">運営会社サイト</a>
+      <a href="terms.html">利用規約</a>
+      <a href="privacy.html">プライバシーポリシー（人材紹介）</a>
+      <a href="privacy-ad.html">プライバシーポリシー（求人広告）</a>
+      <a href="https://www.agent-best.net/contact" target="_blank" rel="noopener">お問い合わせ</a>
+    </nav>
+    <div class="foot__line">
+      <p>応募を迷っている段階でも、LINEで質問だけいただけます。</p>
+      <a class="line-badge" href="https://line.me/R/ti/p/@697nxhbt?oat_content=url&ts=08302134" target="_blank" rel="noopener noreferrer" data-line-cta="jobs-apply" aria-label="LINEで友だち追加する"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" width="116" height="36" loading="lazy" decoding="async"></a>
+    </div>
+    <p class="foot__copy">&copy; 株式会社エージェントベスト</p>
+  </div>
+</footer>
+
+<script>
+/* =========================================================================
+   転職支援サービスの申し込みフォーム（ワークポート/JAC と同じ建て付け）
+
+   「応募する」を押した人がここに来る。企業へ直接応募するのではなく、
+   当社（人材紹介）に転職支援を申し込み、当社から企業へ推薦する形で選考が進む。
+   どの求人から来たかは ?job=<求人ID> で受け取り、送信データに一緒に入れる。
+
+   送信先は Supabase の public.applications テーブル（匿名キーで INSERT のみ許可）。
+   受信通知は Supabase の Database Webhook → Apps Script → Gmail。
+   設定手順は APPLY_SETUP.md にある。
+   ========================================================================= */
+
+/* rebuild.js が data/jobs.json から「ID・企業名・職種名・年収」だけを差し込む。
+   求人データ全部（3.5MB）は要らないので、このページには最小限だけ持たせている。 */
+/* rebuild.js が [id, 会社名, 職種名, 年収] の表形式で埋める（5,700件を軽く持つため）。ここでオブジェクトに戻す */
+const JOBS_MINI = (__JOBS_MINI__).map(r=>Array.isArray(r)?{id:r[0],company:r[1],name:r[2],salary:r[3]}:r);
+
+const SUPABASE_URL      = "https://jvdnabtpxcyfnogdulea.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_kVUJIz-lImX0AD5eALVVaA_YiDqi7GQ";
+const APPLY_TABLE       = "applications";
+const CONSULT_URL       = "https://calendly.com/r_matsuoka";
+const DRAFT_KEY         = "jobsite-apply-draft";
+
+const $=s=>document.querySelector(s);
+const $$=s=>[...document.querySelectorAll(s)];
+const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function track(name,params){ try{ if(typeof gtag==="function") gtag("event",name,params||{}); }catch(e){} }
+
+/* ---------- テーマ（一覧ページと同じ設定を引き継ぐ） ---------- */
+const SUN='<circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5.6 5.6L4.2 4.2M19.8 19.8l-1.4-1.4M18.4 5.6l1.4-1.4M4.2 19.8l1.4-1.4"/>';
+const MOON='<path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z"/>';
+function currentTheme(){ return document.documentElement.getAttribute("data-theme") || (matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"); }
+function setTheme(t){ document.documentElement.setAttribute("data-theme",t); $("#themeIcon").innerHTML=t==="dark"?SUN:MOON; try{localStorage.setItem("jobsite-theme",t);}catch(e){} }
+$("#themeBtn").addEventListener("click",()=>setTheme(currentTheme()==="dark"?"light":"dark"));
+(function(){ let t; try{t=localStorage.getItem("jobsite-theme");}catch(e){} setTheme(t||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light")); })();
+
+/* ---------- 選択肢 ---------- */
+const EXP_JOBS=[
+  "営業職","人事・総務・法務・広報・IR","財務・会計・経理","事務・アシスタント",
+  "経営企画・新規事業開発","マーケティング・販促・営業企画","経営・戦略コンサルタント",
+  "CxO・エグゼクティブ","販売・サービス職","PG・SE・ITコンサルタント",
+  "通信・インフラエンジニア","社内SE","ヘルプデスク・ユーザーサポート",
+  "WEBクリエイティブ職","デザイナー・クリエイティブ職","ゲーム制作関連職",
+  "研究・製品開発","品質・評価","生産管理・生産技術",
+  "機械設計・電気設計・組込み系エンジニア","建築・土木技術者",
+  "金融・保険・証券関連職","不動産専門職","介護・福祉関連職",
+  "看護師・薬剤師・医療系専門職","公務員・団体職員",
+  "学生（就業経験なし）","その他"
+];
+const PREFS=["北海道","青森県","岩手県","宮城県","秋田県","山形県","福島県","茨城県","栃木県","群馬県","埼玉県","千葉県","東京都","神奈川県","新潟県","富山県","石川県","福井県","山梨県","長野県","岐阜県","静岡県","愛知県","三重県","滋賀県","京都府","大阪府","兵庫県","奈良県","和歌山県","鳥取県","島根県","岡山県","広島県","山口県","徳島県","香川県","愛媛県","高知県","福岡県","佐賀県","長崎県","熊本県","大分県","宮崎県","鹿児島県","沖縄県","海外"];
+const SALARY=["300万円未満","300〜400万円","400〜500万円","500〜600万円","600〜700万円","700〜800万円","800〜1,000万円","1,000〜1,200万円","1,200〜1,500万円","1,500万円以上","就業経験なし"];
+const TIMING=["すぐにでも","3ヶ月以内","半年以内","1年以内","良い求人があれば"];
+const STATUS=["情報収集を始めたところ","応募・面接をしている（転職活動中）","内定・オファーが出ている","まだ迷っている"];
+/* ⚠ 対面は載せない（実際にやっていないため）。増やすなら実際に受けられる形だけにする。 */
+const MEETING=[
+  {v:"オンライン", d:"Google Meet などのビデオ通話。全国どこからでも。"},
+  {v:"電話",       d:"顔出し不要。移動中や在職中の方に選ばれています。"}
+];
+
+function fillSelect(id, opts, placeholder){
+  const el=$("#"+id); if(!el) return;
+  el.innerHTML=`<option value="">${esc(placeholder)}</option>`+
+    opts.map(o=>`<option value="${esc(o)}">${esc(o)}</option>`).join("");
+}
+(function initFields(){
+  const now=new Date().getFullYear();
+  const years=[]; for(let y=now-17; y>=now-75; y--) years.push(String(y)+"年");
+  const months=[]; for(let m=1;m<=12;m++) months.push(String(m)+"月");
+  const days=[];   for(let d=1;d<=31;d++) days.push(String(d)+"日");
+  fillSelect("by", years,  "年");
+  fillSelect("bm", months, "月");
+  fillSelect("bd", days,   "日");
+  fillSelect("expJob", EXP_JOBS, "選択してください");
+  fillSelect("pref",   PREFS,    "選択してください");
+  fillSelect("salary", SALARY,   "選択してください（任意）");
+  fillSelect("timing", TIMING,   "選択してください");
+  fillSelect("status", STATUS,   "選択してください（任意）");
+  $("#meeting").innerHTML=MEETING.map((m,i)=>`
+    <label class="choice">
+      <input type="radio" name="meeting" value="${esc(m.v)}"${i===0?" checked":""}>
+      <span class="dot"></span>
+      <span class="txt"><b>${esc(m.v)}</b><small>${esc(m.d)}</small></span>
+    </label>`).join("");
+})();
+
+/* ---------- どの求人から来たか ---------- */
+const jobId=new URLSearchParams(location.search).get("job")||"";
+const job=JOBS_MINI.find(j=>j.id===jobId)||null;
+if(job){
+  $("#jobref").hidden=false;
+  $("#jobref").innerHTML=`
+    <p class="jobref__lbl">応募する求人</p>
+    ${job.company?`<p class="jobref__co">${esc(job.company)}</p>`:""}
+    <h2 class="jobref__title">${esc(job.name||"求人")}</h2>
+    ${job.salary?`<span class="jobref__sal">想定年収 ${esc(job.salary)}</span>`:""}
+    <a class="jobref__back" href="./?job=${encodeURIComponent(job.id)}">求人の内容をもう一度見る</a>`;
+  track("apply_form_open",{job_id:job.id, company:job.company||"", job_name:job.name||""});
+}else{
+  track("apply_form_open",{job_id:"", company:"", job_name:""});
+}
+
+/* LINE「②この求人について送る」の本文。求人が分かるときだけ求人名・企業名・URLを入れて
+   LINEを開く。求人が特定できないときは②を消して友だち追加だけにする。 */
+(function(){
+  const a=$("#lineMsg"); if(!a) return;
+  if(!job){ a.hidden=true; return; }
+  const link=/^https?:$/.test(location.protocol)
+    ? `${location.origin}${location.pathname.replace(/apply\.html$/,"")}?job=${encodeURIComponent(job.id)}` : "";
+  const msg=`求人サイトを見てご連絡しました。下記の求人について相談したいです。\n■求人：${job.name||""}\n■企業：${job.company||""}\n`+(link?`■ページ：${link}\n`:"");
+  a.href=`https://line.me/R/oaMessage/%40697nxhbt/?${encodeURIComponent(msg)}`;
+})();
+
+/* ---------- ステップ制御 ---------- */
+const TOTAL=4;
+let step=1, sending=false;
+const stepsEl=$("#steps"), stepNo=$("#stepno"), nextBtn=$("#next"), prevBtn=$("#prev");
+
+function paintStep(){
+  stepsEl.innerHTML=Array.from({length:TOTAL},(_,i)=>{
+    const n=i+1;
+    return `<i class="${n===step?"is-on":(n<step?"is-done":"")}"></i>`;
+  }).join("");
+  stepNo.textContent=`STEP ${step} / ${TOTAL}`;
+  $$(".step").forEach(el=>el.classList.toggle("on", +el.dataset.step===step));
+  prevBtn.hidden = step===1;
+  const left=TOTAL-step;
+  nextBtn.innerHTML = step===TOTAL
+    ? `転職支援サービスに申し込む`
+    : `次へ${left>0?`<small>あと${left}ステップ</small>`:""}`;
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+function fieldErr(key, msg){
+  const f=document.querySelector(`.f[data-f="${key}"]`); if(!f) return;
+  const p=f.querySelector(".f__err");
+  f.classList.toggle("ng", !!msg);
+  if(p){ p.textContent=msg||""; p.hidden=!msg; }
+}
+function clearErrs(){ $$(".f").forEach(f=>{ f.classList.remove("ng"); const p=f.querySelector(".f__err"); if(p){p.hidden=true;} }); }
+
+const val=id=>{ const el=$("#"+id); return el?String(el.value||"").trim():""; };
+const digits=s=>String(s||"").replace(/[^0-9]/g,"");
+
+function validate(n){
+  let ok=true;
+  const bad=(k,m)=>{ fieldErr(k,m); if(ok){ const f=document.querySelector(`.f[data-f="${k}"]`); if(f) f.scrollIntoView({block:"center",behavior:"smooth"}); } ok=false; };
+  if(n===1){
+    fieldErr("name",""); fieldErr("birth","");
+    if(!val("name")) bad("name","お名前をご入力ください。");
+    if(!val("by")||!val("bm")||!val("bd")) bad("birth","生年月日をお選びください。");
+  }
+  if(n===2){
+    fieldErr("expJob",""); fieldErr("pref","");
+    if(!val("expJob")) bad("expJob","直近の経験職種をお選びください。");
+    if(!val("pref"))   bad("pref","お住まいの都道府県をお選びください。");
+  }
+  if(n===3){
+    fieldErr("email",""); fieldErr("phone","");
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(val("email"))) bad("email","メールアドレスの形式をご確認ください。");
+    const d=digits(val("phone"));
+    if(d.length<10||d.length>11) bad("phone","携帯電話番号を、ハイフンなし10〜11桁でご入力ください。");
+  }
+  if(n===4){
+    fieldErr("timing",""); fieldErr("agree","");
+    if(!val("timing")) bad("timing","ご希望の転職時期をお選びください。");
+    if(!$("#agree").checked) bad("agree","利用規約とプライバシーポリシーへの同意が必要です。");
+  }
+  return ok;
+}
+
+nextBtn.addEventListener("click",()=>{
+  if(sending) return;
+  if(!validate(step)) return;
+  if(step<TOTAL){
+    step++; saveDraft(); paintStep();
+    track("apply_step",{step:step, job_id:jobId});
+    return;
+  }
+  submit();
+});
+prevBtn.addEventListener("click",()=>{ if(sending) return; clearErrs(); step--; paintStep(); });
+
+/* Enter でうっかり送信しない。最終ステップ以外は「次へ」に振り替える */
+$("#form").addEventListener("submit",e=>e.preventDefault());
+$("#form").addEventListener("keydown",e=>{
+  if(e.key!=="Enter") return;
+  if(e.target.tagName==="TEXTAREA") return;
+  e.preventDefault();
+  nextBtn.click();
+});
+
+/* ---------- 入力内容の一時保存（この端末のみ） ---------- */
+const DRAFT_IDS=["name","kana","by","bm","bd","expJob","pref","salary","email","phone","timing","status","message"];
+function saveDraft(){
+  try{
+    const d={step:step};
+    DRAFT_IDS.forEach(id=>{ const el=$("#"+id); if(el) d[id]=el.value; });
+    const m=document.querySelector('input[name="meeting"]:checked'); if(m) d.meeting=m.value;
+    localStorage.setItem(DRAFT_KEY, JSON.stringify(d));
+  }catch(e){}
+}
+function loadDraft(){
+  let d=null;
+  try{ d=JSON.parse(localStorage.getItem(DRAFT_KEY)||"null"); }catch(e){}
+  if(!d) return;
+  DRAFT_IDS.forEach(id=>{ const el=$("#"+id); if(el && d[id]!=null) el.value=d[id]; });
+  if(d.meeting){ const m=document.querySelector(`input[name="meeting"][value="${CSS.escape(d.meeting)}"]`); if(m) m.checked=true; }
+  if(d.step>=1 && d.step<=TOTAL) step=d.step;
+}
+function clearDraft(){ try{ localStorage.removeItem(DRAFT_KEY); }catch(e){} }
+$("#form").addEventListener("input", saveDraft);
+$("#form").addEventListener("change", saveDraft);
+
+/* ---------- ログイン中なら、マイページの登録内容を先に入れておく ---------- */
+let sessionUserId=null;
+(async function prefillFromAccount(){
+  if(!SUPABASE_URL||!SUPABASE_ANON_KEY) return;
+  try{
+    await new Promise((res,rej)=>{
+      const t=document.createElement("script");
+      t.src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js";
+      t.onload=res; t.onerror=rej; document.head.appendChild(t);
+    });
+    const sb=window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    const {data}=await sb.auth.getSession();
+    const user=data&&data.session&&data.session.user;
+    if(!user) return;
+    sessionUserId=user.id;
+    if(!val("email") && user.email) $("#email").value=user.email;
+    const p=await sb.from("profiles").select("full_name,current_industry,timing").eq("id",user.id).maybeSingle();
+    if(p.data){
+      if(!val("name") && p.data.full_name) $("#name").value=p.data.full_name;
+      if(!val("timing") && p.data.timing && TIMING.indexOf(p.data.timing)>=0) $("#timing").value=p.data.timing;
+    }
+    saveDraft();
+  }catch(e){ /* 読み込めなくてもフォームはそのまま使える */ }
+})();
+
+/* ---------- 送信 ---------- */
+function sendMsg(text, ng){
+  const el=$("#sendmsg");
+  el.hidden=!text; el.textContent=text||"";
+  el.className="sendmsg"+(ng?" ng":"");
+}
+function birthISO(){
+  const y=digits(val("by")), m=digits(val("bm")), d=digits(val("bd"));
+  if(!y||!m||!d) return null;
+  return y+"-"+String(m).padStart(2,"0")+"-"+String(d).padStart(2,"0");
+}
+async function submit(){
+  /* ハニーポット。自動入力するbotだけが埋める欄なので、埋まっていたら送らない */
+  if(val("website")){ showDone(); return; }
+  sending=true; nextBtn.disabled=true; nextBtn.textContent="送信中…"; sendMsg("");
+
+  const payload={
+    job_id:      jobId || null,
+    job_name:    job ? (job.name||null) : null,
+    company:     job ? (job.company||null) : null,
+    full_name:   val("name"),
+    kana:        val("kana") || null,
+    birth_date:  birthISO(),
+    experience_job: val("expJob") || null,
+    prefecture:  val("pref") || null,
+    current_salary: val("salary") || null,
+    email:       val("email"),
+    phone:       digits(val("phone")),
+    meeting_type: (document.querySelector('input[name="meeting"]:checked')||{}).value || null,
+    timing:      val("timing") || null,
+    job_hunting_status: val("status") || null,
+    message:     val("message") || null,
+    consent:     true,
+    user_id:     sessionUserId,
+    source:      "jobsite"
+  };
+
+  try{
+    const res=await fetch(SUPABASE_URL+"/rest/v1/"+APPLY_TABLE,{
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json",
+        "apikey":SUPABASE_ANON_KEY,
+        "Authorization":"Bearer "+SUPABASE_ANON_KEY,
+        "Prefer":"return=minimal"
+      },
+      body:JSON.stringify(payload)
+    });
+    if(!res.ok){
+      const t=await res.text().catch(()=>"");
+      throw new Error(res.status+" "+t.slice(0,200));
+    }
+    clearDraft();
+    track("apply_submit",{job_id:jobId, company:(job&&job.company)||"", job_name:(job&&job.name)||"", meeting:payload.meeting_type||"", timing:payload.timing||""});
+    showDone();
+  }catch(err){
+    console.warn(err);
+    sending=false; nextBtn.disabled=false; nextBtn.innerHTML="転職支援サービスに申し込む";
+    sendMsg("送信できませんでした。時間をおいてもう一度お試しいただくか、r_matsuoka@agent-best.net あてにご連絡ください。", true);
+    track("apply_error",{job_id:jobId});
+  }
+}
+function showDone(){
+  $("#form").hidden=true;
+  $("#jobref").hidden=true;
+  $("#done").hidden=false;
+  document.querySelector(".head").hidden=true;
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+/* ---------- 起動 ---------- */
+loadDraft();
+paintStep();
+</script>
+<script>
+  /* LINE友だち追加のクリックをGA4へ。 */
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest && e.target.closest('[data-line-cta]');
+    if(a && typeof window.gtag === 'function'){
+      window.gtag('event','line_add_friend',{placement:a.getAttribute('data-line-cta'), page_path:location.pathname});
+    }
+  });
+</script>
+</body>
+</html>

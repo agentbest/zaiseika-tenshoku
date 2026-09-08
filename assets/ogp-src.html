@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<style>
+  /* 1200×630 のOGP画像を作るためだけのファイル。
+     Chromeのヘッドレスで screenshot を撮って assets/ogp.jpg にする（作り方は下のコメント）。
+       chrome --headless --disable-gpu --window-size=1200,630 \
+         --screenshot="C:\Users\user\zaiseika-tenshoku\assets\ogp.png" \
+         "file:///C:/Users/user/zaiseika-tenshoku/assets/ogp-src.html"
+     ⚠ --screenshot の出力先は絶対パスで書くこと（相対にすると黙って書かれない）。 */
+  *{margin:0; padding:0; box-sizing:border-box}
+  body{width:1200px; height:630px; overflow:hidden;
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",Meiryo,sans-serif;
+    background:#0F1626; color:#fff; position:relative}
+  .bg{position:absolute; inset:0;
+    background:
+      radial-gradient(1100px 620px at 78% 18%, rgba(42,76,174,.55), transparent 62%),
+      linear-gradient(150deg, #101A31 0%, #0E1424 58%, #12182A 100%)}
+  .rule{position:absolute; left:0; top:0; width:10px; height:100%; background:#D6362A}
+  .inner{position:absolute; inset:0; padding:74px 84px 64px 92px; display:flex; flex-direction:column}
+  .eyebrow{font-size:23px; letter-spacing:.16em; color:#9FB4EC; font-weight:700}
+  h1{margin-top:26px; font-size:74px; line-height:1.24; letter-spacing:.01em; font-weight:800}
+  h1 em{font-style:normal; color:#FF6A58}
+  p{margin-top:26px; font-size:25px; line-height:1.7; color:#C3CCE2; max-width:23em}
+  .foot{margin-top:auto; display:flex; align-items:center; gap:18px}
+  .mark{width:44px; height:44px; border-radius:10px; background:#D6362A;
+    display:flex; align-items:center; justify-content:center; font-weight:800; font-size:22px}
+  .name{font-size:27px; font-weight:800; letter-spacing:.02em}
+  .dom{margin-left:auto; font-size:21px; color:#8C9AB8; letter-spacing:.06em}
+</style></head>
+<body>
+  <div class="bg"></div><div class="rule"></div>
+  <div class="inner">
+    <div class="eyebrow">公務員のための転職求人サイト</div>
+    <h1>査定してきた側が、<br><em>値付けされる</em>番です。</h1>
+    <p>財政課・会計課・企画課。庁内で当たり前だった経験が、民間ではどう呼ばれ、いくらになるのか。</p>
+    <div class="foot">
+      <div class="mark">財</div>
+      <div class="name">財政課転職</div>
+      <div class="dom">zaiseikatenshoku.com</div>
+    </div>
+  </div>
+</body></html>
