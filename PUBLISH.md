@@ -1,5 +1,14 @@
 # zaiseikatenshoku.com の公開手順（DNS設定）
 
+> **2026-09-09に完了。** SquarespaceのDNSを書き換え済み（プリセット「Squarespaceの既定値」を削除→
+> カスタムレコードにA×4・AAAA×4・CNAME `www`→`agentbest.github.io`）。
+> 証明書発行済み・Enforce HTTPS 有効。https://zaiseikatenshoku.com/ で公開中。
+> `www` は apex へ 301、http は https へ 301。
+>
+> ⚠ Squarespaceの管理画面は**書き込みのたびにGoogleの再認証ダイアログ**が出る。
+> このダイアログの［続行］はブラウザ自動化からは押せない（別ウィンドウが要る）ので、必ず人が押す。
+> メールのSPF/DMARC/DKIMと Domain Connect のプリセットは残してある。
+
 配信は **GitHub Pages**。ただし `agent-best.net` のサブドメインではなく**独自ドメインのルート（apex）**なので、
 DNSの設定方法が既存LPと違います。**エラベル（eraberusaiyodaiko.com）と同じ手順です。**
 
