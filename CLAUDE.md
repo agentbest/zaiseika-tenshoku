@@ -637,3 +637,23 @@ X / Facebook / LinkedIn / はてなブックマーク / リンクをコピー（
   4. 既存ページ・データの削除、求人データの一括置換
   5. 複数リポジトリへの一括変更
 - Publicリポジトリ。push前にトークン・APIキーの混入をgrepで確認する（**Supabase の Secret key が入っていないこと**を特に確認）。
+
+## 他端末で作業するには
+
+リポジトリは `agentbest/zaiseika-tenshoku`（GitHub・Public）。npm の依存は無く、Node.js だけあれば動く。
+
+```
+git clone https://github.com/agentbest/zaiseika-tenshoku.git
+cd zaiseika-tenshoku
+node rebuild.js        # data/jobs/*.json から復元して index.html / apply.html を再生成（119件）
+python -m http.server  # ブラウザで確認
+```
+
+- **`data/jobs.json` はリポジトリに無い**（.gitignore）。無ければ `rebuild.js` が `data/jobs/<求人ID>.json` から復元するので、
+  デザイン・文言・絞り込みの変更だけなら clone 直後にそのまま作業できる（2026-09-10 に素の clone で確認済み）。
+  復元した場合、**同点の求人の並び順が元端末と少し変わる**ことがある（中身は同じ）。
+- **新しい求人を取り込む（`node fetch-jobs.js` 等）ときだけ Airtable のトークンが要る。**
+  `airtable.local.json` に `{"token":"pat..."}` を置く（.gitignore 済み・Public なので絶対にコミットしない）。
+  隣に `bes-crm/config.js` がある端末ならそこの `AIRTABLE_TOKEN` も拾う。
+- `admin/` と `スカウト管理画面.bat` は端末0だけの手元ツールでリポジトリには入っていない。
+- 作業前に `git pull`、終わったら push。別端末で同時に触ると衝突するので未コミットで放置しない。
