@@ -117,6 +117,13 @@ function checkOne(file, P) {
     if (m) warn.push('禁止表現: ' + msg + '（該当: ' + m[0] + '）');
   }
 
+  // ⚠ 日本語の文章に紛れ込むはずのない文字（ハングル・キリル・タイ文字）。
+  //    生成中に取り違えると、見た目が似ていて気づけないまま公開されるので機械で弾く。
+  const alien = (raw.match(/[가-힣ᄀ-ᇿЀ-ӿ฀-๿]/g) || []);
+  if (alien.length) {
+    warn.push('日本語以外の文字が混入: ' + [...new Set(alien)].join(' ') + '（frontmatterも含めて確認）');
+  }
+
   // 見出し重複
   const heads = (body.match(/^##\s+(.*)$/gm) || []).map(s => s.replace(/^##\s+/, '').trim());
   const dup = heads.filter((h, i) => heads.indexOf(h) !== i);

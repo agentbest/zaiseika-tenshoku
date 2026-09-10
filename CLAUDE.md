@@ -87,7 +87,12 @@ out/{slug}.md を書く（data/article_plan.tsv の行を引く）
 | `check-articles.js` | 文字数・見解2箇所・FAQ3件・出典URL・禁止表現・見出し重複を検査 |
 | `tools/egov.js` | e-Gov法令APIから条文を引く |
 | `tools/pdftext.js` | 自治体の公表PDF（給与・定員管理等の状況）からテキストを取り出す |
+| `tools/xlsx.js` | xlsx をタブ区切りで読む（総務省の団体別データ用・npm依存なし） |
 
+- ⚠ **自治体別の一次情報は、まず総務省の集約Excelを当たる。**各自治体サイトは様式も置き場所もばらばらで届かないことがある。
+  `https://www.soumu.go.jp/main_sosiki/jichi_gyousei/c-gyousei/teiin-kyuuyo02_R06.html` に団体別のラスパイレス指数・平均給与月額等がある。
+  `node tools/xlsx.js <ファイル> <シート番号> <団体名>` で1行引ける。**⚠ 結合セルでヘッダーがずれるので、列の対応は
+  必ず別の資料と突き合わせて確認してから使う**（対応が確定できない表は使わない）。
 - ⚠ **自治体別の記事は、各自治体が公表する「給与・定員管理等の状況」のPDFが一次情報。**
   本文はPDFにしか無いので `tools/pdftext.js` で読む。**pdfjs-dist はリポジトリに入れない**（作業用ディレクトリに
   `npm i pdfjs-dist@4.2.67` して、環境変数 `PDFJS` でファイルの場所を渡す。使い方はツールの先頭に書いてある）

@@ -9,7 +9,10 @@
   <url><loc>https://zaiseikatenshoku.com/privacy-ad.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/dept-zaisei-honyaku.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zaiseikatenshoku.com/media/pref-aomori.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/pref-hokkaido.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zaiseikatenshoku.com/media/pref-iwate.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zaiseikatenshoku.com/media/pref-miyagi.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/seido-shitsugyo-daikae.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/seido-shitsugyo-nashi.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/seido-taishokuteate-fushime.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
