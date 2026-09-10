@@ -86,7 +86,11 @@ out/{slug}.md を書く（data/article_plan.tsv の行を引く）
 | `build-articles.js` | Markdown → HTML。**npm依存なし・Node標準のみ** |
 | `check-articles.js` | 文字数・見解2箇所・FAQ3件・出典URL・禁止表現・見出し重複を検査 |
 | `tools/egov.js` | e-Gov法令APIから条文を引く |
+| `tools/pdftext.js` | 自治体の公表PDF（給与・定員管理等の状況）からテキストを取り出す |
 
+- ⚠ **自治体別の記事は、各自治体が公表する「給与・定員管理等の状況」のPDFが一次情報。**
+  本文はPDFにしか無いので `tools/pdftext.js` で読む。**pdfjs-dist はリポジトリに入れない**（作業用ディレクトリに
+  `npm i pdfjs-dist@4.2.67` して、環境変数 `PDFJS` でファイルの場所を渡す。使い方はツールの先頭に書いてある）
 - ⚠ **e-Gov の HTML ページは JavaScript で本文を描画するので、取得しても条文が読めない。**
   条番号を書くときは必ず `node tools/egov.js <法令ID> <条番号>` で原文を確認する
 - ⚠ **「エージェントベストの見解」ブロックが2箇所ない記事は公開しない。** `check-articles.js` が弾く
