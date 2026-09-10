@@ -66,6 +66,37 @@ facet ではなく `state.govFront` / `state.finFit`（真偽値）。`baseMatch
   当サイトの看板には使えない。表示名は「自治体の部署別 仕事ガイド」（ナビ・フッターは「部署別 仕事ガイド」）で統一する
   （ファイル名 `zukan.html` は公開済みURLなのでそのまま）
 
+### 4-2. 記事メディア `media/`
+
+公務員向けの記事を **1,000本**入れる場所。**`zukan.html` と違い、HTMLを直接編集しない。**
+`out/*.md` を書いて `node build-articles.js` で `media/*.html` を生成する。
+
+```
+out/{slug}.md を書く（data/article_plan.tsv の行を引く）
+  → node check-articles.js   … 警告ゼロにする
+  → node build-articles.js   … media/*.html ＋ media/index.html ＋ sitemap.xml
+  → 内容を提示して承認を得てから push
+```
+
+| ファイル | 役割 |
+|---|---|
+| `ARTICLE_SPEC.md` | 記事仕様書。記事タイプ別の構成と禁止事項 |
+| `rules/common.md` `cta.md` `insight.md` | 文体・CTA・見解ブロックのルール（非エンジニアが編集可） |
+| `data/article_plan.tsv` | 1,000本の計画表。`node build-plan.js` で再生成できる |
+| `build-articles.js` | Markdown → HTML。**npm依存なし・Node標準のみ** |
+| `check-articles.js` | 文字数・見解2箇所・FAQ3件・出典URL・禁止表現・見出し重複を検査 |
+| `tools/egov.js` | e-Gov法令APIから条文を引く |
+
+- ⚠ **e-Gov の HTML ページは JavaScript で本文を描画するので、取得しても条文が読めない。**
+  条番号を書くときは必ず `node tools/egov.js <法令ID> <条番号>` で原文を確認する
+- ⚠ **「エージェントベストの見解」ブロックが2箇所ない記事は公開しない。** `check-articles.js` が弾く
+- ⚠ **数値は出典付きのみ。** ただし `CLAUDE.md` の「年収の数字を訴求に使わない」は生きている。
+  見出し・リード・CTAに年収額を出さない。本文で出典付きの統計を解説するのは可
+- ⚠ **1セッションで書くのは3〜5本。** それ以上は品質が落ちる（`media-gen` の実績）
+- 記事の一覧は `media/index.html`。ヘッダーnav（`template.html` / `apply-template.html` / `zukan.html`）と
+  `zukan.html` のフッターから「記事」でつながっている。**navを消すと記事が孤立する**
+- 進捗は `PROGRESS.md` に1行ずつ足す
+
 ### 5. jobsite・shinsotsu との関係
 
 **求人データは Airtable の同じテーブルを3サイトで共有している。**
