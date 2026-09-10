@@ -54,7 +54,9 @@ function parseFront(text) {
 // ---------- markdown（限定サブセット） ----------
 function inline(s) {
   let t = esc(s);
-  t = t.replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+|\.?[^)\s]*\.html[^)\s]*|\.\/[^)\s]*)\)/g,
+  // 相対リンクは ./ と ../ の両方を受ける。記事は media/ の下なので、
+  // 求人一覧など サイト直下へのリンクは ../ で書く（rules/cta.md）。
+  t = t.replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+|\.?[^)\s]*\.html[^)\s]*|\.{1,2}\/[^)\s]*)\)/g,
     (mm, txt, url) => {
       const ext = /^https?:/.test(url) && !url.startsWith(SITE);
       return `<a href="${esc(url)}"${ext ? ' target="_blank" rel="noopener noreferrer"' : ''}>${txt}</a>`;
@@ -130,11 +132,19 @@ function md2html(src) {
 
 
 // ---------- FAQ 抽出（構造化データ用） ----------
+// 構造化データは素のテキストで出す。markdown記号を残すと、検索結果に ** や
+// [文字](URL) がそのまま出る。
+function plainText(s) {
+  return s
+    .replace(/\[([^\]]+)\]\([^)\s]*\)/g, '$1')
+    .replace(/\*\*([^*]+)\*\*/g, '$1');
+}
+
 function extractFaq(src) {
   const lines = src.replace(/\r\n/g, '\n').split('\n');
   const faq = [];
   let inFaq = false, q = null, a = [];
-  const push = () => { if (q && a.length) faq.push({ q, a: a.join('') }); q = null; a = []; };
+  const push = () => { if (q && a.length) faq.push({ q: plainText(q), a: plainText(a.join('')) }); q = null; a = []; };
   for (const L of lines) {
     if (/^##\s+/.test(L)) { push(); inFaq = /よくある質問/.test(L); continue; }
     if (!inFaq) continue;
