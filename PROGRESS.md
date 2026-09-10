@@ -42,6 +42,11 @@ node check-articles.js       # out/ に書きかけが無いか確認
 
 ## 作業ログ
 
+最終更新：2026-09-10（**自動運転1回目。需要ランクSから3本。**No.1 `pref-hokkaido`（5,052字）／No.855 `seido-taishokuteate-fushime`（4,074字）／No.894 `seido-shitsugyo-daikae`（4,033字）。`check-articles.js` は **out/ 全6本 OK6／NG0**、タグ一致・JSON-LD正常・記事内リンク切れなし。
+**この回で分かったこと：**（1）**自治体の「給与・定員管理等の状況」は各自治体サイトで様式も置き場所もバラバラ。**北海道は `tools/pdftext.js` でPDFから職員数61,623人・部門別内訳・退職手当支給率まで取れたが、**青森県は標準様式の公表ページに到達できず、この回は飛ばした**（CLAUDE.md 4-3 の「届かない自治体は飛ばす」に従った）。（2）**総務省「地方公共団体給与情報等公表システム」に全団体分の集約Excelがある**（`https://www.soumu.go.jp/main_sosiki/jichi_gyousei/c-gyousei/teiin-kyuuyo02_R06.html`）。ラスパイレス指数・平均給与月額・退職手当の支給状況などが団体別に入っている。**自治体別350本はこれを共通ソースにするべき。**次回、xlsxを読む道具を作ってから自治体別に戻る。（3）北海道の「退職手当1人当たり平均支給額2,352千円」は**全職種の退職者の平均**で、定年まで勤めた場合の額ではない。この種の数字は注記を読まずに使うと誤る。
+**残り994本**（うち需要ランクS 234本）。次は**総務省Excelを読む道具を作り、都道府県 No.2以降**へ）
+
+
 最終更新：2026-09-10（**記事メディアの土台を作り、1本目を書きました。**`data/article_plan.tsv` を1,000本ぶん生成（slug重複0・ローマ字欠落0）。`ARTICLE_SPEC.md`／`rules/common.md`・`cta.md`・`insight.md`／`build-plan.js`／`build-articles.js`／`check-articles.js`／`tools/egov.js` を新規作成。ヘッダーnav（`template.html`・`apply-template.html`・`zukan.html`）と `zukan.html` のフッターに「記事」を追加し、`node rebuild.js` を実行（**生成物の差分は各3行のみ・求人119件の並びは不変**）。
 **この回で分かったこと：**（1）**e-Gov の HTML ページは JavaScript で本文を描画するため、取得しても条文が読めない。**法令APIから引く `tools/egov.js` を作って解決した。地方自治法211条・233条・149条を原文で確認済み。（2）**Bash のヒアドキュメント経由で JS を書くとバックスラッシュが1段消え、文字列から組み立てた正規表現が静かに壊れる。**正規表現を含むファイルはエディタ側で書くこと。
 （3）**e-Gov の法令IDは推測しない。**国家公務員退職手当法を `328AC0000000182` と推測して404。正しくは **`328AC1000000182`**（AC0ではなくAC1）。`node tools/egov.js --find <法令名>` で必ず引くこと。
