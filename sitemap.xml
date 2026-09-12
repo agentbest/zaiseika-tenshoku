@@ -8,8 +8,11 @@
   <url><loc>https://zaiseikatenshoku.com/privacy.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
   <url><loc>https://zaiseikatenshoku.com/privacy-ad.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://zaiseikatenshoku.com/media/city-aomori.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zaiseikatenshoku.com/media/city-asahikawa.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/city-chiba.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/city-fukuoka.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zaiseikatenshoku.com/media/city-hakodate.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/city-hamamatsu.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/city-hiroshima.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/city-kawasaki.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
