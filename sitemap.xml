@@ -353,6 +353,7 @@
   <url><loc>https://zaiseikatenshoku.com/media/dept-keiyaku-mensetsu.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/dept-keiyaku-shokumu.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/dept-keiyaku-tenshokusaki.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zaiseikatenshoku.com/media/dept-kenchiku-honyaku.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/dept-kikaku-hatarakikata.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/dept-kikaku-honyaku.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/dept-kikaku-mensetsu.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -423,7 +424,9 @@
   <url><loc>https://zaiseikatenshoku.com/media/dept-somu-mensetsu.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/dept-somu-shokumu.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/dept-somu-tenshokusaki.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zaiseikatenshoku.com/media/dept-toshi-hatarakikata.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/dept-toshi-honyaku.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zaiseikatenshoku.com/media/dept-toshi-mensetsu.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/dept-toshi-shokumu.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/dept-toshi-tenshokusaki.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/dept-zaisei-hatarakikata.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
