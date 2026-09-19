@@ -2,6 +2,7 @@
 //   node tools/egov.js <法令ID> <条番号> [条番号...]
 //   例: node tools/egov.js 322AC0000000067 211 233 149
 //   条番号を省略すると、その法令の収録条数と条番号の一覧を出す。
+//   長い条文は800字で切る。--full を付けると全文を出す（支給率の号の列挙などはこれで読む）。
 //
 // ⚠ e-Gov の HTML ページ（laws.e-gov.go.jp/law/...）は JavaScript で本文を描画するため、
 //    取得しても中身が読めない。条文を確認するときは必ずこの API を使うこと。
@@ -110,7 +111,8 @@ async function findLaw(word) {
 }
 
 async function main() {
-  const argv = process.argv.slice(2);
+  const full = process.argv.includes('--full');
+  const argv = process.argv.slice(2).filter(a => a !== '--full');
   const lawId = argv[0];
   const nums = argv.slice(1);
   if (!lawId) {
@@ -146,7 +148,7 @@ async function main() {
     }
     for (const h of hits) {
       console.log('■ ' + h.title + (h.caption ? ' ' + h.caption : ''));
-      console.log(h.text.length > 800 ? h.text.slice(0, 800) + ' …' : h.text);
+      console.log(!full && h.text.length > 800 ? h.text.slice(0, 800) + ' …（--full で全文）' : h.text);
       console.log('');
     }
   }
