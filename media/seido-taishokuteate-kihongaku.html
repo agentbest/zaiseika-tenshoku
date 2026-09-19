@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+<title>基本額の計算の考え方｜財政課転職</title>
+<link rel="icon" href="../assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="../assets/icon-192.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="canonical" href="https://zaiseikatenshoku.com/media/seido-taishokuteate-kihongaku.html">
+<meta name="description" content="退職手当の基本額は「退職日の俸給月額 × 勤続期間の区分ごとの割合の合計」です。なぜ退職日の額なのか、手当は入るのか、降任で下がった場合はどうなるのかを、国の法律の条文で整理しました。">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="財政課転職">
+<meta property="og:title" content="基本額の計算の考え方">
+<meta property="og:description" content="退職手当の基本額は「退職日の俸給月額 × 勤続期間の区分ごとの割合の合計」です。なぜ退職日の額なのか、手当は入るのか、降任で下がった場合はどうなるのかを、国の法律の条文で整理しました。">
+<meta property="og:url" content="https://zaiseikatenshoku.com/media/seido-taishokuteate-kihongaku.html">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://zaiseikatenshoku.com/assets/ogp.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zaiseikatenshoku.com/assets/ogp.jpg">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1XXMP8Y1B4"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1XXMP8Y1B4');</script>
+<style>:root{--paper:#F5F7FA;--surface:#FFFFFF;--surface-2:#EEF1F6;--ink:#161A26;--ink-2:#4A5261;--ink-3:#6E7686;
+--line:#DDE2EA;--line-2:#EAEEF4;--accent:#1E3A8A;--accent-soft:#E9EDF9;--accent-ink:#1B3374;
+--cta:#D6362A;--cta-ink:#FFF;--cta-hover:#B22A20;--r-card:14px;--r-pill:999px;
+--sans:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","YuGothic","Noto Sans JP",Meiryo,system-ui,sans-serif;--maxw:800px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#0F131A;--surface:#171C26;--surface-2:#1F2530;
+--ink:#EAEEF5;--ink-2:#B4BCCA;--ink-3:#828C9E;--line:#2A313D;--line-2:#232A35;--accent:#8FA6F0;
+--accent-soft:#1B2338;--accent-ink:#BFCDFA;--cta:#D6392C;--cta-hover:#E44D3D}}
+:root[data-theme="dark"]{--paper:#0F131A;--surface:#171C26;--surface-2:#1F2530;--ink:#EAEEF5;--ink-2:#B4BCCA;
+--ink-3:#828C9E;--line:#2A313D;--line-2:#232A35;--accent:#8FA6F0;--accent-soft:#1B2338;--accent-ink:#BFCDFA;--cta:#D6392C;--cta-hover:#E44D3D}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.9;-webkit-text-size-adjust:100%}
+a{color:var(--accent-ink)}
+.topbar{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.topbar__inner{max-width:1080px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:16px}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;color:inherit}
+.brand__mark{width:30px;height:30px;border-radius:7px}
+.brand__name{display:block;font-weight:800;font-size:15px;letter-spacing:.02em}
+.brand__sub{display:block;font-size:10px;color:var(--ink-3);letter-spacing:.12em}
+.gnav{display:flex;gap:16px;margin-left:auto;flex-wrap:wrap}
+.gnav a{font-size:13.5px;color:var(--ink-2);text-decoration:none}
+.gnav a[aria-current]{color:var(--accent-ink);font-weight:700}
+.btn-head{background:var(--cta);color:var(--cta-ink);text-decoration:none;font-size:13px;font-weight:700;padding:8px 14px;border-radius:var(--r-pill);white-space:nowrap}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:22px 16px 56px}
+.crumb{font-size:12px;color:var(--ink-3);margin-bottom:14px}
+.crumb a{color:var(--ink-3)}
+.post__eyebrow{display:inline-block;font-size:11.5px;letter-spacing:.08em;color:var(--accent-ink);background:var(--accent-soft);padding:4px 10px;border-radius:var(--r-pill);margin:0 0 10px}
+h1{font-size:27px;line-height:1.5;letter-spacing:.01em;margin:0 0 12px}
+.post__meta{font-size:12px;color:var(--ink-3);margin:0 0 26px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+h2{font-size:20px;line-height:1.55;margin:38px 0 12px;padding-left:11px;border-left:4px solid var(--accent)}
+h3{font-size:16.5px;margin:26px 0 8px}
+p{margin:0 0 16px}
+ul,ol{margin:0 0 18px;padding-left:1.35em}
+li{margin-bottom:7px}
+.tw{overflow-x:auto;margin:0 0 20px}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--surface-2);font-weight:700}
+.blk{border-radius:var(--r-card);padding:16px 18px;margin:24px 0}
+.blk p:last-child{margin-bottom:0}
+.blk__lbl{font-size:11.5px;letter-spacing:.08em;font-weight:800;margin:0 0 7px}
+.blk--insight{background:var(--accent-soft);border:1px solid var(--accent)}
+.blk--insight .blk__lbl{color:var(--accent-ink)}
+.blk--note{background:var(--surface-2);border:1px solid var(--line)}
+.blk--note .blk__lbl{color:var(--ink-3)}
+.blk--cta{background:var(--surface);border:1px dashed var(--accent)}
+.sources{margin:34px 0 0;padding:15px 17px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card)}
+.sources h2{font-size:14px;margin:0 0 8px;padding:0;border:0}
+.sources ol{margin:0;font-size:13px;color:var(--ink-2)}
+.author{margin:30px 0 0;padding:16px 18px;border:1px solid var(--line);border-radius:var(--r-card);background:var(--surface)}
+.author__lbl{font-size:11px;letter-spacing:.1em;color:var(--ink-3);margin:0 0 3px}
+.author__name{font-size:16px;font-weight:800;margin:0 0 7px}
+.author__bio{font-size:13px;line-height:1.85;color:var(--ink-2);margin:0}
+.related{margin:34px 0 0}
+.related h2{font-size:15px;margin:0 0 10px;padding:0;border:0}
+.related ul,.idx__grp ul{list-style:none;padding:0;margin:0}
+.related li,.idx__grp li{border-bottom:1px solid var(--line-2);padding:9px 0;margin:0}
+.related a,.idx__grp a{font-size:14px;text-decoration:none}
+.related a:hover,.idx__grp a:hover{text-decoration:underline}
+.cta{margin:38px 0 0;padding:22px 20px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);text-align:center}
+.cta h2{font-size:18px;margin:0 0 9px;padding:0;border:0}
+.cta p{font-size:13.5px;color:var(--ink-2)}
+.cta__btns{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+.cta__pri{background:var(--cta);color:#fff;text-decoration:none;font-weight:700;padding:11px 22px;border-radius:var(--r-pill)}
+.cta__sec{background:var(--surface-2);color:var(--ink);text-decoration:none;font-weight:700;padding:11px 18px;border-radius:var(--r-pill)}
+.site-foot{background:var(--surface);border-top:1px solid var(--line);margin-top:44px}
+.foot__inner{max-width:1080px;margin:0 auto;padding:24px 16px;font-size:12.5px;color:var(--ink-2)}
+.foot__links{display:flex;flex-wrap:wrap;gap:12px;margin:11px 0}
+.foot__links a{color:var(--ink-2);text-decoration:none}
+.foot__copy{color:var(--ink-3);margin:0}
+.idx__grp{margin:30px 0 0}
+.idx__grp h2{font-size:17px}
+.idx__cnt{font-size:12px;color:var(--ink-3);font-weight:400;margin-left:8px}
+@media(max-width:640px){h1{font-size:22px}h2{font-size:18px}.wrap{padding:18px 14px 44px}}</style>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"基本額の計算の考え方","description":"退職手当の基本額は「退職日の俸給月額 × 勤続期間の区分ごとの割合の合計」です。なぜ退職日の額なのか、手当は入るのか、降任で下がった場合はどうなるのかを、国の法律の条文で整理しました。","mainEntityOfPage":"https://zaiseikatenshoku.com/media/seido-taishokuteate-kihongaku.html","author":{"@type":"Organization","name":"株式会社エージェントベスト"},"publisher":{"@type":"Organization","name":"財政課転職"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"財政課転職","item":"https://zaiseikatenshoku.com/"},{"@type":"ListItem","position":2,"name":"記事","item":"https://zaiseikatenshoku.com/media/"},{"@type":"ListItem","position":3,"name":"基本額の計算の考え方","item":"https://zaiseikatenshoku.com/media/seido-taishokuteate-kihongaku.html"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"地域手当は退職手当の計算に入りますか","acceptedAnswer":{"@type":"Answer","text":"入りません。第3条第1項は「退職の日におけるその者の俸給月額」を基礎とし、これは俸給表で定められた月額です。地域手当、扶養手当、住居手当、時間外勤務手当は俸給月額に含まれません。地方公務員の条例では「給料月額」と書かれているのが一般的で、給料表の額を指します。月収や源泉徴収票の支払金額から概算すると、大きく上に外れます。給料表の自分の級と号の額を、辞令か給与明細で確かめてください。"}},{"@type":"Question","name":"役職定年で管理職を外れた後に退職すると、不利になりますか","acceptedAnswer":{"@type":"Answer","text":"国の形では、第5条の2の特例が関わります。俸給月額の減額改定以外の理由——役職の変更による降給はこれに当たり得ます——で俸給月額が下がった場合、下がる前の期間は下がる前の俸給月額で、下がった後の期間は退職日俸給月額で計算して合計します。それまでの勤続が下がった後の額で計算されることはありません。ただし、この特例が自分の自治体の条例にあるか、どう定めているかは自治体ごとに違います。役職定年や降任を経て退職する予定の方は、条例の特例の条を必ず読んでください。人事の担当課に、制度の照会として聞くこともできます。"}},{"@type":"Question","name":"基本額の上限に達することはありますか","acceptedAnswer":{"@type":"Answer","text":"第6条は、基本額の上限を退職日俸給月額の60倍と定めています。自己都合等の第3条の表では、勤続35年で47.5か月分なので、上限には達しません。定年等の第5条の表（1〜10年150、11〜25年165、26〜34年180、35年以上105）では、長く勤めた場合に60か月分に近づき、上限に達することがあります。転職による退職で上限に達する場面は、まずありません。上限があることは知っておいて構いませんが、転職の見込みを立てるうえで効いてくるのは、俸給月額の置き方と、自己都合の乗率、調整額の減額のほうです。自己都合と定年の違いは自己都合退職と定年退職で何が変わるかに整理しています。"}}]}]</script>
+</head>
+<body>
+<header class="topbar"><div class="topbar__inner">
+<a class="brand" href="../" aria-label="財政課転職トップ">
+<img class="brand__mark" src="../assets/mark.png" alt="" aria-hidden="true">
+<span><span class="brand__name">財政課転職</span><span class="brand__sub">PUBLIC &rarr; PRIVATE</span></span></a>
+<nav class="gnav" aria-label="メインメニュー">
+<a href="../">求人を探す</a>
+<a href="../zukan.html">部署別 仕事ガイド</a>
+<a href="./" aria-current="page">記事</a>
+<a href="../apply.html">転職支援サービス</a></nav>
+<a class="btn-head" href="../apply.html">無料で相談する</a></div></header>
+<main class="wrap">
+<nav class="crumb"><a href="../">財政課転職</a> &rsaquo; <a href="./">記事</a> &rsaquo; 制度とお金</nav>
+<article class="post">
+<p class="post__eyebrow">制度とお金 / 退職手当</p>
+<h1>基本額の計算の考え方</h1>
+<p class="post__meta">2026年9月時点の公開情報にもとづきます。制度や募集要項は変わることがあるため、手続きの前に各機関の公式情報をご確認ください。</p>
+<p>退職手当の基本額は、<b>「退職日の俸給月額に、勤続期間の区分ごとの割合を乗じた額の合計」</b>です。式は1行で書けます。</p>
+<p>ところが、この1行には、<b>多くの方が確かめていない前提が3つ</b>入っています。<b>「俸給月額」に何が含まれるのか。なぜ「退職日」の額なのか。退職の前に俸給月額が下がっていたら、どうなるのか。</b>この3つを確かめずに概算すると、見込みが大きく外れます。</p>
+<p>この記事では、<b>基本額の式の考え方</b>を、国家公務員退職手当法の条文で整理します。地方公務員の退職手当は所属自治体の条例で決まります（地方自治法第204条）が、条例は国の法律に沿った構成を採るのが一般的です。もう1つの柱である調整額は<a href="seido-taishokuteate-chosei.html">調整額とは何か</a>で扱っています。</p>
+<h2>式の形——「退職日俸給月額 × 割合の合計」</h2>
+<p>第3条第1項は、こう定めています。</p>
+<p>&gt; 退職した者に対する退職手当の基本額は、退職の日におけるその者の俸給月額（俸給が日額で定められている者については、退職の日におけるその者の俸給の日額の二十一日分に相当する額。次条から第六条の四までにおいて「退職日俸給月額」という。）に、その者の勤続期間を次の各号に区分して、当該各号に掲げる割合を乗じて得た額の合計額とする。</p>
+<p>分解すると、<b>3つの部品</b>です。</p>
+<div class="tw"><table>
+<thead><tr><th>部品</th><th>中身</th><th>決まり方</th></tr></thead><tbody>
+<tr><td><b>退職日俸給月額</b></td><td>退職の日の俸給月額</td><td>給料表の額。<b>手当は含まない</b></td></tr>
+<tr><td><b>勤続期間の区分</b></td><td>1〜10年、11〜15年、16〜20年、21〜25年、26〜30年、31年以上</td><td>月数で数え、端数は切り捨て</td></tr>
+<tr><td><b>区分ごとの割合</b></td><td>100分の100、110、160、200、160、120</td><td>退職の理由で表が変わる</td></tr>
+</tbody></table></div>
+<p><b>「俸給月額」は、給料表で定められた月額です。</b>地域手当、扶養手当、住居手当、時間外勤務手当は入りません。<b>毎月の手取りや、源泉徴収票の支払金額とは別の数字</b>です。地方公務員の条例では「給料月額」と書かれているのが一般的で、<b>給料表の額を指します。</b>ここを月収のイメージで置くと、見込みが大きく上に外れます。</p>
+<p><b>区分ごとの割合を乗じた額の「合計額」です。</b>勤続22年なら、1〜10年目に100分の100、11〜15年目に100分の110、16〜20年目に100分の160、21〜22年目に100分の200を乗じて、合計します。区分の詳しい意味は<a href="seido-taishokuteate-kinzoku.html">勤続年数が支給率に与える影響</a>に書いています。</p>
+<h2>なぜ「退職日」の額なのか</h2>
+<p>基本額は、<b>在職中の俸給の平均ではなく、退職の日の俸給月額</b>で計算します。<b>最後の1か月の額に、全期間の割合がかかる。</b>この形には、実務上の帰結が2つあります。</p>
+<p><b>1. 昇給の時期をまたぐかどうかで、基準額が変わる</b></p>
+<p>昇給の直後に退職すれば、上がった後の俸給月額が基準になります。<b>退職日を昇給の前に置くか後に置くかで、全期間の割合がかかる基準額が変わる</b>ということです。ただし、条例で昇給の時期や退職日の扱いは定められているので、自分の自治体の規定を確認してください。</p>
+<p><b>2. 退職の前に俸給月額が下がっていると、そのままでは不利になる</b></p>
+<p>降任や役職の変更で俸給月額が下がった後に退職すると、<b>下がった後の額に全期間の割合がかかる</b>ことになります。<b>これを補正するのが、第5条の2の特例</b>です。</p>
+<h2>俸給月額が下がっていた場合の特例——第5条の2</h2>
+<p>第5条の2は、<b>「俸給月額の減額改定以外の理由により」俸給月額が減額されたことがある場合</b>の特例です。給料表そのものの改定で下がった場合は対象外で、<b>降任などの個別の理由で下がった場合</b>が対象です。</p>
+<p>仕組みは、こうです。減額される前の俸給月額のうち最も多いもの（<b>特定減額前俸給月額</b>）が、退職日俸給月額より多いときは、基本額を<b>2つの部分の合計</b>にします。</p>
+<div class="tw"><table>
+<thead><tr><th>部分</th><th>計算</th></tr></thead><tbody>
+<tr><td><b>減額の日の前日までの分</b></td><td>特定減額前俸給月額を基礎に、減額の日の前日までの勤続期間で計算した基本額に相当する額</td></tr>
+<tr><td><b>減額の日以降の分</b></td><td>退職日俸給月額に、全期間の割合から減額の日の前日までの割合を差し引いた割合を乗じた額</td></tr>
+</tbody></table></div>
+<p>つまり、<b>下がる前の期間は下がる前の額で、下がった後の期間は下がった後の額で計算して、足す。</b>降任があっても、<b>それ以前の勤続が下がった後の額で計算されることはない</b>、という形です。</p>
+<p>自治体の条例にも、同様の特例を置いているところが多くあります。<b>役職定年や降任を経て退職する方は、この条が自分の条例にあるか、どう定められているかを必ず確認してください。</b></p>
+<aside class="blk blk--insight"><p class="blk__lbl">エージェントベストの見解</p><p>面談で伺うと、<b>「役職を降りてから辞めると損だから、降りる前に辞めたい」</b>とおっしゃる方がいます。<b>その前提は、第5条の2の特例を知らないことから来ている</b>ことが多いです。国の形では、<b>下がる前の期間は下がる前の額で計算される</b>ので、降任そのものが過去の勤続の評価を下げるわけではありません。<b>下がるのは、降任の後に積み上がる期間の分だけ</b>です。ただし、<b>この特例が自分の自治体の条例にあるか、あるならどう定めているか</b>は、確かめないと分かりません。<b>「降りる前に辞めなければ」という判断を、条文を見ずにしないでください。</b>逆に、条例に特例がない自治体なら、その判断には根拠があります。<b>どちらなのかを先に確かめる。</b>それだけで、退職の時期の選び方が変わります。</p></aside>
+<h2>最高限度——60か月分</h2>
+<p>第6条は、基本額の上限を定めています。</p>
+<p>&gt; 第三条から第五条までの規定により計算した退職手当の基本額が退職日俸給月額に六十を乗じて得た額を超えるときは、これらの規定にかかわらず、その乗じて得た額をその者の退職手当の基本額とする。</p>
+<p><b>基本額は、退職日俸給月額の60倍を超えません。</b>区分ごとの割合の合計がどれだけ大きくなっても、60か月分が上限です。定年等の表（第5条）で長く勤めた場合に、この上限に達することがあります。</p>
+<h2>基本額と調整額の2階建て</h2>
+<p>退職手当の額は、<b>基本額と調整額の合計</b>です。基本額が「俸給月額 × 勤続」で決まるのに対し、調整額は<b>在職中の職員の区分を月ごとに積み上げる</b>別の仕組みで、<b>自己都合等退職者は勤続9年以下でゼロ、10〜24年で2分の1</b>になります（第6条の4第4項）。<b>基本額の式だけで見込みを立てると、調整額の分が抜けます。</b>役職に就いていた期間が長い方ほど、この抜けが大きくなります。</p>
+<h2>転職するとどうなるか</h2>
+<p>転職による退職で、基本額に関して効いてくる点は3つです。</p>
+<p><b>1. 「俸給月額」を給料表の額で置く</b></p>
+<p><b>手当を含めない。</b>月収のイメージで置くと、見込みが上に外れます。給料表の自分の級と号の額を、辞令か給与明細で確かめてください。</p>
+<p><b>2. 退職日と昇給の時期の関係を見る</b></p>
+<p>昇給の直後の退職日なら、上がった後の額が基準です。<b>条例の昇給の規定と、自分の昇給の時期</b>を確かめてください。</p>
+<p><b>3. 俸給月額が下がったことがあるなら、特例の有無を確かめる</b></p>
+<p>降任や役職の変更で下がった経験があるなら、<b>第5条の2に当たる条が自分の条例にあるか</b>を確かめてください。<b>あるなら、下がる前の期間は下がる前の額で計算されます。</b></p>
+<h2>手続きと期限</h2>
+<p>基本額の計算に使う<b>俸給月額と勤続期間は、任命権者の側が人事の記録から計算します。</b>本人が申告するものではありません。ただし、<b>特定減額前俸給月額の特例が適用されるかどうか</b>は、記録の持ち方によっては照会が必要になることがあります。</p>
+<p><b>退職の意思を伝えずに確認できること</b>は、次の3つです。</p>
+<ul>
+<li>給料表で、<b>自分の級と号の額</b>を確かめる（これが「俸給月額」）</li>
+<li>自治体の条例で、<b>基本額の条、特例の条、最高限度の条</b>を読む（国の第3条・第5条の2・第6条に当たる部分）</li>
+<li>自分の<b>昇給の時期</b>と、<b>俸給月額が下がったことがあればその時期</b>を整理する</li>
+</ul>
+<p><b>見込額の照会は、制度の照会として人事の担当課に聞ける自治体が多くあります。</b>このとき、<b>「俸給月額はいくらで計算されるか」「特例の適用はあるか」</b>まで聞くと、答えの意味が分かります。</p>
+<h2>誤解されやすい点</h2>
+<p><b>「俸給月額」を月収で置く</b></p>
+<p><b>給料表の額だけ</b>です。地域手当も時間外も入りません。</p>
+<p><b>「在職中の平均の給料で計算される」と思い込む</b></p>
+<p><b>退職日の額</b>です。最後の1か月の額に、全期間の割合がかかります。</p>
+<p><b>「降任すると、それまでの勤続も下がった額で計算される」と思い込む</b></p>
+<p>国の形では、<b>第5条の2の特例で、下がる前の期間は下がる前の額で計算</b>されます。自治体の条例に同様の条があるかを確かめてください。</p>
+<p><b>「基本額だけで退職手当の全体が分かる」と思い込む</b></p>
+<p><b>調整額が別にあります。</b>役職に就いていた期間が長いほど、調整額の比重は大きくなります。</p>
+<aside class="blk blk--insight"><p class="blk__lbl">エージェントベストの見解</p><p>ここまで式の話を書いておいて逆のことを言いますが、<b>式が分かっても、見込額を自分で確定させることはお勧めしていません。</b>俸給月額の当てはめ、特例の適用、調整額の区分は、<b>本人の履歴を持っている人事の担当課でないと正確に出せない</b>からです。式を理解する意味は、<b>照会したときに答えの意味が分かること</b>と、<b>照会の前に桁の見当を持てること</b>にあります。面談で伺うと、<b>式を知らずに照会して、出てきた額の理由が分からないまま「思ったより少なかった」で止まっている方</b>がいます。その額のどこに手当が入っていないのか、どこで乗率がかかっているのか、調整額がいくらか。<b>式が分かっていれば、その額を分解して読めます。</b>そのうえで、<b>その額と、いま動いた場合の行き先の見込みを、同じ紙に並べる。</b>片方だけでは比較になりません。応募先が決まっていない段階のほうが、むしろ整理する意味があります。ご利用は無料です（紹介手数料は採用企業の負担です）。</p></aside>
+<p><a href="../?fin=1">財政・会計の経験が効く求人を見てみる</a></p>
+<h2>まとめ</h2>
+<ul>
+<li>基本額は<b>「退職日俸給月額 × 勤続期間の区分ごとの割合の合計」</b>です（第3条第1項）。<b>俸給月額は給料表の額で、手当は含みません</b></li>
+<li><b>退職日の額</b>が基準です。昇給の時期をまたぐかどうかで基準額が変わります</li>
+<li>降任などで俸給月額が下がったことがある場合、<b>第5条の2の特例で、下がる前の期間は下がる前の額で計算</b>します。自治体の条例に同様の条があるかを確かめてください</li>
+<li>基本額の<b>最高限度は退職日俸給月額の60倍</b>です（第6条）</li>
+<li>退職手当は<b>基本額と調整額の合計</b>です。基本額だけで見込みを立てると、調整額の分が抜けます</li>
+<li>式を知る意味は、<b>照会したときに答えを分解して読めること</b>にあります</li>
+</ul>
+<h2>よくある質問</h2>
+<h3>地域手当は退職手当の計算に入りますか</h3>
+<p><b>入りません。</b>第3条第1項は「退職の日におけるその者の俸給月額」を基礎とし、これは俸給表で定められた月額です。地域手当、扶養手当、住居手当、時間外勤務手当は俸給月額に含まれません。地方公務員の条例では「給料月額」と書かれているのが一般的で、<b>給料表の額</b>を指します。<b>月収や源泉徴収票の支払金額から概算すると、大きく上に外れます。</b>給料表の自分の級と号の額を、辞令か給与明細で確かめてください。</p>
+<h3>役職定年で管理職を外れた後に退職すると、不利になりますか</h3>
+<p><b>国の形では、第5条の2の特例が関わります。</b>俸給月額の減額改定以外の理由——役職の変更による降給はこれに当たり得ます——で俸給月額が下がった場合、<b>下がる前の期間は下がる前の俸給月額で、下がった後の期間は退職日俸給月額で計算して合計</b>します。<b>それまでの勤続が下がった後の額で計算されることはありません。</b>ただし、<b>この特例が自分の自治体の条例にあるか、どう定めているか</b>は自治体ごとに違います。役職定年や降任を経て退職する予定の方は、条例の特例の条を必ず読んでください。人事の担当課に、制度の照会として聞くこともできます。</p>
+<h3>基本額の上限に達することはありますか</h3>
+<p><b>第6条は、基本額の上限を退職日俸給月額の60倍と定めています。</b>自己都合等の第3条の表では、勤続35年で47.5か月分なので、上限には達しません。定年等の第5条の表（1〜10年150、11〜25年165、26〜34年180、35年以上105）では、長く勤めた場合に60か月分に近づき、上限に達することがあります。<b>転職による退職で上限に達する場面は、まずありません。</b>上限があることは知っておいて構いませんが、転職の見込みを立てるうえで効いてくるのは、<b>俸給月額の置き方と、自己都合の乗率、調整額の減額</b>のほうです。自己都合と定年の違いは<a href="seido-taishokuteate-jiko.html">自己都合退職と定年退職で何が変わるか</a>に整理しています。</p>
+<section class="sources"><h2>出典</h2><ol><li><a href="https://laws.e-gov.go.jp/law/328AC1000000182" target="_blank" rel="noopener noreferrer">国家公務員退職手当法 第3条（退職手当の基本額）／第5条の2（俸給月額が減額されたことがある場合の特例）／第6条（基本額の最高限度額）／第6条の4（調整額）｜e-Gov法令検索</a></li><li><a href="https://laws.e-gov.go.jp/law/322AC0000000067" target="_blank" rel="noopener noreferrer">地方自治法 第204条（給与その他の給付）｜e-Gov法令検索</a></li></ol></section>
+</article>
+<div class="author"><p class="author__lbl">監修</p>
+<p class="author__name"><a href="https://www.agent-best.net/profile" target="_blank" rel="noopener">松岡 良次</a></p>
+<p class="author__bio">株式会社エージェントベスト代表。大手人材会社およびスタートアップ人材企業にて、IT・スタートアップ・メガベンチャー企業の採用支援に従事。独立後はIT・スタートアップ・コンサル領域に特化し、20〜30代のキャリア支援を行う。（厚生労働大臣許可 13-ユ-316964）</p></div>
+<section class="related"><h2>関連する記事</h2><ul><li><a href="seido-taishokuteate-chosei.html">調整額とは何か</a></li><li><a href="seido-taishokuteate-fushime.html">勤続20年・25年という節目の意味</a></li><li><a href="seido-taishokuteate-jiko.html">自己都合退職と定年退職で何が変わるか</a></li><li><a href="seido-taishokuteate-jorei.html">退職手当条例の読み方</a></li><li><a href="seido-taishokuteate-kinzoku.html">勤続年数が支給率に与える影響</a></li><li><a href="seido-taishokuteate-shikumi.html">退職手当の仕組み｜何で金額が決まるのか</a></li></ul></section>
+<section class="cta"><h2>「自分の経験に、どこで値段が付くのか」から相談できます</h2>
+<p>在職中でも、情報収集だけでも構いません。応募する求人が決まっていない段階のほうが、むしろ整理する意味があります。ご利用はすべて無料です。</p>
+<div class="cta__btns"><a class="cta__pri" href="../apply.html">無料で相談する</a>
+<a class="cta__sec" href="../">求人を見る</a>
+<a class="cta__sec" href="https://line.me/R/ti/p/@697nxhbt" target="_blank" rel="noopener noreferrer" data-line-cta="media-cta">LINEで相談する</a></div></section>
+</main>
+<footer class="site-foot"><div class="foot__inner">
+<strong>財政課転職 — 公務員のための求人サイト</strong><br>
+<span>人材紹介サービス「エージェントベスト」が運営しています。ご利用はすべて無料です（紹介手数料は採用企業からいただきます）。</span>
+<nav class="foot__links"><a href="../">求人を探す</a><a href="../zukan.html">部署別 仕事ガイド</a>
+<a href="./">記事</a><a href="../apply.html">転職支援サービス</a><a href="../terms.html">利用規約</a>
+<a href="../privacy.html">プライバシーポリシー（人材紹介）</a><a href="../privacy-ad.html">プライバシーポリシー（求人広告）</a>
+<a href="https://www.agent-best.net/" target="_blank" rel="noopener">運営会社サイト</a></nav>
+<p class="foot__copy">&copy; 株式会社エージェントベスト</p></div></footer>
+</body>
+</html>
