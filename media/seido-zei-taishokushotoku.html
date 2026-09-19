@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+<title>退職所得の課税の仕組み｜財政課転職</title>
+<link rel="icon" href="../assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="../assets/icon-192.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="canonical" href="https://zaiseikatenshoku.com/media/seido-zei-taishokushotoku.html">
+<meta name="description" content="退職手当の税は「控除して、半分にして、他の所得と分けて税率をかける」の3段階です。所得税の速算表、復興特別所得税、住民税10パーセントを使って、国税庁の計算例を追いながら仕組みを整理しました。手取りの見込みを自分で出せるようになります。">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="財政課転職">
+<meta property="og:title" content="退職所得の課税の仕組み">
+<meta property="og:description" content="退職手当の税は「控除して、半分にして、他の所得と分けて税率をかける」の3段階です。所得税の速算表、復興特別所得税、住民税10パーセントを使って、国税庁の計算例を追いながら仕組みを整理しました。手取りの見込みを自分で出せるようになります。">
+<meta property="og:url" content="https://zaiseikatenshoku.com/media/seido-zei-taishokushotoku.html">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://zaiseikatenshoku.com/assets/ogp.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zaiseikatenshoku.com/assets/ogp.jpg">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1XXMP8Y1B4"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1XXMP8Y1B4');</script>
+<style>:root{--paper:#F5F7FA;--surface:#FFFFFF;--surface-2:#EEF1F6;--ink:#161A26;--ink-2:#4A5261;--ink-3:#6E7686;
+--line:#DDE2EA;--line-2:#EAEEF4;--accent:#1E3A8A;--accent-soft:#E9EDF9;--accent-ink:#1B3374;
+--cta:#D6362A;--cta-ink:#FFF;--cta-hover:#B22A20;--r-card:14px;--r-pill:999px;
+--sans:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","YuGothic","Noto Sans JP",Meiryo,system-ui,sans-serif;--maxw:800px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#0F131A;--surface:#171C26;--surface-2:#1F2530;
+--ink:#EAEEF5;--ink-2:#B4BCCA;--ink-3:#828C9E;--line:#2A313D;--line-2:#232A35;--accent:#8FA6F0;
+--accent-soft:#1B2338;--accent-ink:#BFCDFA;--cta:#D6392C;--cta-hover:#E44D3D}}
+:root[data-theme="dark"]{--paper:#0F131A;--surface:#171C26;--surface-2:#1F2530;--ink:#EAEEF5;--ink-2:#B4BCCA;
+--ink-3:#828C9E;--line:#2A313D;--line-2:#232A35;--accent:#8FA6F0;--accent-soft:#1B2338;--accent-ink:#BFCDFA;--cta:#D6392C;--cta-hover:#E44D3D}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.9;-webkit-text-size-adjust:100%}
+a{color:var(--accent-ink)}
+.topbar{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.topbar__inner{max-width:1080px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:16px}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;color:inherit}
+.brand__mark{width:30px;height:30px;border-radius:7px}
+.brand__name{display:block;font-weight:800;font-size:15px;letter-spacing:.02em}
+.brand__sub{display:block;font-size:10px;color:var(--ink-3);letter-spacing:.12em}
+.gnav{display:flex;gap:16px;margin-left:auto;flex-wrap:wrap}
+.gnav a{font-size:13.5px;color:var(--ink-2);text-decoration:none}
+.gnav a[aria-current]{color:var(--accent-ink);font-weight:700}
+.btn-head{background:var(--cta);color:var(--cta-ink);text-decoration:none;font-size:13px;font-weight:700;padding:8px 14px;border-radius:var(--r-pill);white-space:nowrap}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:22px 16px 56px}
+.crumb{font-size:12px;color:var(--ink-3);margin-bottom:14px}
+.crumb a{color:var(--ink-3)}
+.post__eyebrow{display:inline-block;font-size:11.5px;letter-spacing:.08em;color:var(--accent-ink);background:var(--accent-soft);padding:4px 10px;border-radius:var(--r-pill);margin:0 0 10px}
+h1{font-size:27px;line-height:1.5;letter-spacing:.01em;margin:0 0 12px}
+.post__meta{font-size:12px;color:var(--ink-3);margin:0 0 26px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+h2{font-size:20px;line-height:1.55;margin:38px 0 12px;padding-left:11px;border-left:4px solid var(--accent)}
+h3{font-size:16.5px;margin:26px 0 8px}
+p{margin:0 0 16px}
+ul,ol{margin:0 0 18px;padding-left:1.35em}
+li{margin-bottom:7px}
+.tw{overflow-x:auto;margin:0 0 20px}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--surface-2);font-weight:700}
+.blk{border-radius:var(--r-card);padding:16px 18px;margin:24px 0}
+.blk p:last-child{margin-bottom:0}
+.blk__lbl{font-size:11.5px;letter-spacing:.08em;font-weight:800;margin:0 0 7px}
+.blk--insight{background:var(--accent-soft);border:1px solid var(--accent)}
+.blk--insight .blk__lbl{color:var(--accent-ink)}
+.blk--note{background:var(--surface-2);border:1px solid var(--line)}
+.blk--note .blk__lbl{color:var(--ink-3)}
+.blk--cta{background:var(--surface);border:1px dashed var(--accent)}
+.sources{margin:34px 0 0;padding:15px 17px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card)}
+.sources h2{font-size:14px;margin:0 0 8px;padding:0;border:0}
+.sources ol{margin:0;font-size:13px;color:var(--ink-2)}
+.author{margin:30px 0 0;padding:16px 18px;border:1px solid var(--line);border-radius:var(--r-card);background:var(--surface)}
+.author__lbl{font-size:11px;letter-spacing:.1em;color:var(--ink-3);margin:0 0 3px}
+.author__name{font-size:16px;font-weight:800;margin:0 0 7px}
+.author__bio{font-size:13px;line-height:1.85;color:var(--ink-2);margin:0}
+.related{margin:34px 0 0}
+.related h2{font-size:15px;margin:0 0 10px;padding:0;border:0}
+.related ul,.idx__grp ul{list-style:none;padding:0;margin:0}
+.related li,.idx__grp li{border-bottom:1px solid var(--line-2);padding:9px 0;margin:0}
+.related a,.idx__grp a{font-size:14px;text-decoration:none}
+.related a:hover,.idx__grp a:hover{text-decoration:underline}
+.cta{margin:38px 0 0;padding:22px 20px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);text-align:center}
+.cta h2{font-size:18px;margin:0 0 9px;padding:0;border:0}
+.cta p{font-size:13.5px;color:var(--ink-2)}
+.cta__btns{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+.cta__pri{background:var(--cta);color:#fff;text-decoration:none;font-weight:700;padding:11px 22px;border-radius:var(--r-pill)}
+.cta__sec{background:var(--surface-2);color:var(--ink);text-decoration:none;font-weight:700;padding:11px 18px;border-radius:var(--r-pill)}
+.site-foot{background:var(--surface);border-top:1px solid var(--line);margin-top:44px}
+.foot__inner{max-width:1080px;margin:0 auto;padding:24px 16px;font-size:12.5px;color:var(--ink-2)}
+.foot__links{display:flex;flex-wrap:wrap;gap:12px;margin:11px 0}
+.foot__links a{color:var(--ink-2);text-decoration:none}
+.foot__copy{color:var(--ink-3);margin:0}
+.idx__grp{margin:30px 0 0}
+.idx__grp h2{font-size:17px}
+.idx__cnt{font-size:12px;color:var(--ink-3);font-weight:400;margin-left:8px}
+@media(max-width:640px){h1{font-size:22px}h2{font-size:18px}.wrap{padding:18px 14px 44px}}</style>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"退職所得の課税の仕組み","description":"退職手当の税は「控除して、半分にして、他の所得と分けて税率をかける」の3段階です。所得税の速算表、復興特別所得税、住民税10パーセントを使って、国税庁の計算例を追いながら仕組みを整理しました。手取りの見込みを自分で出せるようになります。","mainEntityOfPage":"https://zaiseikatenshoku.com/media/seido-zei-taishokushotoku.html","author":{"@type":"Organization","name":"株式会社エージェントベスト"},"publisher":{"@type":"Organization","name":"財政課転職"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"財政課転職","item":"https://zaiseikatenshoku.com/"},{"@type":"ListItem","position":2,"name":"記事","item":"https://zaiseikatenshoku.com/media/"},{"@type":"ListItem","position":3,"name":"退職所得の課税の仕組み","item":"https://zaiseikatenshoku.com/media/seido-zei-taishokushotoku.html"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"勤続15年で退職手当が700万円の場合、税はいくらになりますか","acceptedAnswer":{"@type":"Answer","text":"上の3段階で計算すると、次のようになります。控除額は40万円×15年＝600万円。退職所得の金額は（700万円−600万円）×1／2＝50万円。所得税は50万円×5パーセント＝25,000円、復興特別所得税は25,000円×2.1パーセント＝525円、住民税は50万円×10パーセント＝50,000円。税の合計は75,525円で、手取りは約692万円です。これは仕組みを示すための計算で、勤続年数の端数の扱いや退職の年の税制で変わります。申告書を提出することが前提です。自分の額は、所属の担当課と税務署で確認してください。"}},{"@type":"Question","name":"退職の年に、退職手当と転職先の給与を両方受け取ります。税率は上がりますか","acceptedAnswer":{"@type":"Answer","text":"退職所得は分離課税なので、転職先の給与と合算されません。退職手当の税率は、退職所得の金額だけで速算表に当てはめて決まります。転職先の給与が多くても、退職手当の側の税率は上がりません。逆に、転職先の給与の税率が退職手当で上がることもありません。両方を同じ年に受け取っても、それぞれ別に計算されます。ただし、退職所得の金額は所得税の計算上「合計所得金額」に含まれる扱いがあり、扶養や各種の控除の判定に関わることがあります。その点は個別性が高いので、税務署か税理士に確認してください。"}},{"@type":"Question","name":"復興特別所得税は、いつまでかかりますか","acceptedAnswer":{"@type":"Answer","text":"国税庁のNo.2260によれば、平成25年から令和19年までの各年分について、所得税と復興特別所得税（原則としてその年分の基準所得税額の2.1パーセント）を併せて申告・納付するとされています。退職手当の源泉徴収でも、所得税の額に2.1パーセントを乗じた額が併せて徴収されます。なお、No.2732には、令和9年分以後は所得税、防衛特別所得税および復興特別所得税を源泉徴収の対象とする、という記載があります。税率や名称は年分によって変わるので、退職する年の最新の情報を国税庁のページで確認してください。"}}]}]</script>
+</head>
+<body>
+<header class="topbar"><div class="topbar__inner">
+<a class="brand" href="../" aria-label="財政課転職トップ">
+<img class="brand__mark" src="../assets/mark.png" alt="" aria-hidden="true">
+<span><span class="brand__name">財政課転職</span><span class="brand__sub">PUBLIC &rarr; PRIVATE</span></span></a>
+<nav class="gnav" aria-label="メインメニュー">
+<a href="../">求人を探す</a>
+<a href="../zukan.html">部署別 仕事ガイド</a>
+<a href="./" aria-current="page">記事</a>
+<a href="../apply.html">転職支援サービス</a></nav>
+<a class="btn-head" href="../apply.html">無料で相談する</a></div></header>
+<main class="wrap">
+<nav class="crumb"><a href="../">財政課転職</a> &rsaquo; <a href="./">記事</a> &rsaquo; 制度とお金</nav>
+<article class="post">
+<p class="post__eyebrow">制度とお金 / 失業給付と税金</p>
+<h1>退職所得の課税の仕組み</h1>
+<p class="post__meta">2026年9月時点の公開情報にもとづきます。制度や募集要項は変わることがあるため、手続きの前に各機関の公式情報をご確認ください。</p>
+<p>退職手当の税は、<b>3段階</b>で決まります。<b>控除して、半分にして、他の所得と分けて税率をかける。</b>この3段階を知っていれば、<b>手取りの見込みは自分で出せます。</b></p>
+<p>前の記事<a href="seido-taishokuteate-zei.html">退職所得控除と税金</a>では、控除の計算と申告書の話を扱いました。この記事は、その先——<b>税率をどうかけて、いくらになるのか</b>——を、国税庁の計算例を追いながら整理します。<b>税は個別性が高い分野</b>なので、一般的な取扱いを書きます。<b>自分の額は、所属の担当課と税務署で確認してください。</b></p>
+<h2>3段階の全体</h2>
+<div class="tw"><table>
+<thead><tr><th>段階</th><th>何をするか</th><th>根拠</th></tr></thead><tbody>
+<tr><td><b>1. 控除する</b></td><td>収入金額から退職所得控除額を引く</td><td>所得税法第30条第3項</td></tr>
+<tr><td><b>2. 半分にする</b></td><td>残額に2分の1を乗じる（短期・特定役員の特例あり）</td><td>第30条第2項</td></tr>
+<tr><td><b>3. 分けて税率をかける</b></td><td>他の所得と合算せず、退職所得の金額だけに所得税の税率をかける。復興特別所得税と住民税も同じ金額にかかる</td><td>分離課税、No.2260、地方税法第50条の4・第328条の3</td></tr>
+</tbody></table></div>
+<p><b>1と2で「退職所得の金額」が出ます。3で税額が出ます。</b>それぞれを見ていきます。</p>
+<h2>段階1と2：退職所得の金額を出す</h2>
+<p>所得税法第30条第2項は、退職所得の金額を<b>「その年中の退職手当等の収入金額から退職所得控除額を控除した残額の二分の一に相当する金額」</b>と定めています。控除額は第3項で、<b>勤続20年以下は40万円×勤続年数（80万円未満なら80万円）、20年超は800万円＋70万円×（勤続年数−20年）</b>です。勤続年数の1年未満の端数は1年に切り上げます（No.1420）。</p>
+<p><b>式：（収入金額 − 退職所得控除額）× 1／2 ＝ 退職所得の金額</b></p>
+<p>控除の詳細と、勤続5年以下の短期退職手当等の特例は<a href="seido-taishokuteate-zei.html">退職所得控除と税金</a>に書いています。</p>
+<h2>段階3：税率をかける——分離課税</h2>
+<p>退職所得は、<b>給与や他の所得と合算せず、退職所得の金額だけに税率をかけます。</b>これが分離課税です。<b>退職の年に給与が多くても、退職手当の税率はそれに引きずられません。</b></p>
+<p>かける税率は、<b>所得税の速算表</b>です。国税庁のNo.2260は、次の表を示しています（令和8年4月1日現在）。</p>
+<div class="tw"><table>
+<thead><tr><th>課税される所得金額</th><th>税率</th><th>控除額</th></tr></thead><tbody>
+<tr><td>1,000円から1,949,000円まで</td><td>5パーセント</td><td>0円</td></tr>
+<tr><td>1,950,000円から3,299,000円まで</td><td>10パーセント</td><td>97,500円</td></tr>
+<tr><td>3,300,000円から6,949,000円まで</td><td>20パーセント</td><td>427,500円</td></tr>
+<tr><td>6,950,000円から8,999,000円まで</td><td>23パーセント</td><td>636,000円</td></tr>
+<tr><td>9,000,000円から17,999,000円まで</td><td>33パーセント</td><td>1,536,000円</td></tr>
+<tr><td>18,000,000円から39,999,000円まで</td><td>40パーセント</td><td>2,796,000円</td></tr>
+<tr><td>40,000,000円以上</td><td>45パーセント</td><td>4,796,000円</td></tr>
+</tbody></table></div>
+<p><b>退職所得の金額をこの表に当てはめて、税率を乗じ、控除額を引く</b>と、所得税の額が出ます。そして、No.2260によれば、<b>平成25年から令和19年までの各年分は、所得税と復興特別所得税（原則として基準所得税額の2.1パーセント）を併せて申告・納付</b>します。</p>
+<p><b>住民税</b>は、退職所得について分離課税で、地方税法第50条の4が道府県民税の税率を<b>100分の4</b>、第328条の3が市町村民税の税率を<b>100分の6</b>と定めています。<b>退職所得の金額の10パーセント</b>です。</p>
+<div class="tw"><table>
+<thead><tr><th>税</th><th>かけ方</th></tr></thead><tbody>
+<tr><td><b>所得税</b></td><td>退職所得の金額 × 速算表の税率 − 控除額</td></tr>
+<tr><td><b>復興特別所得税</b></td><td>所得税の額 × 2.1パーセント</td></tr>
+<tr><td><b>住民税</b></td><td>退職所得の金額 × 10パーセント（道府県4パーセント＋市町村6パーセント）</td></tr>
+</tbody></table></div>
+<h2>国税庁の計算例を追う</h2>
+<p>No.2732に、計算例があります。<b>勤続10年2か月、退職手当の支給額800万円</b>の場合です。</p>
+<div class="tw"><table>
+<thead><tr><th>段階</th><th>計算</th><th>結果</th></tr></thead><tbody>
+<tr><td>勤続年数</td><td>10年2か月 → 端数を切り上げて<b>11年</b></td><td>11年</td></tr>
+<tr><td>控除額</td><td>40万円 × 11年</td><td><b>440万円</b></td></tr>
+<tr><td>退職所得の金額</td><td>（800万円 − 440万円）× 1／2</td><td><b>180万円</b></td></tr>
+<tr><td>所得税</td><td>180万円 × 5パーセント − 0円</td><td>90,000円</td></tr>
+<tr><td>復興特別所得税</td><td>90,000円 × 2.1パーセント</td><td>1,890円</td></tr>
+<tr><td><b>所得税＋復興特別所得税</b></td><td></td><td><b>91,890円</b>（No.2732の計算例と一致）</td></tr>
+<tr><td>住民税</td><td>180万円 × 10パーセント</td><td><b>180,000円</b></td></tr>
+<tr><td><b>税の合計</b></td><td></td><td><b>271,890円</b></td></tr>
+</tbody></table></div>
+<p><b>800万円の退職手当に対して、税の合計は約27万円</b>です。<b>給与の感覚で「2割引かれる」と見積もると160万円ですが、実際はその6分の1ほど</b>です。控除と2分の1と分離課税の3つが、それぞれ効いています。</p>
+<p>もう1つ、勤続が長い場合を置きます。<b>勤続22年、退職手当1,000万円</b>とします。</p>
+<div class="tw"><table>
+<thead><tr><th>段階</th><th>計算</th><th>結果</th></tr></thead><tbody>
+<tr><td>控除額</td><td>800万円 ＋ 70万円 × 2年</td><td>940万円</td></tr>
+<tr><td>退職所得の金額</td><td>（1,000万円 − 940万円）× 1／2</td><td><b>30万円</b></td></tr>
+<tr><td>所得税</td><td>30万円 × 5パーセント</td><td>15,000円</td></tr>
+<tr><td>復興特別所得税</td><td>15,000円 × 2.1パーセント</td><td>315円</td></tr>
+<tr><td>住民税</td><td>30万円 × 10パーセント</td><td>30,000円</td></tr>
+<tr><td><b>税の合計</b></td><td></td><td><b>45,315円</b></td></tr>
+</tbody></table></div>
+<p><b>1,000万円に対して、税の合計は約4万5千円</b>です。<b>勤続が長いほど控除が大きく、退職手当の大半が課税の対象から外れます。</b></p>
+<p><b>この2つは、仕組みを示すための計算例</b>です。自分の額は、勤続年数と収入金額で変わります。</p>
+<aside class="blk blk--insight"><p class="blk__lbl">エージェントベストの見解</p><p>面談で伺うと、<b>退職手当の手取りを「額面の8割」と見積もっている方</b>がほとんどです。給与の源泉徴収の感覚です。ところが、上の2つの例では、<b>800万円で手取りは約773万円、1,000万円で約995万円</b>。<b>額面の9割7分から9割9分が手元に残ります。</b>この違いは、転職後の資金計画に直接効きます。ここで1つ提案があります。<b>自分の勤続年数と退職手当の見込額で、上の表の計算を一度、紙にやってください。</b>控除額を出し、引いて半分にし、速算表に当てはめる。<b>10分で終わります。</b>それで、「2割引かれる」という前提が消え、手取りの桁が見えます。<b>ただし、これは「退職所得の受給に関する申告書」を提出した場合の話</b>です。提出しなければ、支給額の20.42パーセントが源泉徴収され、確定申告まで戻りません。<b>計算の前提として、申告書を出すことを忘れないでください。</b>なお、ここに書いたのは一般的な取扱いです。<b>自分の額は、退職の年の最新の情報で、所属の担当課と税務署に確認してください。</b></p></aside>
+<h2>転職するとどうなるか</h2>
+<p>転職を考えている方にとって、課税の仕組みで効いてくる点は3つです。</p>
+<p><b>1. 手取りは額面の9割以上になることが多い</b></p>
+<p>控除・2分の1・分離課税の3つが効きます。<b>「2割引かれる」前提の資金計画は、見直せます。</b></p>
+<p><b>2. 税率は退職所得の金額だけで決まる</b></p>
+<p>給与や転職先の収入とは合算されません。<b>退職の年の給与が多くても、退職手当の税率は上がりません。</b></p>
+<p><b>3. 計算は自分でできる</b></p>
+<p>勤続年数と収入金額があれば、上の表で出せます。<b>申告書を提出することが前提</b>です。</p>
+<h2>手続きと期限</h2>
+<p>課税の仕組みそのものに手続きはありませんが、<b>「退職所得の受給に関する申告書」を退職手当の支払いを受ける時までに提出する</b>ことが、上の計算が適用される前提です。提出しなければ、控除を反映せずに支給額の20.42パーセントが源泉徴収されます（No.2732）。申告書の中身は<a href="seido-zei-shinkokusho.html">退職所得の受給に関する申告書</a>に書いています。</p>
+<p><b>住民税は、退職手当の支払い時に特別徴収</b>されます。翌年に退職手当の分の住民税が来ることはありません。ただし、<b>退職した年の給与の住民税は翌年に普通徴収</b>で来ます。別の話として、資金計画に入れておいてください。</p>
+<h2>誤解されやすい点</h2>
+<p><b>「退職手当は給与と同じ税率で2割引かれる」と思い込む</b></p>
+<p><b>控除・2分の1・分離課税</b>で、額面の9割以上が手元に残ることが多いです。</p>
+<p><b>「退職の年は給与が多いから、退職手当の税率も上がる」と思い込む</b></p>
+<p><b>分離課税なので、合算されません。</b>退職所得の金額だけで税率が決まります。</p>
+<p><b>「住民税は翌年に来る」と思い込む</b></p>
+<p><b>退職所得の住民税は支払い時に特別徴収</b>です。翌年に来るのは、退職した年の給与の分です。</p>
+<p><b>「申告書を出さなくても、この計算で引かれる」と思い込む</b></p>
+<p><b>出さなければ20.42パーセントの源泉徴収</b>です。計算の前提は申告書の提出です。</p>
+<aside class="blk blk--insight"><p class="blk__lbl">エージェントベストの見解</p><p>ここまで税の計算を書いておいて逆のことを言いますが、<b>税が軽いことは、辞める理由にも、辞めない理由にもなりません。</b>税の仕組みは、辞めても辞めなくても同じです。面談で伺うと、<b>手取りの桁が見えたことで、資金の空白の見込みが正確になり、待つか動くかの比較が具体的になった方</b>がいます。<b>税の計算は、判断そのものではなく、判断の材料の精度を上げる作業</b>です。10分で終わるその作業をしないまま「2割引かれる」で計画を立てると、材料の精度が落ちたまま判断することになります。<b>退職手当の手取りの見込み、支給日、そして自分の経験に値を付けてくれる業界の見込み。</b>この3つを同じ紙に並べてください。片方だけでは比較になりません。応募先が決まっていない段階のほうが、むしろ整理する意味があります。ご利用は無料です（紹介手数料は採用企業の負担です）。</p></aside>
+<p><a href="../?fin=1">財政・会計の経験が効く求人を見てみる</a></p>
+<h2>まとめ</h2>
+<ul>
+<li>退職手当の税は、<b>①控除する ②半分にする ③他の所得と分けて税率をかける</b>の3段階です（所得税法第30条、分離課税）</li>
+<li>所得税は<b>退職所得の金額に速算表の税率を乗じて控除額を引き</b>、復興特別所得税は<b>所得税の2.1パーセント</b>、住民税は<b>10パーセント</b>です（No.2260、地方税法第50条の4・第328条の3）</li>
+<li>国税庁の計算例では、<b>勤続10年2か月・800万円で所得税と復興特別所得税が91,890円</b>、住民税を加えても約27万円です（No.2732）</li>
+<li><b>勤続が長いほど控除が大きく、退職手当の大半が課税の対象から外れます</b></li>
+<li>上の計算が適用される前提は、<b>「退職所得の受給に関する申告書」の提出</b>です。提出しなければ20.42パーセントの源泉徴収です</li>
+<li><b>税は個別性が高い分野です。自分の額は、所属の担当課と税務署で確認してください</b></li>
+</ul>
+<h2>よくある質問</h2>
+<h3>勤続15年で退職手当が700万円の場合、税はいくらになりますか</h3>
+<p><b>上の3段階で計算すると、次のようになります。</b>控除額は40万円×15年＝600万円。退職所得の金額は（700万円−600万円）×1／2＝50万円。所得税は50万円×5パーセント＝25,000円、復興特別所得税は25,000円×2.1パーセント＝525円、住民税は50万円×10パーセント＝50,000円。<b>税の合計は75,525円</b>で、手取りは約692万円です。<b>これは仕組みを示すための計算で、勤続年数の端数の扱いや退職の年の税制で変わります。</b>申告書を提出することが前提です。自分の額は、所属の担当課と税務署で確認してください。</p>
+<h3>退職の年に、退職手当と転職先の給与を両方受け取ります。税率は上がりますか</h3>
+<p><b>退職所得は分離課税なので、転職先の給与と合算されません。</b>退職手当の税率は、退職所得の金額だけで速算表に当てはめて決まります。転職先の給与が多くても、退職手当の側の税率は上がりません。逆に、転職先の給与の税率が退職手当で上がることもありません。<b>両方を同じ年に受け取っても、それぞれ別に計算されます。</b>ただし、退職所得の金額は所得税の計算上「合計所得金額」に含まれる扱いがあり、扶養や各種の控除の判定に関わることがあります。<b>その点は個別性が高いので、税務署か税理士に確認してください。</b></p>
+<h3>復興特別所得税は、いつまでかかりますか</h3>
+<p><b>国税庁のNo.2260によれば、平成25年から令和19年までの各年分について、所得税と復興特別所得税（原則としてその年分の基準所得税額の2.1パーセント）を併せて申告・納付する</b>とされています。退職手当の源泉徴収でも、所得税の額に2.1パーセントを乗じた額が併せて徴収されます。なお、No.2732には、令和9年分以後は所得税、防衛特別所得税および復興特別所得税を源泉徴収の対象とする、という記載があります。<b>税率や名称は年分によって変わるので、退職する年の最新の情報を国税庁のページで確認してください。</b></p>
+<section class="sources"><h2>出典</h2><ol><li><a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1420.htm" target="_blank" rel="noopener noreferrer">No.1420 退職金を受け取ったとき（退職所得）｜国税庁タックスアンサー</a></li><li><a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/gensen/2732.htm" target="_blank" rel="noopener noreferrer">No.2732 退職手当等に対する源泉徴収｜国税庁タックスアンサー</a></li><li><a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2260.htm" target="_blank" rel="noopener noreferrer">No.2260 所得税の税率｜国税庁タックスアンサー</a></li><li><a href="https://laws.e-gov.go.jp/law/340AC0000000033" target="_blank" rel="noopener noreferrer">所得税法 第30条（退職所得）｜e-Gov法令検索</a></li><li><a href="https://laws.e-gov.go.jp/law/325AC0000000226" target="_blank" rel="noopener noreferrer">地方税法 第50条の4／第328条の3（分離課税に係る所得割の税率）｜e-Gov法令検索</a></li></ol></section>
+</article>
+<div class="author"><p class="author__lbl">監修</p>
+<p class="author__name"><a href="https://www.agent-best.net/profile" target="_blank" rel="noopener">松岡 良次</a></p>
+<p class="author__bio">株式会社エージェントベスト代表。大手人材会社およびスタートアップ人材企業にて、IT・スタートアップ・メガベンチャー企業の採用支援に従事。独立後はIT・スタートアップ・コンサル領域に特化し、20〜30代のキャリア支援を行う。（厚生労働大臣許可 13-ユ-316964）</p></div>
+<section class="related"><h2>関連する記事</h2><ul><li><a href="seido-shitsugyo-daikae.html">「退職手当が失業給付の代わり」の正確なところ</a></li><li><a href="seido-shitsugyo-hellowork.html">ハローワークで公務員が使える制度</a></li><li><a href="seido-shitsugyo-kyufu.html">退職手当が一定額に満たない場合の給付</a></li><li><a href="seido-shitsugyo-nashi.html">公務員に雇用保険がない理由</a></li><li><a href="seido-zei-shinkokusho.html">退職所得の受給に関する申告書</a></li><li><a href="seido-nenkin-ichigenka.html">被用者年金一元化で何が変わったか</a></li></ul></section>
+<section class="cta"><h2>「自分の経験に、どこで値段が付くのか」から相談できます</h2>
+<p>在職中でも、情報収集だけでも構いません。応募する求人が決まっていない段階のほうが、むしろ整理する意味があります。ご利用はすべて無料です。</p>
+<div class="cta__btns"><a class="cta__pri" href="../apply.html">無料で相談する</a>
+<a class="cta__sec" href="../">求人を見る</a>
+<a class="cta__sec" href="https://line.me/R/ti/p/@697nxhbt" target="_blank" rel="noopener noreferrer" data-line-cta="media-cta">LINEで相談する</a></div></section>
+</main>
+<footer class="site-foot"><div class="foot__inner">
+<strong>財政課転職 — 公務員のための求人サイト</strong><br>
+<span>人材紹介サービス「エージェントベスト」が運営しています。ご利用はすべて無料です（紹介手数料は採用企業からいただきます）。</span>
+<nav class="foot__links"><a href="../">求人を探す</a><a href="../zukan.html">部署別 仕事ガイド</a>
+<a href="./">記事</a><a href="../apply.html">転職支援サービス</a><a href="../terms.html">利用規約</a>
+<a href="../privacy.html">プライバシーポリシー（人材紹介）</a><a href="../privacy-ad.html">プライバシーポリシー（求人広告）</a>
+<a href="https://www.agent-best.net/" target="_blank" rel="noopener">運営会社サイト</a></nav>
+<p class="foot__copy">&copy; 株式会社エージェントベスト</p></div></footer>
+</body>
+</html>
