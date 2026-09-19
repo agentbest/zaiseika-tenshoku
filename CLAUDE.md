@@ -125,13 +125,17 @@ out/{slug}.md を書く（data/article_plan.tsv の行を引く）
 
 ```
 git pull
-  → data/article_plan.tsv から需要ランクSの未着手を3本選ぶ
+  → node tools/next.js <レーン>  … 自分のレーンの未着手を3本引く（レーンは PROGRESS.md「並行運転」）
   → 一次情報を取って out/{slug}.md を書く
   → node check-articles.js   … 警告ゼロにする
   → node build-articles.js   … media/*.html ＋ index ＋ sitemap
-  → PROGRESS.md に1行足す
-  → commit & push
+  → node tools/hrefcheck.js  … 未執筆へのリンク・JSON-LD・文字混入をゼロにする
+  → PROGRESS.md の自分のレーンの作業ログに1ブロック足す
+  → commit → git pull --rebase → push
 ```
+
+⚠ **2端末で同時に回すときは、種別をレーンで分ける**（A＝部署別→制度とお金→業界研究→資格・スキル／B＝選考対策→自治体別）。
+手順・衝突の直し方は `PROGRESS.md`「並行運転」に書いてある。
 
 **執筆の順番**は需要ランクS（240本）を先に埋める。内訳は都道府県47・政令指定都市20・特別区23、
 主要8部署 × 5テーマ40、職務経歴書30・面接40、退職手当15・失業給付と税金13・年金12。
