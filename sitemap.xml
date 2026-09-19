@@ -570,6 +570,8 @@
   <url><loc>https://zaiseikatenshoku.com/media/seido-taishokuteate-shikumi.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/seido-taishokuteate-shikyubi.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/seido-taishokuteate-zei.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zaiseikatenshoku.com/media/senko-shokumu-chotatsu.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zaiseikatenshoku.com/media/senko-shokumu-gikai.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/senko-shokumu-ido.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/senko-shokumu-jikopr.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/senko-shokumu-jorei.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -581,5 +583,6 @@
   <url><loc>https://zaiseikatenshoku.com/media/senko-shokumu-shinnyu.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/senko-shokumu-suji.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/senko-shokumu-yogo.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zaiseikatenshoku.com/media/senko-shokumu-yosan.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/senko-shokumu-yoyaku.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>
