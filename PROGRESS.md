@@ -3,23 +3,41 @@
 `ARTICLE_SPEC.md` と `rules/*.md` を読んでから作業してください。
 サイト全体の禁止事項は `CLAUDE.md` が優先します。
 
-## 再開するとき
+## 再開するとき（自動運転・1回3本）
 
 ```
 git pull
 node check-articles.js       # out/ に書きかけが無いか確認
+node tools/next.js A         # 自分のレーンの次の3本を引く（レーンは下の「並行運転」を見る）
 ```
 
-1. このファイルの作業ログを読み、どこまで終わっているか確認する
-2. `data/article_plan.tsv` から**まだ書いていない行**を引く（`media/{slug}.html` が無いもの）
-3. `ARTICLE_SPEC.md` の記事タイプ別の構成に従って `out/{slug}.md` を書く
-4. **条番号を書くときは `node tools/egov.js <法令ID> <条番号>` で原文を確認する**
+1. このファイルの作業ログ（自分のレーンの節）を読み、どこまで終わっているか・保留のリンクが無いかを確認する
+2. `node tools/next.js <レーン>` で次の3本を引く。**他のレーンの行は書かない**
+3. `ARTICLE_SPEC.md` の記事タイプ別の構成に従って `out/{slug}.md` を書く。**同じ部署・同じ系列の既存記事を1本読んでから書く**（構成と口調を揃える）
+4. **条番号を書くときは `node tools/egov.js <法令ID> <条番号>` で原文を確認する**（`--find <法令名>` でIDを引く。推測しない）
 5. **出典URLは実際に開いて到達を確認してから `sources` に書く**
-6. `node check-articles.js` … 警告ゼロにする
+6. `node check-articles.js` … 警告ゼロにする（字数が足りなければ「その構造に固有の事情」を段落で足す）
 7. `node build-articles.js` … `media/*.html`・`media/index.html`・`sitemap.xml` を更新
-8. ローカルで表示を確認する（`http://localhost:8788/media/`）
-9. このファイルの作業ログに1行足す
-10. **内容を松岡さんに提示して承認を得てから push する**
+8. `node tools/hrefcheck.js` … MISS=0 JSONLD_NG=0 ALIEN=0 MISLINK=0 にする。**未執筆の記事にはリンクしない**（「別の記事に整理します」と書いて、保留として作業ログに残す。書けたら戻す）
+9. このファイルの**自分のレーンの作業ログの先頭**に1ブロック足す（下の「作業ログ」の形式）
+10. `git add out media sitemap.xml PROGRESS.md` → commit → `git pull --rebase` → push（記事メディアは事前確認なしで push してよい。CLAUDE.md 4-3）
+
+## 並行運転（2端末で同時に進めるとき）
+
+**レーンで種別を分ける。**同じ種別を2端末で書くと、同じ No を取り合う・保留リンクが噛み合わない、が起きる。
+
+| レーン | 担当する種別（この順に書き切る） | 起動の仕方 |
+|---|---|---|
+| **A** | 部署別 → 制度とお金 → 業界研究 → 資格・スキル | `/loop 記事作成の続き（レーンA）` |
+| **B** | 選考対策 → 自治体別（残りがあれば） | `/loop 記事作成の続き（レーンB）` |
+
+- 割当の正本はこの表。`tools/next.js` の `LANES` はその写しなので、変えるときは両方を直す
+- 自分のレーンを書き切ったら、もう一方のレーンの**後ろの種別**から引き取る（先に相手に一言）
+- **他のレーンの記事へのリンクは、`media/{slug}.html` が存在するものだけ**に張る。`tools/hrefcheck.js` の MISS で機械的に弾ける
+- 作業ログはレーンごとに節を分けてある。**自分の節の先頭に足す**（同じ場所に2端末が挿入すると rebase で必ず衝突するため）
+- `git pull --rebase` で `media/index.html`・`sitemap.xml` が衝突したら、生成物なので中身を直さず `node build-articles.js` で作り直してから `git add media/index.html sitemap.xml && git rebase --continue`
+- `out/` や `media/{slug}.html` そのものが衝突したら、同じ No を2端末で書いている。**止めて報告する**（force push はしない）
+- 別の端末の初期設定：`git clone https://github.com/agentbest/zaiseika-tenshoku.git` → Node が入っていれば npm install 不要（全部 Node 標準のみ）→ Claude Code で `CLAUDE.md` と `PROGRESS.md` を読ませてから `/loop` を打つ
 
 ## 決めごと
 
@@ -27,7 +45,7 @@ node check-articles.js       # out/ に書きかけが無いか確認
 - **見解ブロックが2箇所ない記事は公開しない**
 - 残業時間・年収額を訴求に使わない。出典付きの統計を本文で解説するのは可
 - 特定の自治体の内部事情（残業・人間関係・部署の評判）は書かない。裏が取れない
-- 2端末で並行するときは、**種別で担当を分ける**か、着手前に必ず `git pull` する
+- 2端末で並行するときは、**「並行運転」のレーンで種別を分ける。**着手前に必ず `git pull`
 
 ## 内訳（`data/article_plan.tsv`・全1,000本）
 
@@ -41,6 +59,14 @@ node check-articles.js       # out/ に書きかけが無いか確認
 | 951-1000 | 資格・スキル | 50 |
 
 ## 作業ログ
+
+各ブロックの形式：`### 最終更新：自動運転N回目（No.x-y）` の下に、記事ごとに「slug／柱にした条文／構成の要点」、保留したリンク、check・build・hrefcheck の結果、残り本数。
+
+### レーンB（選考対策 →）の作業ログ
+
+（まだ無し。レーンBの1回目はここに足す）
+
+### レーンA（部署別 →）の作業ログ
 
 ### 最終更新：自動運転181回目（No.541-543）
 
