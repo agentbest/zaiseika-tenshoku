@@ -7,6 +7,9 @@
   <url><loc>https://zaiseikatenshoku.com/terms.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
   <url><loc>https://zaiseikatenshoku.com/privacy.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
   <url><loc>https://zaiseikatenshoku.com/privacy-ad.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+<<<<<<< HEAD
+=======
+>>>>>>> 3f049d2 (記事3本追加（業界研究・観光・地域振興 No.825/824/823）)
   <url><loc>https://zaiseikatenshoku.com/media/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/city-abiko.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/city-ageo.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -553,6 +556,9 @@
   <url><loc>https://zaiseikatenshoku.com/media/industry-kaigogyo-nenshu.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/industry-kaigogyo-senko.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/industry-kaigogyo-shiboudoki.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zaiseikatenshoku.com/media/industry-kanko-mikeiken.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zaiseikatenshoku.com/media/industry-kanko-nenshu.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zaiseikatenshoku.com/media/industry-kanko-shiboudoki.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/industry-kankyogyo-hyoka.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/industry-kankyogyo-senko.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/industry-kensetsuconsul-hyoka.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
