@@ -509,6 +509,7 @@
   <url><loc>https://zaiseikatenshoku.com/media/industry-govtech-senko.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/industry-govtech-shiboudoki.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/industry-hokengyo-hyoka.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zaiseikatenshoku.com/media/industry-hokengyo-mikeiken.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/industry-hokengyo-nenshu.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/industry-hokengyo-senko.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/industry-hokengyo-shiboudoki.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -557,6 +558,8 @@
   <url><loc>https://zaiseikatenshoku.com/media/industry-tsushin-nenshu.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/industry-tsushin-senko.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/industry-tsushin-shiboudoki.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zaiseikatenshoku.com/media/industry-zeirishi-hyoka.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zaiseikatenshoku.com/media/industry-zeirishi-senko.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/industry-zenecon-hyoka.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/industry-zenecon-mikeiken.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/industry-zenecon-nenshu.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
