@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+<title>Excel｜民間で最初に問われる水準はどこか｜財政課転職</title>
+<link rel="icon" href="../assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="../assets/icon-192.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="canonical" href="https://zaiseikatenshoku.com/media/skill-excel.html">
+<meta name="description" content="現金出納の検査の仕組みを出発点に、表計算で最初に問われる水準と、行政で身についている習慣を整理しました。">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="財政課転職">
+<meta property="og:title" content="Excel｜民間で最初に問われる水準はどこか">
+<meta property="og:description" content="現金出納の検査の仕組みを出発点に、表計算で最初に問われる水準と、行政で身についている習慣を整理しました。">
+<meta property="og:url" content="https://zaiseikatenshoku.com/media/skill-excel.html">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://zaiseikatenshoku.com/assets/ogp.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zaiseikatenshoku.com/assets/ogp.jpg">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1XXMP8Y1B4"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1XXMP8Y1B4');</script>
+<style>:root{--paper:#F5F7FA;--surface:#FFFFFF;--surface-2:#EEF1F6;--ink:#161A26;--ink-2:#4A5261;--ink-3:#6E7686;
+--line:#DDE2EA;--line-2:#EAEEF4;--accent:#1E3A8A;--accent-soft:#E9EDF9;--accent-ink:#1B3374;
+--cta:#D6362A;--cta-ink:#FFF;--cta-hover:#B22A20;--r-card:14px;--r-pill:999px;
+--sans:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","YuGothic","Noto Sans JP",Meiryo,system-ui,sans-serif;--maxw:800px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#0F131A;--surface:#171C26;--surface-2:#1F2530;
+--ink:#EAEEF5;--ink-2:#B4BCCA;--ink-3:#828C9E;--line:#2A313D;--line-2:#232A35;--accent:#8FA6F0;
+--accent-soft:#1B2338;--accent-ink:#BFCDFA;--cta:#D6392C;--cta-hover:#E44D3D}}
+:root[data-theme="dark"]{--paper:#0F131A;--surface:#171C26;--surface-2:#1F2530;--ink:#EAEEF5;--ink-2:#B4BCCA;
+--ink-3:#828C9E;--line:#2A313D;--line-2:#232A35;--accent:#8FA6F0;--accent-soft:#1B2338;--accent-ink:#BFCDFA;--cta:#D6392C;--cta-hover:#E44D3D}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.9;-webkit-text-size-adjust:100%}
+a{color:var(--accent-ink)}
+.topbar{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.topbar__inner{max-width:1080px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:16px}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;color:inherit}
+.brand__mark{width:30px;height:30px;border-radius:7px}
+.brand__name{display:block;font-weight:800;font-size:15px;letter-spacing:.02em}
+.brand__sub{display:block;font-size:10px;color:var(--ink-3);letter-spacing:.12em}
+.gnav{display:flex;gap:16px;margin-left:auto;flex-wrap:wrap}
+.gnav a{font-size:13.5px;color:var(--ink-2);text-decoration:none}
+.gnav a[aria-current]{color:var(--accent-ink);font-weight:700}
+.btn-head{background:var(--cta);color:var(--cta-ink);text-decoration:none;font-size:13px;font-weight:700;padding:8px 14px;border-radius:var(--r-pill);white-space:nowrap}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:22px 16px 56px}
+.crumb{font-size:12px;color:var(--ink-3);margin-bottom:14px}
+.crumb a{color:var(--ink-3)}
+.post__eyebrow{display:inline-block;font-size:11.5px;letter-spacing:.08em;color:var(--accent-ink);background:var(--accent-soft);padding:4px 10px;border-radius:var(--r-pill);margin:0 0 10px}
+h1{font-size:27px;line-height:1.5;letter-spacing:.01em;margin:0 0 12px}
+.post__meta{font-size:12px;color:var(--ink-3);margin:0 0 26px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+h2{font-size:20px;line-height:1.55;margin:38px 0 12px;padding-left:11px;border-left:4px solid var(--accent)}
+h3{font-size:16.5px;margin:26px 0 8px}
+p{margin:0 0 16px}
+ul,ol{margin:0 0 18px;padding-left:1.35em}
+li{margin-bottom:7px}
+.tw{overflow-x:auto;margin:0 0 20px}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--surface-2);font-weight:700}
+.blk{border-radius:var(--r-card);padding:16px 18px;margin:24px 0}
+.blk p:last-child{margin-bottom:0}
+.blk__lbl{font-size:11.5px;letter-spacing:.08em;font-weight:800;margin:0 0 7px}
+.blk--insight{background:var(--accent-soft);border:1px solid var(--accent)}
+.blk--insight .blk__lbl{color:var(--accent-ink)}
+.blk--note{background:var(--surface-2);border:1px solid var(--line)}
+.blk--note .blk__lbl{color:var(--ink-3)}
+.blk--cta{background:var(--surface);border:1px dashed var(--accent)}
+.sources{margin:34px 0 0;padding:15px 17px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card)}
+.sources h2{font-size:14px;margin:0 0 8px;padding:0;border:0}
+.sources ol{margin:0;font-size:13px;color:var(--ink-2)}
+.author{margin:30px 0 0;padding:16px 18px;border:1px solid var(--line);border-radius:var(--r-card);background:var(--surface)}
+.author__lbl{font-size:11px;letter-spacing:.1em;color:var(--ink-3);margin:0 0 3px}
+.author__name{font-size:16px;font-weight:800;margin:0 0 7px}
+.author__bio{font-size:13px;line-height:1.85;color:var(--ink-2);margin:0}
+.related{margin:34px 0 0}
+.related h2{font-size:15px;margin:0 0 10px;padding:0;border:0}
+.related ul,.idx__grp ul{list-style:none;padding:0;margin:0}
+.related li,.idx__grp li{border-bottom:1px solid var(--line-2);padding:9px 0;margin:0}
+.related a,.idx__grp a{font-size:14px;text-decoration:none}
+.related a:hover,.idx__grp a:hover{text-decoration:underline}
+.cta{margin:38px 0 0;padding:22px 20px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);text-align:center}
+.cta h2{font-size:18px;margin:0 0 9px;padding:0;border:0}
+.cta p{font-size:13.5px;color:var(--ink-2)}
+.cta__btns{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+.cta__pri{background:var(--cta);color:#fff;text-decoration:none;font-weight:700;padding:11px 22px;border-radius:var(--r-pill)}
+.cta__sec{background:var(--surface-2);color:var(--ink);text-decoration:none;font-weight:700;padding:11px 18px;border-radius:var(--r-pill)}
+.site-foot{background:var(--surface);border-top:1px solid var(--line);margin-top:44px}
+.foot__inner{max-width:1080px;margin:0 auto;padding:24px 16px;font-size:12.5px;color:var(--ink-2)}
+.foot__links{display:flex;flex-wrap:wrap;gap:12px;margin:11px 0}
+.foot__links a{color:var(--ink-2);text-decoration:none}
+.foot__copy{color:var(--ink-3);margin:0}
+.idx__grp{margin:30px 0 0}
+.idx__grp h2{font-size:17px}
+.idx__cnt{font-size:12px;color:var(--ink-3);font-weight:400;margin-left:8px}
+@media(max-width:640px){h1{font-size:22px}h2{font-size:18px}.wrap{padding:18px 14px 44px}}</style>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"Excel｜民間で最初に問われる水準はどこか","description":"現金出納の検査の仕組みを出発点に、表計算で最初に問われる水準と、行政で身についている習慣を整理しました。","mainEntityOfPage":"https://zaiseikatenshoku.com/media/skill-excel.html","author":{"@type":"Organization","name":"株式会社エージェントベスト"},"publisher":{"@type":"Organization","name":"財政課転職"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"財政課転職","item":"https://zaiseikatenshoku.com/"},{"@type":"ListItem","position":2,"name":"記事","item":"https://zaiseikatenshoku.com/media/"},{"@type":"ListItem","position":3,"name":"Excel｜民間で最初に問われる水準はどこか","item":"https://zaiseikatenshoku.com/media/skill-excel.html"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"関数をあまり使っていません","acceptedAnswer":{"@type":"Answer","text":"表の作り方から見直してください。関数を覚える前に、1行1件、1列1項目の形になっているかを確認します。この形であれば、分類ごとの集計の機能だけで、多くの集計ができます。そのうえで、検索の関数と条件の判定を覚えると、実務の範囲がほぼ埋まります。なお、応募条件に「基本的な操作」と書かれている場合、この範囲で足りることがあります。読み方は求人票の読み方｜どこを見れば実態が分かるかに整理しています。関数の数を増やすことを目標にしないでください。"}},{"@type":"Question","name":"資格を取ったほうがよいですか","acceptedAnswer":{"@type":"Answer","text":"応募条件に記載がある場合に、満たす材料になります。記載がない場合、判断の中心にはなりません。なお、体系的に学ぶ手段としては有効です。独学では触れない機能を知る機会になります。ただし、応募の時期が近い場合は優先順位を下げてください。職務経歴書の作成と、求人を読む作業のほうが、時期に直接効きます。扱いは選考スケジュールの組み方に整理しています。資格より、作った表の実物と運用を説明できるほうが伝わります。"}},{"@type":"Question","name":"共有の環境での作法は違いますか","acceptedAnswer":{"@type":"Answer","text":"権限と履歴の考え方が加わります。共有を前提とする環境では、誰に、どこまで見せるかの設定が操作の一部になります。また、変更の履歴が残るため、数字が変わったときに追えます。なお、1行1件、1列1項目という原則は、環境が変わっても同じです。表の作り方が正しければ、どの環境でも使えます。扱いはGoogleスプレッドシート｜庁内のExcel運用との違いに整理しています。⚠ 業務のデータを、許可のない環境に置かないでください。"}}]}]</script>
+</head>
+<body>
+<header class="topbar"><div class="topbar__inner">
+<a class="brand" href="../" aria-label="財政課転職トップ">
+<img class="brand__mark" src="../assets/mark.png" alt="" aria-hidden="true">
+<span><span class="brand__name">財政課転職</span><span class="brand__sub">PUBLIC &rarr; PRIVATE</span></span></a>
+<nav class="gnav" aria-label="メインメニュー">
+<a href="../">求人を探す</a>
+<a href="../zukan.html">部署別 仕事ガイド</a>
+<a href="./" aria-current="page">記事</a>
+<a href="../apply.html">転職支援サービス</a></nav>
+<a class="btn-head" href="../apply.html">無料で相談する</a></div></header>
+<main class="wrap">
+<nav class="crumb"><a href="../">財政課転職</a> &rsaquo; <a href="./">記事</a> &rsaquo; 資格・スキル</nav>
+<article class="post">
+<p class="post__eyebrow">資格・スキル / スキル</p>
+<h1>Excel｜民間で最初に問われる水準はどこか</h1>
+<p class="post__meta">2026年9月時点の公開情報にもとづきます。制度や募集要項は変わることがあるため、手続きの前に各機関の公式情報をご確認ください。</p>
+<p><b>「表計算はどこまでできれば足りるのか」</b>というご相談を伺います。</p>
+<p><b>最初に問われるのは、速さではありません。</b></p>
+<p>この記事では、<b>水準の目安</b>と、<b>行政で身についている習慣</b>を扱います。</p>
+<h2>数字は、別の人が検査する前提で作られます</h2>
+<p><b>地方自治法第235条の2第1項</b>です。</p>
+<p>&gt; <b>普通地方公共団体の現金の出納は、毎月例日を定めて監査委員がこれを検査しなければならない。</b></p>
+<p><b>同条第3項</b>です。</p>
+<p>&gt; <b>監査委員は、第一項の規定による検査の結果に関する報告</b>（略）<b>を普通地方公共団体の議会及び長に提出しなければならない。</b></p>
+<p><b>毎月、別の機関が検査し、その結果を報告する。</b></p>
+<p><b>この仕組みが、制度として置かれています。</b></p>
+<p><b>つまり、行政で扱う数字は、「後から別の人が確かめる」ことを前提に作られている</b>ということです。</p>
+<p><b>そのため、根拠が追えるように作る、検算する、記録を残すという習慣が身につきます。</b></p>
+<p><b>この習慣こそが、民間で最初に問われる水準</b>です。</p>
+<h2>最初に問われる水準</h2>
+<div class="tw"><table>
+<thead><tr><th>段階</th><th>内容</th><th>目安</th></tr></thead><tbody>
+<tr><td>① 入力と書式</td><td>見やすく、統一して入力する</td><td><b>できて当然</b></td></tr>
+<tr><td>② 表の作り方</td><td><b>1行1件、1列1項目</b></td><td>ここが分かれ目</td></tr>
+<tr><td>③ 関数</td><td>集計、検索、条件の判定</td><td>よく使う範囲</td></tr>
+<tr><td>④ 分類ごとの集計</td><td>集計の機能</td><td>実務で頻出</td></tr>
+<tr><td>⑤ 検算</td><td><b>合計が合うかを別の方法で確かめる</b></td><td>信用に直結</td></tr>
+<tr><td>⑥ 自動化</td><td>定型の処理</td><td>必要になってから</td></tr>
+</tbody></table></div>
+<p><b>②と⑤が中心</b>です。</p>
+<p><b>②について。</b></p>
+<p><b>見た目を整えた表は、集計に使えません。</b></p>
+<p><b>セルを結合する、1つの列に複数の情報を入れる、小計の行を途中に挟む。</b></p>
+<p><b>これらをすると、後から集計できなくなります。</b></p>
+<p><b>⑤について。</b></p>
+<p><b>合計を2つの方法で出して突き合わせる。</b></p>
+<p><b>行政の事務では、当たり前に行ってきた作業</b>です。</p>
+<h2>行政で身についていること</h2>
+<div class="tw"><table>
+<thead><tr><th>習慣</th><th>民間での意味</th></tr></thead><tbody>
+<tr><td>① 根拠の資料と突き合わせる</td><td><b>数字の出所が追える</b></td></tr>
+<tr><td>② 検算する</td><td>誤りを残さない</td></tr>
+<tr><td>③ 様式を統一する</td><td>誰が作っても同じ形になる</td></tr>
+<tr><td>④ 記録を残す</td><td>後から確認できる</td></tr>
+<tr><td>⑤ 期限を守る</td><td>締めに間に合わせる</td></tr>
+<tr><td>⑥ 引継ぎを前提に作る</td><td>担当が交代しても回る</td></tr>
+</tbody></table></div>
+<p><b>⑥が、実は評価されます。</b></p>
+<p><b>異動のたびに引き継いできたため、「自分にしか分からない表」を作らない習慣</b>があります。</p>
+<p><b>民間では、担当者しか使えない表が残り、その人が辞めると回らなくなる。</b></p>
+<p><b>この場面は、実際に起きています。</b></p>
+<h2>足すべき範囲</h2>
+<div class="tw"><table>
+<thead><tr><th>要素</th><th>内容</th></tr></thead><tbody>
+<tr><td>① 検索の関数</td><td>別の表から値を引く</td></tr>
+<tr><td>② 条件の判定</td><td>条件で処理を分ける</td></tr>
+<tr><td>③ 分類ごとの集計</td><td>集計の機能を使う</td></tr>
+<tr><td>④ 表の正規化</td><td><b>集計できる形に直す</b></td></tr>
+<tr><td>⑤ 見せる用と作業用を分ける</td><td>作業の表と、報告の表</td></tr>
+<tr><td>⑥ 共有を前提とした作り</td><td>権限、履歴</td></tr>
+</tbody></table></div>
+<p><b>⑤について。</b></p>
+<p><b>作業のための表と、報告のための表を分ける</b>という考え方があります。</p>
+<p><b>作業の表は1行1件で作り、報告の表はそこから集計して作る。</b></p>
+<p><b>1つの表で両方をしようとすると、どちらも中途半端になります。</b></p>
+<h2>書き方の例</h2>
+<p><b>悪い例</b></p>
+<p>&gt; Excelを使った資料の作成ができます。</p>
+<p><b>良い例</b></p>
+<p>&gt; ◯◯に関する年間約◯件のデータについて、<b>1行1件の形で管理の表を整備。</b>検索と条件の関数を用いて<b>別表から値を引く仕組みを作り、入力の手間を削減。</b><b>合計を2通りの方法で算出して突き合わせる検算の手順</b>を組み込み、<b>月次の報告の資料を自動で生成できる形に整備。</b>担当の交代時の引継ぎにも使用。</p>
+<p><b>「件数」「構造」「仕組み」「検算」「引継ぎ」</b>が入っています。</p>
+<p><b>基本の型は</b><a href="senko-shokumu-kihon.html">公務員の職務経歴書｜民間で読まれる形にする基本</a><b>に整理しています。</b></p>
+<aside class="blk blk--insight"><p class="blk__lbl">エージェントベストの見解</p><p>表計算について、<b>面談でお伝えしているのが「検算の手順を書いてください」</b>という点です。<b>「表計算が使えます」では、水準が分かりません。</b>ところが、<b>「合計を2通りの方法で算出して突き合わせる手順を組み込んだ」</b>と書かれていると、<b>実務の水準が伝わります。</b>そして、<b>この習慣は、民間で不足していることがあります。</b>関数の参照が1行ずれている、行を追加したのに合計の範囲が古いまま、単位が混ざっている。<b>これらは、見た目では気づきません。</b>行政では、<b>監査や検査を受けることが制度として決まっているため、確認が習慣になっています。</b>しかも、<b>誤りがあれば訂正の手続が要る</b>ため、事前に防ぐ意識が働きます。書類には、<b>「検算」「突き合わせ」「根拠の資料との照合」</b>という言葉を使ってください。<b>関数の名前を並べるより、この一文のほうが効きます。</b>ご利用は無料です（紹介手数料は採用企業の負担です）。</p></aside>
+<h2>どの転職先で効くか</h2>
+<div class="tw"><table>
+<thead><tr><th>領域</th><th>使いどころ</th></tr></thead><tbody>
+<tr><td>① 管理部門</td><td><b>集計、報告、検算</b></td></tr>
+<tr><td>② 事務の受託</td><td>手順の整備</td></tr>
+<tr><td>③ 行政が相手の事業</td><td>報告の様式の理解</td></tr>
+<tr><td>④ 経理・財務</td><td>突き合わせ</td></tr>
+<tr><td>⑤ 現場の管理</td><td>進捗の集計</td></tr>
+</tbody></table></div>
+<p><b>②について。</b></p>
+<p><b>受託した業務では、担当が交代しても同じ処理ができる形</b>が求められます。</p>
+<p><b>引継ぎを前提に表を作ってきた経験</b>は、そこで直接使えます。</p>
+<p><b>探し方は</b><a href="senko-sagasu-kyujin.html">公務員経験が活きる求人の探し方</a><b>に整理しています。</b></p>
+<h2>面接で聞かれやすいこと</h2>
+<div class="tw"><table>
+<thead><tr><th>質問の趣旨</th><th>用意しておくこと</th></tr></thead><tbody>
+<tr><td>扱った規模</td><td><b>件数、項目の数</b></td></tr>
+<tr><td>使える関数</td><td><b>正確に、範囲を明示して</b></td></tr>
+<tr><td>検算の方法</td><td>どう確かめたか</td></tr>
+<tr><td>引継ぎ</td><td>他の人が使えたか</td></tr>
+<tr><td>自動化の経験</td><td>あれば、内容</td></tr>
+</tbody></table></div>
+<p><b>2行目です。</b></p>
+<p><b>できないことを書かないでください。</b></p>
+<p><b>「集計・検索・条件の関数と、分類ごとの集計の経験あり」</b>という形で、範囲を明示してください。</p>
+<p><a href="../apply.html">経験の言い換えから相談する</a>こともできます。</p>
+<h2>学ぶ前に考えること</h2>
+<div class="tw"><table>
+<thead><tr><th>確認すること</th><th>内容</th></tr></thead><tbody>
+<tr><td>① すでにある経験</td><td><b>作った表と、その規模</b></td></tr>
+<tr><td>② 応募したい求人の条件</td><td>どこまで求められているか</td></tr>
+<tr><td>③ 足りない部分</td><td>検索、条件、集計の機能</td></tr>
+<tr><td>④ 期限</td><td>応募の時期までに間に合うか</td></tr>
+</tbody></table></div>
+<p><b>なお、資格や講座を取れば転職できる、という関係にはありません。</b></p>
+<p><b>どの規模の表を、どう作り、どう確かめたか</b>が、評価の対象です。</p>
+<h2>集計できない表の直し方</h2>
+<p><b>行政の様式には、印刷を前提にした表が残っていることがあります。</b></p>
+<div class="tw"><table>
+<thead><tr><th>よくある形</th><th>直し方</th></tr></thead><tbody>
+<tr><td>セルが結合されている</td><td><b>結合を解き、値を各行に入れる</b></td></tr>
+<tr><td>小計の行が途中にある</td><td>別の表に分ける</td></tr>
+<tr><td>1つの列に複数の情報</td><td>列を分ける</td></tr>
+<tr><td>見出しが2段になっている</td><td>1段にまとめる</td></tr>
+<tr><td>空白の行で区切っている</td><td>区分の列を作る</td></tr>
+</tbody></table></div>
+<p><b>1行目が最も多い</b>です。</p>
+<p><b>結合されたセルがあると、並び替えも集計もできません。</b></p>
+<p><b>直す手順は、作業用の表を別に作り、そこへ値を展開する</b>という形です。</p>
+<p><b>元の様式は、報告用として残して差し支えありません。</b></p>
+<p><b>この作業自体が、実務でよく求められます。</b></p>
+<h2>よくある失敗</h2>
+<p><b>1. 「使えます」とだけ書く</b></p>
+<p><b>規模と作り方</b>を書いてください。</p>
+<p><b>2. 検算の手順を書かない</b></p>
+<p><b>実務の水準</b>が伝わります。</p>
+<p><b>3. 見た目を整えた表を作る</b></p>
+<p><b>1行1件、1列1項目</b>が原則です。</p>
+<p><b>4. セルを結合する</b></p>
+<p><b>集計できなくなります。</b></p>
+<p><b>5. 作業用と報告用を分けない</b></p>
+<p><b>どちらも中途半端</b>になります。</p>
+<p><b>6. 引継ぎを前提にしない</b></p>
+<p><b>担当が交代すると回りません。</b></p>
+<p><b>7. できる範囲を広く書く</b></p>
+<p><b>入社後に困ります。</b></p>
+<p><b>8. 講座を受ければ進めると考える</b></p>
+<p><b>どう作り、どう確かめたか</b>が評価の対象です。</p>
+<aside class="blk blk--insight"><p class="blk__lbl">エージェントベストの見解</p><p>ここまで水準の話をしておいて逆のことを言いますが、<b>操作の速さを競う必要はありません。</b>面談で拝見していると、<b>「若い人のほうが詳しいので不利だ」と考える方</b>がいらっしゃいます。ところが、<b>実務で問題になるのは、速さではなく正確さ</b>です。速く作った表に誤りがあれば、<b>後の工程すべてが狂います。</b>そして、<b>誤りを見つけるのは、たいてい数日後</b>です。そのときには、<b>その表を使った資料が外に出ています。</b>行政では、<b>この事故を防ぐために、確認の工程が組み込まれています。</b>ですから、<b>「速く作れます」ではなく、「確かめてから出します」</b>と言えるようにしてください。<b>そのうえで、必要な機能は入社後に覚えられます。</b>関数は調べれば分かりますが、<b>確かめる習慣は、すぐには身につきません。</b>在職中でも、情報収集だけでも構いません。</p></aside>
+<p><a href="https://line.me/R/ti/p/@697nxhbt" target="_blank" rel="noopener noreferrer">LINEで短く聞くこともできます</a></p>
+<h2>まとめ</h2>
+<ul>
+<li><b>地方自治法第235条の2</b>は、<b>毎月例日を定めた現金出納の検査</b>と、<b>その結果の議会及び長への報告</b>を定めています</li>
+<li><b>行政の数字は、後から別の人が確かめる前提</b>で作られます。<b>根拠を追える形、検算、記録</b>の習慣が身につきます</li>
+<li>最初に問われるのは、<b>①入力と書式 ②表の作り方 ③関数 ④分類ごとの集計 ⑤検算</b>です</li>
+<li><b>②と⑤が分かれ目</b>です。<b>1行1件、1列1項目</b>で作ってください</li>
+<li><b>引継ぎを前提に作る習慣</b>は、民間で評価されます</li>
+<li><b>作業用の表と報告用の表を分けて</b>ください</li>
+<li><b>速さではなく正確さ</b>です。「確かめてから出します」と言えるようにしてください</li>
+</ul>
+<p>行政が相手の求人もまとまっています。<a href="../?gov=1">行政が相手の求人を見てみる</a>。</p>
+<h2>よくある質問</h2>
+<h3>関数をあまり使っていません</h3>
+<p><b>表の作り方から見直してください。</b>関数を覚える前に、<b>1行1件、1列1項目の形</b>になっているかを確認します。この形であれば、<b>分類ごとの集計の機能だけで、多くの集計ができます。</b>そのうえで、<b>検索の関数と条件の判定</b>を覚えると、実務の範囲がほぼ埋まります。なお、<b>応募条件に「基本的な操作」と書かれている場合、この範囲で足りる</b>ことがあります。読み方は<a href="senko-sagasu-kyujinhyo.html">求人票の読み方｜どこを見れば実態が分かるか</a>に整理しています。<b>関数の数を増やすことを目標にしないでください。</b></p>
+<h3>資格を取ったほうがよいですか</h3>
+<p><b>応募条件に記載がある場合に、満たす材料になります。</b>記載がない場合、<b>判断の中心にはなりません。</b>なお、<b>体系的に学ぶ手段としては有効</b>です。独学では触れない機能を知る機会になります。ただし、<b>応募の時期が近い場合は優先順位を下げて</b>ください。<b>職務経歴書の作成と、求人を読む作業</b>のほうが、時期に直接効きます。扱いは<a href="senko-sagasu-schedule.html">選考スケジュールの組み方</a>に整理しています。<b>資格より、作った表の実物と運用を説明できるほうが伝わります。</b></p>
+<h3>共有の環境での作法は違いますか</h3>
+<p><b>権限と履歴の考え方が加わります。</b>共有を前提とする環境では、<b>誰に、どこまで見せるか</b>の設定が操作の一部になります。また、<b>変更の履歴が残る</b>ため、数字が変わったときに追えます。なお、<b>1行1件、1列1項目という原則は、環境が変わっても同じ</b>です。<b>表の作り方が正しければ、どの環境でも使えます。</b>扱いは<a href="skill-spreadsheet.html">Googleスプレッドシート｜庁内のExcel運用との違い</a>に整理しています。<b>⚠ 業務のデータを、許可のない環境に置かないでください。</b></p>
+<section class="sources"><h2>出典</h2><ol><li><a href="https://laws.e-gov.go.jp/law/322AC0000000067" target="_blank" rel="noopener noreferrer">地方自治法 第235条の2（現金出納の検査及び公金の収納等の監査）｜e-Gov法令検索</a></li></ol></section>
+</article>
+<div class="author"><p class="author__lbl">監修</p>
+<p class="author__name"><a href="https://www.agent-best.net/profile" target="_blank" rel="noopener">松岡 良次</a></p>
+<p class="author__bio">株式会社エージェントベスト代表。大手人材会社およびスタートアップ人材企業にて、IT・スタートアップ・メガベンチャー企業の採用支援に従事。独立後はIT・スタートアップ・コンサル領域に特化し、20〜30代のキャリア支援を行う。（厚生労働大臣許可 13-ユ-316964）</p></div>
+<section class="related"><h2>関連する記事</h2><ul><li><a href="skill-bi.html">BIツール｜統計・財政データの経験を可視化に接続する</a></li><li><a href="skill-bunsho.html">ビジネス文書とメール｜公文書との作法の違い</a></li><li><a href="skill-databunseki.html">データ分析｜EBPMの延長で身につける範囲</a></li><li><a href="skill-eigo.html">英語｜必要になる職種と、不要な職種</a></li><li><a href="skill-eigyokiso.html">営業の基礎｜行政営業で公務員経験が効く理由</a></li><li><a href="skill-gyomuflow.html">業務フローの作成｜要件定義の前段として</a></li></ul></section>
+<section class="cta"><h2>「自分の経験に、どこで値段が付くのか」から相談できます</h2>
+<p>在職中でも、情報収集だけでも構いません。応募する求人が決まっていない段階のほうが、むしろ整理する意味があります。ご利用はすべて無料です。</p>
+<div class="cta__btns"><a class="cta__pri" href="../apply.html">無料で相談する</a>
+<a class="cta__sec" href="../">求人を見る</a>
+<a class="cta__sec" href="https://line.me/R/ti/p/@697nxhbt" target="_blank" rel="noopener noreferrer" data-line-cta="media-cta">LINEで相談する</a></div></section>
+</main>
+<footer class="site-foot"><div class="foot__inner">
+<strong>財政課転職 — 公務員のための求人サイト</strong><br>
+<span>人材紹介サービス「エージェントベスト」が運営しています。ご利用はすべて無料です（紹介手数料は採用企業からいただきます）。</span>
+<nav class="foot__links"><a href="../">求人を探す</a><a href="../zukan.html">部署別 仕事ガイド</a>
+<a href="./">記事</a><a href="../apply.html">転職支援サービス</a><a href="../terms.html">利用規約</a>
+<a href="../privacy.html">プライバシーポリシー（人材紹介）</a><a href="../privacy-ad.html">プライバシーポリシー（求人広告）</a>
+<a href="https://www.agent-best.net/" target="_blank" rel="noopener">運営会社サイト</a></nav>
+<p class="foot__copy">&copy; 株式会社エージェントベスト</p></div></footer>
+</body>
+</html>
