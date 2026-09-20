@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+<title>ノーコードツール｜情報政策の経験を実装側へ｜財政課転職</title>
+<link rel="icon" href="../assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="../assets/icon-192.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="canonical" href="https://zaiseikatenshoku.com/media/skill-nocode.html">
+<meta name="description" content="行政手続のオンライン化を定める規定を手がかりに、庁内で仕組みを作った経験をどう示すかを整理しました。">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="財政課転職">
+<meta property="og:title" content="ノーコードツール｜情報政策の経験を実装側へ">
+<meta property="og:description" content="行政手続のオンライン化を定める規定を手がかりに、庁内で仕組みを作った経験をどう示すかを整理しました。">
+<meta property="og:url" content="https://zaiseikatenshoku.com/media/skill-nocode.html">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://zaiseikatenshoku.com/assets/ogp.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zaiseikatenshoku.com/assets/ogp.jpg">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1XXMP8Y1B4"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1XXMP8Y1B4');</script>
+<style>:root{--paper:#F5F7FA;--surface:#FFFFFF;--surface-2:#EEF1F6;--ink:#161A26;--ink-2:#4A5261;--ink-3:#6E7686;
+--line:#DDE2EA;--line-2:#EAEEF4;--accent:#1E3A8A;--accent-soft:#E9EDF9;--accent-ink:#1B3374;
+--cta:#D6362A;--cta-ink:#FFF;--cta-hover:#B22A20;--r-card:14px;--r-pill:999px;
+--sans:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","YuGothic","Noto Sans JP",Meiryo,system-ui,sans-serif;--maxw:800px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#0F131A;--surface:#171C26;--surface-2:#1F2530;
+--ink:#EAEEF5;--ink-2:#B4BCCA;--ink-3:#828C9E;--line:#2A313D;--line-2:#232A35;--accent:#8FA6F0;
+--accent-soft:#1B2338;--accent-ink:#BFCDFA;--cta:#D6392C;--cta-hover:#E44D3D}}
+:root[data-theme="dark"]{--paper:#0F131A;--surface:#171C26;--surface-2:#1F2530;--ink:#EAEEF5;--ink-2:#B4BCCA;
+--ink-3:#828C9E;--line:#2A313D;--line-2:#232A35;--accent:#8FA6F0;--accent-soft:#1B2338;--accent-ink:#BFCDFA;--cta:#D6392C;--cta-hover:#E44D3D}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.9;-webkit-text-size-adjust:100%}
+a{color:var(--accent-ink)}
+.topbar{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.topbar__inner{max-width:1080px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:16px}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;color:inherit}
+.brand__mark{width:30px;height:30px;border-radius:7px}
+.brand__name{display:block;font-weight:800;font-size:15px;letter-spacing:.02em}
+.brand__sub{display:block;font-size:10px;color:var(--ink-3);letter-spacing:.12em}
+.gnav{display:flex;gap:16px;margin-left:auto;flex-wrap:wrap}
+.gnav a{font-size:13.5px;color:var(--ink-2);text-decoration:none}
+.gnav a[aria-current]{color:var(--accent-ink);font-weight:700}
+.btn-head{background:var(--cta);color:var(--cta-ink);text-decoration:none;font-size:13px;font-weight:700;padding:8px 14px;border-radius:var(--r-pill);white-space:nowrap}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:22px 16px 56px}
+.crumb{font-size:12px;color:var(--ink-3);margin-bottom:14px}
+.crumb a{color:var(--ink-3)}
+.post__eyebrow{display:inline-block;font-size:11.5px;letter-spacing:.08em;color:var(--accent-ink);background:var(--accent-soft);padding:4px 10px;border-radius:var(--r-pill);margin:0 0 10px}
+h1{font-size:27px;line-height:1.5;letter-spacing:.01em;margin:0 0 12px}
+.post__meta{font-size:12px;color:var(--ink-3);margin:0 0 26px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+h2{font-size:20px;line-height:1.55;margin:38px 0 12px;padding-left:11px;border-left:4px solid var(--accent)}
+h3{font-size:16.5px;margin:26px 0 8px}
+p{margin:0 0 16px}
+ul,ol{margin:0 0 18px;padding-left:1.35em}
+li{margin-bottom:7px}
+.tw{overflow-x:auto;margin:0 0 20px}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--surface-2);font-weight:700}
+.blk{border-radius:var(--r-card);padding:16px 18px;margin:24px 0}
+.blk p:last-child{margin-bottom:0}
+.blk__lbl{font-size:11.5px;letter-spacing:.08em;font-weight:800;margin:0 0 7px}
+.blk--insight{background:var(--accent-soft);border:1px solid var(--accent)}
+.blk--insight .blk__lbl{color:var(--accent-ink)}
+.blk--note{background:var(--surface-2);border:1px solid var(--line)}
+.blk--note .blk__lbl{color:var(--ink-3)}
+.blk--cta{background:var(--surface);border:1px dashed var(--accent)}
+.sources{margin:34px 0 0;padding:15px 17px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card)}
+.sources h2{font-size:14px;margin:0 0 8px;padding:0;border:0}
+.sources ol{margin:0;font-size:13px;color:var(--ink-2)}
+.author{margin:30px 0 0;padding:16px 18px;border:1px solid var(--line);border-radius:var(--r-card);background:var(--surface)}
+.author__lbl{font-size:11px;letter-spacing:.1em;color:var(--ink-3);margin:0 0 3px}
+.author__name{font-size:16px;font-weight:800;margin:0 0 7px}
+.author__bio{font-size:13px;line-height:1.85;color:var(--ink-2);margin:0}
+.related{margin:34px 0 0}
+.related h2{font-size:15px;margin:0 0 10px;padding:0;border:0}
+.related ul,.idx__grp ul{list-style:none;padding:0;margin:0}
+.related li,.idx__grp li{border-bottom:1px solid var(--line-2);padding:9px 0;margin:0}
+.related a,.idx__grp a{font-size:14px;text-decoration:none}
+.related a:hover,.idx__grp a:hover{text-decoration:underline}
+.cta{margin:38px 0 0;padding:22px 20px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);text-align:center}
+.cta h2{font-size:18px;margin:0 0 9px;padding:0;border:0}
+.cta p{font-size:13.5px;color:var(--ink-2)}
+.cta__btns{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+.cta__pri{background:var(--cta);color:#fff;text-decoration:none;font-weight:700;padding:11px 22px;border-radius:var(--r-pill)}
+.cta__sec{background:var(--surface-2);color:var(--ink);text-decoration:none;font-weight:700;padding:11px 18px;border-radius:var(--r-pill)}
+.site-foot{background:var(--surface);border-top:1px solid var(--line);margin-top:44px}
+.foot__inner{max-width:1080px;margin:0 auto;padding:24px 16px;font-size:12.5px;color:var(--ink-2)}
+.foot__links{display:flex;flex-wrap:wrap;gap:12px;margin:11px 0}
+.foot__links a{color:var(--ink-2);text-decoration:none}
+.foot__copy{color:var(--ink-3);margin:0}
+.idx__grp{margin:30px 0 0}
+.idx__grp h2{font-size:17px}
+.idx__cnt{font-size:12px;color:var(--ink-3);font-weight:400;margin-left:8px}
+@media(max-width:640px){h1{font-size:22px}h2{font-size:18px}.wrap{padding:18px 14px 44px}}</style>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"ノーコードツール｜情報政策の経験を実装側へ","description":"行政手続のオンライン化を定める規定を手がかりに、庁内で仕組みを作った経験をどう示すかを整理しました。","mainEntityOfPage":"https://zaiseikatenshoku.com/media/skill-nocode.html","author":{"@type":"Organization","name":"株式会社エージェントベスト"},"publisher":{"@type":"Organization","name":"財政課転職"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"財政課転職","item":"https://zaiseikatenshoku.com/"},{"@type":"ListItem","position":2,"name":"記事","item":"https://zaiseikatenshoku.com/media/"},{"@type":"ListItem","position":3,"name":"ノーコードツール｜情報政策の経験を実装側へ","item":"https://zaiseikatenshoku.com/media/skill-nocode.html"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"特定のツールの名前を、求人票で指定されています","acceptedAnswer":{"@type":"Answer","text":"その求人では、要件になっている可能性があります。ただし、「必須」と「歓迎」で扱いが違います。必須であれば、そのツールの経験が要ります。歓迎であれば、類似の経験で応募できることがあります。なお、ノーコードのツールは、考え方が共通している部分があります。「別のツールで同等の仕組みを作った経験があります」と書けば、判断の材料になります。大切なのは、何を作り、どう使われたかです。読み方は求人票の読み方｜どこを見れば実態が分かるかに整理しています。"}},{"@type":"Question","name":"情報政策の部署にいませんが、書けますか","acceptedAnswer":{"@type":"Answer","text":"書けます。評価されるのは、部署の名称ではなく、やったことです。窓口の業務で確認の表を作った、集計の作業を置き換えた、進捗の管理の仕組みを作った。これらは、どの部署でも起こり得ます。書き方は、「◯◯の作業について、◯◯を用いて仕組みを作成し、係◯名で運用」という形です。なお、情報政策の部署にいた場合は、調達や仕様の作成の経験も併せて書いてください。発注する側の経験は、技術職の転職｜事務職と何が違うかに整理した考え方と同じく、そのまま書ける材料です。"}},{"@type":"Question","name":"独学で学んだツールは、どう書きますか","acceptedAnswer":{"@type":"Answer","text":"作ったものと併せて書いてください。「独学で習得」とだけ書くと、到達が分かりません。「◯◯を独学で習得し、係内の◯◯の作業を仕組み化。職員◯名が利用」という形にすると、習得と実績の両方が伝わります。なお、業務で使っていない場合は、個人で作ったものを示すこともできます。ただし、庁内のデータを個人の環境で扱うことには規程上の制約があります。必ず、所属の情報の担当に確認してください。判断に迷う場合は、業務では使わず、公開されているデータで試すほうが安全です。"}}]}]</script>
+</head>
+<body>
+<header class="topbar"><div class="topbar__inner">
+<a class="brand" href="../" aria-label="財政課転職トップ">
+<img class="brand__mark" src="../assets/mark.png" alt="" aria-hidden="true">
+<span><span class="brand__name">財政課転職</span><span class="brand__sub">PUBLIC &rarr; PRIVATE</span></span></a>
+<nav class="gnav" aria-label="メインメニュー">
+<a href="../">求人を探す</a>
+<a href="../zukan.html">部署別 仕事ガイド</a>
+<a href="./" aria-current="page">記事</a>
+<a href="../apply.html">転職支援サービス</a></nav>
+<a class="btn-head" href="../apply.html">無料で相談する</a></div></header>
+<main class="wrap">
+<nav class="crumb"><a href="../">財政課転職</a> &rsaquo; <a href="./">記事</a> &rsaquo; 資格・スキル</nav>
+<article class="post">
+<p class="post__eyebrow">資格・スキル / スキル</p>
+<h1>ノーコードツール｜情報政策の経験を実装側へ</h1>
+<p class="post__meta">2026年9月時点の公開情報にもとづきます。制度や募集要項は変わることがあるため、手続きの前に各機関の公式情報をご確認ください。</p>
+<p><b>庁内で、申請の仕組みや集計の様式を作った経験</b>をお持ちの方がいらっしゃいます。</p>
+<p><b>その経験を、どう書けばよいか</b>というご相談です。</p>
+<p>この記事では、<b>位置づけ</b>と、<b>示し方</b>を扱います。</p>
+<h2>オンラインでの申請には、法律上の根拠があります</h2>
+<p><b>情報通信技術を活用した行政の推進等に関する法律第6条第1項</b>です。</p>
+<p>&gt; <b>申請等のうち当該申請等に関する他の法令の規定において書面等により行うことその他のその方法が規定されているものについては、当該法令の規定にかかわらず、主務省令で定めるところにより、主務省令で定める電子情報処理組織</b>（略）<b>を使用する方法により行うことができる。</b></p>
+<p><b>同条第2項</b>です。</p>
+<p>&gt; <b>前項の電子情報処理組織を使用する方法により行われた申請等については、当該申請等に関する他の法令の規定に規定する方法により行われたものとみなして、当該法令その他の当該申請等に関する法令の規定を適用する。</b></p>
+<p><b>同条第3項</b>は、<b>到達の時点</b>について定めています。</p>
+<p>&gt; 第一項の電子情報処理組織を使用する方法により行われた申請等は、<b>当該申請等を受ける行政機関等の使用に係る電子計算機に備えられたファイルへの記録がされた時に当該行政機関等に到達したものとみなす。</b></p>
+<p><b>書面によることが定められた手続でも、電子的な方法で行える</b>という構造です。</p>
+<p><b>そして、到達の時点まで条文で定められています。</b></p>
+<p><b>つまり、オンライン化は、法令の要件を満たす形で行う必要がある</b>ということです。</p>
+<p><b>庁内で仕組みを作った経験には、この理解が含まれています。</b></p>
+<h2>何が評価されるか</h2>
+<p><b>ツールの名前ではありません。</b></p>
+<div class="tw"><table>
+<thead><tr><th>評価される要素</th><th>内容</th></tr></thead><tbody>
+<tr><td>① 業務を分解する力</td><td><b>どの工程を、どう置き換えたか</b></td></tr>
+<tr><td>② 要件を言葉にする力</td><td>何を満たす必要があったか</td></tr>
+<tr><td>③ 法令・規程との整合</td><td>到達、本人の確認、記録の保存</td></tr>
+<tr><td>④ 使われた実績</td><td><b>実際に運用されたか</b></td></tr>
+<tr><td>⑤ 引き継いだか</td><td>属人的に終わっていないか</td></tr>
+</tbody></table></div>
+<p><b>①と④が中心</b>です。</p>
+<p><b>「作った」だけでは、評価が定まりません。</b></p>
+<p><b>実際に運用され、業務が変わったかどうか</b>が見られます。</p>
+<p><b>⑤について。</b></p>
+<p><b>作った本人しか直せない状態で終わっていると、組織では評価されにくい</b>ものです。</p>
+<p><b>手順書を残した、他の職員に操作を教えた、という事実があれば書いてください。</b></p>
+<h2>書き方の例</h2>
+<p><b>悪い例</b></p>
+<p>&gt; 庁内でノーコードツールを使って、申請のフォームを作りました。</p>
+<p><b>良い例</b></p>
+<p>&gt; ◯◯に関する申請について、<b>紙の様式で年間約◯件を処理していた業務を、オンラインでの受付に変更。</b>受付から決裁までの工程を整理し、<b>本人の確認の方法と記録の保存について関係課と協議。</b><b>運用の手順書を作成し、職員◯名に操作を説明。</b>運用の開始から◯か月で、年間の処理のうち約◯割がオンラインでの受付に移行。</p>
+<p><b>「対象の業務」「工程」「整合の確認」「引継ぎ」「結果」</b>が入っています。</p>
+<p><b>基本の型は</b><a href="senko-shokumu-kihon.html">公務員の職務経歴書｜民間で読まれる形にする基本</a><b>に整理しています。</b></p>
+<h2>どの転職先で効くか</h2>
+<div class="tw"><table>
+<thead><tr><th>領域</th><th>使いどころ</th></tr></thead><tbody>
+<tr><td>① 自治体向けのシステム</td><td><b>現場での運用が分かる</b></td></tr>
+<tr><td>② 導入の支援</td><td>業務の要件の整理</td></tr>
+<tr><td>③ 社内の情報システム</td><td>業務の改善、内製の支援</td></tr>
+<tr><td>④ 業務の受託</td><td>受託した業務の効率化</td></tr>
+<tr><td>⑤ 業務の改善の支援</td><td>工程の分析</td></tr>
+</tbody></table></div>
+<p><b>①と②が、最も重なります。</b></p>
+<p><b>自治体向けのシステムの会社では、「現場で何が起きるか」を知っている人</b>が求められます。</p>
+<p><b>窓口での運用、繁忙期の状況、職員の体制、決裁の流れ。</b></p>
+<p><b>これらは、外から入った人には見えにくい</b>ものです。</p>
+<p><b>探し方は</b><a href="senko-sagasu-kyujin.html">公務員経験が活きる求人の探し方</a><b>に整理しています。</b></p>
+<aside class="blk blk--insight"><p class="blk__lbl">エージェントベストの見解</p><p>ノーコードでの内製について、<b>面談でお伝えしているのが「ツールの名前ではなく、業務の変化を書いてください」</b>という点です。書類を拝見すると、<b>使ったツールの名称だけが並んでいる</b>ことがあります。ところが、<b>採用する側が見ているのは、業務がどう変わったか</b>です。何件の処理が、どの工程で、どれだけ短くなったか。誰が使えるようになったか。<b>そして、法令や規程との整合をどう確認したか。</b>ここが、行政での経験ならではの部分です。<b>民間のツールの導入では、法令の要件まで踏み込む場面は多くありません。</b>一方、行政の手続では、<b>到達の時点、本人の確認、記録の保存</b>といった要件を満たす必要があります。<b>この確認を経験している人は、自治体向けの事業で重宝されます。</b>書類には、<b>「関係課と協議のうえ、◯◯の要件を満たす形で運用を開始」</b>と書いてください。ご利用は無料です（紹介手数料は採用企業の負担です）。</p></aside>
+<h2>学ぶ前に考えること</h2>
+<div class="tw"><table>
+<thead><tr><th>確認すること</th><th>内容</th></tr></thead><tbody>
+<tr><td>① すでに作ったものがあるか</td><td><b>実績が先</b></td></tr>
+<tr><td>② 応募したい求人の条件</td><td>ツールの指定があるか</td></tr>
+<tr><td>③ 目的</td><td>実装側に回りたいのか、業務の改善か</td></tr>
+<tr><td>④ 期限</td><td>応募の時期までに間に合うか</td></tr>
+<tr><td>⑤ 他に優先することはないか</td><td>書類、条件の整理</td></tr>
+</tbody></table></div>
+<p><b>①を最初に置いてください。</b></p>
+<p><b>庁内で何かを作った経験があるなら、その整理が先</b>です。</p>
+<p><b>新しいツールを学ぶより、既にある実績を書くほうが早く進みます。</b></p>
+<p><b>③について。</b></p>
+<p><b>実装そのものを担いたいのか、業務の要件を整理する側に回りたいのか</b>で、見る求人が変わります。</p>
+<p><b>なお、ツールを習得すれば転職できる、という関係にはありません。</b></p>
+<p><b>業務をどう変えたかが、評価の対象</b>です。</p>
+<h2>実績がない場合</h2>
+<div class="tw"><table>
+<thead><tr><th>やること</th><th>内容</th></tr></thead><tbody>
+<tr><td>庁内の業務で試す</td><td><b>小さい範囲で</b></td></tr>
+<tr><td>手順を残す</td><td>他の人が使える形に</td></tr>
+<tr><td>結果を記録する</td><td>件数、時間の変化</td></tr>
+<tr><td>共有する</td><td>係内、課内</td></tr>
+</tbody></table></div>
+<p><b>1行目です。</b></p>
+<p><b>自分の担当の業務で、集計や確認の作業を置き換えてみる。</b></p>
+<p><b>規模が小さくても、実績になります。</b></p>
+<p><b>⚠ ただし、庁内のシステムやデータの取扱いには規程があります。</b><b>必ず、所属の情報の担当に確認してから進めてください。</b></p>
+<p><a href="../apply.html">経験の言い換えから相談する</a>こともできます。</p>
+<h2>よくある失敗</h2>
+<p><b>1. ツールの名前だけを書く</b></p>
+<p><b>業務の変化</b>を書いてください。</p>
+<p><b>2. 使われた実績を書かない</b></p>
+<p><b>運用されたかどうか</b>が見られます。</p>
+<p><b>3. 引き継ぎを書かない</b></p>
+<p><b>属人的に終わっていない</b>ことが評価されます。</p>
+<p><b>4. 法令・規程との整合に触れない</b></p>
+<p><b>行政ならではの部分</b>です。</p>
+<p><b>5. 実績より先に学習を始める</b></p>
+<p><b>既にある実績の整理が先</b>です。</p>
+<p><b>6. 数字を書かない</b></p>
+<p><b>件数と変化</b>で示してください。</p>
+<p><b>7. 規程を確認せずに試す</b></p>
+<p><b>情報の担当に確認</b>してください。</p>
+<p><b>8. 習得すれば転職できると考える</b></p>
+<p><b>業務をどう変えたか</b>が評価の対象です。</p>
+<aside class="blk blk--insight"><p class="blk__lbl">エージェントベストの見解</p><p>ここまで実績の話をしておいて逆のことを言いますが、<b>大きな成果でなくて構いません。</b>面談で拝見していると、<b>「庁内の一部でしか使われていないので、書くほどではない」と考える方</b>がいらっしゃいます。ところが、<b>規模の大小より、工程を分解して作り直した経験そのものが評価されます。</b>係の中の集計、確認の表、進捗の管理。<b>どれも、業務の要件を言葉にして、形にする作業</b>です。そして、<b>民間で求められているのも、同じ作業</b>です。むしろ、<b>大規模なシステムの経験より、現場の小さな改善を自分で回した経験のほうが、導入の支援では役立つ</b>ことがあります。理由は、<b>使う側の立場が分かるから</b>です。書類には、<b>「係内の◯◯の作業について、確認の表を作成し、処理の時間を短縮」</b>と書いてください。<b>小さくても、自分で決めて作った事実</b>が伝わります。在職中でも、情報収集だけでも構いません。</p></aside>
+<p><a href="https://line.me/R/ti/p/@697nxhbt" target="_blank" rel="noopener noreferrer">LINEで短く聞くこともできます</a></p>
+<h2>まとめ</h2>
+<ul>
+<li><b>情報通信技術を活用した行政の推進等に関する法律第6条</b>は、<b>書面によることが定められた申請等を、電子情報処理組織を使用する方法により行える</b>とし、<b>到達の時点</b>まで定めています</li>
+<li><b>オンライン化は、法令の要件を満たす形で行う必要があります。</b>この理解が、経験に含まれています</li>
+<li>評価されるのは、<b>ツールの名前ではなく、業務の変化</b>です</li>
+<li><b>使われた実績</b>と、<b>引き継いだかどうか</b>を書いてください</li>
+<li><b>法令・規程との整合を確認した経験</b>は、行政ならではの部分です</li>
+<li><b>既にある実績の整理が、新しい学習より先</b>です</li>
+<li><b>規模の大小より、工程を分解して作り直した経験</b>が評価されます</li>
+</ul>
+<p>行政が相手の求人もまとまっています。<a href="../?gov=1">行政が相手の求人を見てみる</a>。</p>
+<h2>よくある質問</h2>
+<h3>特定のツールの名前を、求人票で指定されています</h3>
+<p><b>その求人では、要件になっている可能性があります。</b>ただし、<b>「必須」と「歓迎」で扱いが違います。</b>必須であれば、そのツールの経験が要ります。歓迎であれば、<b>類似の経験で応募できる</b>ことがあります。なお、<b>ノーコードのツールは、考え方が共通している</b>部分があります。「別のツールで同等の仕組みを作った経験があります」と書けば、<b>判断の材料になります。</b>大切なのは、<b>何を作り、どう使われたか</b>です。読み方は<a href="senko-sagasu-kyujinhyo.html">求人票の読み方｜どこを見れば実態が分かるか</a>に整理しています。</p>
+<h3>情報政策の部署にいませんが、書けますか</h3>
+<p><b>書けます。</b>評価されるのは、<b>部署の名称ではなく、やったこと</b>です。窓口の業務で確認の表を作った、集計の作業を置き換えた、進捗の管理の仕組みを作った。<b>これらは、どの部署でも起こり得ます。</b>書き方は、<b>「◯◯の作業について、◯◯を用いて仕組みを作成し、係◯名で運用」</b>という形です。なお、<b>情報政策の部署にいた場合は、調達や仕様の作成の経験も併せて書いて</b>ください。<b>発注する側の経験</b>は、<a href="senko-tachiba-gijutsu.html">技術職の転職｜事務職と何が違うか</a>に整理した考え方と同じく、<b>そのまま書ける材料</b>です。</p>
+<h3>独学で学んだツールは、どう書きますか</h3>
+<p><b>作ったものと併せて書いてください。</b>「独学で習得」とだけ書くと、<b>到達が分かりません。</b>「◯◯を独学で習得し、係内の◯◯の作業を仕組み化。職員◯名が利用」という形にすると、<b>習得と実績の両方が伝わります。</b>なお、<b>業務で使っていない場合は、個人で作ったものを示す</b>こともできます。ただし、<b>庁内のデータを個人の環境で扱うことには規程上の制約</b>があります。<b>必ず、所属の情報の担当に確認</b>してください。<b>判断に迷う場合は、業務では使わず、公開されているデータで試す</b>ほうが安全です。</p>
+<section class="sources"><h2>出典</h2><ol><li><a href="https://laws.e-gov.go.jp/law/414AC0000000151" target="_blank" rel="noopener noreferrer">情報通信技術を活用した行政の推進等に関する法律 第6条（電子情報処理組織による申請等）｜e-Gov法令検索</a></li></ol></section>
+</article>
+<div class="author"><p class="author__lbl">監修</p>
+<p class="author__name"><a href="https://www.agent-best.net/profile" target="_blank" rel="noopener">松岡 良次</a></p>
+<p class="author__bio">株式会社エージェントベスト代表。大手人材会社およびスタートアップ人材企業にて、IT・スタートアップ・メガベンチャー企業の採用支援に従事。独立後はIT・スタートアップ・コンサル領域に特化し、20〜30代のキャリア支援を行う。（厚生労働大臣許可 13-ユ-316964）</p></div>
+<section class="related"><h2>関連する記事</h2><ul><li><a href="skill-eigo.html">英語｜必要になる職種と、不要な職種</a></li><li><a href="skill-seiseiai.html">生成AIの業務活用｜自治体での利用経験をどう語るか</a></li></ul></section>
+<section class="cta"><h2>「自分の経験に、どこで値段が付くのか」から相談できます</h2>
+<p>在職中でも、情報収集だけでも構いません。応募する求人が決まっていない段階のほうが、むしろ整理する意味があります。ご利用はすべて無料です。</p>
+<div class="cta__btns"><a class="cta__pri" href="../apply.html">無料で相談する</a>
+<a class="cta__sec" href="../">求人を見る</a>
+<a class="cta__sec" href="https://line.me/R/ti/p/@697nxhbt" target="_blank" rel="noopener noreferrer" data-line-cta="media-cta">LINEで相談する</a></div></section>
+</main>
+<footer class="site-foot"><div class="foot__inner">
+<strong>財政課転職 — 公務員のための求人サイト</strong><br>
+<span>人材紹介サービス「エージェントベスト」が運営しています。ご利用はすべて無料です（紹介手数料は採用企業からいただきます）。</span>
+<nav class="foot__links"><a href="../">求人を探す</a><a href="../zukan.html">部署別 仕事ガイド</a>
+<a href="./">記事</a><a href="../apply.html">転職支援サービス</a><a href="../terms.html">利用規約</a>
+<a href="../privacy.html">プライバシーポリシー（人材紹介）</a><a href="../privacy-ad.html">プライバシーポリシー（求人広告）</a>
+<a href="https://www.agent-best.net/" target="_blank" rel="noopener">運営会社サイト</a></nav>
+<p class="foot__copy">&copy; 株式会社エージェントベスト</p></div></footer>
+</body>
+</html>

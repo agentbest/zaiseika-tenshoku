@@ -843,4 +843,7 @@
   <url><loc>https://zaiseikatenshoku.com/media/senko-taishoku-tetsuzuki.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/senko-taishoku-yukyu.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/senko-taishoku-zaishokuchu.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zaiseikatenshoku.com/media/skill-eigo.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zaiseikatenshoku.com/media/skill-nocode.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zaiseikatenshoku.com/media/skill-seiseiai.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>
