@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+<title>BIツール｜統計・財政データの経験を可視化に接続する｜財政課転職</title>
+<link rel="icon" href="../assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="../assets/icon-192.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="canonical" href="https://zaiseikatenshoku.com/media/skill-bi.html">
+<meta name="description" content="財政状況の公表が義務であることを出発点に、数字を伝わる形にする経験と、足すべき技術を整理しました。">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="財政課転職">
+<meta property="og:title" content="BIツール｜統計・財政データの経験を可視化に接続する">
+<meta property="og:description" content="財政状況の公表が義務であることを出発点に、数字を伝わる形にする経験と、足すべき技術を整理しました。">
+<meta property="og:url" content="https://zaiseikatenshoku.com/media/skill-bi.html">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://zaiseikatenshoku.com/assets/ogp.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zaiseikatenshoku.com/assets/ogp.jpg">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1XXMP8Y1B4"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1XXMP8Y1B4');</script>
+<style>:root{--paper:#F5F7FA;--surface:#FFFFFF;--surface-2:#EEF1F6;--ink:#161A26;--ink-2:#4A5261;--ink-3:#6E7686;
+--line:#DDE2EA;--line-2:#EAEEF4;--accent:#1E3A8A;--accent-soft:#E9EDF9;--accent-ink:#1B3374;
+--cta:#D6362A;--cta-ink:#FFF;--cta-hover:#B22A20;--r-card:14px;--r-pill:999px;
+--sans:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","YuGothic","Noto Sans JP",Meiryo,system-ui,sans-serif;--maxw:800px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#0F131A;--surface:#171C26;--surface-2:#1F2530;
+--ink:#EAEEF5;--ink-2:#B4BCCA;--ink-3:#828C9E;--line:#2A313D;--line-2:#232A35;--accent:#8FA6F0;
+--accent-soft:#1B2338;--accent-ink:#BFCDFA;--cta:#D6392C;--cta-hover:#E44D3D}}
+:root[data-theme="dark"]{--paper:#0F131A;--surface:#171C26;--surface-2:#1F2530;--ink:#EAEEF5;--ink-2:#B4BCCA;
+--ink-3:#828C9E;--line:#2A313D;--line-2:#232A35;--accent:#8FA6F0;--accent-soft:#1B2338;--accent-ink:#BFCDFA;--cta:#D6392C;--cta-hover:#E44D3D}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.9;-webkit-text-size-adjust:100%}
+a{color:var(--accent-ink)}
+.topbar{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.topbar__inner{max-width:1080px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:16px}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;color:inherit}
+.brand__mark{width:30px;height:30px;border-radius:7px}
+.brand__name{display:block;font-weight:800;font-size:15px;letter-spacing:.02em}
+.brand__sub{display:block;font-size:10px;color:var(--ink-3);letter-spacing:.12em}
+.gnav{display:flex;gap:16px;margin-left:auto;flex-wrap:wrap}
+.gnav a{font-size:13.5px;color:var(--ink-2);text-decoration:none}
+.gnav a[aria-current]{color:var(--accent-ink);font-weight:700}
+.btn-head{background:var(--cta);color:var(--cta-ink);text-decoration:none;font-size:13px;font-weight:700;padding:8px 14px;border-radius:var(--r-pill);white-space:nowrap}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:22px 16px 56px}
+.crumb{font-size:12px;color:var(--ink-3);margin-bottom:14px}
+.crumb a{color:var(--ink-3)}
+.post__eyebrow{display:inline-block;font-size:11.5px;letter-spacing:.08em;color:var(--accent-ink);background:var(--accent-soft);padding:4px 10px;border-radius:var(--r-pill);margin:0 0 10px}
+h1{font-size:27px;line-height:1.5;letter-spacing:.01em;margin:0 0 12px}
+.post__meta{font-size:12px;color:var(--ink-3);margin:0 0 26px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+h2{font-size:20px;line-height:1.55;margin:38px 0 12px;padding-left:11px;border-left:4px solid var(--accent)}
+h3{font-size:16.5px;margin:26px 0 8px}
+p{margin:0 0 16px}
+ul,ol{margin:0 0 18px;padding-left:1.35em}
+li{margin-bottom:7px}
+.tw{overflow-x:auto;margin:0 0 20px}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--surface-2);font-weight:700}
+.blk{border-radius:var(--r-card);padding:16px 18px;margin:24px 0}
+.blk p:last-child{margin-bottom:0}
+.blk__lbl{font-size:11.5px;letter-spacing:.08em;font-weight:800;margin:0 0 7px}
+.blk--insight{background:var(--accent-soft);border:1px solid var(--accent)}
+.blk--insight .blk__lbl{color:var(--accent-ink)}
+.blk--note{background:var(--surface-2);border:1px solid var(--line)}
+.blk--note .blk__lbl{color:var(--ink-3)}
+.blk--cta{background:var(--surface);border:1px dashed var(--accent)}
+.sources{margin:34px 0 0;padding:15px 17px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card)}
+.sources h2{font-size:14px;margin:0 0 8px;padding:0;border:0}
+.sources ol{margin:0;font-size:13px;color:var(--ink-2)}
+.author{margin:30px 0 0;padding:16px 18px;border:1px solid var(--line);border-radius:var(--r-card);background:var(--surface)}
+.author__lbl{font-size:11px;letter-spacing:.1em;color:var(--ink-3);margin:0 0 3px}
+.author__name{font-size:16px;font-weight:800;margin:0 0 7px}
+.author__bio{font-size:13px;line-height:1.85;color:var(--ink-2);margin:0}
+.related{margin:34px 0 0}
+.related h2{font-size:15px;margin:0 0 10px;padding:0;border:0}
+.related ul,.idx__grp ul{list-style:none;padding:0;margin:0}
+.related li,.idx__grp li{border-bottom:1px solid var(--line-2);padding:9px 0;margin:0}
+.related a,.idx__grp a{font-size:14px;text-decoration:none}
+.related a:hover,.idx__grp a:hover{text-decoration:underline}
+.cta{margin:38px 0 0;padding:22px 20px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);text-align:center}
+.cta h2{font-size:18px;margin:0 0 9px;padding:0;border:0}
+.cta p{font-size:13.5px;color:var(--ink-2)}
+.cta__btns{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+.cta__pri{background:var(--cta);color:#fff;text-decoration:none;font-weight:700;padding:11px 22px;border-radius:var(--r-pill)}
+.cta__sec{background:var(--surface-2);color:var(--ink);text-decoration:none;font-weight:700;padding:11px 18px;border-radius:var(--r-pill)}
+.site-foot{background:var(--surface);border-top:1px solid var(--line);margin-top:44px}
+.foot__inner{max-width:1080px;margin:0 auto;padding:24px 16px;font-size:12.5px;color:var(--ink-2)}
+.foot__links{display:flex;flex-wrap:wrap;gap:12px;margin:11px 0}
+.foot__links a{color:var(--ink-2);text-decoration:none}
+.foot__copy{color:var(--ink-3);margin:0}
+.idx__grp{margin:30px 0 0}
+.idx__grp h2{font-size:17px}
+.idx__cnt{font-size:12px;color:var(--ink-3);font-weight:400;margin-left:8px}
+@media(max-width:640px){h1{font-size:22px}h2{font-size:18px}.wrap{padding:18px 14px 44px}}</style>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"BIツール｜統計・財政データの経験を可視化に接続する","description":"財政状況の公表が義務であることを出発点に、数字を伝わる形にする経験と、足すべき技術を整理しました。","mainEntityOfPage":"https://zaiseikatenshoku.com/media/skill-bi.html","author":{"@type":"Organization","name":"株式会社エージェントベスト"},"publisher":{"@type":"Organization","name":"財政課転職"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"財政課転職","item":"https://zaiseikatenshoku.com/"},{"@type":"ListItem","position":2,"name":"記事","item":"https://zaiseikatenshoku.com/media/"},{"@type":"ListItem","position":3,"name":"BIツール｜統計・財政データの経験を可視化に接続する","item":"https://zaiseikatenshoku.com/media/skill-bi.html"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"専用のツールを使ったことがありません","acceptedAnswer":{"@type":"Answer","text":"表計算の経験から書いてください。集計、関数、作図、様式の整備。これらは、業務としては同じ作業です。求人票の応募条件で、特定のツールが必須とされているかを確認してください。「必須」であれば、その経験が要ります。「歓迎」であれば、表計算の経験で応募できることがあります。なお、ツールは考え方が共通している部分があります。「表計算で、集計の手順を様式として整備した経験があります」と書けば、判断の材料になります。できないことは書かないでください。"}},{"@type":"Question","name":"財政の数字を扱っていませんでした","acceptedAnswer":{"@type":"Answer","text":"扱った数字で書いてください。申請や届出の件数、利用者の数、事業の実績、検査の件数。どの分野でも、数字を集計し、公表や報告に使っているはずです。書き方は、「◯◯の実績について、年◯回の集計を担当し、推移を図に整理して報告に使用」という形です。財政に限りません。なお、公表された資料に載った数字であれば、作成に関わった事実を書けることがあります。判断に迷う場合は、内容に触れず、作業の説明にとどめてください。"}},{"@type":"Question","name":"指標の設計とは、何をするのですか","acceptedAnswer":{"@type":"Answer","text":"「何を見れば判断できるか」を決める作業です。たとえば、窓口の業務であれば、処理の件数だけでなく、待ち時間、再来の割合、不備の率を見ることで、状況が分かります。どれを見るかを決めるのが、設計です。行政でも、事業の評価の指標を設定した経験があれば、同じ作業です。「事業の評価にあたり、◯◯を指標として設定し、年度ごとに測定」という形で書けます。数字を並べるのではなく、判断に使える数字を選ぶ。この考え方が、民間でも求められます。"}}]}]</script>
+</head>
+<body>
+<header class="topbar"><div class="topbar__inner">
+<a class="brand" href="../" aria-label="財政課転職トップ">
+<img class="brand__mark" src="../assets/mark.png" alt="" aria-hidden="true">
+<span><span class="brand__name">財政課転職</span><span class="brand__sub">PUBLIC &rarr; PRIVATE</span></span></a>
+<nav class="gnav" aria-label="メインメニュー">
+<a href="../">求人を探す</a>
+<a href="../zukan.html">部署別 仕事ガイド</a>
+<a href="./" aria-current="page">記事</a>
+<a href="../apply.html">転職支援サービス</a></nav>
+<a class="btn-head" href="../apply.html">無料で相談する</a></div></header>
+<main class="wrap">
+<nav class="crumb"><a href="../">財政課転職</a> &rsaquo; <a href="./">記事</a> &rsaquo; 資格・スキル</nav>
+<article class="post">
+<p class="post__eyebrow">資格・スキル / スキル</p>
+<h1>BIツール｜統計・財政データの経験を可視化に接続する</h1>
+<p class="post__meta">2026年9月時点の公開情報にもとづきます。制度や募集要項は変わることがあるため、手続きの前に各機関の公式情報をご確認ください。</p>
+<p><b>統計や財政の数字を扱ってきた方から、「可視化の仕事に移れるか」</b>というご相談を伺います。</p>
+<p><b>数字を伝わる形にする経験は、すでに積んでいます。</b></p>
+<p>この記事では、<b>接続の仕方</b>と、<b>足すべき技術</b>を扱います。</p>
+<h2>財政の状況は、住民に公表するものです</h2>
+<p><b>地方自治法第243条の3第1項</b>です。</p>
+<p>&gt; <b>普通地方公共団体の長は、条例の定めるところにより、毎年二回以上歳入歳出予算の執行状況並びに財産、地方債及び一時借入金の現在高その他財政に関する事項を住民に公表しなければならない。</b></p>
+<p><b>「毎年二回以上」「住民に公表しなければならない」</b>と定められています。</p>
+<p><b>公表の相手は、専門家ではなく住民</b>です。</p>
+<p><b>つまり、専門的な数字を、専門でない相手に伝わる形にする</b>ことが求められます。</p>
+<p><b>これが、可視化の目的そのもの</b>です。</p>
+<p><b>行政で公表の資料を作ってきた方は、この作業を経験しています。</b></p>
+<h2>可視化で行うこと</h2>
+<div class="tw"><table>
+<thead><tr><th>工程</th><th>内容</th></tr></thead><tbody>
+<tr><td>① 目的を決める</td><td><b>誰に、何を分かってほしいか</b></td></tr>
+<tr><td>② データを集める</td><td>出所、定義、期間</td></tr>
+<tr><td>③ 整える</td><td>集計、結合、欠損の扱い</td></tr>
+<tr><td>④ 図を選ぶ</td><td>推移、構成、比較、分布</td></tr>
+<tr><td>⑤ 見せ方を決める</td><td>並び、色、注記</td></tr>
+<tr><td>⑥ 更新の仕組み</td><td>定期の更新をどうするか</td></tr>
+</tbody></table></div>
+<p><b>①と④が中心</b>です。</p>
+<p><b>④について。</b></p>
+<p><b>推移は折れ線、構成は帯や円、比較は棒、分布は別の形。</b></p>
+<p><b>目的に応じて図の種類が決まります。</b></p>
+<p><b>行政の公表資料でも、この選択をしてきたはず</b>です。</p>
+<h2>行政で身についていること</h2>
+<div class="tw"><table>
+<thead><tr><th>経験</th><th>可視化での使いどころ</th></tr></thead><tbody>
+<tr><td>① データの出所の確認</td><td><b>どの統計、どの年度か</b></td></tr>
+<tr><td>② 定義の確認</td><td>何を数えたものか</td></tr>
+<tr><td>③ 経年と他団体との比較</td><td>推移と比較の設計</td></tr>
+<tr><td>④ 専門でない相手への説明</td><td><b>伝わる形にする</b></td></tr>
+<tr><td>⑤ 公表の配慮</td><td>個人が特定されない形に</td></tr>
+<tr><td>⑥ 定期の更新</td><td>毎年・毎四半期の作業</td></tr>
+</tbody></table></div>
+<p><b>④が、最も価値がある部分</b>です。</p>
+<p><b>財政の指標を、住民向けの広報紙に載せる。</b></p>
+<p><b>この作業は、専門的な数字を翻訳する仕事</b>です。</p>
+<p><b>民間でも、同じことが求められます。</b></p>
+<h2>足すべき技術</h2>
+<div class="tw"><table>
+<thead><tr><th>技術</th><th>内容</th></tr></thead><tbody>
+<tr><td>① ツールの操作</td><td><b>表計算の外に出る</b></td></tr>
+<tr><td>② データの整形</td><td>縦横の変換、結合</td></tr>
+<tr><td>③ 更新の自動化</td><td>手作業を減らす</td></tr>
+<tr><td>④ 見る人に合わせる</td><td>経営層、現場、顧客</td></tr>
+<tr><td>⑤ 指標の設計</td><td>何を見れば判断できるか</td></tr>
+<tr><td>⑥ 共有の仕組み</td><td>誰がいつ見るか</td></tr>
+</tbody></table></div>
+<p><b>③が、民間との違いが出る部分</b>です。</p>
+<p><b>行政では、年に数回の公表のために、その都度作る</b>ことがあります。</p>
+<p><b>民間では、毎日や毎週見るため、更新の自動化が前提</b>になります。</p>
+<p><b>⑤について。</b></p>
+<p><b>「何を見れば判断できるか」を決めるのが、指標の設計</b>です。</p>
+<p><b>財政の指標を扱ってきた方は、この考え方を持っています。</b></p>
+<h2>書き方の例</h2>
+<p><b>悪い例</b></p>
+<p>&gt; 統計データの集計と、グラフの作成を担当しました。</p>
+<p><b>良い例</b></p>
+<p>&gt; ◯◯に関する財政の状況について、<b>年◯回の公表資料を作成。</b>歳入歳出の執行の状況と、<b>過去◯年の推移、類似する団体との比較</b>を図に整理。<b>専門的な用語を用いずに説明する注記を付し、広報紙とウェブで公表。</b>集計の手順を<b>表計算の様式として整備し、担当が交代しても同じ形で作成できるように運用。</b></p>
+<p><b>「回数」「比較の設計」「伝え方」「再現できる仕組み」</b>が入っています。</p>
+<p><b>基本の型は</b><a href="senko-shokumu-kihon.html">公務員の職務経歴書｜民間で読まれる形にする基本</a><b>に整理しています。</b></p>
+<aside class="blk blk--insight"><p class="blk__lbl">エージェントベストの見解</p><p>可視化について、<b>面談でお伝えしているのが「翻訳した経験を書いてください」</b>という点です。<b>「グラフを作成」と書かれても、水準が分かりません。</b>ところが、<b>「専門的な指標を、住民に分かる言葉と図に置き換えて公表した」</b>と書かれていると、<b>目的が伝わります。</b>そして、<b>この翻訳の作業は、民間でも必要とされています。</b>経営層は細かい数字を見る時間がない、現場は自分の担当の範囲しか見ない、顧客は専門用語を知らない。<b>相手に応じて、見せ方を変える必要があります。</b>行政では、<b>住民という最も幅の広い相手に向けて公表する義務</b>があるため、この訓練を受けています。書類には、<b>「専門的な用語を用いずに説明する注記を付した」「図の種類を目的に応じて選んだ」</b>と書いてください。<b>ツールの名前より、この判断のほうが評価されます。</b>ご利用は無料です（紹介手数料は採用企業の負担です）。</p></aside>
+<h2>どこまで学ぶか</h2>
+<div class="tw"><table>
+<thead><tr><th>目的</th><th>必要な範囲</th></tr></thead><tbody>
+<tr><td>会社の資料を読む</td><td><b>図の読み方で足ります</b></td></tr>
+<tr><td>業務で集計と図を作る</td><td>ツールの操作</td></tr>
+<tr><td>可視化を職種とする</td><td>①〜⑥を体系的に</td></tr>
+</tbody></table></div>
+<p><b>求人によって、求められる範囲が違います。</b></p>
+<p><b>「データの可視化」と書かれていても、集計が中心の業務</b>と、<b>指標の設計から担う業務</b>では、必要なものが違います。</p>
+<p><b>求人票の仕事内容の欄で確認</b>してください。</p>
+<p><b>読み方は</b><a href="senko-sagasu-kyujinhyo.html">求人票の読み方｜どこを見れば実態が分かるか</a><b>に整理しています。</b></p>
+<h2>どの転職先で効くか</h2>
+<div class="tw"><table>
+<thead><tr><th>領域</th><th>使いどころ</th></tr></thead><tbody>
+<tr><td>① 自治体向けの事業</td><td><b>公的なデータの扱いが分かる</b></td></tr>
+<tr><td>② 調査・分析</td><td>図の設計</td></tr>
+<tr><td>③ 事業の企画</td><td>指標の設計</td></tr>
+<tr><td>④ 管理部門</td><td>定期の報告</td></tr>
+<tr><td>⑤ 広報</td><td>対外の発信</td></tr>
+</tbody></table></div>
+<p><b>①について。</b></p>
+<p><b>自治体を顧客とする事業では、公表されているデータを使う場面</b>があります。</p>
+<p><b>どの資料に何が載っているか、定義や公表の時期がどうなっているか。</b></p>
+<p><b>この理解は、外から入った人には時間がかかります。</b></p>
+<p><b>探し方は</b><a href="senko-sagasu-kyujin.html">公務員経験が活きる求人の探し方</a><b>に整理しています。</b></p>
+<h2>面接で聞かれやすいこと</h2>
+<div class="tw"><table>
+<thead><tr><th>質問の趣旨</th><th>用意しておくこと</th></tr></thead><tbody>
+<tr><td>作った資料と相手</td><td><b>誰に向けたものか</b></td></tr>
+<tr><td>図の選び方</td><td>目的と図の対応</td></tr>
+<tr><td>定義の確認</td><td>何を確かめたか</td></tr>
+<tr><td>更新の仕組み</td><td>再現できる形か</td></tr>
+<tr><td>使えるツール</td><td><b>正確に、範囲を明示して</b></td></tr>
+</tbody></table></div>
+<p><b>5行目です。</b></p>
+<p><b>できないことを書くと、入社後に困ります。</b></p>
+<p><b>「表計算で、関数と集計の機能を用いた集計・作図の経験あり」</b>という形で、範囲を明示してください。</p>
+<p><a href="../apply.html">経験の言い換えから相談する</a>こともできます。</p>
+<h2>学ぶ前に考えること</h2>
+<div class="tw"><table>
+<thead><tr><th>確認すること</th><th>内容</th></tr></thead><tbody>
+<tr><td>① すでにある経験</td><td><b>公表資料、統計、財政の資料</b></td></tr>
+<tr><td>② 目的</td><td>読むためか、業務で担うためか</td></tr>
+<tr><td>③ 応募したい求人の範囲</td><td>集計中心か、設計からか</td></tr>
+<tr><td>④ 期限</td><td>応募の時期までに間に合うか</td></tr>
+</tbody></table></div>
+<p><b>なお、ツールを覚えれば転職できる、という関係にはありません。</b></p>
+<p><b>誰に向けて、何を、どう伝えてきたか</b>が、評価の対象です。</p>
+<h2>よくある失敗</h2>
+<p><b>1. 「グラフを作成」とだけ書く</b></p>
+<p><b>目的と相手</b>を書いてください。</p>
+<p><b>2. 翻訳した経験に触れない</b></p>
+<p><b>最も価値がある部分</b>です。</p>
+<p><b>3. 図の選び方を書かない</b></p>
+<p><b>目的と図の対応</b>が判断です。</p>
+<p><b>4. 定義の確認に触れない</b></p>
+<p><b>数字の扱いの確かさ</b>が伝わります。</p>
+<p><b>5. 更新の仕組みを書かない</b></p>
+<p><b>再現できる形か</b>が見られます。</p>
+<p><b>6. 使えるツールを広く書く</b></p>
+<p><b>範囲を明示</b>してください。</p>
+<p><b>7. 求人の範囲を確認しない</b></p>
+<p><b>集計中心か設計からか</b>で違います。</p>
+<p><b>8. ツールを覚えれば進めると考える</b></p>
+<p><b>誰に何を伝えたか</b>が評価の対象です。</p>
+<aside class="blk blk--insight"><p class="blk__lbl">エージェントベストの見解</p><p>ここまで技術の話をしておいて逆のことを言いますが、<b>可視化で最も避けたいのは、誤解を招く図です。</b>面談で拝見していると、<b>見栄えを優先して、軸の起点を動かす、単位を揃えない、期間を切り取る</b>といった図を作ってしまう例があります。行政では、<b>公表する資料であるため、この操作は許されません。</b>軸を動かせば差が大きく見え、期間を切り取れば傾向が変わる。<b>受け取る側の判断を誤らせます。</b>そして、<b>民間でも、これは信用の問題です。</b>社内の報告で誤った印象を与えれば、判断が狂う。顧客への資料で誇張すれば、後から問題になる。<b>行政で身につけた「正確に見せる」感覚は、そのまま価値になります。</b>書類には、<b>「比較の条件を揃えたうえで作図」</b>と書いてください。<b>見栄えより、正確さを優先してきた</b>ことは、強みとして書けます。在職中でも、情報収集だけでも構いません。</p></aside>
+<p><a href="https://line.me/R/ti/p/@697nxhbt" target="_blank" rel="noopener noreferrer">LINEで短く聞くこともできます</a></p>
+<h2>まとめ</h2>
+<ul>
+<li><b>地方自治法第243条の3第1項</b>は、<b>毎年二回以上、歳入歳出予算の執行状況、財産、地方債及び一時借入金の現在高その他財政に関する事項を住民に公表しなければならない</b>としています</li>
+<li><b>公表の相手は住民</b>です。<b>専門的な数字を、専門でない相手に伝わる形にする</b>経験を積んでいます</li>
+<li>可視化の工程は、<b>①目的 ②収集 ③整形 ④図の選択 ⑤見せ方 ⑥更新</b>です</li>
+<li>行政で身につくのは、<b>出所と定義の確認、経年と他団体の比較、翻訳、公表の配慮</b>です</li>
+<li>足すのは、<b>ツール、整形、更新の自動化、相手に合わせること、指標の設計</b>です</li>
+<li><b>翻訳した経験</b>を書いてください。ツールの名前より評価されます</li>
+<li><b>誤解を招く図を作らない</b>という感覚は、そのまま価値になります</li>
+</ul>
+<p>行政が相手の求人もまとまっています。<a href="../?gov=1">行政が相手の求人を見てみる</a>。</p>
+<h2>よくある質問</h2>
+<h3>専用のツールを使ったことがありません</h3>
+<p><b>表計算の経験から書いてください。</b>集計、関数、作図、様式の整備。<b>これらは、業務としては同じ作業</b>です。求人票の応募条件で、<b>特定のツールが必須とされているか</b>を確認してください。「必須」であれば、その経験が要ります。「歓迎」であれば、<b>表計算の経験で応募できる</b>ことがあります。なお、<b>ツールは考え方が共通している</b>部分があります。「表計算で、集計の手順を様式として整備した経験があります」と書けば、<b>判断の材料になります。</b>できないことは書かないでください。</p>
+<h3>財政の数字を扱っていませんでした</h3>
+<p><b>扱った数字で書いてください。</b>申請や届出の件数、利用者の数、事業の実績、検査の件数。<b>どの分野でも、数字を集計し、公表や報告に使っている</b>はずです。書き方は、<b>「◯◯の実績について、年◯回の集計を担当し、推移を図に整理して報告に使用」</b>という形です。<b>財政に限りません。</b>なお、<b>公表された資料に載った数字</b>であれば、<b>作成に関わった事実を書ける</b>ことがあります。判断に迷う場合は、<b>内容に触れず、作業の説明にとどめて</b>ください。</p>
+<h3>指標の設計とは、何をするのですか</h3>
+<p><b>「何を見れば判断できるか」を決める作業</b>です。たとえば、窓口の業務であれば、<b>処理の件数だけでなく、待ち時間、再来の割合、不備の率</b>を見ることで、状況が分かります。<b>どれを見るかを決めるのが、設計</b>です。行政でも、<b>事業の評価の指標を設定した経験</b>があれば、同じ作業です。「事業の評価にあたり、◯◯を指標として設定し、年度ごとに測定」という形で書けます。<b>数字を並べるのではなく、判断に使える数字を選ぶ。</b><b>この考え方が、民間でも求められます。</b></p>
+<section class="sources"><h2>出典</h2><ol><li><a href="https://laws.e-gov.go.jp/law/322AC0000000067" target="_blank" rel="noopener noreferrer">地方自治法 第243条の3（財政状況の公表等）｜e-Gov法令検索</a></li></ol></section>
+</article>
+<div class="author"><p class="author__lbl">監修</p>
+<p class="author__name"><a href="https://www.agent-best.net/profile" target="_blank" rel="noopener">松岡 良次</a></p>
+<p class="author__bio">株式会社エージェントベスト代表。大手人材会社およびスタートアップ人材企業にて、IT・スタートアップ・メガベンチャー企業の採用支援に従事。独立後はIT・スタートアップ・コンサル領域に特化し、20〜30代のキャリア支援を行う。（厚生労働大臣許可 13-ユ-316964）</p></div>
+<section class="related"><h2>関連する記事</h2><ul><li><a href="skill-bunsho.html">ビジネス文書とメール｜公文書との作法の違い</a></li><li><a href="skill-databunseki.html">データ分析｜EBPMの延長で身につける範囲</a></li><li><a href="skill-eigo.html">英語｜必要になる職種と、不要な職種</a></li><li><a href="skill-eigyokiso.html">営業の基礎｜行政営業で公務員経験が効く理由</a></li><li><a href="skill-gyomuflow.html">業務フローの作成｜要件定義の前段として</a></li><li><a href="skill-keiyakusho.html">契約書の読み方｜自治体の契約実務との差</a></li></ul></section>
+<section class="cta"><h2>「自分の経験に、どこで値段が付くのか」から相談できます</h2>
+<p>在職中でも、情報収集だけでも構いません。応募する求人が決まっていない段階のほうが、むしろ整理する意味があります。ご利用はすべて無料です。</p>
+<div class="cta__btns"><a class="cta__pri" href="../apply.html">無料で相談する</a>
+<a class="cta__sec" href="../">求人を見る</a>
+<a class="cta__sec" href="https://line.me/R/ti/p/@697nxhbt" target="_blank" rel="noopener noreferrer" data-line-cta="media-cta">LINEで相談する</a></div></section>
+</main>
+<footer class="site-foot"><div class="foot__inner">
+<strong>財政課転職 — 公務員のための求人サイト</strong><br>
+<span>人材紹介サービス「エージェントベスト」が運営しています。ご利用はすべて無料です（紹介手数料は採用企業からいただきます）。</span>
+<nav class="foot__links"><a href="../">求人を探す</a><a href="../zukan.html">部署別 仕事ガイド</a>
+<a href="./">記事</a><a href="../apply.html">転職支援サービス</a><a href="../terms.html">利用規約</a>
+<a href="../privacy.html">プライバシーポリシー（人材紹介）</a><a href="../privacy-ad.html">プライバシーポリシー（求人広告）</a>
+<a href="https://www.agent-best.net/" target="_blank" rel="noopener">運営会社サイト</a></nav>
+<p class="foot__copy">&copy; 株式会社エージェントベスト</p></div></footer>
+</body>
+</html>
