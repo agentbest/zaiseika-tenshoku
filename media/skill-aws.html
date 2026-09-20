@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+<title>AWS認定｜クラウド調達の経験を技術側へ広げる｜財政課転職</title>
+<link rel="icon" href="../assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="../assets/icon-192.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="canonical" href="https://zaiseikatenshoku.com/media/skill-aws.html">
+<meta name="description" content="長期継続契約の定めを出発点に、クラウドの調達の経験と、技術側へ広げるときの考え方を整理しました。">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="財政課転職">
+<meta property="og:title" content="AWS認定｜クラウド調達の経験を技術側へ広げる">
+<meta property="og:description" content="長期継続契約の定めを出発点に、クラウドの調達の経験と、技術側へ広げるときの考え方を整理しました。">
+<meta property="og:url" content="https://zaiseikatenshoku.com/media/skill-aws.html">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://zaiseikatenshoku.com/assets/ogp.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zaiseikatenshoku.com/assets/ogp.jpg">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1XXMP8Y1B4"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1XXMP8Y1B4');</script>
+<style>:root{--paper:#F5F7FA;--surface:#FFFFFF;--surface-2:#EEF1F6;--ink:#161A26;--ink-2:#4A5261;--ink-3:#6E7686;
+--line:#DDE2EA;--line-2:#EAEEF4;--accent:#1E3A8A;--accent-soft:#E9EDF9;--accent-ink:#1B3374;
+--cta:#D6362A;--cta-ink:#FFF;--cta-hover:#B22A20;--r-card:14px;--r-pill:999px;
+--sans:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","YuGothic","Noto Sans JP",Meiryo,system-ui,sans-serif;--maxw:800px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#0F131A;--surface:#171C26;--surface-2:#1F2530;
+--ink:#EAEEF5;--ink-2:#B4BCCA;--ink-3:#828C9E;--line:#2A313D;--line-2:#232A35;--accent:#8FA6F0;
+--accent-soft:#1B2338;--accent-ink:#BFCDFA;--cta:#D6392C;--cta-hover:#E44D3D}}
+:root[data-theme="dark"]{--paper:#0F131A;--surface:#171C26;--surface-2:#1F2530;--ink:#EAEEF5;--ink-2:#B4BCCA;
+--ink-3:#828C9E;--line:#2A313D;--line-2:#232A35;--accent:#8FA6F0;--accent-soft:#1B2338;--accent-ink:#BFCDFA;--cta:#D6392C;--cta-hover:#E44D3D}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.9;-webkit-text-size-adjust:100%}
+a{color:var(--accent-ink)}
+.topbar{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.topbar__inner{max-width:1080px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:16px}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;color:inherit}
+.brand__mark{width:30px;height:30px;border-radius:7px}
+.brand__name{display:block;font-weight:800;font-size:15px;letter-spacing:.02em}
+.brand__sub{display:block;font-size:10px;color:var(--ink-3);letter-spacing:.12em}
+.gnav{display:flex;gap:16px;margin-left:auto;flex-wrap:wrap}
+.gnav a{font-size:13.5px;color:var(--ink-2);text-decoration:none}
+.gnav a[aria-current]{color:var(--accent-ink);font-weight:700}
+.btn-head{background:var(--cta);color:var(--cta-ink);text-decoration:none;font-size:13px;font-weight:700;padding:8px 14px;border-radius:var(--r-pill);white-space:nowrap}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:22px 16px 56px}
+.crumb{font-size:12px;color:var(--ink-3);margin-bottom:14px}
+.crumb a{color:var(--ink-3)}
+.post__eyebrow{display:inline-block;font-size:11.5px;letter-spacing:.08em;color:var(--accent-ink);background:var(--accent-soft);padding:4px 10px;border-radius:var(--r-pill);margin:0 0 10px}
+h1{font-size:27px;line-height:1.5;letter-spacing:.01em;margin:0 0 12px}
+.post__meta{font-size:12px;color:var(--ink-3);margin:0 0 26px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+h2{font-size:20px;line-height:1.55;margin:38px 0 12px;padding-left:11px;border-left:4px solid var(--accent)}
+h3{font-size:16.5px;margin:26px 0 8px}
+p{margin:0 0 16px}
+ul,ol{margin:0 0 18px;padding-left:1.35em}
+li{margin-bottom:7px}
+.tw{overflow-x:auto;margin:0 0 20px}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--surface-2);font-weight:700}
+.blk{border-radius:var(--r-card);padding:16px 18px;margin:24px 0}
+.blk p:last-child{margin-bottom:0}
+.blk__lbl{font-size:11.5px;letter-spacing:.08em;font-weight:800;margin:0 0 7px}
+.blk--insight{background:var(--accent-soft);border:1px solid var(--accent)}
+.blk--insight .blk__lbl{color:var(--accent-ink)}
+.blk--note{background:var(--surface-2);border:1px solid var(--line)}
+.blk--note .blk__lbl{color:var(--ink-3)}
+.blk--cta{background:var(--surface);border:1px dashed var(--accent)}
+.sources{margin:34px 0 0;padding:15px 17px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card)}
+.sources h2{font-size:14px;margin:0 0 8px;padding:0;border:0}
+.sources ol{margin:0;font-size:13px;color:var(--ink-2)}
+.author{margin:30px 0 0;padding:16px 18px;border:1px solid var(--line);border-radius:var(--r-card);background:var(--surface)}
+.author__lbl{font-size:11px;letter-spacing:.1em;color:var(--ink-3);margin:0 0 3px}
+.author__name{font-size:16px;font-weight:800;margin:0 0 7px}
+.author__bio{font-size:13px;line-height:1.85;color:var(--ink-2);margin:0}
+.related{margin:34px 0 0}
+.related h2{font-size:15px;margin:0 0 10px;padding:0;border:0}
+.related ul,.idx__grp ul{list-style:none;padding:0;margin:0}
+.related li,.idx__grp li{border-bottom:1px solid var(--line-2);padding:9px 0;margin:0}
+.related a,.idx__grp a{font-size:14px;text-decoration:none}
+.related a:hover,.idx__grp a:hover{text-decoration:underline}
+.cta{margin:38px 0 0;padding:22px 20px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);text-align:center}
+.cta h2{font-size:18px;margin:0 0 9px;padding:0;border:0}
+.cta p{font-size:13.5px;color:var(--ink-2)}
+.cta__btns{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+.cta__pri{background:var(--cta);color:#fff;text-decoration:none;font-weight:700;padding:11px 22px;border-radius:var(--r-pill)}
+.cta__sec{background:var(--surface-2);color:var(--ink);text-decoration:none;font-weight:700;padding:11px 18px;border-radius:var(--r-pill)}
+.site-foot{background:var(--surface);border-top:1px solid var(--line);margin-top:44px}
+.foot__inner{max-width:1080px;margin:0 auto;padding:24px 16px;font-size:12.5px;color:var(--ink-2)}
+.foot__links{display:flex;flex-wrap:wrap;gap:12px;margin:11px 0}
+.foot__links a{color:var(--ink-2);text-decoration:none}
+.foot__copy{color:var(--ink-3);margin:0}
+.idx__grp{margin:30px 0 0}
+.idx__grp h2{font-size:17px}
+.idx__cnt{font-size:12px;color:var(--ink-3);font-weight:400;margin-left:8px}
+@media(max-width:640px){h1{font-size:22px}h2{font-size:18px}.wrap{padding:18px 14px 44px}}</style>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"AWS認定｜クラウド調達の経験を技術側へ広げる","description":"長期継続契約の定めを出発点に、クラウドの調達の経験と、技術側へ広げるときの考え方を整理しました。","mainEntityOfPage":"https://zaiseikatenshoku.com/media/skill-aws.html","author":{"@type":"Organization","name":"株式会社エージェントベスト"},"publisher":{"@type":"Organization","name":"財政課転職"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"財政課転職","item":"https://zaiseikatenshoku.com/"},{"@type":"ListItem","position":2,"name":"記事","item":"https://zaiseikatenshoku.com/media/"},{"@type":"ListItem","position":3,"name":"AWS認定｜クラウド調達の経験を技術側へ広げる","item":"https://zaiseikatenshoku.com/media/skill-aws.html"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"調達の担当でしたが、技術は分かりません","acceptedAnswer":{"@type":"Answer","text":"業務側の職種を探してください。「要件の整理」「導入の支援」「調達の支援」「業務側の担当」と書かれた求人では、技術の実装の経験が必須でないことがあります。とくに、自治体を顧客とする事業では、発注する側の考え方を知っている人が求められます。仕様の作り方、予算の時期、受入れの確認の観点。これらは、調達を経験していないと分かりません。扱いは要件定義｜各課ヒアリングの経験をそのまま職務にするに整理しています。技術が分からないことを理由に、候補を狭めないでください。"}},{"@type":"Question","name":"資格を取ると、技術側に移れますか","acceptedAnswer":{"@type":"Answer","text":"資格だけでは、判断されません。技術側の求人では、構築や運用の実務の経験が問われることがあります。資格は、知識の裏づけとして併記するものです。なお、用語を揃える目的であれば、学ぶ意味があります。技術の担当者との会話で、何ができて何が難しいかの見当がつくようになります。判断の目安は、求人票の応募条件です。「実務経験◯年以上」と書かれている場合、資格では代えられません。目的を決めてから、検討してください。"}},{"@type":"Question","name":"庁内の環境で試せません","acceptedAnswer":{"@type":"Answer","text":"個人の環境で、業務の情報を用いずに試してください。⚠ 庁内のデータや権限を個人の環境で使わないでください。規程に反するおそれがあります。判断に迷う場合は、所属の情報の担当に確認してください。なお、試した内容は、書類に書けます。「個人の環境で、◯◯の構成を作成し、動作を確認」という形です。業務の情報を使っていないことを明記してください。扱いはSQL｜データを自分で取り出せることの価値にも整理しています。"}}]}]</script>
+</head>
+<body>
+<header class="topbar"><div class="topbar__inner">
+<a class="brand" href="../" aria-label="財政課転職トップ">
+<img class="brand__mark" src="../assets/mark.png" alt="" aria-hidden="true">
+<span><span class="brand__name">財政課転職</span><span class="brand__sub">PUBLIC &rarr; PRIVATE</span></span></a>
+<nav class="gnav" aria-label="メインメニュー">
+<a href="../">求人を探す</a>
+<a href="../zukan.html">部署別 仕事ガイド</a>
+<a href="./" aria-current="page">記事</a>
+<a href="../apply.html">転職支援サービス</a></nav>
+<a class="btn-head" href="../apply.html">無料で相談する</a></div></header>
+<main class="wrap">
+<nav class="crumb"><a href="../">財政課転職</a> &rsaquo; <a href="./">記事</a> &rsaquo; 資格・スキル</nav>
+<article class="post">
+<p class="post__eyebrow">資格・スキル / 資格</p>
+<h1>AWS認定｜クラウド調達の経験を技術側へ広げる</h1>
+<p class="post__meta">2026年9月時点の公開情報にもとづきます。制度や募集要項は変わることがあるため、手続きの前に各機関の公式情報をご確認ください。</p>
+<p><b>システムの調達に関わってきた方から、「技術側に移れるか」</b>というご相談を伺います。</p>
+<p><b>調達の経験は、そのまま材料になります。</b></p>
+<p>この記事では、<b>接続の仕方</b>と、<b>資格の位置づけ</b>を扱います。</p>
+<p><b>⚠ 試験の内容・区分・実施の方法は、提供する事業者の公表を確認してください。</b><b>この記事では、個別の内容には触れません。</b></p>
+<h2>役務の提供は、複数年の契約になることがあります</h2>
+<p><b>地方自治法第234条の3</b>です。</p>
+<p>&gt; <b>普通地方公共団体は、第二百十四条の規定にかかわらず、翌年度以降にわたり、電気、ガス若しくは水の供給若しくは電気通信役務の提供を受ける契約又は不動産を借りる契約その他政令で定める契約を締結することができる。</b>この場合においては、<b>各年度におけるこれらの経費の予算の範囲内においてその給付を受けなければならない。</b></p>
+<p><b>翌年度以降にわたる契約を締結できる場合</b>が定められています。</p>
+<p><b>そして、各年度の予算の範囲内で給付を受けるという条件</b>が付いています。</p>
+<p><b>利用した分を継続して支払う形の役務</b>は、この枠組みと関わります。</p>
+<p><b>つまり、クラウドの調達では、契約の形と予算の年度の関係を整理する必要がある</b>ということです。</p>
+<p><b>この整理を経験している方は、民間でも重宝されます。</b></p>
+<h2>調達の経験が接続する部分</h2>
+<div class="tw"><table>
+<thead><tr><th>経験</th><th>技術側での使いどころ</th></tr></thead><tbody>
+<tr><td>① 要件の整理</td><td><b>何を求めるかを言葉にする</b></td></tr>
+<tr><td>② 費用の見積り</td><td>構成と利用の量の想定</td></tr>
+<tr><td>③ 契約の形</td><td>期間、更新、解約</td></tr>
+<tr><td>④ 情報の取扱い</td><td>保管の場所、権限、監査</td></tr>
+<tr><td>⑤ 移行の計画</td><td>現行からの切替え</td></tr>
+<tr><td>⑥ 受入れの確認</td><td>完了の条件</td></tr>
+</tbody></table></div>
+<p><b>②と④が、クラウドの調達に特有</b>です。</p>
+<p><b>②について。</b></p>
+<p><b>使った分に応じて費用が変わる形では、利用の量の想定が必要</b>です。</p>
+<p><b>この見積りを経験していることは、そのまま説明できます。</b></p>
+<p><b>④について。</b></p>
+<p><b>保管の場所、アクセスの権限、記録の保存。</b></p>
+<p><b>行政では、規程に沿って確認してきた</b>はずです。</p>
+<p><b>扱いは</b><a href="skill-spreadsheet.html">Googleスプレッドシート｜庁内のExcel運用との違い</a><b>にも整理しています。</b></p>
+<h2>資格の位置づけ</h2>
+<div class="tw"><table>
+<thead><tr><th>状況</th><th>扱い</th></tr></thead><tbody>
+<tr><td>① 応募条件に記載がある</td><td><b>満たす材料になる</b></td></tr>
+<tr><td>② 技術の実務がない</td><td>到達を示すものが他にない</td></tr>
+<tr><td>③ 調達の実務がある</td><td><b>経験のほうが具体</b></td></tr>
+<tr><td>④ 用語を揃えたい</td><td>学ぶ意味があります</td></tr>
+<tr><td>⑤ 目的が曖昧</td><td>優先順位を下げてください</td></tr>
+</tbody></table></div>
+<p><b>②と④が、取る理由になります。</b></p>
+<p><b>④について。</b></p>
+<p><b>技術の担当者と話す際に、言葉が通じる</b>ようになります。</p>
+<p><b>何ができて、何が難しいかの見当がつくと、要件の整理が速くなります。</b></p>
+<p><b>なお、取れば転職できる、という関係にはありません。</b></p>
+<p><b>何を調達し、どう確認したか</b>が、評価の対象です。</p>
+<h2>書き方の例</h2>
+<p><b>悪い例</b></p>
+<p>&gt; システムの調達を担当しました。</p>
+<p><b>良い例</b></p>
+<p>&gt; ◯◯システムの更改にあたり、<b>業務側の担当として要件の整理から受入れの確認までを担当。</b>現行の業務の工程を整理し、<b>求める機能と性能を仕様に記載。</b><b>契約の形と年度の予算の関係を整理し、長期継続契約による調達の可否を確認。</b><b>保管の場所と権限の設定、記録の保存について、所属の規程と照らして条件を設定。</b>移行にあたり、<b>データの件数を移行の前後で突き合わせ。</b></p>
+<p><b>「立場」「要件」「契約の整理」「規律」「検証」</b>が入っています。</p>
+<p><b>基本の型は</b><a href="senko-shokumu-kihon.html">公務員の職務経歴書｜民間で読まれる形にする基本</a><b>に整理しています。</b></p>
+<aside class="blk blk--insight"><p class="blk__lbl">エージェントベストの見解</p><p>クラウドの調達について、<b>面談でお伝えしているのが「契約と予算の整理を書いてください」</b>という点です。技術の話は、<b>技術の担当者のほうが詳しい</b>場合があります。一方、<b>契約の形と予算の年度の関係を整理できる人は、多くありません。</b>利用した分に応じて費用が変わる役務を、<b>年度で区切られた予算の枠組みでどう扱うか。</b>複数年の契約にするのか、年度ごとにするのか。<b>増減が生じたときに、どう処理するか。</b><b>この整理は、行政の調達を経験した人の強み</b>です。そして、<b>自治体を顧客とする事業では、この論点が必ず出ます。</b>相手の予算の仕組みが分からないと、提案の形が決まりません。書類には、<b>「契約の形と年度の予算の関係を整理し、調達の方法を決定」</b>と書いてください。<b>技術の深さで勝負しなくても、書ける材料があります。</b>ご利用は無料です（紹介手数料は採用企業の負担です）。</p></aside>
+<h2>技術側へ広げるときの順序</h2>
+<div class="tw"><table>
+<thead><tr><th>順</th><th>やること</th></tr></thead><tbody>
+<tr><td>1</td><td><b>立場を決める</b>（業務側か、技術側か）</td></tr>
+<tr><td>2</td><td>調達の経験を整理する</td></tr>
+<tr><td>3</td><td>用語を揃える</td></tr>
+<tr><td>4</td><td>応募条件を確認する</td></tr>
+<tr><td>5</td><td>必要なら、資格を検討する</td></tr>
+</tbody></table></div>
+<p><b>1が起点</b>です。</p>
+<p><b>業務側の担当として要件を整理する職務</b>と、<b>技術側で構築や運用を担う職務</b>では、求められるものが違います。</p>
+<p><b>求人票の仕事内容の欄で確認</b>してください。</p>
+<p><b>読み方は</b><a href="senko-sagasu-kyujinhyo.html">求人票の読み方｜どこを見れば実態が分かるか</a><b>に整理しています。</b></p>
+<h2>書くときの注意</h2>
+<div class="tw"><table>
+<thead><tr><th>注意</th><th>内容</th></tr></thead><tbody>
+<tr><td>① 取得の年を書く</td><td>いつ取ったか</td></tr>
+<tr><td>② 区分を正確に</td><td><b>段階がある場合</b></td></tr>
+<tr><td>③ 立場を明記</td><td>業務側か、技術側か</td></tr>
+<tr><td>④ できる範囲を限定</td><td><b>構築・運用まで含めない</b></td></tr>
+<tr><td>⑤ 実務と併記</td><td>調達の経験と組み合わせる</td></tr>
+</tbody></table></div>
+<p><b>④が重要</b>です。</p>
+<p><b>資格を書いたことで、構築まで担えると受け取られる</b>ことがあります。</p>
+<p><b>「業務側の担当として、要件の整理と受入れの確認を担当」</b>と、<b>立場を明記</b>してください。</p>
+<h2>在職中にできること</h2>
+<div class="tw"><table>
+<thead><tr><th>項目</th><th>内容</th></tr></thead><tbody>
+<tr><td>調達の経験の整理</td><td><b>要件、契約、費用、移行</b></td></tr>
+<tr><td>規程の確認</td><td>情報の取扱い、権限</td></tr>
+<tr><td>用語の学習</td><td>長く続ける前提で</td></tr>
+<tr><td>求人を読む</td><td>週に30分</td></tr>
+</tbody></table></div>
+<p><b>1行目を先にしてください。</b></p>
+<p><b>手元にある材料を整理すると、足りないものが分かります。</b></p>
+<p><b>2行目について。</b></p>
+<p><b>情報の取扱いの規程は、応募先でも同じ論点になります。</b></p>
+<p><b>どの条件で確認したかを覚えておいてください。</b><b>面接で問われることがあります。</b></p>
+<p><a href="../apply.html">経験の言い換えから相談する</a>こともできます。</p>
+<h2>面接で聞かれやすいこと</h2>
+<div class="tw"><table>
+<thead><tr><th>質問の趣旨</th><th>用意しておくこと</th></tr></thead><tbody>
+<tr><td>担当した調達</td><td><b>規模、期間、形</b></td></tr>
+<tr><td>要件の整理</td><td>どう決めたか</td></tr>
+<tr><td>費用の見積り</td><td>想定の置き方</td></tr>
+<tr><td>情報の取扱い</td><td>規程との照合</td></tr>
+<tr><td>立場</td><td><b>業務側か、技術側か</b></td></tr>
+</tbody></table></div>
+<p><b>5行目です。</b></p>
+<p><b>なお、特定の事業者が分かる説明は避けてください。</b></p>
+<p><b>守秘の義務は、退職した後も続きます。</b></p>
+<h2>よくある失敗</h2>
+<p><b>1. 技術の深さで勝負しようとする</b></p>
+<p><b>契約と予算の整理</b>が書ける材料です。</p>
+<p><b>2. 立場を書かない</b></p>
+<p><b>業務側か技術側か</b>を明記してください。</p>
+<p><b>3. 要件の整理を書かない</b></p>
+<p><b>言葉にする作業</b>が中心です。</p>
+<p><b>4. 費用の見積りに触れない</b></p>
+<p><b>利用の量の想定</b>が特有の論点です。</p>
+<p><b>5. 情報の取扱いを書かない</b></p>
+<p><b>規程との照合</b>は経験です。</p>
+<p><b>6. できる範囲を広く書く</b></p>
+<p><b>構築まで含めない</b>でください。</p>
+<p><b>7. 資格だけを書く</b></p>
+<p><b>調達の経験</b>と組み合わせてください。</p>
+<p><b>8. 取れば転職できると考える</b></p>
+<p><b>何を調達し、どう確認したか</b>が評価の対象です。</p>
+<aside class="blk blk--insight"><p class="blk__lbl">エージェントベストの見解</p><p>ここまで「調達の経験が書ける」という話をしておいて逆のことを言いますが、<b>技術側に移るなら、手を動かす機会を作ってください。</b>面談で拝見していると、<b>調達の経験だけで技術側の求人に応募し、面接で具体を問われて止まる方</b>がいらっしゃいます。要件を整理できることと、<b>実際に構成を組めることは別</b>です。そして、<b>技術側の求人では、後者が問われます。</b>対処は2つです。1つは、<b>業務側の職種を選ぶこと。</b>要件の整理、導入の支援、調達の支援であれば、<b>いまの経験がそのまま使えます。</b>もう1つは、<b>個人の環境で試すこと。</b>⚠ ただし、<b>庁内のデータや権限を使わないでください。</b>公開されている範囲で、自分の環境で試す形にしてください。<b>どちらを選ぶかを、先に決めてください。</b>在職中でも、情報収集だけでも構いません。</p></aside>
+<p><a href="https://line.me/R/ti/p/@697nxhbt" target="_blank" rel="noopener noreferrer">LINEで短く聞くこともできます</a></p>
+<h2>まとめ</h2>
+<ul>
+<li><b>地方自治法第234条の3</b>は、<b>翌年度以降にわたる契約を締結できる場合</b>を定め、<b>各年度の予算の範囲内で給付を受ける</b>としています</li>
+<li><b>クラウドの調達では、契約の形と予算の年度の関係を整理する必要</b>があります</li>
+<li>接続するのは、<b>要件の整理、費用の見積り、契約の形、情報の取扱い、移行の計画、受入れの確認</b>です</li>
+<li><b>費用の見積り（利用の量の想定）と、情報の取扱い</b>が、この分野に特有の論点です</li>
+<li><b>資格は、用語を揃える目的か、技術の実務がない場合に材料</b>になります</li>
+<li><b>立場（業務側か技術側か）を明記</b>してください</li>
+<li><b>技術側に移るなら、手を動かす機会を作って</b>ください</li>
+</ul>
+<p>行政が相手の求人もまとまっています。<a href="../?gov=1">行政が相手の求人を見てみる</a>。</p>
+<h2>よくある質問</h2>
+<h3>調達の担当でしたが、技術は分かりません</h3>
+<p><b>業務側の職種を探してください。</b>「要件の整理」「導入の支援」「調達の支援」「業務側の担当」と書かれた求人では、<b>技術の実装の経験が必須でないことがあります。</b>とくに、<b>自治体を顧客とする事業では、発注する側の考え方を知っている人</b>が求められます。仕様の作り方、予算の時期、受入れの確認の観点。<b>これらは、調達を経験していないと分かりません。</b>扱いは<a href="skill-yoken.html">要件定義｜各課ヒアリングの経験をそのまま職務にする</a>に整理しています。<b>技術が分からないことを理由に、候補を狭めないでください。</b></p>
+<h3>資格を取ると、技術側に移れますか</h3>
+<p><b>資格だけでは、判断されません。</b>技術側の求人では、<b>構築や運用の実務の経験</b>が問われることがあります。資格は、<b>知識の裏づけとして併記するもの</b>です。なお、<b>用語を揃える目的であれば、学ぶ意味があります。</b>技術の担当者との会話で、<b>何ができて何が難しいかの見当がつく</b>ようになります。判断の目安は、<b>求人票の応募条件</b>です。「実務経験◯年以上」と書かれている場合、資格では代えられません。<b>目的を決めてから、検討してください。</b></p>
+<h3>庁内の環境で試せません</h3>
+<p><b>個人の環境で、業務の情報を用いずに試してください。</b>⚠ <b>庁内のデータや権限を個人の環境で使わないでください。</b>規程に反するおそれがあります。<b>判断に迷う場合は、所属の情報の担当に確認</b>してください。なお、<b>試した内容は、書類に書けます。</b>「個人の環境で、◯◯の構成を作成し、動作を確認」という形です。<b>業務の情報を使っていないことを明記</b>してください。扱いは<a href="skill-sql.html">SQL｜データを自分で取り出せることの価値</a>にも整理しています。</p>
+<section class="sources"><h2>出典</h2><ol><li><a href="https://laws.e-gov.go.jp/law/322AC0000000067" target="_blank" rel="noopener noreferrer">地方自治法 第234条の3（長期継続契約）｜e-Gov法令検索</a></li></ol></section>
+</article>
+<div class="author"><p class="author__lbl">監修</p>
+<p class="author__name"><a href="https://www.agent-best.net/profile" target="_blank" rel="noopener">松岡 良次</a></p>
+<p class="author__bio">株式会社エージェントベスト代表。大手人材会社およびスタートアップ人材企業にて、IT・スタートアップ・メガベンチャー企業の採用支援に従事。独立後はIT・スタートアップ・コンサル領域に特化し、20〜30代のキャリア支援を行う。（厚生労働大臣許可 13-ユ-316964）</p></div>
+<section class="related"><h2>関連する記事</h2><ul><li><a href="skill-eisei.html">衛生管理者｜総務・人事からの転職で使える場面</a></li><li><a href="skill-fukushi.html">社会福祉士・ケアマネジャー｜福祉職の転職で</a></li><li><a href="skill-gkentei.html">G検定・E資格｜DX推進の経験と組み合わせる</a></li><li><a href="skill-hoken-kanri.html">保育士・保健師の資格を民間でどう使うか</a></li><li><a href="skill-mos.html">MOS｜取るべき人と、取らなくてよい人</a></li><li><a href="skill-oyojoho.html">応用情報技術者｜SIer・ITコンサルへの転職で</a></li></ul></section>
+<section class="cta"><h2>「自分の経験に、どこで値段が付くのか」から相談できます</h2>
+<p>在職中でも、情報収集だけでも構いません。応募する求人が決まっていない段階のほうが、むしろ整理する意味があります。ご利用はすべて無料です。</p>
+<div class="cta__btns"><a class="cta__pri" href="../apply.html">無料で相談する</a>
+<a class="cta__sec" href="../">求人を見る</a>
+<a class="cta__sec" href="https://line.me/R/ti/p/@697nxhbt" target="_blank" rel="noopener noreferrer" data-line-cta="media-cta">LINEで相談する</a></div></section>
+</main>
+<footer class="site-foot"><div class="foot__inner">
+<strong>財政課転職 — 公務員のための求人サイト</strong><br>
+<span>人材紹介サービス「エージェントベスト」が運営しています。ご利用はすべて無料です（紹介手数料は採用企業からいただきます）。</span>
+<nav class="foot__links"><a href="../">求人を探す</a><a href="../zukan.html">部署別 仕事ガイド</a>
+<a href="./">記事</a><a href="../apply.html">転職支援サービス</a><a href="../terms.html">利用規約</a>
+<a href="../privacy.html">プライバシーポリシー（人材紹介）</a><a href="../privacy-ad.html">プライバシーポリシー（求人広告）</a>
+<a href="https://www.agent-best.net/" target="_blank" rel="noopener">運営会社サイト</a></nav>
+<p class="foot__copy">&copy; 株式会社エージェントベスト</p></div></footer>
+</body>
+</html>
