@@ -84,6 +84,13 @@ const PUB_RE  = /GovTech|行政DX|自治体DX|公共政策|パブリックセク
 const EXP_RE  = /公務員|官公庁出身|自治体出身|行政経験|役所/g;
 /* 財政課・会計課の経験がそのまま値段になる求人。トップの特集に出すための印 */
 const FIN_RE  = /公会計|地方財政|地方交付税|予算編成|財政|CFO|経営企画|管理会計|財務|経理|IR|資金調達|補助金|交付金/;
+/* 一覧の先頭に固定する求人（求人DBのレコードID）。並べた順に上から出る。
+   既定の並び（新着順・おすすめ順）のときだけ効く。年収順・企業名順を選んだ人には効かせない。
+   2026-10-01 松岡さん指示: WiseVine の 行政DXパートナー（ドメインスペシャリスト・FO は求人DBに登録後に足す） */
+const PINNED_JOBS = [
+  'recGuUBtR6RnQIcyH', // WiseVine 行政DXパートナー（技術営業/プリセールス）
+  'recl9wJk6fSmoGli2', // WiseVine 行政DXパートナー（Sales）
+];
 function govScore(j){
   const hits = (s, re) => (String(s || '').match(re) || []).length;
   const head = [j.title, j.position, j.jobCategory, j.industry].filter(Boolean).join(' ');
@@ -109,6 +116,10 @@ function publicSectorOnly(jobs){
     kept.push(j);
   }
   kept.sort((a, b) => b.govScore - a.govScore);
+  /* 上位固定。PINNED_JOBS の並び順で一覧の先頭に出す（template.html の sortJobs が pin を見る） */
+  for(const j of kept){ const i = PINNED_JOBS.indexOf(j.id); if(i >= 0) j.pin = i + 1; }
+  const missing = PINNED_JOBS.filter(id => !kept.some(j => j.id === id));
+  if(missing.length) console.log(`⚠ 上位固定の求人が掲載対象にありません（求人DBで終了・削除されたかも）: ${missing.join(', ')}`);
   console.log(`公務員の経験が活きる求人だけに絞りました: ${jobs.length}件 → ${kept.length}件`
     + `（うち行政が相手と明記 ${kept.filter(j => j.govFront).length}件 / 財政・会計が効く ${kept.filter(j => j.finFit).length}件）`);
   if(!kept.length) console.log('⚠ 1件も残りませんでした。data/jobs.json が空か、点数の付け方が壊れています。');
@@ -247,7 +258,7 @@ function plainLead(src){
    template.html 側で展開する（JOBS の定義と JOBS.forEach の中）。 */
 const LIGHT_KEYS = ['id','company','position','title','employment','kubun','salaryMin','salaryMax','location',
   'jobCategory','industry','url','listedStatus','createdAt','gradYear','t','logo','employees','employeeCount','areas','remote','lead',
-  'govScore','govFront','finFit'];
+  'govScore','govFront','finFit','pin'];
 function lighten(full){
   const tagPath = path.join(dir, 'data', 'tags.json');
   const tagIdx = new Map();

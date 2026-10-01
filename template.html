@@ -1995,6 +1995,8 @@ function sortJobs(arr){
   else if(state.sort==="salaryLow") a.sort((x,y)=>(x._skey<0?1e9:x._skey)-(y._skey<0?1e9:y._skey));
   else if(state.sort==="company") a.sort((x,y)=>String(x.company||"").localeCompare(String(y.company||""),"ja"));
   else a.sort((x,y)=>y._skey-x._skey);
+  /* 上位固定（rebuild.js の PINNED_JOBS）。既定の並びのときだけ先頭へ。sort は安定なので残りの順は崩れない */
+  if(state.sort==="new"||state.sort==="reco") a.sort((x,y)=>(x.pin||1e9)-(y.pin||1e9));
   return a;
 }
 
