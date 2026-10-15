@@ -14,7 +14,7 @@ const BASE_ID   = 'appYkc36EvioYoL1A';   // base「人材紹介事業」
 const TABLE_ID  = 'tblyPZZasXTM2tcrV';   // table「求人DB（求人票）」
 const dir = __dirname;
 
-/* ---------- トークンの取得（fetch-1day.js と同じ） ---------- */
+/* ---------- トークンの取得 ---------- */
 function findToken(){
   if(process.env.AIRTABLE_TOKEN) return process.env.AIRTABLE_TOKEN;
   const local = path.join(dir, 'airtable.local.json');

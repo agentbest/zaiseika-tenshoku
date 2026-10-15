@@ -118,7 +118,7 @@ out/{slug}.md を書く（data/article_plan.tsv の行を引く）
 2. 個人情報・フォーム・認証（マイページ、RLS、応募フォーム）
 3. 費用が発生する変更
 4. 既存ページ・求人データの削除や一括置換
-5. `template.html` / `apply-template.html` / `1day-template.html` の変更（＝求人サイト本体）
+5. `template.html` / `apply-template.html` の変更（＝求人サイト本体）
 6. 複数リポジトリへの一括変更
 
 **1回の実行でやること**
@@ -184,7 +184,7 @@ Sが終わったらAへ移る。
 
 ```
 template.html / apply-template.html / data/jobs.json を編集
-  → node rebuild.js      （index.html・apply.html・1day.html を再生成・件数を表示）
+  → node rebuild.js      （index.html・apply.html を再生成・件数を表示）
   → commit & push        （数十秒で反映）
 ```
 
@@ -192,7 +192,6 @@ template.html / apply-template.html / data/jobs.json を編集
 |---|---|---|
 | `index.html`（約5.4MB・gzip後1.6MB） | `template.html` | `__JOBS_DATA__` ＝ 中途求人5,700件超の**一覧用の項目だけ**（表形式 `{k,r}`・タグは番号）。本文は `data/jobs/<求人ID>.json` |
 | `apply.html`（約1.2MB） | `apply-template.html` | `__JOBS_MINI__` ＝ ID・企業名・職種名・年収**だけ**（表形式 `[id,会社名,職種名,年収]`） |
-| `1day.html` | `1day-template.html` | `__EVENTS_DATA__` |
 
 ⚠ **`apply.html` に求人データ全部を持たせない。** 申し込みフォームが必要なのは「どの求人から来たか」の
 見出しだけなので、`rebuild.js` が最小限に削って埋めている。全部入れると3.5MBのフォームになる。
@@ -212,7 +211,7 @@ node fetch-jobs.js  → data/jobs.json（全件・全項目・約56MB。⚠ .git
 node fetch-tags.js / fetch-logos.js / fetch-employees.js
 node rebuild.js     → index.html      … 一覧・検索・絞り込みに要る項目だけ（表形式）を埋め込む
                     → data/jobs/<求人ID>.json … 求人1件ずつの全項目（本文）。求人を開いたときに読む
-                    → apply.html / 1day.html
+                    → apply.html
 ```
 
 - **一覧側（`index.html` に内蔵）**: id・会社名・ポジション・雇用形態・年収・勤務地（70字まで）・職種・業界・URL・上場区分・掲載日・
@@ -225,31 +224,11 @@ node rebuild.js     → index.html      … 一覧・検索・絞り込みに要
 - `data/jobs/` は掲載中の中途求人だけ。`rebuild.js` が掲載終了ぶんのファイルを消す。
 - **タグの番号は `data/tags.json` の並び順**。`fetch-tags.js` を回して順番が変わったら、必ず `rebuild.js` も回す（番号がずれる）。
 
-## 1day選考会（`1day.html` ＋ 検索結果1位のPR枠）
+## 1day選考会 — 2026-10-16 に廃止（松岡さん指示）
 
-⚠ **2026-09-01に導線を作り替えた。** 開催数が少ないのにナビ・特集行・フッター・専用ページと4か所を
-占めていたため、**ナビ・一覧上部の特集行・フッターからは外し、検索結果の1位に固定で出るPR枠に一本化**した。
-専用ページ `1day.html` は残っていて、PR枠のリンク先になっている（ナビからは辿れない）。
-
-- PR枠は `template.html` の `prSlotHtml()`。**1ページ目のときだけ**先頭に差し込む。
-- 開催があるときは日程・参加企業を出して `1day.html` へ、無いときは「開催の案内を受け取る」で
-  `apply.html` へ送る（**常に表示する**）。
-- PR枠に出すデータは `rebuild.js` の `onedayMini()` が `__ONEDAY_MINI__` に差し込む（直近3件）。
-  **`data/1day.json` を更新したら `node rebuild.js` を回すこと。** 回さないとPR枠が古いままになる。
-
-
-開催情報は Airtable「1day選考会」`tbl1J80CGqiOTvuf7`。`node fetch-1day.js` → `data/1day.json` →
-`node rebuild.js` → `1day.html` の順。**求人と違い、取得は毎回 Airtable から手で回す。**
-
-- 「公開ステータス」が**非公開・未設定**の回は `fetch-1day.js` の時点で落ちる（＝サイトに出ない）。
-- ⚠ **このテーブルは shinsotsu.agent-best.net と共有している。**「区分」（2026-08-28追加・
-  `fldfhFRnZhuug3rl0`）で振り分ける。中途＝このサイト、新卒・インターン＝shinsotsu。
-  - `rebuild.js` の **`midCareerEvents()`** が中途以外を落とす。**shinsotsu 側には鏡写しの
-    `newGradOnly1day()` がある。片方だけ直すと、同じ回が両サイトに出る／どちらにも出ない。**
-  - **区分が空の回は中途扱い**（求人の `midCareerOnly()` と同じ既定）。ビルド時に回名を挙げて警告する。
-  - 記入例の行（非公開）に運用メモを入れてある。**複製したら区分を必ず見直すこと。**
-- 申し込みは Airtable フォーム `shr0K5l9MSiNMgUe6`（`applyUrl()` が回名と日付をプリフィル）。
-  ⚠ **shinsotsu 側はこのフォームを使わず、自前の `apply.html` に送っている。**
+`1day.html`・`1day-template.html`・`fetch-1day.js`・`data/1day.json`・検索結果1位のPR枠（`prSlotHtml()` / `__ONEDAY_MINI__`）を
+jobs・skill・shinsotsu・zaiseika-tenshoku の4サイトから削除した（zaiseika は 10/16 追加）。Airtable の「1day選考会」テーブル（tbl1J80CGqiOTvuf7）は 9/12 時点で既に無い。
+戻すときは 2026-10-15 以前のコミットから復元する。求人本文に「1Day選考会」と書かれている求人は求人データなので対象外。
 
 ## サイトの位置づけ・表記
 

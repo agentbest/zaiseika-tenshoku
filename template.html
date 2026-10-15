@@ -456,27 +456,6 @@
   .pager .gap{color:var(--ink-3); padding:0 2px; font-family:var(--mono)}
   .pager__nav{font-family:var(--sans)!important; font-weight:700}
 
-  /* 検索結果の1位に固定で出す1day選考会のPR枠。
-     ナビ・特集行から1dayを外した代わりに、ここが唯一の入口になっている。 */
-  .prslot{
-    position:relative; background:color-mix(in srgb,var(--accent) 5%, var(--surface));
-    border:1px solid color-mix(in srgb,var(--accent) 28%, var(--line));
-    border-radius:var(--r-card); padding:18px 22px 16px; min-width:0;
-  }
-  .prslot__top{display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:6px}
-  .prslot__lbl{
-    flex:none; font-size:10.5px; font-weight:800; letter-spacing:.08em; line-height:1;
-    padding:4px 7px; border-radius:4px; background:var(--accent); color:#fff;
-  }
-  .prslot__cat{font-size:12.5px; font-weight:700; color:var(--accent-ink); letter-spacing:.02em}
-  .prslot__title{margin:0 0 6px; font-size:17px; line-height:1.5}
-  .prslot__title a{color:var(--ink); text-decoration:none}
-  .prslot__title a:hover{text-decoration:underline; text-underline-offset:3px}
-  .prslot__desc{margin:0; color:var(--ink-2); font-size:13.5px; line-height:1.85}
-  .prslot__meta{display:flex; flex-wrap:wrap; gap:4px 10px; margin:10px 0 0; font-size:13px}
-  .prslot__meta dt{font-weight:700; color:var(--ink-3)}
-  .prslot__meta dd{margin:0; color:var(--ink-2)}
-  .prslot__act{margin-top:14px}
   .empty{text-align:center; padding:80px 20px; color:var(--ink-3)}
   .empty svg{color:var(--line); margin-bottom:14px}
   .empty h3{margin:0 0 6px; color:var(--ink-2); font-size:17px}
@@ -1335,34 +1314,10 @@
 /* rebuild.js は {k:[キー], r:[[値…]]} の表形式で埋める（キーの繰り返しを省くため）。ここでオブジェクトに戻す。
    タグは番号（t）で入っていて、TAGS の定義後（下の JOBS.forEach）で名前に戻す。 */
 const JOBS = (d=>{ if(Array.isArray(d)) return d; const k=d.k||[]; return (d.r||[]).map(row=>{ const o={}; k.forEach((key,i)=>{ const v=row[i]; if(v!==null&&v!==undefined&&v!=="") o[key]=v; }); return o; }); })(__JOBS_DATA__);
-/* 1day選考会は開催数が少ないので、専用ページをナビに置くのをやめ、
-   検索結果の1位に固定のPR枠として出している（ページ1のときだけ）。
-   開催がある回は日程を出し、無いときは案内を受け取る導線に切り替える。
-   ONEDAY は rebuild.js が data/1day.json から差し込む（直近3件・このサイトの区分のみ）。 */
-const ONEDAY = __ONEDAY_MINI__;
 /* タグの目録（name / slug / cat / desc）。data/tags.json ＝ node fetch-tags.js で取得。
    求人1件ずつのタグは j.tags（タグ名の配列）。突き合わせは**タグ名の完全一致**。
    ⚠ 件数はここに無い。中途だけに絞ったあとの件数はこの下で数える。 */
 const TAGS = __TAGS_DATA__;
-function prSlotHtml(){
-  const next = (ONEDAY && ONEDAY[0]) || null;
-  const link = next ? "1day.html" : "apply.html";
-  const cta  = next ? "開催予定を見る" : "開催の案内を受け取る";
-  const title = next ? (next.title || "1day選考会") : "1日で複数社、まとめて選考が進みます";
-  const desc = next
-    ? "1日で複数社の選考が進みます。日程・参加企業は詳細ページでご確認ください。"
-    : "書類選考や日程調整を挟まずに、1日で複数社と会える選考会です。次回の開催が決まりしだい、ご登録いただいた方へご案内します。";
-  const meta = next
-    ? `<dl class="prslot__meta"><dt>次回開催</dt><dd>${esc(next.date||"日程調整中")}</dd>${next.company?`<dt>参加企業</dt><dd>${esc(next.company)}</dd>`:""}</dl>`
-    : "";
-  return `<article class="prslot">
-    <div class="prslot__top"><span class="prslot__lbl">PR</span><span class="prslot__cat">1day選考会</span></div>
-    <h3 class="prslot__title"><a href="${link}">${esc(title)}</a></h3>
-    <p class="prslot__desc">${desc}</p>
-    ${meta}
-    <div class="prslot__act"><a class="btn-detail" href="${link}">${cta}</a></div>
-  </article>`;
-}
 
 
 /* ---------- 応募・相談の導線設定 ----------
@@ -1483,11 +1438,6 @@ document.addEventListener("click",e=>{
   else if(host.endsWith("calendly.com")) track("consult_click", {location:label});
   else if(/^(pm|eng|student)\.agent-best\.net$/.test(host)) track("lp_click", {lp:host, link_text:label});
   else if(host.endsWith("agent-best.net")) track("corporate_click", {link_text:label});
-},true);
-/* サイト内の特集ページ（1day選考会）への遷移を計測（相対リンクなので上の一括計測に乗らない） */
-document.addEventListener("click",e=>{
-  const a=e.target.closest("a[href='1day.html']"); if(!a) return;
-  track("feature_click", {feature:"1day", link_text:(a.textContent||"").trim().slice(0,60)});
 },true);
 let currentJob={};
 
@@ -2260,7 +2210,7 @@ function renderPage(){
   const total=pageCount();
   if(page>total) page=total;
   const start=(page-1)*perPage;
-  $("#grid").innerHTML = (page === 1 ? prSlotHtml() : "") + filtered.slice(start, start+perPage).map(rowHtml).join("");
+  $("#grid").innerHTML = filtered.slice(start, start+perPage).map(rowHtml).join("");
   renderPager();
   paintFavs();
 }

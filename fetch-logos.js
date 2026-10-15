@@ -26,7 +26,7 @@ const F_LOGO   = 'ロゴ';                       // fld32OKkkAS1lJbr8
 const OUT_DIR  = path.join(__dirname, 'assets', 'logos');
 const dir = __dirname;
 
-/* ---------- トークンの取得（fetch-1day.js と同じ） ---------- */
+/* ---------- トークンの取得 ---------- */
 function findToken(){
   if(process.env.AIRTABLE_TOKEN) return process.env.AIRTABLE_TOKEN;
 
