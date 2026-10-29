@@ -166,7 +166,15 @@ shinsotsu の `static-pages.js`（もとは jobsite）を移植した。`node re
 - 掲載が終わった求人のページは `rebuild.js` のたびに消える（404）
 - 検索画面で求人を開くと canonical が `/job/<求人ID>/` に切り替わり、シェア・LINE・メールの求人URLも静的ページになる（`setCanonical()` / `jobUrl()`）
 - ⚠ ヘッダー・フッターは `template.html` と `job-template.html` の2か所。直すときは両方
-- ⚠ このサイトには毎朝の自動更新が無い。求人を入れ替えたら手元で `node rebuild.js` → push（求人ページも一緒に入れ替わる）
+- 求人ページは毎朝の自動更新（下の 4-5）で求人と一緒に入れ替わる
+
+### 4-5. 毎朝の自動更新（2026-10-30〜）
+
+`.github/workflows/update-jobs.yml` が**毎朝 06:20 JST** に `fetch-jobs → fetch-tags → fetch-employees → rebuild` を回し、変更があれば commit & push する（jobsite 06:00・shinsotsu 06:10 と同じ形）。それまでは手動で、9/6 のデータのまま止まっていた（119件。初回の取り直しで194件）。
+- Secret は `AIRTABLE_TOKEN`。無いと毎朝失敗する
+- ⚠ **`fetch-jobs.js` は jobsite と同じファイル（鏡写し）。** 2026-10-30 に jobsite の最新版へ差し替えた（媒体の控え・面接確約の除去、募集停止・「サイトに掲載しない」の除外、勤務地（都道府県）など。それまでの版には無く、取り直すと募集停止の求人が出る状態だった）。jobsite 側を直したらこちらにも写す
+- 掲載が20%以上減ると push しない。`fetch-logos.js` は回さない（jobsite と同じ理由）
+- 記事の自動運転と同じリポジトリなので、push の前に `git pull --rebase` している。手元で作業する前も `git pull`
 
 ### 5. jobsite・shinsotsu との関係
 
