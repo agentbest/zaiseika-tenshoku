@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /apply.html
+Disallow: /?
 
 Sitemap: https://zaiseikatenshoku.com/sitemap.xml
+Sitemap: https://zaiseikatenshoku.com/sitemap-jobs.xml

@@ -151,6 +151,23 @@ Sが終わったらAへ移る。
 - 別端末と衝突したら `git pull --rebase`。**force push はしない**
 - 判断に迷うことが出たら、**書かずに止めて報告する**
 
+### 4-4. 求人ページ（検索エンジン向け・2026-10-29）
+
+それまで求人は検索画面の中（`?job=`）でしか開けず、Google からは求人が1件も見えていなかった（Search Console の「代替ページ」約120件は `?job=` のURL）。
+shinsotsu の `static-pages.js`（もとは jobsite）を移植した。`node rebuild.js` の最後で動く。
+
+| 生成物 | 中身 |
+|---|---|
+| `job/<求人ID>/index.html` | 求人1件のページ（`job-template.html`）。JobPosting 構造化データ・求人ごとの title / OGP・「ほかの公務員経験が活きる求人」6件（同じ会社 → govScore の高い順） |
+| `sitemap-jobs.xml` | 求人ページだけのサイトマップ。**記事の `sitemap.xml` は `build-articles.js` が作るので別ファイルにした**（2本とも Search Console に送信済み） |
+| `robots.txt` | `/apply.html` と `/?`（`?job=`・`?q=`・`?gov=` 付きトップ）を巡回させない。`sitemap.xml` と `sitemap-jobs.xml` の両方を書く |
+| `assets/site.css` | `template.html` の `<style>` の写し |
+
+- 掲載が終わった求人のページは `rebuild.js` のたびに消える（404）
+- 検索画面で求人を開くと canonical が `/job/<求人ID>/` に切り替わり、シェア・LINE・メールの求人URLも静的ページになる（`setCanonical()` / `jobUrl()`）
+- ⚠ ヘッダー・フッターは `template.html` と `job-template.html` の2か所。直すときは両方
+- ⚠ このサイトには毎朝の自動更新が無い。求人を入れ替えたら手元で `node rebuild.js` → push（求人ページも一緒に入れ替わる）
+
 ### 5. jobsite・shinsotsu との関係
 
 **求人データは Airtable の同じテーブルを3サイトで共有している。**

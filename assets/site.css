@@ -1,0 +1,1007 @@
+:root{
+    --paper:#F5F7FA; --surface:#FFFFFF; --surface-2:#EEF1F6;
+    --ink:#161A26; --ink-2:#4A5261; --ink-3:#6E7686;
+    --line:#DDE2EA; --line-2:#EAEEF4;
+    --accent:#1E3A8A; --accent-strong:#2A4CAE; --accent-soft:#E9EDF9; --accent-ink:#1B3374;
+    --gold:#C1841F; --gold-soft:#FBF1DE;
+    --good:#0F7B57; --good-soft:#E2F2EB;
+    --focus:#2A4CAE;
+    --cta:#D6362A; --cta-ink:#FFFFFF; --cta-hover:#B22A20;
+    --shadow-sm:0 1px 2px rgba(21,26,40,.05), 0 1px 3px rgba(21,26,40,.06);
+    --shadow-md:0 4px 12px rgba(21,26,40,.08), 0 2px 4px rgba(21,26,40,.05);
+    --shadow-lg:0 24px 60px rgba(16,20,34,.22);
+    --r-card:14px; --r-input:10px; --r-pill:999px;
+    --sans:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","YuGothic","Noto Sans JP",Meiryo,system-ui,sans-serif;
+    --mono:ui-monospace,"SF Mono","Cascadia Mono","Roboto Mono",Consolas,monospace;
+    --maxw:1300px;
+  }
+
+  /* ===== このサイト独自：庁内の経験を民間語に読み替える表 ===== */
+  .xlate{margin:22px 0 10px}
+  .xlate__h{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin:0 0 4px}
+  .xlate__h h2{font-size:20px; line-height:1.4; margin:0; letter-spacing:.01em}
+  .xlate__h p{margin:0; font-size:13px; color:var(--ink-3)}
+  .xlate__grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:10px; margin-top:14px}
+  .xcard{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-card); padding:14px 15px; box-shadow:var(--shadow-sm)}
+  .xcard__from{font-size:12px; color:var(--ink-3); letter-spacing:.04em}
+  .xcard__to{display:flex; align-items:flex-start; gap:8px; margin-top:6px; font-size:15px; font-weight:700; line-height:1.5; color:var(--accent-ink)}
+  .xcard__to svg{flex:none; margin-top:3px; color:var(--accent)}
+  .xcard p{margin:8px 0 0; font-size:13px; line-height:1.75; color:var(--ink-2)}
+  .xlate__foot{display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-top:14px;
+    background:var(--accent-soft); border-radius:var(--r-card); padding:12px 15px; font-size:13.5px; color:var(--accent-ink)}
+  .xlate__foot a{color:var(--accent-ink); font-weight:700}
+  @media (prefers-color-scheme:dark){
+    :root{
+      --paper:#0F131A; --surface:#171C26; --surface-2:#1F2530;
+      --ink:#EAEEF5; --ink-2:#B4BCCA; --ink-3:#828C9E;
+      --line:#2A313D; --line-2:#232A35;
+      --accent:#8FA6F0; --accent-strong:#AFC0F8; --accent-soft:#1B2338; --accent-ink:#BFCDFA;
+      --gold:#E0AE5E; --gold-soft:#2A2416;
+      --good:#4FBE8E; --good-soft:#12241B;
+      --focus:#8FA6F0;
+      --cta:#D6392C; --cta-ink:#FFFFFF; --cta-hover:#E44D3D;
+      --shadow-sm:0 1px 2px rgba(0,0,0,.3); --shadow-md:0 6px 18px rgba(0,0,0,.4);
+      --shadow-lg:0 30px 70px rgba(0,0,0,.6);
+    }
+  }
+  :root[data-theme="light"]{
+    --paper:#F5F7FA; --surface:#FFFFFF; --surface-2:#EEF1F6;
+    --ink:#161A26; --ink-2:#4A5261; --ink-3:#6E7686;
+    --line:#DDE2EA; --line-2:#EAEEF4;
+    --accent:#1E3A8A; --accent-strong:#2A4CAE; --accent-soft:#E9EDF9; --accent-ink:#1B3374;
+    --gold:#C1841F; --gold-soft:#FBF1DE; --good:#0F7B57; --good-soft:#E2F2EB; --focus:#2A4CAE;
+    --cta:#D6362A; --cta-ink:#FFFFFF; --cta-hover:#B22A20;
+    --shadow-sm:0 1px 2px rgba(21,26,40,.05),0 1px 3px rgba(21,26,40,.06);
+    --shadow-md:0 4px 12px rgba(21,26,40,.08),0 2px 4px rgba(21,26,40,.05);
+    --shadow-lg:0 24px 60px rgba(16,20,34,.22);
+  }
+  :root[data-theme="dark"]{
+    --paper:#0F131A; --surface:#171C26; --surface-2:#1F2530;
+    --ink:#EAEEF5; --ink-2:#B4BCCA; --ink-3:#828C9E;
+    --line:#2A313D; --line-2:#232A35;
+    --accent:#8FA6F0; --accent-strong:#AFC0F8; --accent-soft:#1B2338; --accent-ink:#BFCDFA;
+    --gold:#E0AE5E; --gold-soft:#2A2416; --good:#4FBE8E; --good-soft:#12241B; --focus:#8FA6F0;
+    --cta:#D6392C; --cta-ink:#FFFFFF; --cta-hover:#E44D3D;
+    --shadow-sm:0 1px 2px rgba(0,0,0,.3); --shadow-md:0 6px 18px rgba(0,0,0,.4);
+    --shadow-lg:0 30px 70px rgba(0,0,0,.6);
+  }
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--sans); font-size:15px; line-height:1.7;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    font-feature-settings:"palt" 1;
+  }
+  a{color:inherit}
+  button{font-family:inherit; cursor:pointer}
+  :focus-visible{outline:2px solid var(--focus); outline-offset:2px; border-radius:4px}
+  ::selection{background:var(--accent-soft); color:var(--accent-ink)}
+  .mono{font-family:var(--mono); font-variant-numeric:tabular-nums}
+
+  /* ---------- Top bar ---------- */
+  .topbar{
+    position:sticky; top:0; z-index:40;
+    background:color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter:saturate(180%) blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar__inner{
+    max-width:var(--maxw); margin:0 auto; padding:14px 24px;
+    display:flex; align-items:center; gap:20px;
+  }
+  .brand{display:flex; align-items:center; gap:11px; text-decoration:none; flex-shrink:0}
+  .brand__mark{width:auto; height:30px; flex-shrink:0}
+  .brand__name{font-weight:800; letter-spacing:.02em; font-size:16px; line-height:1.1}
+  .brand__sub{font-size:10.5px; letter-spacing:.22em; color:var(--ink-3); text-transform:uppercase; font-weight:600}
+  .brand__txt{display:flex; flex-direction:column; gap:2px}
+
+  .search{position:relative; flex:1; max-width:380px}
+  .search svg{position:absolute; left:14px; top:50%; transform:translateY(-50%); color:var(--ink-3); pointer-events:none}
+  .search input{
+    width:100%; padding:11px 14px 11px 42px; font-size:14.5px;
+    border:1px solid var(--line); border-radius:var(--r-pill);
+    background:var(--surface); color:var(--ink); transition:border-color .15s, box-shadow .15s;
+  }
+  .search input::placeholder{color:var(--ink-3)}
+  .search input:focus{outline:none; border-color:var(--accent); box-shadow:0 0 0 4px var(--accent-soft)}
+
+  .topbar__actions{display:flex; align-items:center; gap:8px; margin-left:auto}
+  .iconbtn{
+    display:inline-grid; place-items:center; width:40px; height:40px;
+    border:1px solid var(--line); border-radius:10px; background:var(--surface); color:var(--ink-2);
+    transition:background .15s, color .15s, border-color .15s;
+  }
+  .iconbtn:hover{background:var(--surface-2); color:var(--ink)}
+  .filter-toggle{display:none; align-items:center; gap:7px; padding:0 14px; width:auto; font-weight:700; font-size:13.5px}
+  .filter-toggle .badge{background:var(--accent); color:#fff; border-radius:999px; font-size:11px; padding:1px 7px; font-family:var(--mono)}
+
+  /* ---------- Layout ---------- */
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px}
+
+  /* ---------- ヒーロー（アイキャッチ） ----------
+     写真の上に藍のスクリムを重ねる。人物は右、コピーと検索は左。
+     ライト・ダークどちらでも同じ見え方になるよう、中は常に白文字で組む。 */
+  .hero{
+    position:relative; margin:18px 0 0; border-radius:18px; overflow:hidden;
+    background:#111726; box-shadow:var(--shadow-md); isolation:isolate;
+  }
+  .hero__bg{
+    position:absolute; inset:0; width:100%; height:100%;
+    object-fit:cover; object-position:50% 46%;
+  }
+  .hero__scrim{
+    position:absolute; inset:0;
+    background:
+      linear-gradient(96deg, rgba(14,18,48,.95) 0%, rgba(14,18,48,.90) 32%, rgba(16,21,54,.62) 58%, rgba(20,26,62,.36) 100%),
+      linear-gradient(180deg, rgba(10,13,36,.34) 0%, rgba(10,13,36,0) 44%);
+  }
+  .hero__inner{position:relative; padding:44px 44px 38px; max-width:660px; color:#fff}
+  .hero__eyebrow{
+    display:inline-flex; align-items:center; gap:8px; margin:0 0 12px;
+    font-size:11.5px; font-weight:800; letter-spacing:.14em; color:rgba(255,255,255,.78);
+  }
+  .hero__eyebrow::before{content:""; width:22px; height:2px; background:#FF8A72; border-radius:2px}
+  .hero h1{
+    margin:0 0 12px; font-size:clamp(1.62rem,3.3vw,2.35rem); line-height:1.24;
+    letter-spacing:.01em; font-weight:800; text-wrap:balance; color:#fff;
+    text-shadow:0 2px 18px rgba(8,10,28,.45);
+  }
+  .hero h1 em{font-style:normal; color:#FF8A72}
+  .hero__sub{
+    margin:0 0 20px; font-size:15px; line-height:1.75; color:rgba(255,255,255,.90);
+    max-width:34em; text-shadow:0 1px 12px rgba(8,10,28,.4);
+  }
+  /* ヒーロー内の検索。押した内容はヘッダーの #q に流し込む */
+  .hero__search{display:flex; gap:8px; margin:0 0 14px}
+  .hero__search .field{position:relative; flex:1 1 auto; min-width:0}
+  .hero__search .field svg{
+    position:absolute; left:14px; top:50%; transform:translateY(-50%);
+    color:var(--ink-3); pointer-events:none;
+  }
+  .hero__search input{
+    width:100%; padding:13px 14px 13px 42px; font:inherit; font-size:15px;
+    border-radius:var(--r-input); border:1px solid transparent;
+    background:#fff; color:#161A26; box-shadow:0 6px 20px rgba(8,10,28,.22);
+  }
+  .hero__search input::placeholder{color:#8A8E9E}
+  .hero__search input:focus{outline:none; box-shadow:0 0 0 4px rgba(214,54,42,.45), 0 6px 20px rgba(8,10,28,.22)}
+  .hero__search button{
+    flex:none; padding:13px 22px; border:none; border-radius:var(--r-input);
+    background:var(--cta); color:var(--cta-ink); font-weight:800; font-size:15px;
+    box-shadow:0 6px 20px rgba(8,10,28,.22); transition:background .15s;
+  }
+  .hero__search button:hover{background:var(--cta-hover)}
+  .hero__quick{display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:0 0 20px}
+  .hero__quick-lbl{font-size:12px; font-weight:700; color:rgba(255,255,255,.72); letter-spacing:.06em}
+  .hero__quick button{
+    padding:6px 14px; border-radius:var(--r-pill); font-size:13.5px; font-weight:700;
+    color:#fff; background:rgba(255,255,255,.13); border:1px solid rgba(255,255,255,.34);
+    backdrop-filter:blur(4px); transition:background .15s, border-color .15s;
+  }
+  .hero__quick button:hover{background:rgba(255,255,255,.24); border-color:rgba(255,255,255,.6)}
+  .hero__stats{
+    display:flex; flex-wrap:wrap; gap:10px 30px; padding-top:18px;
+    border-top:1px solid rgba(255,255,255,.22);
+  }
+  .hero__stats div{display:flex; align-items:baseline; gap:7px}
+  .hero__stats b{
+    font-family:var(--mono); font-variant-numeric:tabular-nums;
+    font-size:21px; font-weight:700; color:#FFFFFF; line-height:1.2;
+  }
+  .hero__stats span{font-size:12.5px; color:rgba(255,255,255,.72)}
+
+  .intro{padding:20px 0 22px}
+  .intro p{margin:0; color:var(--ink-2); font-size:15px; max-width:60ch}
+  .intro .note{
+    display:inline-flex; align-items:center; gap:8px; margin-top:12px;
+    padding:7px 14px; border-radius:var(--r-pill);
+    background:var(--surface); border:1px solid var(--line);
+    color:var(--ink); font-size:14px; line-height:1.5; max-width:100%;
+  }
+  .intro .note b{color:var(--ink); font-weight:800}
+  .intro .note svg{flex:none; color:var(--ink-3)}
+
+  /* 特集ページへの導線 */
+
+  .layout{display:grid; grid-template-columns:288px 1fr; gap:34px; padding-bottom:80px; align-items:start}
+  /* grid/flex の子は既定で min-width:auto のため、長い社名などで横スクロールが出る。明示的に潰す */
+  .layout > *{min-width:0}
+
+  /* ---------- Filters ---------- */
+  .filters{position:sticky; top:84px; max-height:calc(100vh - 104px); overflow-y:auto; padding-right:4px}
+  .filters__foot{display:none}
+  .filters::-webkit-scrollbar{width:8px}
+  .filters::-webkit-scrollbar-thumb{background:var(--line); border-radius:4px}
+  .fgroup{border-bottom:1px solid var(--line-2); padding:16px 2px}
+  .fgroup:first-child{padding-top:2px}
+  .fgroup__head{display:flex; align-items:baseline; justify-content:space-between; gap:8px; margin-bottom:11px}
+  .fgroup__title{font-size:12px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-3)}
+  .fgroup__clear{font-size:11.5px; color:var(--accent); background:none; border:none; padding:0; opacity:0; pointer-events:none; transition:opacity .15s}
+  .fgroup.has-sel .fgroup__clear{opacity:1; pointer-events:auto}
+  /* タグのカテゴリは数が多いので折りたたむ。開きっぱなしだと左サイドバーが延々と続く */
+  .fgroup--fold{padding:0}
+  .fgroup--fold>summary{list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:8px; padding:15px 2px}
+  .fgroup--fold>summary::-webkit-details-marker{display:none}
+  .fgroup--fold>summary:hover .fgroup__title{color:var(--ink-2)}
+  .fgroup--fold>summary:focus-visible{outline:2px solid var(--focus); outline-offset:2px; border-radius:6px}
+  .fgroup__sum-r{display:flex; align-items:center; gap:7px; flex:none}
+  .fgroup__n{font-family:var(--mono); font-size:11px; color:var(--ink-3)}
+  .fgroup__badge{font-family:var(--mono); font-size:11px; background:var(--accent); color:#fff; border-radius:999px; padding:1px 7px}
+  .fgroup__chev{color:var(--ink-3); transition:transform .18s}
+  .fgroup--fold[open]>summary .fgroup__chev{transform:rotate(180deg)}
+  .fgroup__fold-body{padding:0 2px 16px}
+  .fgroup--fold .facet-list{max-height:280px}
+  /* いまの条件では0件になる選択肢。押しても結果が変わらないので押せなくする。
+     消さずに残すのは、その条件が「無い」のか「今の条件では0件」なのかを見分けられるようにするため。 */
+  .opt.is-zero{opacity:.45; cursor:default}
+  .opt.is-zero:hover{background:none}
+  .opt.is-zero .lbl{color:var(--ink-3)}
+  .fchip:disabled{opacity:.45; cursor:default}
+  .fchip:disabled:hover{border-color:var(--line)}
+  .fchip .cnt{font-family:var(--mono); font-size:11px; color:var(--ink-3)}
+
+  /* 大分類→中分類の2段。親そのものが絞り込みの値（親を押す＝配下すべて） */
+  .trow{display:flex; align-items:center; gap:2px}
+  .trow .opt{flex:1; min-width:0}
+  .tkid{flex:none; width:26px; height:26px; display:grid; place-items:center; background:none; border:none; color:var(--ink-3); border-radius:6px; cursor:pointer}
+  .tkid:hover{background:var(--surface-2); color:var(--ink-2)}
+  .tkid .fgroup__chev{transition:transform .18s}
+  .tkid[aria-expanded="true"] .fgroup__chev{transform:rotate(180deg)}
+  .tkids{margin:0 0 4px 26px; border-left:1px solid var(--line-2); padding-left:7px}
+  .opt--p .lbl{font-weight:700}
+  .opt--c .lbl{font-size:13px; color:var(--ink-2)}
+  .tnode.hidden{display:none}
+  .tnode.is-zero .tkid{opacity:.45}
+
+  .facet-search{width:100%; padding:7px 11px; font-size:13px; border:1px solid var(--line); border-radius:8px; background:var(--surface); color:var(--ink); margin-bottom:9px}
+  .facet-search:focus{outline:none; border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft)}
+  .facet-list{display:flex; flex-direction:column; gap:1px; max-height:236px; overflow-y:auto; margin:0 -4px; padding:0 4px}
+  .facet-list.scroll::-webkit-scrollbar{width:7px}
+  .facet-list.scroll::-webkit-scrollbar-thumb{background:var(--line); border-radius:4px}
+  .opt{display:flex; align-items:center; gap:9px; padding:6px 7px; border-radius:8px; cursor:pointer; transition:background .12s}
+  .opt:hover{background:var(--surface-2)}
+  .opt input{position:absolute; opacity:0; width:0; height:0}
+  .opt .box{
+    width:17px; height:17px; border:1.5px solid var(--line); border-radius:5px; flex-shrink:0;
+    display:grid; place-items:center; background:var(--surface); transition:all .12s; color:#fff;
+  }
+  .opt .box svg{width:11px; height:11px; opacity:0; transform:scale(.6); transition:.12s}
+  .opt input:checked + .box{background:var(--accent); border-color:var(--accent)}
+  .opt input:checked + .box svg{opacity:1; transform:scale(1)}
+  .opt input:focus-visible + .box{box-shadow:0 0 0 3px var(--accent-soft)}
+  .opt .lbl{flex:1; font-size:13.5px; color:var(--ink); line-height:1.35; min-width:0}
+  .opt .cnt{font-family:var(--mono); font-size:11.5px; color:var(--ink-3); font-variant-numeric:tabular-nums}
+  .opt.hidden{display:none}
+
+  .chip-row{display:flex; flex-wrap:wrap; gap:7px}
+  .fchip{
+    padding:6px 13px; border:1px solid var(--line); border-radius:var(--r-pill); background:var(--surface);
+    font-size:13px; color:var(--ink-2); transition:all .12s; user-select:none;
+  }
+  .fchip:hover{border-color:var(--ink-3)}
+  .fchip[aria-pressed="true"]{background:var(--accent-soft); border-color:var(--accent); color:var(--accent-ink); font-weight:700}
+
+  /* 年収は下限・上限の2つのプルダウンで絞る。上は2,000万円で頭打ち（それ以上は「2,000万円以上」に畳む） */
+  .salrange{display:flex; align-items:center; gap:7px; margin-top:10px}
+  .salrange select{
+    flex:1 1 0; min-width:0; padding:8px 26px 8px 10px; font-size:13px; font-family:inherit; line-height:1.4;
+    border:1px solid var(--line); border-radius:9px; color:var(--ink); appearance:none; cursor:pointer;
+    background:var(--surface) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236E7686' stroke-width='2.5'><path d='M6 9l6 6 6-6'/></svg>") no-repeat right 8px center;
+  }
+  .salrange select:focus{outline:none; border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft)}
+  .salrange select.is-set{border-color:var(--accent); color:var(--accent-ink); font-weight:700}
+  .salrange__sep{flex:none; font-size:12.5px; color:var(--ink-3)}
+
+  /* ---------- Results ---------- */
+  .resbar{display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-bottom:16px}
+  .rescount{font-size:14px; color:var(--ink-2)}
+  .rescount b{font-family:var(--mono); font-size:19px; color:var(--ink); font-weight:800; margin-right:1px}
+  .sortsel{margin-left:auto; display:flex; align-items:center; gap:8px}
+  .sortsel label{font-size:12px; color:var(--ink-3); font-weight:600}
+  .sortsel select{
+    padding:8px 30px 8px 12px; font-size:13.5px; border:1px solid var(--line); border-radius:9px;
+    background:var(--surface) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236E7686' stroke-width='2.5'><path d='M6 9l6 6 6-6'/></svg>") no-repeat right 10px center;
+    color:var(--ink); appearance:none; cursor:pointer; font-family:inherit;
+  }
+  .sortsel select:focus{outline:none; border-color:var(--accent)}
+
+  .active-chips{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px}
+  .active-chips:empty{display:none}
+  .achip{display:inline-flex; align-items:center; gap:6px; padding:5px 8px 5px 12px; background:var(--accent-soft); color:var(--accent-ink); border-radius:var(--r-pill); font-size:12.5px; font-weight:600}
+  .achip button{background:none; border:none; color:var(--accent-ink); display:grid; place-items:center; padding:2px; border-radius:50%; opacity:.7}
+  .achip button:hover{opacity:1; background:color-mix(in srgb,var(--accent) 18%, transparent)}
+  .clear-all{font-size:12.5px; color:var(--ink-3); background:none; border:none; text-decoration:underline; text-underline-offset:2px}
+  .clear-all:hover{color:var(--ink)}
+
+  /* ---------- 求人リスト（1件1行の横長カード） ---------- */
+  .joblist{display:flex; flex-direction:column; gap:14px}
+  .jrow{
+    position:relative; background:var(--surface); border:1px solid var(--line);
+    border-radius:var(--r-card); padding:20px 22px 18px; min-width:0;
+    transition:border-color .15s, box-shadow .15s;
+  }
+  .jrow:hover{border-color:color-mix(in srgb,var(--accent) 32%, var(--line)); box-shadow:var(--shadow-sm)}
+  .jrow__top{display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:5px; padding-right:44px}
+  .jrow__new{
+    flex:none; font-size:10.5px; font-weight:800; letter-spacing:.08em; line-height:1;
+    padding:4px 7px; border-radius:5px; background:var(--cta); color:var(--cta-ink);
+  }
+  .jrow__co{font-size:13px; font-weight:700; color:var(--accent); min-width:0; overflow-wrap:anywhere}
+  /* 企業ロゴ。画像が無い企業は社名の頭文字タイルにする。
+     ⚠ 外部の favicon サービスは使わない（訪問者の閲覧履歴が第三者に渡るため）。 */
+  .jrow__logo{
+    flex:0 0 auto; width:28px; height:28px; border-radius:7px; overflow:hidden;
+    display:grid; place-items:center; border:1px solid var(--line-2);
+    background:var(--accent-soft); color:var(--accent);
+    font-size:12px; font-weight:800; line-height:1; letter-spacing:.01em;
+  }
+  .jrow__logo img{width:100%; height:100%; object-fit:contain; display:block; background:#fff}
+  /* ⚠ ロゴは正方形とは限らない。「ロゴス」のような横長のワードマークを28px角に
+     押し込むと高さ5pxほどになって読めない。画像のときだけタイルを横に伸ばす。
+     頭文字タイル（画像なし）は正方形のまま。 */
+  /* ⚠ 高さは % ではなく px で指定する。display:grid のタイルの中で img に height:100% を
+     使うと、親の高さが内容依存になって循環し、画像がタイルからはみ出す（実際に起きた）。 */
+  .jrow__logo--img{
+    display:flex; align-items:center; justify-content:center;
+    width:auto; min-width:28px; max-width:88px; padding:0 4px;
+    background:#fff; border-color:var(--line);
+  }
+  .jrow__logo--img img{width:auto; height:22px; max-width:80px}
+  /* 求人詳細のヘッダーでも同じタイルを使う（大きめ）。クラス名は jrow__ のままで、
+     カードと詳細で見た目がずれないようにしている。 */
+  .jrow__logo--lg{width:44px; height:44px; border-radius:10px; font-size:17px}
+  /* ⚠ width:auto をここにも書く。--lg（幅44px固定）が後ろにあるので、
+     書かないとタイルが44pxのまま画像だけ横にはみ出して切れる。 */
+  .jrow__logo--lg.jrow__logo--img{width:auto; min-width:44px; max-width:140px; padding:0 6px}
+  .jrow__logo--lg.jrow__logo--img img{height:34px; max-width:128px}
+  .jrow__ind{font-size:12px; color:var(--ink-3); min-width:0; overflow-wrap:anywhere}
+  .jrow__ind::before{content:"·"; margin-right:8px; color:var(--line)}
+  .jrow__title{margin:0 0 10px; padding-right:44px; font-size:18px; font-weight:800; line-height:1.5}
+  .jrow__title a{
+    color:var(--ink); text-decoration:none; overflow-wrap:anywhere;
+    background-image:linear-gradient(currentColor,currentColor); background-size:0 1.5px;
+    background-position:0 100%; background-repeat:no-repeat; transition:background-size .2s;
+  }
+  .jrow__title a:hover{color:var(--accent); background-size:100% 1.5px}
+  .jrow__desc{
+    margin:0 0 12px; font-size:13.5px; line-height:1.85; color:var(--ink-2);
+    display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+  }
+  .jrow__meta{
+    display:grid; grid-template-columns:auto 1fr; gap:5px 16px; margin:0 0 14px;
+    padding-top:12px; border-top:1px solid var(--line-2); font-size:13.5px;
+  }
+  .jrow__meta dt{color:var(--ink-3); font-weight:700; white-space:nowrap}
+  .jrow__meta dd{margin:0; color:var(--ink); min-width:0; overflow-wrap:anywhere}
+  .jrow__sal{font-family:var(--mono); font-weight:800; font-size:15px; color:var(--ink); font-variant-numeric:tabular-nums}
+  .jrow__act{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; align-items:center}
+  .card__tags{display:flex; flex-wrap:wrap; gap:6px; margin:0 0 12px}
+  /* 長い職種名でも切れないよう、はみ出す時だけ折り返す */
+  .tag{font-size:11.5px; padding:3px 9px; border-radius:6px; background:var(--surface-2); color:var(--ink-2); font-weight:600; max-width:100%; overflow-wrap:anywhere; line-height:1.5}
+  .tag--cat{background:var(--accent-soft); color:var(--accent-ink)}
+  .tag--remote{background:var(--good-soft); color:var(--good)}
+  /* 求人タグ。職種・雇用形態と見分けがつくよう、地ではなく枠線で出す */
+  .tag--jt{background:transparent; border:1px solid var(--line-2); color:var(--ink-3); font-weight:500}
+  /* 求人詳細のタグ一覧。押すとその条件で一覧に戻る */
+  .pd-tagcat{margin-top:14px}
+  .pd-tagcat__h{font-size:11.5px; font-weight:800; letter-spacing:.08em; color:var(--ink-3); margin:0 0 7px}
+  .pd-tagcat__row{display:flex; flex-wrap:wrap; gap:7px}
+  a.tag--link{text-decoration:none; transition:border-color .15s, color .15s}
+  a.tag--link:hover{border-color:var(--accent); color:var(--accent)}
+  .tag--kubun{background:var(--accent-soft); color:var(--accent-ink); font-weight:800}
+
+  /* ---------- ボタン（応募・詳細） ---------- */
+  .btn-apply{
+    display:inline-flex; align-items:center; justify-content:center; gap:7px; white-space:nowrap;
+    padding:11px 24px; border:0; border-radius:var(--r-pill);
+    background:var(--cta); color:var(--cta-ink); font-weight:800; font-size:14px;
+    text-decoration:none; box-shadow:var(--shadow-sm); transition:background .15s;
+  }
+  .btn-apply:hover{background:var(--cta-hover)}
+  .btn-apply svg{flex:none}
+  .btn-detail{
+    display:inline-flex; align-items:center; justify-content:center; gap:6px; white-space:nowrap;
+    padding:11px 20px; border:1px solid var(--line); border-radius:var(--r-pill);
+    background:var(--surface); color:var(--accent-ink); font-weight:700; font-size:14px; text-decoration:none;
+    transition:background .15s, border-color .15s;
+  }
+  .btn-detail:hover{background:var(--surface-2); border-color:var(--accent)}
+
+  /* ---------- ページネーション ---------- */
+  .pager{display:flex; justify-content:center; align-items:center; gap:6px; flex-wrap:wrap; margin:34px 0 0}
+  .pager button{
+    min-width:40px; height:40px; padding:0 11px; border:1px solid var(--line); border-radius:9px;
+    background:var(--surface); color:var(--ink-2); font-weight:700; font-size:13.5px;
+    font-family:var(--mono); font-variant-numeric:tabular-nums; transition:background .15s, border-color .15s;
+  }
+  .pager button:hover:not([disabled]):not([aria-current]){background:var(--surface-2); border-color:var(--ink-3)}
+  .pager button[aria-current="page"]{background:var(--accent); border-color:var(--accent); color:#fff}
+  .pager button[disabled]{opacity:.35; cursor:default}
+  .pager .gap{color:var(--ink-3); padding:0 2px; font-family:var(--mono)}
+  .pager__nav{font-family:var(--sans)!important; font-weight:700}
+
+  .empty{text-align:center; padding:80px 20px; color:var(--ink-3)}
+  .empty svg{color:var(--line); margin-bottom:14px}
+  .empty h3{margin:0 0 6px; color:var(--ink-2); font-size:17px}
+  .empty button{margin-top:16px; padding:10px 22px; border:none; border-radius:var(--r-pill); background:var(--accent); color:#fff; font-weight:700}
+
+  /* ---------- Detail panel ---------- */
+  /* ---------- 気になる求人／マイページ ---------- */
+  .fav{
+    position:absolute; top:11px; right:11px; z-index:2;
+    display:grid; place-items:center; width:32px; height:32px;
+    border-radius:9px; border:1px solid transparent; background:transparent;
+    color:var(--ink-3); cursor:pointer;
+    transition:background .15s, color .15s, border-color .15s, transform .12s;
+  }
+  .fav:hover{background:var(--surface-2); color:var(--gold); border-color:var(--line)}
+  .fav:active{transform:scale(.88)}
+  .fav.on{color:var(--gold)}
+  .fav.on svg{fill:var(--gold)}
+  .fav--bar{position:static; width:40px; height:40px; border-color:var(--line); background:var(--surface)}
+
+  .mybtn{width:auto; padding:0 13px; gap:7px; display:inline-flex; align-items:center; font-weight:700; font-size:13.5px}
+  .mybtn .badge{background:var(--accent); color:#fff; border-radius:999px; font-size:11px; padding:1px 7px; font-family:var(--mono); font-weight:700}
+  :root[data-theme="dark"] .mybtn .badge{color:#0F131A}
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .mybtn .badge{color:#0F131A} }
+  /* 未読メッセージは★の件数と別の色にする（同じ色だと数字の意味が混ざる） */
+  .mybtn .badge--msg{background:#C0392B; color:#fff}
+  :root[data-theme="dark"] .mybtn .badge--msg{color:#fff}
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .mybtn .badge--msg{color:#fff} }
+
+  .auth{border:1px solid var(--line); border-radius:var(--r-card); background:var(--surface-2); padding:18px 18px 16px; margin-bottom:26px}
+  .auth h3{margin:0 0 6px; font-size:15px; letter-spacing:.01em}
+  .auth p{margin:0 0 12px; font-size:13px; color:var(--ink-2); line-height:1.75}
+  .auth__row{display:flex; gap:8px; flex-wrap:wrap}
+  .auth input[type=email], .auth input[type=text]{
+    flex:1 1 220px; min-width:0; padding:10px 12px; font-family:inherit; font-size:14px;
+    border:1px solid var(--line); border-radius:var(--r-input); background:var(--surface); color:var(--ink);
+  }
+  .auth input:focus-visible{outline:2px solid var(--focus); outline-offset:1px}
+  .auth__btn{
+    padding:10px 16px; border:0; border-radius:var(--r-input); background:var(--accent); color:#fff;
+    font-weight:700; font-size:13.5px; white-space:nowrap;
+  }
+  .auth__btn:hover{background:var(--accent-strong)}
+  .auth__btn[disabled]{opacity:.55; cursor:default}
+  .auth__btn--ghost{background:transparent; color:var(--ink-2); border:1px solid var(--line)}
+  .auth__btn--ghost:hover{background:var(--surface); color:var(--ink)}
+  .auth__msg{margin:10px 0 0; font-size:12.5px; line-height:1.7}
+  .auth__msg.ok{color:var(--good)}
+  .auth__msg.ng{color:#C0392B}
+  :root[data-theme="dark"] .auth__msg.ng{color:#F1948A}
+  .auth__who{display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:13.5px; margin-bottom:12px}
+  .auth__who b{font-weight:700; word-break:break-all}
+  .auth__note{font-size:12px; color:var(--ink-3); margin-top:10px; line-height:1.7}
+
+  /* 求人案内の受信同意。利用規約への包括同意とは別に、個別に取る（特定電子メール法）。
+     既定はオフ。チェックしなくても会員登録そのものは進められる。 */
+  .consent{
+    display:flex; gap:9px; align-items:flex-start; margin:12px 0 0;
+    font-size:12.5px; color:var(--ink-2); line-height:1.7; cursor:pointer;
+  }
+  .consent input[type=checkbox]{
+    flex:0 0 auto; width:17px; height:17px; margin:2px 0 0; accent-color:var(--accent); cursor:pointer;
+  }
+  .consent input:focus-visible{outline:2px solid var(--focus); outline-offset:2px}
+
+  /* ★を押した人に出す、その場の登録案内。モーダルにはしない（操作を止めない）。 */
+  .signal{
+    position:fixed; left:50%; transform:translateX(-50%) translateY(140%);
+    bottom:16px; z-index:60; width:min(440px, calc(100vw - 24px));
+    border:1px solid var(--line); border-radius:var(--r-card); background:var(--surface);
+    box-shadow:0 12px 36px rgba(0,0,0,.18); padding:16px 16px 14px;
+    transition:transform .28s cubic-bezier(.22,.9,.3,1); visibility:hidden;
+  }
+  .signal.open{transform:translateX(-50%) translateY(0); visibility:visible}
+  .signal h3{margin:0 0 6px; font-size:14.5px; padding-right:26px}
+  .signal p{margin:0 0 12px; font-size:12.5px; color:var(--ink-2); line-height:1.75}
+  .signal__x{
+    position:absolute; top:10px; right:10px; width:28px; height:28px; display:grid; place-items:center;
+    border:0; background:transparent; color:var(--ink-3); border-radius:8px;
+  }
+  .signal__x:hover{background:var(--surface-2); color:var(--ink)}
+  .signal__later{
+    display:inline-block; margin-top:10px; padding:0; border:0; background:transparent;
+    color:var(--ink-3); font-size:12px; text-decoration:underline; text-underline-offset:3px;
+  }
+  .signal__later:hover{color:var(--ink-2)}
+  @media (prefers-reduced-motion:reduce){ .signal{transition:none} }
+
+  /* 会員プロフィール（ログインしているときだけ表示） */
+  .prof{margin-top:16px; padding-top:16px; border-top:1px solid var(--line)}
+  .prof__h{font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3); font-weight:700; margin:0 0 4px}
+  .prof__lead{font-size:12.5px; color:var(--ink-3); line-height:1.7; margin:0 0 14px}
+  .pf{margin-bottom:14px}
+  .pf__t{display:block; font-size:12.5px; font-weight:700; color:var(--ink-2); margin-bottom:6px}
+  .pf select, .pf input[type=text]{
+    flex:none; width:100%; padding:10px 12px; font-family:inherit; font-size:14px;
+    border:1px solid var(--line); border-radius:var(--r-input); background:var(--surface); color:var(--ink);
+  }
+  .pf select:focus-visible, .pf input:focus-visible{outline:2px solid var(--focus); outline-offset:1px}
+  .pf__chips{display:flex; flex-wrap:wrap; gap:7px}
+  .pf__chip input{position:absolute; opacity:0; width:0; height:0}
+  .pf__chip>span{
+    display:inline-block; padding:7px 12px; border:1px solid var(--line); border-radius:999px;
+    background:var(--surface); font-size:12.5px; color:var(--ink-2); line-height:1.25; transition:border-color .15s, background .15s;
+  }
+  .pf__chip .cnt{font-family:var(--mono); font-size:11px; color:var(--ink-3); margin-left:4px}
+  .pf__chip input:checked+span{border-color:var(--accent); background:color-mix(in srgb,var(--accent) 10%, var(--surface)); color:var(--accent); font-weight:700}
+  .pf__chip input:checked+span .cnt{color:var(--accent)}
+  .pf__chip input:focus-visible+span{outline:2px solid var(--focus); outline-offset:1px}
+  .prof__act{display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-top:2px}
+  .auth__btn--sm{padding:7px 12px; font-size:12.5px}
+
+  /* 履歴書・職務経歴書 */
+  .doc{display:flex; align-items:center; gap:8px; flex-wrap:wrap; padding:12px 0; border-top:1px dashed var(--line)}
+  .doc:first-of-type{border-top:0; padding-top:4px}
+  .doc__label{font-size:13px; font-weight:700; min-width:86px}
+  .doc__now{font-size:12px; color:var(--ink-3); flex:1 1 150px; min-width:0}
+  .doc__now b{color:var(--ink-2); font-weight:700; word-break:break-all}
+  .doc__input{position:absolute; opacity:0; width:0; height:0}
+  .doc__pick{cursor:pointer}
+  .doc__input:focus-visible+.doc__pick{outline:2px solid var(--focus); outline-offset:1px}
+  .doc__msg{flex:0 0 100%; margin:2px 0 0; font-size:12.5px; line-height:1.9; color:var(--ink-2)}
+  .doc__msg.ok{color:var(--good)}
+  .doc__msg.ng{color:#C0392B}
+  :root[data-theme="dark"] .doc__msg.ng{color:#F1948A}
+
+  /* 担当者とのメッセージ（スカウト・DM）。ログイン中だけ、マイページの一番上に出る。
+     求人企業ではなく当社の担当者との1対1のやりとり。スレッドは会員ひとりにつき1本。 */
+  .msgs{margin-bottom:26px}
+  .msgs__new{color:#fff; background:#C0392B; border-radius:999px; font-size:11px; font-family:var(--mono); padding:1px 8px; margin-left:6px; font-weight:700}
+  .msgs__list{
+    display:flex; flex-direction:column; gap:12px; max-height:340px; overflow-y:auto;
+    padding:14px; border:1px solid var(--line); border-radius:var(--r-card); background:var(--surface-2);
+  }
+  .msgs__empty{margin:0; font-size:12.5px; color:var(--ink-3); line-height:1.8}
+  .msg{max-width:88%; display:flex; flex-direction:column; gap:5px}
+  .msg--staff{align-self:flex-start}
+  .msg--me{align-self:flex-end; align-items:flex-end}
+  .msg__body{
+    padding:10px 13px; border-radius:13px; font-size:13px; line-height:1.8;
+    border:1px solid var(--line); background:var(--surface); color:var(--ink); word-break:break-word;
+  }
+  .msg--me .msg__body{border-color:transparent; background:var(--accent); color:#fff}
+  .msg__meta{font-size:11px; color:var(--ink-3); font-family:var(--mono)}
+  .msg__unread{color:#C0392B; font-family:var(--font); font-weight:700; margin-left:5px}
+  :root[data-theme="dark"] .msg__unread{color:#F1948A}
+  .msg__job{
+    display:block; width:100%; text-align:left; margin-top:2px; padding:9px 12px;
+    border:1px solid var(--line); border-radius:11px; background:var(--surface);
+    font-family:inherit; font-size:12.5px; line-height:1.6; color:var(--ink-2); cursor:pointer;
+  }
+  .msg__job:hover{border-color:var(--accent); color:var(--accent)}
+  .msg__job b{display:block; color:var(--ink); font-weight:700}
+  .msg--me .msg__job{background:var(--surface); color:var(--ink-2)}
+  .msgs__form{margin-top:12px}
+  .msgs__form textarea{
+    width:100%; padding:11px 12px; font-family:inherit; font-size:14px; line-height:1.7; resize:vertical;
+    border:1px solid var(--line); border-radius:var(--r-input); background:var(--surface); color:var(--ink);
+  }
+  .msgs__form textarea:focus-visible{outline:2px solid var(--focus); outline-offset:1px}
+  .msgs__row{display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-top:9px}
+  .msgs__row .auth__msg{margin:0}
+
+  /* 退会（アカウントの削除）。取り返しがつかないので、開く→確認する の2段階にしている */
+  .quit{margin-top:18px; padding-top:14px; border-top:1px dashed var(--line)}
+  .quit__open{
+    background:none; border:0; padding:0; color:var(--ink-3);
+    font-size:12px; text-decoration:underline; text-underline-offset:2px;
+  }
+  .quit__open:hover{color:var(--ink-2)}
+  .quit__box{
+    margin-top:12px; padding:14px 16px; border-radius:12px;
+    border:1px solid color-mix(in srgb, #C0392B 34%, var(--line)); background:color-mix(in srgb, #C0392B 5%, var(--surface));
+  }
+  .quit__box h4{margin:0 0 8px; font-size:13.5px; font-weight:800; color:var(--ink)}
+  .quit__box p{margin:0 0 8px; font-size:12.5px; color:var(--ink-2); line-height:1.8}
+  .quit__box ul{margin:0 0 10px; padding-left:1.2em; font-size:12.5px; color:var(--ink-2); line-height:1.8}
+  .quit__act{display:flex; gap:8px; flex-wrap:wrap; align-items:center}
+  .quit__btn{
+    padding:9px 15px; border:1px solid #C0392B; border-radius:var(--r-input); background:transparent; color:#C0392B;
+    font-weight:700; font-size:13px; white-space:nowrap;
+  }
+  .quit__btn:hover{background:#C0392B; color:#fff}
+  .quit__btn[disabled]{opacity:.55; cursor:default}
+
+  .myrow{
+    position:relative; display:block; width:100%; text-align:left; color:inherit;
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--r-card);
+    padding:15px 46px 14px 16px; margin-bottom:10px;
+    transition:border-color .15s, box-shadow .15s;
+  }
+  .myrow:hover{border-color:color-mix(in srgb,var(--accent) 35%, var(--line)); box-shadow:var(--shadow-sm)}
+  .myrow__co{font-size:12px; font-weight:700; color:var(--accent)}
+  .myrow__title{margin:2px 0 6px; font-size:15px; font-weight:700; line-height:1.5}
+  .myrow__sal{font-family:var(--mono); font-weight:800; font-size:14px; color:var(--ink)}
+  .myrow .fav{top:12px; right:10px}
+  .myempty{text-align:center; padding:34px 10px; color:var(--ink-3); font-size:13.5px; line-height:1.9}
+  .myempty svg{color:var(--line); margin-bottom:6px}
+  .mysec{font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3); font-weight:700; margin:0 0 12px}
+  .mysec--row{display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-top:30px}
+  .mysec__clear{
+    background:none; border:0; padding:0; color:var(--ink-3);
+    font-size:11.5px; font-weight:700; letter-spacing:normal; text-transform:none; text-decoration:underline; white-space:nowrap;
+  }
+  .mysec__clear:hover{color:var(--ink)}
+
+  .backdrop{position:fixed; inset:0; z-index:60; background:rgba(15,17,26,.5); backdrop-filter:blur(3px); opacity:0; pointer-events:none; transition:opacity .25s}
+  .backdrop.open{opacity:1; pointer-events:auto}
+  .panel{
+    position:fixed; top:0; right:0; bottom:0; z-index:70; width:min(680px,100%);
+    background:var(--surface); box-shadow:var(--shadow-lg); transform:translateX(102%);
+    transition:transform .32s cubic-bezier(.22,.68,.24,1); display:flex; flex-direction:column;
+  }
+  .panel.open{transform:translateX(0)}
+  .panel__bar{position:sticky; top:0; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 20px; border-bottom:1px solid var(--line); background:var(--surface); z-index:2}
+  .panel__bar .lbl{font-size:12px; letter-spacing:.15em; text-transform:uppercase; color:var(--ink-3); font-weight:700}
+  .panel__body{overflow-y:auto; padding:26px 30px 60px}
+  .pd-co{font-size:14px; font-weight:700; color:var(--accent); margin:0 0 5px}
+  .pd-title{font-size:22px; line-height:1.4; font-weight:800; margin:0 0 16px; text-wrap:balance}
+  .pd-tags{display:flex; flex-wrap:wrap; gap:7px; margin-bottom:20px}
+  .pd-salary{display:flex; flex-wrap:wrap; gap:22px; padding:16px 18px; background:var(--surface-2); border-radius:12px; margin-bottom:8px}
+  .pd-salary .item{display:flex; flex-direction:column; gap:3px}
+  .pd-salary .k{font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3); font-weight:700}
+  .pd-salary .v{font-family:var(--mono); font-weight:800; font-size:17px; color:var(--ink); font-variant-numeric:tabular-nums}
+  .pd-salary .v.gold{color:var(--ink)}
+  .pd-cta{display:flex; gap:10px; margin:18px 0 6px; flex-wrap:wrap}
+  .btn-primary{display:inline-flex; align-items:center; gap:8px; padding:12px 22px; background:var(--accent); color:#fff; border:none; border-radius:var(--r-pill); font-weight:700; font-size:14px; text-decoration:none; transition:background .15s}
+  .btn-primary:hover{background:var(--accent-strong)}
+  .btn-ghost{display:inline-flex; align-items:center; gap:8px; padding:12px 20px; background:var(--surface); color:var(--ink); border:1px solid var(--line); border-radius:var(--r-pill); font-weight:700; font-size:14px; text-decoration:none}
+  .btn-ghost:hover{background:var(--surface-2)}
+  .pd-sec{margin-top:30px}
+  .pd-sec > h3{font-size:15px; font-weight:800; margin:0 0 12px; padding-bottom:9px; border-bottom:2px solid var(--accent-soft); display:flex; align-items:center; gap:9px}
+  .pd-sec > h3::before{content:""; width:4px; height:15px; background:var(--accent); border-radius:2px}
+  .pd-sec > .rich + .pd-meta{margin-top:18px; padding-top:16px; border-top:1px solid var(--line)}
+  .pd-meta{display:grid; grid-template-columns:auto 1fr; gap:10px 18px; font-size:13.5px}
+  .pd-meta dt{color:var(--ink-3); font-weight:700; white-space:nowrap}
+  .pd-meta dd{margin:0; color:var(--ink); white-space:pre-wrap}
+  .pd-meta dd a{color:var(--accent); text-decoration:underline; text-underline-offset:2px; word-break:break-all}
+  .pd-meta dd a:hover{color:var(--accent-strong)}
+  .pd-meta dd a svg{vertical-align:-2px; margin-left:3px}
+  .pd-ctanote{margin:10px 0 0; font-size:12.5px; color:var(--ink-3); line-height:1.75}
+  /* mailto が開かない端末向けの逃げ道。アドレスは選択してコピーできるようにする。 */
+  .pd-ctamail{margin:8px 0 0; font-size:12.5px; color:var(--ink-3); line-height:1.75}
+  .pd-ctamail__addr{color:var(--ink-2); font-weight:700; user-select:all; word-break:break-all}
+  .pd-ctamail a{color:var(--accent); text-decoration:underline; text-underline-offset:2px}
+  .pd-ctamail a:hover{color:var(--accent-strong)}
+  /* 担当エージェント紹介ブロック（コーポレート /media の AuthorBlock 由来） */
+  .pd-author{margin-top:34px; padding:18px 20px; border:1px solid var(--line); border-radius:var(--r-card); background:var(--surface-2)}
+  .pd-author .lbl{font-size:11px; letter-spacing:.14em; color:var(--ink-3); font-weight:700; margin:0 0 4px}
+  .pd-author .name{font-size:15.5px; font-weight:800; margin:0 0 8px}
+  .pd-author .name a{color:var(--ink); text-decoration:none}
+  .pd-author .name a:hover{color:var(--accent); text-decoration:underline; text-underline-offset:2px}
+  .pd-author .bio{font-size:12.5px; line-height:1.85; color:var(--ink-2); margin:0 0 12px}
+  .pd-author .sns{display:flex; gap:14px}
+  .pd-author .sns a{color:var(--ink-3); transition:color .15s; display:inline-flex}
+  .pd-author .sns a:hover{color:var(--accent)}
+
+  /* 求人のシェア。外部SDKは読み込まず、ただのリンクとして自前で持つ */
+  .jshare{display:flex; align-items:center; flex-wrap:wrap; gap:10px 12px; margin-top:26px; padding-top:16px; border-top:1px solid var(--line)}
+  .jshare__lbl{font-size:12px; font-weight:700; color:var(--ink-3); letter-spacing:.04em}
+  .jshare__list{display:flex; flex-wrap:wrap; gap:8px}
+  .jshare__btn{
+    display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; padding:0;
+    border:1px solid var(--line); border-radius:999px; background:var(--surface); color:var(--ink-2);
+    transition:background-color .15s, border-color .15s, color .15s;
+  }
+  .jshare__btn:hover{color:#fff}
+  .jshare__btn--x:hover{background:#000; border-color:#000}
+  .jshare__btn--facebook:hover{background:#1877F2; border-color:#1877F2}
+  .jshare__btn--linkedin:hover{background:#0A66C2; border-color:#0A66C2}
+  .jshare__btn--hatena:hover{background:#00A4DE; border-color:#00A4DE}
+  /* コピー・共有はブランド色を持たないので、地の色を薄く敷く。
+     ダークモードだと --accent が明るく、白アイコンが読めなくなるため */
+  .jshare__btn--copy:hover, .jshare__btn--native:hover{
+    background:color-mix(in srgb, currentColor 16%, transparent); border-color:currentColor; color:inherit;
+  }
+  .jshare__btn:focus-visible{outline:2px solid var(--focus); outline-offset:2px}
+  .jshare__hb{font-weight:800; font-size:13px; line-height:1; letter-spacing:-.02em}
+  .jshare__done{font-size:12px; font-weight:700; color:var(--good)}
+  @media (max-width:640px){ .jshare__btn{width:42px; height:42px} }
+  .pd-ctanote b{color:var(--ink-2); font-weight:700}
+
+  /* rich text (markdown) */
+  .rich{font-size:14px; line-height:1.85; color:var(--ink-2); word-break:break-word}
+  .rich h4{font-size:15px; color:var(--ink); font-weight:800; margin:22px 0 8px}
+  .rich h5{font-size:13.5px; color:var(--ink); font-weight:700; margin:16px 0 6px}
+  .rich p{margin:0 0 12px}
+  .rich strong{color:var(--ink); font-weight:700}
+  .rich ul{margin:0 0 12px; padding-left:20px}
+  .rich li{margin:4px 0}
+  .rich a{color:var(--accent); text-decoration:underline; text-underline-offset:2px; word-break:break-all}
+  .rich a:hover{color:var(--accent-strong)}
+
+  /* ---- LINE友だち追加の導線 ---- */
+  .line-line{display:flex; align-items:center; flex-wrap:wrap; gap:8px 12px; margin-top:12px; font-size:13px; color:var(--ink-2)}
+  .line-line b{color:var(--ink-1)}
+  .line-btn{display:inline-flex; align-items:center; gap:7px; padding:9px 16px; border-radius:999px; background:#06c755; color:#fff; font-weight:700; font-size:13px; text-decoration:none; line-height:1; white-space:nowrap}
+  .line-btn:hover{background:#05b34c}
+  .line-btn svg{flex:none}
+  .line-badge{display:inline-block; line-height:0}
+  .line-badge img{display:block; width:116px; height:36px}
+  .line-badge:hover{opacity:.82}
+  .foot__line{display:flex; flex-direction:column; gap:8px; align-items:flex-start; margin:18px 0 4px}
+  .foot__line p{margin:0; font-size:12.5px; color:var(--ink-3)}
+  .empty .line-line{justify-content:center; margin-top:18px}
+  /* ---- LINEで相談する導線 ----
+     LINE公式アカウントへの入口は2種類ある。
+       ・友だち追加        https://line.me/R/ti/p/@697nxhbt?oat_content=url&ts=08302134
+       ・本文つきで開く    https://line.me/R/oaMessage/%40697nxhbt/?本文
+     未追加の人が「本文つき」を開くと友だち追加画面が出るだけで本文は残らない。
+     なので必ず「①友だち追加 → ②この求人について送る」の順に2つ並べる。片方だけにしないこと。 */
+  .pd-line{margin:16px 0 0; padding:16px 18px; border:1px solid color-mix(in srgb,#06c755 36%, var(--line)); border-left:4px solid #06c755; border-radius:12px; background:color-mix(in srgb,#06c755 7%, var(--surface))}
+  .pd-line__ttl{display:flex; align-items:center; gap:8px; margin:0 0 6px; font-size:15.5px; font-weight:800; color:var(--ink)}
+  .pd-line__ttl svg{flex:none; color:#06c755}
+  .pd-line__lead{margin:0 0 12px; font-size:13.5px; line-height:1.8; color:var(--ink-2)}
+  .pd-line__lead b{color:var(--ink); font-weight:700}
+  .pd-line__btns{display:flex; flex-wrap:wrap; gap:9px}
+  .pd-line__btn{display:inline-flex; align-items:center; justify-content:center; gap:7px; padding:12px 20px; border:1px solid #06c755; border-radius:var(--r-pill); background:#06c755; color:#fff; font-weight:800; font-size:14px; text-decoration:none; line-height:1.2; box-shadow:var(--shadow-sm); transition:background .15s, border-color .15s}
+  .pd-line__btn:hover{background:#05b34c; border-color:#05b34c}
+  .pd-line__btn svg{flex:none}
+  .pd-line__btn--sub{background:var(--surface); color:var(--ink); box-shadow:none}
+  .pd-line__btn--sub:hover{background:color-mix(in srgb,#06c755 12%, var(--surface)); border-color:#06c755}
+  .pd-line__steps{counter-reset:ls; display:flex; flex-wrap:wrap; gap:6px 16px; margin:12px 0 0; padding:0; list-style:none; font-size:12.5px; font-weight:700; color:var(--ink-2)}
+  .pd-line__steps li{counter-increment:ls; display:flex; align-items:center; gap:6px}
+  .pd-line__steps li::before{content:counter(ls); display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:#06c755; color:#fff; font-size:11px; font-weight:800; font-family:var(--mono)}
+  .pd-line__note{margin:10px 0 0; font-size:12px; line-height:1.7; color:var(--ink-3)}
+  .pd-line__note b{color:var(--ink-2); user-select:all}
+  .jrow__act .line-btn{padding:11px 16px; font-size:13.5px}
+  .dt-card .line-btn{width:100%; justify-content:center; margin-top:9px; padding:12px; font-size:14px}
+  .applybar .line-btn{flex:0 0 auto; padding:14px 13px; font-size:13px}
+  @media (max-width:640px){
+    .pd-line{padding:14px}
+    .pd-line__btn{width:100%; font-size:15px; padding:14px 18px}
+    .jrow__act .line-btn{flex:1 1 100%; justify-content:center; font-size:15px; padding:13px 14px}
+  }
+  .site-foot{border-top:1px solid var(--line); padding:30px 0 60px; color:var(--ink-3); font-size:12.5px; background:var(--surface)}
+  .foot__inner{max-width:var(--maxw); margin:0 auto; padding:0 24px; display:grid; gap:16px}
+  .foot__brand{display:flex; flex-direction:column; gap:4px}
+  .foot__brand strong{color:var(--ink); font-size:13.5px}
+  .foot__brand span{max-width:70ch; line-height:1.7}
+  /* 縦並びのflexなので align-self を指定しないと画像が幅いっぱいに伸びる */
+  .foot__logo{display:block; align-self:flex-start; height:32px; width:auto; max-width:100%; margin-bottom:4px}
+  .foot__logo--dark{display:none}
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .foot__logo--light{display:none} :root:not([data-theme="light"]) .foot__logo--dark{display:block} }
+  :root[data-theme="dark"] .foot__logo--light{display:none}
+  :root[data-theme="dark"] .foot__logo--dark{display:block}
+  .foot__meta{display:grid; grid-template-columns:auto 1fr; gap:4px 14px; margin:0; max-width:70ch}
+  .foot__meta dt{font-weight:700}
+  .foot__meta dd{margin:0; color:var(--ink-2)}
+  .foot__links{display:flex; flex-wrap:wrap; gap:6px 18px}
+  .foot__links a{color:var(--accent); text-decoration:underline; text-underline-offset:2px}
+  .foot__links--sub{gap:6px 14px; font-size:12px}
+  .foot__links--sub span{font-weight:700; color:var(--ink-3)}
+  .foot__copy{margin:0; padding-top:4px; border-top:1px solid var(--line-2)}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:1080px){ .layout{grid-template-columns:262px 1fr; gap:26px} }
+  @media (max-width:900px){
+    .layout{grid-template-columns:1fr}
+    .filter-toggle{display:inline-flex}
+    .search{max-width:none}
+    /* 幅が狭くなるとコピーが写真の人物側まで伸びるので、スクリムを全面に切り替える */
+    .hero__scrim{
+      background:linear-gradient(180deg, rgba(12,16,42,.58) 0%, rgba(12,16,42,.86) 48%, rgba(12,16,42,.94) 100%);
+    }
+    .hero__inner{max-width:none; padding:34px 28px 30px}
+    .hero__bg{object-position:50% 44%}
+    .filters{
+      position:fixed; top:0; left:0; bottom:0; z-index:65; width:min(340px,86%); max-height:none;
+      background:var(--surface); border-right:1px solid var(--line); padding:18px 18px 40px; overflow-y:auto;
+      transform:translateX(-102%); transition:transform .3s cubic-bezier(.22,.68,.24,1); box-shadow:var(--shadow-lg);
+    }
+    .filters.open{transform:translateX(0)}
+    .filters__head{display:flex; align-items:center; justify-content:space-between; margin-bottom:6px}
+    .filters__head h2{font-size:16px; margin:0}
+    /* ドロワー内を「見出し／スクロール領域／固定ボタン」の3段にする */
+    .filters{display:flex; flex-direction:column; padding-bottom:16px; overflow:hidden}
+    .filters #filterGroups{flex:1; overflow-y:auto; min-height:0; margin-right:-4px; padding-right:4px}
+    .filters__foot{display:block; flex:none; padding-top:12px; border-top:1px solid var(--line)}
+    .filters__foot button{
+      width:100%; padding:14px; border:none; border-radius:var(--r-pill);
+      background:var(--accent); color:#fff; font-weight:800; font-size:15px; box-shadow:var(--shadow-sm);
+    }
+    .filters__foot button b{font-family:var(--mono); font-size:16px}
+  }
+  @media (min-width:901px){ .filters__head{display:none} }
+
+  /* スマホ：検索窓を2段目に折り返し、文字とタップ領域を大きくする */
+  @media (max-width:700px){
+    body{font-size:16px}
+    .topbar__inner{flex-wrap:wrap; gap:10px; padding:10px 16px}
+    .brand{order:1}
+    .topbar__actions{order:2; margin-left:auto}
+    .search{order:3; flex:1 0 100%; max-width:none}
+    /* iOSでフォーカス時に勝手にズームしないよう入力欄は16px以上にする */
+    .search input{font-size:16px; padding:11px 14px 11px 42px}
+    .facet-search{font-size:16px; padding:9px 12px}
+
+    .wrap{padding-left:16px; padding-right:16px}
+
+    .hero{margin-top:12px; border-radius:14px}
+    .hero__inner{padding:26px 18px 24px}
+    .hero__sub{font-size:14.5px; margin-bottom:16px}
+    .hero__search{flex-wrap:wrap}
+    /* iOSでフォーカス時に勝手にズームしないよう16px以上 */
+    .hero__search input{font-size:16px}
+    .hero__search button{width:100%}
+    .hero__stats{gap:10px 22px; padding-top:14px}
+    .hero__stats b{font-size:19px}
+
+    .intro{padding:16px 0 16px}
+    .intro p{font-size:15.5px}
+    .intro .note{font-size:14.5px; align-items:flex-start}
+    .intro .note svg{margin-top:4px}
+
+    .joblist{gap:12px}
+    .jrow{padding:18px 16px 16px}
+    .jrow__co{font-size:14px}
+    .jrow__ind{font-size:12.5px}
+    .jrow__title{font-size:17.5px; line-height:1.55}
+    .tag{font-size:12.5px; padding:4px 10px}
+    .jrow__desc{font-size:14.5px}
+    .jrow__meta{grid-template-columns:1fr; gap:2px; font-size:14.5px}
+    .jrow__meta dt{font-size:12.5px; color:var(--ink-3); margin-top:8px}
+    .jrow__meta dt:first-child{margin-top:0}
+    .jrow__sal{font-size:17px}
+    .jrow__act{justify-content:stretch}
+    .jrow__act .btn-apply,.jrow__act .btn-detail{flex:1 1 45%; font-size:15px; padding:13px 14px}
+
+    .rescount{font-size:15px}
+    .sortsel select{font-size:15px; padding:9px 30px 9px 12px}
+    .achip{font-size:13.5px}
+    .clear-all{font-size:13.5px}
+
+    /* 絞り込みドロワー：指で押しやすいサイズに */
+    .opt{padding:9px 8px}
+    .opt .lbl{font-size:15px}
+    .opt .cnt{font-size:12.5px}
+    .opt .box{width:19px; height:19px}
+    .fchip{font-size:14px; padding:8px 15px}
+    .tkid{width:36px; height:36px}          /* 大分類を開く矢印。指で押せる大きさに */
+    .facet-list{max-height:44vh}
+    .fgroup__title{font-size:12.5px}
+
+    /* 求人詳細 */
+    .panel__body{padding:22px 18px 60px}
+    .pd-title{font-size:20px}
+    .pd-salary{gap:14px 20px; padding:14px 16px}
+    .pd-cta{gap:10px}
+    .btn-primary,.btn-ghost{width:100%; justify-content:center; font-size:15px; padding:14px 18px}
+    .pd-ctanote{font-size:13.5px}
+    .rich{font-size:15.5px}
+    .rich h4{font-size:16px}
+    .rich h5{font-size:14.5px}
+    /* 項目名と内容を縦積みにして横潰れを防ぐ */
+    .pd-meta{grid-template-columns:1fr; gap:2px}
+    .pd-meta dt{font-size:12.5px; color:var(--ink-3); margin-top:10px}
+    .pd-meta dt:first-child{margin-top:0}
+    .pd-meta dd{font-size:14.5px}
+    .pd-author .bio{font-size:13.5px}
+
+    .site-foot{font-size:13.5px}
+    .foot__inner{padding-left:16px; padding-right:16px}
+    .foot__meta{grid-template-columns:1fr; gap:2px}
+    .foot__meta dt{margin-top:8px; color:var(--ink-3)}
+    .foot__meta dt:first-child{margin-top:0}
+  }
+  @media (max-width:560px){
+    .brand__sub{display:none}
+    .filter-toggle{padding:0 12px}
+    .mybtn{padding:0 10px}
+    .mybtn__txt{display:none}
+  }
+  /* 指で押しやすいよう、スマホでは★のタップ範囲を広げる */
+  @media (max-width:700px){
+    .fav{width:42px; height:42px; top:6px; right:6px}
+    .jrow__top,.jrow__title{padding-right:40px}
+  }
+
+  /* =======================================================================
+     ワークポート型レイアウト（グローバルナビ・パンくず・検索条件・求人詳細）
+     ======================================================================= */
+
+  /* ---------- グローバルナビ ---------- */
+  .gnav{display:flex; align-items:center; gap:20px; font-size:13.5px; font-weight:700; flex-shrink:0}
+  .gnav a{color:var(--ink-2); text-decoration:none; white-space:nowrap; transition:color .15s}
+  .gnav a:hover{color:var(--accent)}
+  .gnav a[aria-current="page"]{color:var(--accent)}
+  .btn-head{
+    display:inline-flex; align-items:center; gap:6px; white-space:nowrap;
+    padding:10px 18px; border:0; border-radius:var(--r-pill);
+    background:var(--cta); color:var(--cta-ink); font-weight:800; font-size:13.5px;
+    text-decoration:none; box-shadow:var(--shadow-sm); transition:background .15s;
+  }
+  .btn-head:hover{background:var(--cta-hover)}
+  .btn-head .free{
+    font-size:10px; letter-spacing:.06em; padding:2px 5px; border-radius:4px;
+    background:color-mix(in srgb, var(--cta-ink) 88%, transparent); color:var(--cta);
+  }
+  .btn-head__short{display:none}
+  @media (max-width:1080px){ .gnav{display:none} }
+  /* 狭い画面では、ヘッダーの掲載を横に詰めこまず、CTAを自分の行に落とす。
+     横に並べると 430px で横スクロールが出て、本文ごと右にずれる。 */
+  @media (max-width:760px){
+    .btn-head{order:4; flex:1 0 100%; justify-content:center; padding:12px 16px; font-size:14.5px}
+    .btn-head__long{display:none}
+    .btn-head__short{display:inline}
+  }
+
+  /* ---------- パンくず ---------- */
+  .crumb{display:flex; align-items:center; flex-wrap:wrap; gap:7px; padding:14px 0 0; font-size:12px; color:var(--ink-3)}
+  /* 一覧（＝トップ）ではパンくずを空にしている。上の padding が残るとヒーローが下がるので消す */
+  .crumb:empty{display:none}
+  .crumb a{color:var(--ink-3); text-decoration:none}
+  .crumb a:hover{color:var(--accent); text-decoration:underline; text-underline-offset:2px}
+  .crumb .sep{opacity:.6}
+  .crumb .cur{color:var(--ink-2); font-weight:700; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:46ch}
+
+  /* ---------- 検索結果のヘッダ（現在の検索条件） ---------- */
+  .cond{
+    border:1px solid var(--line); border-radius:var(--r-card); background:var(--surface);
+    padding:14px 16px; margin-bottom:16px;
+  }
+  .cond__h{display:flex; align-items:baseline; gap:10px; margin-bottom:8px}
+  .cond__h span{font-size:11.5px; font-weight:800; letter-spacing:.1em; color:var(--ink-3)}
+  .cond__none{font-size:13px; color:var(--ink-3)}
+  .cond .active-chips{margin-bottom:0}
+
+  .resbar{padding-bottom:14px; border-bottom:1px solid var(--line); margin-bottom:18px}
+  .perpage{display:flex; align-items:center; gap:8px}
+  .perpage label{font-size:12px; color:var(--ink-3); font-weight:600}
+  .sortsel select,.perpage select{min-height:38px}
+
+  /* ---------- 求人詳細（別ページ相当） ---------- */
+  .detail{padding:6px 0 90px}
+  .dt-grid{display:grid; grid-template-columns:1fr 328px; gap:36px; align-items:start}
+  .dt-grid > *{min-width:0}
+  .dt-head{margin-bottom:22px}
+  .dt-co-row{display:flex; align-items:center; gap:10px; margin:0 0 8px}
+  .dt-co{font-size:14px; font-weight:700; color:var(--accent); margin:0; min-width:0; overflow-wrap:anywhere}
+  .dt-title{margin:0 0 14px; font-size:clamp(1.35rem,2.6vw,1.75rem); font-weight:800; line-height:1.4; text-wrap:balance}
+  .dt-back{
+    display:inline-flex; align-items:center; gap:6px; margin-bottom:4px;
+    background:none; border:0; padding:0; color:var(--ink-3); font-size:13px; font-weight:700;
+  }
+  .dt-back:hover{color:var(--accent)}
+
+  /* 右レール（年収＋応募ボタン） */
+  .dt-side{position:sticky; top:96px; display:flex; flex-direction:column; gap:12px}
+  .dt-card{border:1px solid var(--line); border-radius:var(--r-card); background:var(--surface); padding:20px; box-shadow:var(--shadow-sm)}
+  .dt-card .k{display:block; font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3); font-weight:700}
+  .dt-card .v{display:block; font-family:var(--mono); font-weight:800; font-size:19px; color:var(--ink); font-variant-numeric:tabular-nums; margin-bottom:14px}
+  .dt-card .btn-apply{width:100%; padding:14px; font-size:15px}
+  .dt-card .btn-detail{width:100%; margin-top:9px}
+  .dt-card__note{margin:12px 0 0; font-size:11.5px; line-height:1.75; color:var(--ink-3)}
+  .dt-card__note b{color:var(--ink-2)}
+  .dt-fav{display:flex; align-items:center; gap:8px; margin-top:12px; padding-top:12px; border-top:1px solid var(--line-2); font-size:12.5px; color:var(--ink-3)}
+
+  /* スマホ：下に张り付く応募バー */
+  .applybar{
+    position:fixed; left:0; right:0; bottom:0; z-index:50; display:none; gap:10px; align-items:center;
+    padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+    background:color-mix(in srgb, var(--surface) 94%, transparent);
+    backdrop-filter:saturate(180%) blur(10px); border-top:1px solid var(--line);
+  }
+  .applybar .sal{flex:0 0 auto; font-family:var(--mono); font-weight:800; font-size:13.5px; color:var(--ink); line-height:1.3}
+  .applybar .sal small{display:block; font-family:var(--sans); font-size:10px; color:var(--ink-3); letter-spacing:.08em}
+  .applybar .btn-apply{flex:1; padding:14px}
+
+  @media (max-width:1080px){ .dt-grid{grid-template-columns:1fr 288px; gap:26px} }
+  @media (max-width:900px){
+    .dt-grid{grid-template-columns:1fr}
+    .dt-side{position:static}
+    body.detail-open .applybar{display:flex}
+    body.detail-open .detail{padding-bottom:96px}
+  }
+  @media (max-width:700px){
+    .crumb{font-size:12.5px}
+    .crumb .cur{max-width:24ch}
+    .cond{padding:12px 14px}
+    .dt-card{padding:16px}
+  }
+  @media (prefers-reduced-motion:reduce){ *{transition:none!important; animation:none!important} }

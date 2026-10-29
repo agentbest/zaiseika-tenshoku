@@ -292,8 +292,9 @@ function writeDetails(full){
   console.log(`data/jobs/ に求人の詳細を書き出しました: ${full.length}件${removed ? `（掲載終了 ${removed}件を削除）` : ''}`);
 }
 
+let fullJobs = null;   /* 本文つきの掲載求人。最後に static-pages.js が求人ページを作るのに使う */
 const jobs = build('jobs.json', 'template.html', 'index.html', '__JOBS_DATA__', [],
-  data => { const full = attachEmployees(attachLogos(publicSectorOnly(midCareerOnly(data)))); writeDetails(full); return lighten(full); });
+  data => { const full = attachEmployees(attachLogos(publicSectorOnly(midCareerOnly(data)))); writeDetails(full); fullJobs = full; return lighten(full); });
 const jobRows = jobs ? jobs.r.map(r => { const o = {}; jobs.k.forEach((k, i) => { if(r[i] != null) o[k] = r[i]; }); return o; }) : [];
 if(jobs) console.log('index.html を再生成しました:', jobRows.length, '件（中途のみ・一覧用の項目だけ内蔵）');
 
@@ -348,3 +349,6 @@ if(jobs){
   }
 }
 
+/* 検索エンジン向けの静的ページ（job/<求人ID>/・sitemap-jobs.xml・robots.txt・assets/site.css）。2026-10-29〜。
+   index.html は求人詳細を JS で開くため、これが無いと Google からは求人が見えない。中身は static-pages.js */
+if(fullJobs) require('./static-pages.js').build(dir, fullJobs);

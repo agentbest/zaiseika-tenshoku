@@ -8,7 +8,7 @@
 <link rel="icon" href="assets/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="assets/icon-192.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<link rel="canonical" href="https://zaiseikatenshoku.com/">
+<link rel="canonical" id="canon" href="https://zaiseikatenshoku.com/">
 <meta name="description" content="財政課をはじめ、自治体・官公庁で働いてきた方のための転職求人サイト。予算編成・査定・議会対応で身につけた力が、そのまま評価される民間求人だけを載せています。株式会社エージェントベストが運営、ご利用は無料です。">
 <!-- SNSでシェアされたときの表示。静的サイトなので求人ごとの出し分けはできず、
      共有されるのはこのサイト共通のカードになる（求人名は投稿本文側に入れている） -->
@@ -1378,7 +1378,7 @@ function mailUrl(j, way){
   const co  = j&&j.company||"";
   /* ローカルで file:// から開くと origin が "null" になるので、その場合はURLを載せない */
   const link = (j&&j.id&&/^https?:$/.test(location.protocol))
-    ? `${location.origin}${location.pathname}?job=${encodeURIComponent(j.id)}` : "";
+    ? `${location.origin}/job/${encodeURIComponent(j.id)}/` : "";
   const tel = /電話/.test(way||"");
   const subject = `【${tel?"電話希望":"求人について"}】${co}${co&&pos?" / ":""}${pos}`;
   const body =
@@ -1409,7 +1409,7 @@ function lineMsgUrl(j){
   const pos = j&&(j.position||j.jobCategory||j.title)||"";
   const co  = j&&j.company||"";
   const link = (j&&j.id&&/^https?:$/.test(location.protocol))
-    ? `${location.origin}${location.pathname}?job=${encodeURIComponent(j.id)}` : "";
+    ? `${location.origin}/job/${encodeURIComponent(j.id)}/` : "";
   const msg =
     `求人サイトを見てご連絡しました。下記の求人について相談したいです。\n`+
     `■求人：${pos}\n■企業：${co}\n`+(link?`■ページ：${link}\n`:"");
@@ -2325,7 +2325,10 @@ const SHARE_ICONS={
   copy:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>',
   native:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/></svg>'
 };
-function jobUrl(j){ return location.origin+location.pathname+"?job="+encodeURIComponent(j.id); }
+/* 共有するURLは静的ページ /job/<求人ID>/（2026-10-29〜。求人ごとの title / OGP が出る。static-pages.js が作る） */
+function jobUrl(j){ return location.origin+"/job/"+encodeURIComponent(j.id)+"/"; }
+/* 詳細を開いている間は canonical も静的ページに向ける＝検索エンジンの評価を静的ページに寄せる（jobsite と同じ） */
+function setCanonical(href){ const el=document.getElementById("canon"); if(el) el.href=href; }
 function jobShareText(j){
   const pos=j.position||j.jobCategory||j.title||"求人";
   const co=j.company?`｜${j.company}`:"";
@@ -2580,6 +2583,7 @@ function renderDetail(j, keepScroll){
   $("#detail").hidden=false;
   document.body.classList.add("detail-open");
   document.title = jobName(j) + (j.company?"｜"+j.company:"") + " - " + BASE_TITLE;
+  setCanonical("https://zaiseikatenshoku.com/job/"+encodeURIComponent(j.id)+"/");
   if(!keepScroll) window.scrollTo(0,0);
   paintFavs();
 }
@@ -2591,6 +2595,7 @@ function showListView(){
   document.body.classList.remove("detail-open");
   $("#crumb").innerHTML=crumbList();
   document.title=BASE_TITLE;
+  setCanonical("https://zaiseikatenshoku.com/");
   window.scrollTo(0, listScroll);
 }
 
