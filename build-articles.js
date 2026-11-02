@@ -110,6 +110,23 @@ function md2html(src) {
       continue;
     }
 
+    // 引用（「> 」）。職務経歴書の文例などで使う。行の区切りに意味があるので
+    // 各行は <br> でつなぎ、「>」だけの行で段落を分ける。
+    // ⚠ これが無いと段落扱いになり、「>」が &gt; のまま本文に出る（2026-10 に394本で発生）。
+    if (/^>/.test(L)) {
+      const buf = [];
+      while (i < lines.length && /^>/.test(lines[i])) { buf.push(lines[i].replace(/^> ?/, '')); i++; }
+      const paras = [];
+      let cur = [];
+      for (const q of buf) {
+        if (q.trim()) cur.push(q.trim());
+        else if (cur.length) { paras.push(cur); cur = []; }
+      }
+      if (cur.length) paras.push(cur);
+      out.push('<blockquote>' + paras.map(p => `<p>${p.map(inline).join('<br>')}</p>`).join('') + '</blockquote>');
+      continue;
+    }
+
     // 箇条書き
     if (/^-\s+/.test(L)) {
       const items = [];
@@ -124,7 +141,7 @@ function md2html(src) {
 
     // 段落
     const para = [];
-    while (i < lines.length && lines[i].trim() && !/^(#{2,3}\s|-\s|\d+\.\s|\||:::)/.test(lines[i])) { para.push(lines[i]); i++; }
+    while (i < lines.length && lines[i].trim() && !/^(#{2,3}\s|-\s|\d+\.\s|\||:::|>)/.test(lines[i])) { para.push(lines[i]); i++; }
     out.push(`<p>${inline(para.join(''))}</p>`);
   }
   return out.join('\n');
@@ -195,6 +212,8 @@ const CSS = [
 'table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}',
 'th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}',
 'th{background:var(--surface-2);font-weight:700}',
+'blockquote{margin:0 0 20px;padding:12px 16px;border-left:4px solid var(--line);background:var(--surface-2);border-radius:0 8px 8px 0;color:var(--ink-2)}',
+'blockquote p:last-child{margin-bottom:0}',
 '.blk{border-radius:var(--r-card);padding:16px 18px;margin:24px 0}',
 '.blk p:last-child{margin-bottom:0}',
 '.blk__lbl{font-size:11.5px;letter-spacing:.08em;font-weight:800;margin:0 0 7px}',
