@@ -515,9 +515,11 @@
    当社（人材紹介）に転職支援を申し込み、当社から企業へ推薦する形で選考が進む。
    どの求人から来たかは ?job=<求人ID> で受け取り、送信データに一緒に入れる。
 
-   送信先は Supabase の public.applications テーブル（匿名キーで INSERT のみ許可）。
-   受信通知は Supabase の Database Webhook → Apps Script → Gmail。
-   設定手順は APPLY_SETUP.md にある。
+   送信先は Apps Script のウェブアプリ（jobsite-notify。jobs・skill・shinsotsu・相談フォームと同じ1本）。
+   2026-11-04 に Supabase をやめて直送にした（プロジェクトも削除済み）。Apps Script が ①メール ②控えシート
+   「応募フォーム控え」 ③Airtable「求職者（HP）」へ登録 → Airtable のオートメーションが Slack へ通知。
+   通知のサイト名は中途サイト扱いになるので、ご要望欄の先頭に「【財政課転職から】」を付けて見分ける。
+   ⚠ ヘッダーを付けない（text/plain の単純リクエスト）。Apps Script はプリフライトに応えないため。
    ========================================================================= */
 
 /* rebuild.js が data/jobs.json から「ID・企業名・職種名・年収」だけを差し込む。
@@ -525,9 +527,7 @@
 /* rebuild.js が [id, 会社名, 職種名, 年収] の表形式で埋める（5,700件を軽く持つため）。ここでオブジェクトに戻す */
 const JOBS_MINI = (__JOBS_MINI__).map(r=>Array.isArray(r)?{id:r[0],company:r[1],name:r[2],salary:r[3]}:r);
 
-const SUPABASE_URL      = "https://jvdnabtpxcyfnogdulea.supabase.co";
-const SUPABASE_ANON_KEY = "sb_publishable_kVUJIz-lImX0AD5eALVVaA_YiDqi7GQ";
-const APPLY_TABLE       = "applications";
+const NOTIFY_URL        = "https://script.google.com/macros/s/AKfycbwSPDbvJuwN8zgP4tRW-VDP9WRbJ2mybZo43BxYdobpc6rts8t0WMh-sQ2Ivgq0mqYK/exec";
 const CONSULT_URL       = "https://calendly.com/r_matsuoka";
 const DRAFT_KEY         = "jobsite-apply-draft";
 
@@ -721,31 +721,6 @@ function clearDraft(){ try{ localStorage.removeItem(DRAFT_KEY); }catch(e){} }
 $("#form").addEventListener("input", saveDraft);
 $("#form").addEventListener("change", saveDraft);
 
-/* ---------- ログイン中なら、マイページの登録内容を先に入れておく ---------- */
-let sessionUserId=null;
-(async function prefillFromAccount(){
-  if(!SUPABASE_URL||!SUPABASE_ANON_KEY) return;
-  try{
-    await new Promise((res,rej)=>{
-      const t=document.createElement("script");
-      t.src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js";
-      t.onload=res; t.onerror=rej; document.head.appendChild(t);
-    });
-    const sb=window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-    const {data}=await sb.auth.getSession();
-    const user=data&&data.session&&data.session.user;
-    if(!user) return;
-    sessionUserId=user.id;
-    if(!val("email") && user.email) $("#email").value=user.email;
-    const p=await sb.from("profiles").select("full_name,current_industry,timing").eq("id",user.id).maybeSingle();
-    if(p.data){
-      if(!val("name") && p.data.full_name) $("#name").value=p.data.full_name;
-      if(!val("timing") && p.data.timing && TIMING.indexOf(p.data.timing)>=0) $("#timing").value=p.data.timing;
-    }
-    saveDraft();
-  }catch(e){ /* 読み込めなくてもフォームはそのまま使える */ }
-})();
-
 /* ---------- 送信 ---------- */
 function sendMsg(text, ng){
   const el=$("#sendmsg");
@@ -777,27 +752,21 @@ async function submit(){
     meeting_type: (document.querySelector('input[name="meeting"]:checked')||{}).value || null,
     timing:      val("timing") || null,
     job_hunting_status: val("status") || null,
-    message:     val("message") || null,
+    message:     ["【財政課転職（zaiseikatenshoku.com）から】", val("message")].filter(Boolean).join("\n"),
     consent:     true,
-    user_id:     sessionUserId,
-    source:      "jobsite"
+    source:      "jobsite",
+    page_path:   location.host + location.pathname + location.search
   };
 
   try{
-    const res=await fetch(SUPABASE_URL+"/rest/v1/"+APPLY_TABLE,{
+    /* ヘッダーを付けない＝text/plain の単純リクエスト（プリフライト無しで Apps Script に届く） */
+    const res=await fetch(NOTIFY_URL,{
       method:"POST",
-      headers:{
-        "Content-Type":"application/json",
-        "apikey":SUPABASE_ANON_KEY,
-        "Authorization":"Bearer "+SUPABASE_ANON_KEY,
-        "Prefer":"return=minimal"
-      },
-      body:JSON.stringify(payload)
+      body:JSON.stringify({kind:"application_form", record:payload})
     });
-    if(!res.ok){
-      const t=await res.text().catch(()=>"");
-      throw new Error(res.status+" "+t.slice(0,200));
-    }
+    if(!res.ok) throw new Error(String(res.status));
+    const j=await res.json().catch(()=>null);
+    if(!j || !/^ok/.test(String(j.result||""))) throw new Error(String(j&&j.result||"bad reply"));
     clearDraft();
     track("apply_submit",{job_id:jobId, company:(job&&job.company)||"", job_name:(job&&job.name)||"", meeting:payload.meeting_type||"", timing:payload.timing||""});
     showDone();
