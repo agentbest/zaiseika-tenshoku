@@ -98,6 +98,47 @@ for (const [sc, grp, title] of SKILL) {
   add('資格・スキル', grp, grp, title, 'B', `skill-${sc}`, title, '各試験の公式サイト');
 }
 
+// =====================================================================
+// ---- 2026-11-03 追加：1,001〜2,000本 ----
+// ハチワレさん「2,000ページに到達していないから残りの企画を進めて」「各サイト2,000ページがあってから改善」。
+// 10月の Search Console で流入の約半分が「制度とお金」（在職公務員が自分の制度を調べる検索）、
+// 「財政」「転職」の語には需要がほぼ無く、自治体別は表示ゼロが多かった。
+// → 自治体別は増やさず、制度とお金（+325）・選考対策（+195）・資格・スキル（+100）・部署別（+150）・業界研究（+230）。
+// 種別（kind）は既存の5つをそのまま使う（tools/next.js のレーン割当を変えなくて済む）。領域（area）で新旧を分ける。
+// ⚠ 既存の No.1〜1000 の並びと slug は変えない（この節は末尾に足すだけ）。
+// =====================================================================
+const SEIDO2 = JSON.parse(fs.readFileSync(path.join(D, 'topics-seido2.json'), 'utf8'));
+const SENKO2 = JSON.parse(fs.readFileSync(path.join(D, 'topics-senko2.json'), 'utf8'));
+const SKILL2 = JSON.parse(fs.readFileSync(path.join(D, 'topics-skill2.json'), 'utf8'));
+const AX2 = JSON.parse(fs.readFileSync(path.join(D, 'topics-axis2.json'), 'utf8'));
+
+// 7. 制度とお金（追加）。在職中に調べる制度（給与・手当／退職の手続き／失業給付と税金）を S に
+const SEIDO2_S = new Set(['給与・手当', '退職の手続き', '失業給付と税金']);
+for (const [sc, grp, title] of SEIDO2) {
+  add('制度とお金', grp, grp, title, SEIDO2_S.has(grp) ? 'S' : 'A', `seido-${sc}`, title,
+      '地方公務員法／給与条例／退職手当条例／共済組合・年金機構・国税庁の公式。数値は出典付きのみ');
+}
+// 8. 選考対策（追加）。面接の質問別を S に
+for (const [sc, grp, title] of SENKO2) {
+  add('選考対策', grp, grp, title, grp === '面接の質問別' ? 'S' : 'A', `senko-${sc}`, title, '当社の面談知見（rules/insight.md）');
+}
+// 9. 資格・スキル（追加）
+for (const [sc, grp, title] of SKILL2) {
+  add('資格・スキル', grp, grp, title, 'B', `skill-${sc}`, title, grp.startsWith('資格') ? '各試験の公式サイト' : '事務分掌規則／民間の職種定義');
+}
+// 10. 部署別（追加）30部署 × 5テーマ
+for (const [dc, dn] of AX2.dept2) {
+  for (const [tc, tn, tpl] of AX.deptTheme) {
+    add('部署別', dn, dn, tn, 'A', `dept-${dc}-${tc}`, tpl.replace('{X}', dn), '事務分掌規則／部署別 仕事ガイドから内部リンク');
+  }
+}
+// 11. 業界研究（追加）46業界 × 5テーマ
+for (const [ic, iname] of AX2.industry2) {
+  for (const [tc, tn, tpl] of AX.industryTheme) {
+    add('業界研究', iname, iname, tn, 'A', `industry-${ic}-${tc}`, tpl.replace('{X}', iname), '有価証券報告書／業界団体の公表資料');
+  }
+}
+
 // ---- 出力 ----
 const HEAD = ['No', '種別', '領域', '対象', 'テーマ', '需要ランク', 'slug', '記事タイトル案', '備考'];
 const tsv = [HEAD.join('\t'), ...rows.map(r => r.join('\t'))].join('\r\n') + '\r\n';
