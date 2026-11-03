@@ -7,6 +7,7 @@
 > - レーンを並べ替えた：A＝制度とお金 → 部署別 → 資格・スキル（575本）／B＝選考対策 → 業界研究 → 自治体別（425本）。`tools/next.js` の `LANES` も同じ。
 > - 書き方は従来どおり（`CLAUDE.md` 4-3・`ARTICLE_SPEC.md`・`rules/`）。**制度の記事は条文を `tools/egov.js` で確認し、数値は出典付きのみ。年収の数字を訴求に使わない。「公務員は民間で通用しない」前提で書かない。** 新しい領域「面接の質問別」「スキルの言い換え」「退職の手続き」「住宅・生活とお金」は選考対策／資格・スキル／制度とお金の既存の構成（ARTICLE_SPEC の C・E・F）に準じる。
 > - 執筆端末での回し方：`git pull` → `node tools/next.js A`（または B）→ 3本書く → `node check-articles.js` → `node build-articles.js` → `node tools/hrefcheck.js` → `node tools/log.js` → commit → `git pull --rebase` → push。サブエージェント並列で回す場合も、1人3本・レーン内の No 順を守る。
+> - **優先順位（2026-11-04 ハチワレさん）：freelance → saiyo-media（残り700本） → この財政課転職（残り1,000本）。前の2つが終わってから着手。**
 > - 元端末はこれ以降この記事メディアを書かない。
 
 
