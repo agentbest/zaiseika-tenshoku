@@ -4,15 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="index,follow">
-<title>転職支援サービスに申し込む — 財政課転職</title>
+<title>転職支援サービスに申し込む — エージェントベストジョブ財政課転職</title>
 <link rel="icon" href="assets/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="assets/icon-192.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="canonical" href="https://zaiseikatenshoku.com/apply.html">
 <meta name="description" content="株式会社エージェントベストの転職支援サービス（無料）へのお申し込みフォームです。ご登録後、担当エージェントからご連絡し、求人のご紹介や選考のご支援を行います。">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="財政課転職">
-<meta property="og:title" content="転職支援サービスに申し込む — 財政課転職">
+<meta property="og:site_name" content="エージェントベストジョブ財政課転職">
+<meta property="og:title" content="転職支援サービスに申し込む — エージェントベストジョブ財政課転職">
 <meta property="og:description" content="株式会社エージェントベストの転職支援サービス（無料）へのお申し込みフォームです。">
 <meta property="og:url" content="https://zaiseikatenshoku.com/apply.html">
 <meta property="og:locale" content="ja_JP">
@@ -291,7 +291,7 @@
     <a class="brand" href="./" aria-label="求人検索トップ">
       <img class="brand__mark" src="assets/mark.png" alt="" aria-hidden="true" width="156" height="120">
       <span class="brand__txt">
-        <span class="brand__name">財政課転職</span>
+        <span class="brand__name"><span style="display:block;font-size:10px;line-height:1.5">エージェントベストジョブ</span>財政課転職</span>
         <span class="brand__sub">Public &rarr; Private</span>
       </span>
     </a>
@@ -483,7 +483,7 @@
     <div class="foot__brand">
       <img class="foot__logo foot__logo--light" src="assets/logo.png" alt="株式会社エージェントベスト" width="508" height="120">
       <img class="foot__logo foot__logo--dark" src="assets/logo-white.png" alt="" aria-hidden="true" width="508" height="120">
-      <strong>財政課転職</strong>
+      <strong>エージェントベストジョブ財政課転職</strong>
       <span>人材紹介サービス「エージェントベスト」が運営しています。ご利用はすべて無料です（紹介手数料は採用企業からいただきます）。</span>
     </div>
     <dl class="foot__meta">
@@ -518,7 +518,7 @@
    送信先は Apps Script のウェブアプリ（jobsite-notify。jobs・skill・shinsotsu・相談フォームと同じ1本）。
    2026-11-04 に Supabase をやめて直送にした（プロジェクトも削除済み）。Apps Script が ①メール ②控えシート
    「応募フォーム控え」 ③Airtable「求職者（HP）」へ登録 → Airtable のオートメーションが Slack へ通知。
-   通知のサイト名は中途サイト扱いになるので、ご要望欄の先頭に「【財政課転職から】」を付けて見分ける。
+   通知のサイト名は中途サイト扱いになるので、ご要望欄の先頭に「【エージェントベストジョブ財政課転職から】」を付けて見分ける。
    ⚠ ヘッダーを付けない（text/plain の単純リクエスト）。Apps Script はプリフライトに応えないため。
    ========================================================================= */
 
@@ -752,7 +752,7 @@ async function submit(){
     meeting_type: (document.querySelector('input[name="meeting"]:checked')||{}).value || null,
     timing:      val("timing") || null,
     job_hunting_status: val("status") || null,
-    message:     ["【財政課転職（zaiseikatenshoku.com）から】", val("message")].filter(Boolean).join("\n"),
+    message:     ["【エージェントベストジョブ財政課転職（zaiseikatenshoku.com）から】", val("message")].filter(Boolean).join("\n"),
     consent:     true,
     source:      "jobsite",
     page_path:   location.host + location.pathname + location.search

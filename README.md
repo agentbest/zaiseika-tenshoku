@@ -1,4 +1,4 @@
-# 財政課転職（zaiseikatenshoku.com）
+# エージェントベストジョブ財政課転職（zaiseikatenshoku.com）
 
 自治体・官公庁で働いてきた人、とくに**財政課**に向けた求人サイト。
 `jobsite`（jobs.agent-best.net）を複製し、**載せる求人を「公務員の経験が活きるもの」だけに絞った**もの。

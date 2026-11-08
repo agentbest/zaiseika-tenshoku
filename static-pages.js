@@ -146,7 +146,7 @@ function jobPage(C, tpl, j, related){
     return C.INQUIRY_FORM_URL + (C.INQUIRY_FORM_URL.includes('?') ? '&' : '?') + p.toString();
   };
   const lineMsg = (() => {
-    const msg = `財政課転職（求人サイト）を見てご連絡しました。下記の求人について相談したいです。\n■求人：${name}\n■企業：${j.company || ''}\n■ページ：${canon}\n`;
+    const msg = `エージェントベストジョブ財政課転職（求人サイト）を見てご連絡しました。下記の求人について相談したいです。\n■求人：${name}\n■企業：${j.company || ''}\n■ページ：${canon}\n`;
     return `https://line.me/R/oaMessage/${encodeURIComponent(C.LINE_OA_ID)}/?${encodeURIComponent(msg)}`;
   })();
   const ARROW = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
@@ -237,10 +237,10 @@ function jobPage(C, tpl, j, related){
     { '@type': 'ListItem', position: 2, name, item: canon },
   ]};
 
-  const title = `${name}｜${co}（${fmtSalary(j)}） - 財政課転職`;
+  const title = `${name}｜${co}（${fmtSalary(j)}） - エージェントベストジョブ財政課転職`;
   const desc = plain(j.jobContent || j.must || j.companyInfo, 110) || `${co}の${name}の求人。`;
   return tpl
-    .replace('__TITLE__', () => esc(title.length > 70 ? `${name}｜${co} - 財政課転職` : title))
+    .replace('__TITLE__', () => esc(title.length > 70 ? `${name}｜${co} - エージェントベストジョブ財政課転職` : title))
     .replace(/__OGTITLE__/g, () => esc(`${name}｜${co}（${fmtSalary(j)}）`))
     .replace(/__DESC__/g, () => esc(desc))
     .replace(/__CANON__/g, () => esc(canon))

@@ -259,9 +259,9 @@ const GA = '<script async src="https://www.googletagmanager.com/gtag/js?id=G-1XX
 // media/ 配下からの相対パス（記事ページ・一覧ページはどちらも media/ の中）
 function header() {
   return '<header class="topbar"><div class="topbar__inner">\n'
-    + '<a class="brand" href="../" aria-label="財政課転職トップ">\n'
+    + '<a class="brand" href="../" aria-label="エージェントベストジョブ財政課転職トップ">\n'
     + '<img class="brand__mark" src="../assets/mark.png" alt="" aria-hidden="true">\n'
-    + '<span><span class="brand__name">財政課転職</span><span class="brand__sub">PUBLIC &rarr; PRIVATE</span></span></a>\n'
+    + '<span><span class="brand__name"><span style="display:block;font-size:10px;line-height:1.5">エージェントベストジョブ</span>財政課転職</span><span class="brand__sub">PUBLIC &rarr; PRIVATE</span></span></a>\n'
     + '<nav class="gnav" aria-label="メインメニュー">\n'
     + '<a href="../">求人を探す</a>\n'
     + '<a href="../zukan.html">部署別 仕事ガイド</a>\n'
@@ -272,7 +272,7 @@ function header() {
 
 function footer() {
   return '<footer class="site-foot"><div class="foot__inner">\n'
-    + '<strong>財政課転職 — 公務員のための求人サイト</strong><br>\n'
+    + '<strong>エージェントベストジョブ財政課転職 — 公務員のための求人サイト</strong><br>\n'
     + '<span>人材紹介サービス「エージェントベスト」が運営しています。ご利用はすべて無料です（紹介手数料は採用企業からいただきます）。</span>\n'
     + '<nav class="foot__links"><a href="../">求人を探す</a><a href="../zukan.html">部署別 仕事ガイド</a>\n'
     + '<a href="./">記事</a><a href="../apply.html">転職支援サービス</a><a href="../terms.html">利用規約</a>\n'
@@ -305,11 +305,11 @@ function renderArticle(meta, bodyHtml, faq, related) {
     '@context': 'https://schema.org', '@type': 'Article', headline: meta.title,
     description: meta.description || '', mainEntityOfPage: url,
     author: { '@type': 'Organization', name: '株式会社エージェントベスト' },
-    publisher: { '@type': 'Organization', name: '財政課転職' }
+    publisher: { '@type': 'Organization', name: 'エージェントベストジョブ財政課転職' }
   }, {
     '@context': 'https://schema.org', '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: '財政課転職', item: SITE + '/' },
+      { '@type': 'ListItem', position: 1, name: 'エージェントベストジョブ財政課転職', item: SITE + '/' },
       { '@type': 'ListItem', position: 2, name: '記事', item: SITE + '/media/' },
       { '@type': 'ListItem', position: 3, name: meta.title, item: url }]
   }];
@@ -340,14 +340,14 @@ function renderArticle(meta, bodyHtml, faq, related) {
     + '<meta charset="utf-8">\n'
     + '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
     + '<meta name="robots" content="index,follow">\n'
-    + '<title>' + esc(meta.title) + '｜財政課転職</title>\n'
+    + '<title>' + esc(meta.title) + '｜エージェントベストジョブ財政課転職</title>\n'
     + '<link rel="icon" href="../assets/favicon.ico" sizes="any">\n'
     + '<link rel="icon" type="image/png" href="../assets/icon-192.png">\n'
     + '<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">\n'
     + '<link rel="canonical" href="' + url + '">\n'
     + '<meta name="description" content="' + esc(meta.description || '') + '">\n'
     + '<meta property="og:type" content="article">\n'
-    + '<meta property="og:site_name" content="財政課転職">\n'
+    + '<meta property="og:site_name" content="エージェントベストジョブ財政課転職">\n'
     + '<meta property="og:title" content="' + esc(meta.title) + '">\n'
     + '<meta property="og:description" content="' + esc(meta.description || '') + '">\n'
     + '<meta property="og:url" content="' + url + '">\n'
@@ -361,7 +361,7 @@ function renderArticle(meta, bodyHtml, faq, related) {
     + '</head>\n<body>\n'
     + header() + '\n'
     + '<main class="wrap">\n'
-    + '<nav class="crumb"><a href="../">財政課転職</a> &rsaquo; <a href="./">記事</a> &rsaquo; ' + esc(meta.kind || '') + '</nav>\n'
+    + '<nav class="crumb"><a href="../">エージェントベストジョブ財政課転職</a> &rsaquo; <a href="./">記事</a> &rsaquo; ' + esc(meta.kind || '') + '</nav>\n'
     + '<article class="post">\n'
     + '<p class="post__eyebrow">' + esc(meta.kind || '')
     + (meta.area && meta.area !== meta.kind ? ' / ' + esc(meta.area) : '') + '</p>\n'
@@ -395,13 +395,13 @@ function renderIndex(arts) {
     + '<meta charset="utf-8">\n'
     + '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
     + '<meta name="robots" content="index,follow">\n'
-    + '<title>記事一覧｜財政課転職</title>\n'
+    + '<title>記事一覧｜エージェントベストジョブ財政課転職</title>\n'
     + '<link rel="icon" href="../assets/favicon.ico" sizes="any">\n'
     + '<link rel="canonical" href="' + SITE + '/media/">\n'
     + '<meta name="description" content="自治体・官公庁で働いてきた方に向けて、経験の言い換え方、選考の進め方、退職手当や共済といった制度の扱いを整理した記事の一覧です。">\n'
     + '<meta property="og:type" content="website">\n'
-    + '<meta property="og:site_name" content="財政課転職">\n'
-    + '<meta property="og:title" content="記事一覧｜財政課転職">\n'
+    + '<meta property="og:site_name" content="エージェントベストジョブ財政課転職">\n'
+    + '<meta property="og:title" content="記事一覧｜エージェントベストジョブ財政課転職">\n'
     + '<meta property="og:url" content="' + SITE + '/media/">\n'
     + '<meta property="og:image" content="' + SITE + '/assets/ogp.jpg">\n'
     + '<meta name="twitter:card" content="summary_large_image">\n'
@@ -410,7 +410,7 @@ function renderIndex(arts) {
     + '</head>\n<body>\n'
     + header() + '\n'
     + '<main class="wrap">\n'
-    + '<nav class="crumb"><a href="../">財政課転職</a> &rsaquo; 記事</nav>\n'
+    + '<nav class="crumb"><a href="../">エージェントベストジョブ財政課転職</a> &rsaquo; 記事</nav>\n'
     + '<h1>記事一覧</h1>\n'
     + '<p class="post__meta">庁内では当たり前だった仕事が、民間側で何と呼ばれ、どう評価されるのか。制度の手続きまで含めて整理しています。</p>\n'
     + body + '\n'
