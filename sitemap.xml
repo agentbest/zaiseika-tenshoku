@@ -731,6 +731,7 @@
   <url><loc>https://zaiseikatenshoku.com/media/seido-kyosai-choki.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/seido-kyosai-dattai.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/seido-kyosai-gojokai.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zaiseikatenshoku.com/media/seido-kyosai-iryou-futan.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/seido-kyosai-kashitsuke.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/seido-kyosai-kohsai.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/seido-kyosai-shikumi.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -854,6 +855,7 @@
   <url><loc>https://zaiseikatenshoku.com/media/seido-tetsuzuki-kansha.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/seido-tetsuzuki-kashitsuke.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/seido-tetsuzuki-kenko.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zaiseikatenshoku.com/media/seido-tetsuzuki-kinmu-saigo.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/seido-tetsuzuki-kokuho-kanyu.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/seido-tetsuzuki-kokumin-nenkin.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/seido-tetsuzuki-kumiai.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -869,6 +871,7 @@
   <url><loc>https://zaiseikatenshoku.com/media/seido-tetsuzuki-shinkokusho.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/seido-tetsuzuki-shitsugyo-seikyu.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/seido-tetsuzuki-shokuin-data.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zaiseikatenshoku.com/media/seido-tetsuzuki-shorui-hokan.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/seido-tetsuzuki-sobetsu.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/seido-tetsuzuki-taishoku-kigen.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/seido-tetsuzuki-taishoku-shomei.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
