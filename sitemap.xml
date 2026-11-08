@@ -762,11 +762,13 @@
   <url><loc>https://zaiseikatenshoku.com/media/seido-kyuka-dansei-ikukyu.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/seido-kyuka-flex.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/seido-kyuka-fukushoku.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zaiseikatenshoku.com/media/seido-kyuka-fukushoku-haichi.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/seido-kyuka-funin.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/seido-kyuka-haigusha-shussan.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/seido-kyuka-haken.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/seido-kyuka-ikuji.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/seido-kyuka-ikukyu-encho.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zaiseikatenshoku.com/media/seido-kyuka-ikukyu-shokyu.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/seido-kyuka-jikangai.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/seido-kyuka-jikokeihatsu.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/seido-kyuka-kaigo.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -777,6 +779,7 @@
   <url><loc>https://zaiseikatenshoku.com/media/seido-kyuka-kibiki.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/seido-kyuka-mental.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/seido-kyuka-nenkyu.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zaiseikatenshoku.com/media/seido-kyuka-refresh.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/seido-kyuka-shugaku.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/seido-kyuka-shussan.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/seido-kyuka-tanjikan.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
