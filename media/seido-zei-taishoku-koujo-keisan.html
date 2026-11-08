@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+<title>退職所得控除の計算の考え方｜財政課転職</title>
+<link rel="icon" href="../assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="../assets/icon-192.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="canonical" href="https://zaiseikatenshoku.com/media/seido-zei-taishoku-koujo-keisan.html">
+<meta name="description" content="退職所得控除の基本式、勤続年数の数え方、複数の退職金や確定拠出年金一時金との重複調整を解説します。2026年からの適用条件と、本人が用意する資料を整理します。">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="財政課転職">
+<meta property="og:title" content="退職所得控除の計算の考え方">
+<meta property="og:description" content="退職所得控除の基本式、勤続年数の数え方、複数の退職金や確定拠出年金一時金との重複調整を解説します。2026年からの適用条件と、本人が用意する資料を整理します。">
+<meta property="og:url" content="https://zaiseikatenshoku.com/media/seido-zei-taishoku-koujo-keisan.html">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://zaiseikatenshoku.com/assets/ogp.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zaiseikatenshoku.com/assets/ogp.jpg">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1XXMP8Y1B4"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1XXMP8Y1B4');</script>
+<style>:root{--paper:#F5F7FA;--surface:#FFFFFF;--surface-2:#EEF1F6;--ink:#161A26;--ink-2:#4A5261;--ink-3:#6E7686;
+--line:#DDE2EA;--line-2:#EAEEF4;--accent:#1E3A8A;--accent-soft:#E9EDF9;--accent-ink:#1B3374;
+--cta:#D6362A;--cta-ink:#FFF;--cta-hover:#B22A20;--r-card:14px;--r-pill:999px;
+--sans:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","YuGothic","Noto Sans JP",Meiryo,system-ui,sans-serif;--maxw:800px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#0F131A;--surface:#171C26;--surface-2:#1F2530;
+--ink:#EAEEF5;--ink-2:#B4BCCA;--ink-3:#828C9E;--line:#2A313D;--line-2:#232A35;--accent:#8FA6F0;
+--accent-soft:#1B2338;--accent-ink:#BFCDFA;--cta:#D6392C;--cta-hover:#E44D3D}}
+:root[data-theme="dark"]{--paper:#0F131A;--surface:#171C26;--surface-2:#1F2530;--ink:#EAEEF5;--ink-2:#B4BCCA;
+--ink-3:#828C9E;--line:#2A313D;--line-2:#232A35;--accent:#8FA6F0;--accent-soft:#1B2338;--accent-ink:#BFCDFA;--cta:#D6392C;--cta-hover:#E44D3D}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.9;-webkit-text-size-adjust:100%}
+a{color:var(--accent-ink)}
+.topbar{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.topbar__inner{max-width:1080px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:16px}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;color:inherit}
+.brand__mark{width:30px;height:30px;border-radius:7px}
+.brand__name{display:block;font-weight:800;font-size:15px;letter-spacing:.02em}
+.brand__sub{display:block;font-size:10px;color:var(--ink-3);letter-spacing:.12em}
+.gnav{display:flex;gap:16px;margin-left:auto;flex-wrap:wrap}
+.gnav a{font-size:13.5px;color:var(--ink-2);text-decoration:none}
+.gnav a[aria-current]{color:var(--accent-ink);font-weight:700}
+.btn-head{background:var(--cta);color:var(--cta-ink);text-decoration:none;font-size:13px;font-weight:700;padding:8px 14px;border-radius:var(--r-pill);white-space:nowrap}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:22px 16px 56px}
+.crumb{font-size:12px;color:var(--ink-3);margin-bottom:14px}
+.crumb a{color:var(--ink-3)}
+.post__eyebrow{display:inline-block;font-size:11.5px;letter-spacing:.08em;color:var(--accent-ink);background:var(--accent-soft);padding:4px 10px;border-radius:var(--r-pill);margin:0 0 10px}
+h1{font-size:27px;line-height:1.5;letter-spacing:.01em;margin:0 0 12px}
+.post__meta{font-size:12px;color:var(--ink-3);margin:0 0 26px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+h2{font-size:20px;line-height:1.55;margin:38px 0 12px;padding-left:11px;border-left:4px solid var(--accent)}
+h3{font-size:16.5px;margin:26px 0 8px}
+p{margin:0 0 16px}
+ul,ol{margin:0 0 18px;padding-left:1.35em}
+li{margin-bottom:7px}
+.tw{overflow-x:auto;margin:0 0 20px}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--surface-2);font-weight:700}
+blockquote{margin:0 0 20px;padding:12px 16px;border-left:4px solid var(--line);background:var(--surface-2);border-radius:0 8px 8px 0;color:var(--ink-2)}
+blockquote p:last-child{margin-bottom:0}
+.blk{border-radius:var(--r-card);padding:16px 18px;margin:24px 0}
+.blk p:last-child{margin-bottom:0}
+.blk__lbl{font-size:11.5px;letter-spacing:.08em;font-weight:800;margin:0 0 7px}
+.blk--insight{background:var(--accent-soft);border:1px solid var(--accent)}
+.blk--insight .blk__lbl{color:var(--accent-ink)}
+.blk--note{background:var(--surface-2);border:1px solid var(--line)}
+.blk--note .blk__lbl{color:var(--ink-3)}
+.blk--cta{background:var(--surface);border:1px dashed var(--accent)}
+.sources{margin:34px 0 0;padding:15px 17px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card)}
+.sources h2{font-size:14px;margin:0 0 8px;padding:0;border:0}
+.sources ol{margin:0;font-size:13px;color:var(--ink-2)}
+.author{margin:30px 0 0;padding:16px 18px;border:1px solid var(--line);border-radius:var(--r-card);background:var(--surface)}
+.author__lbl{font-size:11px;letter-spacing:.1em;color:var(--ink-3);margin:0 0 3px}
+.author__name{font-size:16px;font-weight:800;margin:0 0 7px}
+.author__bio{font-size:13px;line-height:1.85;color:var(--ink-2);margin:0}
+.related{margin:34px 0 0}
+.related h2{font-size:15px;margin:0 0 10px;padding:0;border:0}
+.related ul,.idx__grp ul{list-style:none;padding:0;margin:0}
+.related li,.idx__grp li{border-bottom:1px solid var(--line-2);padding:9px 0;margin:0}
+.related a,.idx__grp a{font-size:14px;text-decoration:none}
+.related a:hover,.idx__grp a:hover{text-decoration:underline}
+.cta{margin:38px 0 0;padding:22px 20px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);text-align:center}
+.cta h2{font-size:18px;margin:0 0 9px;padding:0;border:0}
+.cta p{font-size:13.5px;color:var(--ink-2)}
+.cta__btns{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+.cta__pri{background:var(--cta);color:#fff;text-decoration:none;font-weight:700;padding:11px 22px;border-radius:var(--r-pill)}
+.cta__sec{background:var(--surface-2);color:var(--ink);text-decoration:none;font-weight:700;padding:11px 18px;border-radius:var(--r-pill)}
+.site-foot{background:var(--surface);border-top:1px solid var(--line);margin-top:44px}
+.foot__inner{max-width:1080px;margin:0 auto;padding:24px 16px;font-size:12.5px;color:var(--ink-2)}
+.foot__links{display:flex;flex-wrap:wrap;gap:12px;margin:11px 0}
+.foot__links a{color:var(--ink-2);text-decoration:none}
+.foot__copy{color:var(--ink-3);margin:0}
+.idx__grp{margin:30px 0 0}
+.idx__grp h2{font-size:17px}
+.idx__cnt{font-size:12px;color:var(--ink-3);font-weight:400;margin-left:8px}
+@media(max-width:640px){h1{font-size:22px}h2{font-size:18px}.wrap{padding:18px 14px 44px}}</style>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"退職所得控除の計算の考え方","description":"退職所得控除の基本式、勤続年数の数え方、複数の退職金や確定拠出年金一時金との重複調整を解説します。2026年からの適用条件と、本人が用意する資料を整理します。","mainEntityOfPage":"https://zaiseikatenshoku.com/media/seido-zei-taishoku-koujo-keisan.html","author":{"@type":"Organization","name":"株式会社エージェントベスト"},"publisher":{"@type":"Organization","name":"財政課転職"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"財政課転職","item":"https://zaiseikatenshoku.com/"},{"@type":"ListItem","position":2,"name":"記事","item":"https://zaiseikatenshoku.com/media/"},{"@type":"ListItem","position":3,"name":"退職所得控除の計算の考え方","item":"https://zaiseikatenshoku.com/media/seido-zei-taishoku-koujo-keisan.html"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"勤続年数の端数はいつも切り上げますか","acceptedAnswer":{"@type":"Answer","text":"基本の勤続年数では一年未満の端数を切り上げますが、過去の給付との重複調整には切捨ての規定があります。どの計算段階かを区別してください。"}},{"@type":"Question","name":"過去の退職金が非課税だったら申告しなくてよいですか","acceptedAnswer":{"@type":"Answer","text":"当時の税がゼロでも、今回の控除計算に関係する場合があります。支給額と算定期間の資料を用意し、申告書で求められる情報を伝えてください。"}},{"@type":"Question","name":"確定拠出年金と退職手当は何年空ければよいですか","acceptedAnswer":{"@type":"Answer","text":"受給の順序、日付、給付の種類、重複期間で取扱いが変わるため、一つの年数では答えられません。2026年からの改正の適用条件も含め、支払者と税務署に確認してください。退職所得控除は、基本式に加えて、期間と受給歴を確認することが大切です。働き方の希望はLINEの相談窓口でも整理できます。ご利用は無料です（紹介手数料は採用企業の負担）。"}}]}]</script>
+</head>
+<body>
+<header class="topbar"><div class="topbar__inner">
+<a class="brand" href="../" aria-label="財政課転職トップ">
+<img class="brand__mark" src="../assets/mark.png" alt="" aria-hidden="true">
+<span><span class="brand__name">財政課転職</span><span class="brand__sub">PUBLIC &rarr; PRIVATE</span></span></a>
+<nav class="gnav" aria-label="メインメニュー">
+<a href="../">求人を探す</a>
+<a href="../zukan.html">部署別 仕事ガイド</a>
+<a href="./" aria-current="page">記事</a>
+<a href="../apply.html">転職支援サービス</a></nav>
+<a class="btn-head" href="../apply.html">無料で相談する</a></div></header>
+<main class="wrap">
+<nav class="crumb"><a href="../">財政課転職</a> &rsaquo; <a href="./">記事</a> &rsaquo; 制度とお金</nav>
+<article class="post">
+<p class="post__eyebrow">制度とお金 / 失業給付と税金</p>
+<h1>退職所得控除の計算の考え方</h1>
+<p class="post__meta">2026-11時点の公開情報にもとづきます。制度や募集要項は変わることがあるため、手続きの前に各機関の公式情報をご確認ください。</p>
+<p>退職所得控除は、退職手当の支給額を増やす制度ではなく、退職所得を計算する際に差し引く控除です。基本式は勤続年数で整理できますが、過去の退職金や確定拠出年金の一時金がある場合には、その式だけで本人の額を確定できないことがあります。</p>
+<p>まず税の計算に使う期間を確認し、基本の控除額を求め、その後に重複する期間などの調整を確認します。本記事は2026年11月時点の公開情報にもとづきます。一般的な所得税の取扱いを整理し、本人の計算は所属の退職手当担当、ほかの支払者、税務署に資料を示して確認してください。</p>
+<h2>控除額と退職所得と税額を区別する</h2>
+<p>所得税法第30条は、退職所得の金額と退職所得控除額を定めています。控除額は、税を計算するための一つの段階です。退職手当の支給額、控除額、控除後の退職所得、実際の税額を分けて見る必要があります。</p>
+<p>一般的な退職所得の計算では、収入金額から退職所得控除額を差し引き、残額の二分の一を退職所得の金額とします。ただし、特定役員退職手当等や短期退職手当等には別の扱いがあります。控除額が分かっただけで、本人の最終的な税が計算できたとは考えないでください。</p>
+<p>国家公務員・地方公務員は、この税法上の役員等に含まれます。役員等勤続年数が五年以下の期間に対応する特定役員退職手当等では、通常の二分の一計算を使いません。職場で管理職ではなかったことを理由に、この区分が無関係とは判断できません。</p>
+<p>この違いは控除額の基本式と、控除後の残額をどう扱うかの違いです。二分の一計算が使えないことを、退職所得控除が一切使えないことと混同しないようにします。所得区分の全体は<a href="seido-zei-taishoku-bunri.html">退職所得の分離課税とは</a>でも整理しています。</p>
+<h2>基本の控除額は勤続二十年を境に計算する</h2>
+<p>所得税法第30条と国税庁No.1420の基本的な計算は次のとおりです。ここで使う勤続年数は、税法上の定めに沿って確認した年数です。複数の退職手当がある場合などの調整は、この表の後で別に確認します。</p>
+<div class="tw"><table>
+<thead><tr><th>勤続年数</th><th>基本の退職所得控除額</th></tr></thead><tbody>
+<tr><td>20年以下</td><td>40万円×勤続年数。計算額が80万円未満なら80万円</td></tr>
+<tr><td>20年超</td><td>800万円＋70万円×（勤続年数－20年）</td></tr>
+</tbody></table></div>
+<p>たとえば、重複期間などの調整がなく、税の計算上の勤続年数が12年なら、基本の控除額は40万円×12年＝480万円です。勤続年数が24年なら、800万円＋70万円×4年＝1080万円となります。どちらも式を示す仮定であり、本人の支給額や税負担を示すものではありません。</p>
+<p>また、障害者になったことが直接の原因で退職した場合には、国税庁は控除額に100万円を加算すると案内しています。単に障害者に該当することだけで判断せず、退職の原因を含めた制度の要件を担当者に確認します。</p>
+<p>税の控除額と退職手当そのものの支給率・支給額は異なる制度です。勤続年数が同じ表示でも、退職手当を算定する期間と税の控除に用いる期間の扱いが一致するとは限りません。支給見込通知のどの数字を見ているかを明確にしてください。</p>
+<h2>通常の勤続年数と重複期間の端数は扱いが違う</h2>
+<p>所得税法施行令第69条は、退職所得控除に係る勤続年数の計算を定めています。国税庁No.1420の例では、10年2か月の勤続期間を11年として控除額を計算しています。基本の勤続年数では一年未満の端数を切り上げる扱いです。</p>
+<p>ただし、履歴書上の在職期間をすべて機械的に足せばよいわけではありません。ほかの支払者での勤務期間が退職手当の計算に通算される場合など、どの期間を税の計算へ含めるかを確認します。入職日、退職日、通算される前歴の資料をそろえてください。</p>
+<p>さらに、過去の退職手当との重複期間を調整する際には、施行令第70条に別の端数処理があります。基本の勤続年数を切り上げる説明を、そのまま重複期間に使ってはいけません。同条では、所定の調整期間に一年未満の端数があれば切り捨てるとされています。</p>
+<p>本人が概算を作る場合も、基本の勤続期間と、過去の給付に係る期間、重なる期間を別々に記録します。丸めた年数だけを先に作ると、どの段階で切上げ・切捨てをしたか分からなくなります。日付や月数の元資料を残すことが大切です。</p>
+<aside class="blk blk--insight"><p class="blk__lbl">エージェントベストの見解</p><p>退職所得控除の見込みは、式そのものよりも、式へ入れる期間を確定する段階で差が生じます。採用日と退職日だけでなく、通算された前歴や過去の一時金を一覧にしておくことを勧めます。「勤続何年」という丸めた数字だけでは、基本の計算と重複期間の調整を区別できません。まず日付の資料をそろえ、担当者がどの期間を採用したかを確認し、その後で控除額と税額を読みます。この順番なら、以前受け取った給付を見落とした概算を、確定した手取りと受け取ることを防げます。仕事を変えるかどうかの判断でも、税の見込みを一つの確定額にせず、確認が済んだ部分と未確認の部分を分けて使うことが有効です。</p></aside>
+<p>今後の仕事の候補は、<a href="../?gov=1">公務員経験を生かせる求人一覧</a>で確認できます。退職手当の計算と、次に担当したい職務の整理を別々に進めましょう。</p>
+<h2>同じ年に複数の退職手当がある場合</h2>
+<p>同じ年に二か所以上から退職手当を受け取る場合は、支払者ごとに基本の控除額を独立して満額使えるとは限りません。国税庁No.2735は、後の支払者がすでに受け取った退職手当も含めて計算する例を示しています。</p>
+<p>その例では、最も長い勤続期間へ、ほかの勤務先の重複しない期間を加えて年数を求めます。同じ期間を二回数えることは避けます。また、先に徴収済みの税を踏まえて、後の支払者が徴収する額を計算する仕組みも確認する必要があります。</p>
+<p>本人は、先に交付された退職所得の源泉徴収票を後の支払者へ示し、退職所得の受給に関する申告書で必要な情報を伝えます。勤務先が異なるから情報共有も自動で済んでいる、と考えないようにしてください。</p>
+<p>同じ年に一般退職手当等と特定役員退職手当等などの異なる区分がある場合は、計算がさらに変わることがあります。国税庁の一つの計算例が本人の組合せと同じかを確かめ、異なる場合はそのまま流用せず担当者へ確認します。</p>
+<h2>過去の受給歴と確定拠出年金の順序を確認する</h2>
+<p>所得税法施行令第70条は、過去の退職手当等と今回の給付に係る期間が重複する場合の調整を定めています。一般的には前年以前四年内の退職手当等を確認する規定がありますが、確定拠出年金の老齢一時金が関係すると、異なる期間の確認が必要です。</p>
+<p>2026年からの改正では、先に確定拠出年金の老齢一時金を受け、その後に老齢一時金以外の退職手当等を受ける場合について、前年以前九年内の確認が関係します。ただし、先行する老齢一時金が2026年1月1日以後に支払われたものに限るという適用条件があります。</p>
+<p>国税庁の2026年4月の改正案内は、この条件の下で、2026年1月1日以後に受けた前年以前九年内の退職手当等や、同日前に受けた前年以前四年内の退職手当等を対象として説明しています。単に「2026年から過去の受給は全部九年」と読み替えることはできません。</p>
+<p>逆に、退職手当等を先に受け、その後に確定拠出年金の老齢一時金を受ける場合は、前年以前十九年内の退職手当等を確認する規定があります。給付の順序によって確認期間が異なるため、受給の順番を入れ替えても同じ計算になるとはいえません。</p>
+<p>これらは対象となる給付と期間の重複を確認する仕組みです。一定年数空ければ誰でも控除をすべて使える、という助言には置き換えられません。受給年、支払日、給付の種類、加入・勤続期間を表にして、支払者と税務署に示してください。</p>
+<h2>以前の給付が控除額未満でも情報は必要</h2>
+<p>過去の退職手当の額が少なく、当時は税がかからなかった場合も、その給付が今回と無関係とは限りません。施行令第70条には、前の退職手当等の収入金額が当時の控除額に満たない場合の、前の勤続期間等のみなし計算が定められています。</p>
+<p>そのため、以前の給付額が控除内だったから重複調整は一切ない、と判断するのは適切ではありません。一方、前の勤続期間を常にそのまま全期間差し引く、と考えるのも正確ではありません。受給額を含む資料に沿って計算を確認する必要があります。</p>
+<p>本人が用意するのは、源泉徴収税額が記載された資料だけではありません。前の支給額、算定期間、給付の種類が分かる資料も重要です。税がゼロだった票や通知も含めて保管し、照会時に示してください。</p>
+<p>経歴や仕事の条件を整理する場合は、<a href="../apply.html">相談の申込み</a>も利用できます。税務の計算を確かめる資料と、職務経験を説明する資料を分けると、必要な確認先を選びやすくなります。</p>
+<h2>申告と手取りの確認まで進める</h2>
+<p>退職所得の受給に関する申告書では、過去や同年中の給付など、様式で求められる情報を正確に伝えます。所属が設ける提出期限を確認し、ほかの支払者の資料が不足する場合は早めに連絡します。退職後に見つかった情報も、担当者へ報告してください。</p>
+<p>控除額の確認が終わったら、所得区分、所得税等、住民税などを分けて手取りの見込みを確認します。退職所得に係る税のほか、給与に係る住民税の残額を一括徴収する場合などもあるため、明細の控除合計がすべて退職所得の税とは限りません。</p>
+<p>退職所得申告書を提出して原則として確定申告不要となる場合も、別の理由で確定申告する際には退職所得の記載が必要です。源泉徴収票などを保管し、本人の年分の申告に備えます。</p>
+<aside class="blk blk--insight"><p class="blk__lbl">エージェントベストの見解</p><p>控除の制度を調べる目的は、税だけで退職時期を決めることではありません。受給できる年齢、給付の契約条件、今後の仕事、生活費も並べた上で、本人が使える選択肢を確認するための材料です。控除額の概算に不明点があるなら、その部分を保留として支払者や税務署へ確認し、仕事の希望は別に整理できます。現職で希望する業務を続けられる見通しがあるなら、残る判断にも理があります。転職を検討する場合も、控除の増減だけで条件の良否を決めず、職務と働き方への納得を確かめてください。複数の給付がある人ほど、年数の目安だけで判断せず、元の資料を基に確認を更新する姿勢を勧めます。</p></aside>
+<h2>よくある質問</h2>
+<h3>勤続年数の端数はいつも切り上げますか</h3>
+<p>基本の勤続年数では一年未満の端数を切り上げますが、過去の給付との重複調整には切捨ての規定があります。どの計算段階かを区別してください。</p>
+<h3>過去の退職金が非課税だったら申告しなくてよいですか</h3>
+<p>当時の税がゼロでも、今回の控除計算に関係する場合があります。支給額と算定期間の資料を用意し、申告書で求められる情報を伝えてください。</p>
+<h3>確定拠出年金と退職手当は何年空ければよいですか</h3>
+<p>受給の順序、日付、給付の種類、重複期間で取扱いが変わるため、一つの年数では答えられません。2026年からの改正の適用条件も含め、支払者と税務署に確認してください。</p>
+<p>退職所得控除は、基本式に加えて、期間と受給歴を確認することが大切です。働き方の希望は<a href="https://line.me/R/ti/p/@697nxhbt" target="_blank" rel="noopener noreferrer">LINEの相談窓口</a>でも整理できます。ご利用は無料です（紹介手数料は採用企業の負担）。</p>
+<section class="sources"><h2>出典</h2><ol><li><a href="https://laws.e-gov.go.jp/law/340AC0000000033" target="_blank" rel="noopener noreferrer">所得税法 第30条</a></li><li><a href="https://laws.e-gov.go.jp/law/340CO0000000096" target="_blank" rel="noopener noreferrer">所得税法施行令 第69条・第70条</a></li><li><a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1420.htm" target="_blank" rel="noopener noreferrer">国税庁 No.1420 退職金を受け取ったとき（退職所得）</a></li><li><a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/gensen/2735.htm" target="_blank" rel="noopener noreferrer">国税庁 No.2735 同じ年に2か所以上から退職手当等が支払われるとき</a></li><li><a href="https://www.nta.go.jp/publication/pamph/gensen/2026kaisei.pdf" target="_blank" rel="noopener noreferrer">国税庁 令和8年4月源泉所得税の改正のあらまし 7ページ</a></li></ol></section>
+</article>
+<div class="author"><p class="author__lbl">監修</p>
+<p class="author__name"><a href="https://www.agent-best.net/profile" target="_blank" rel="noopener">松岡 良次</a></p>
+<p class="author__bio">株式会社エージェントベスト代表。大手人材会社およびスタートアップ人材企業にて、IT・スタートアップ・メガベンチャー企業の採用支援に従事。独立後はIT・スタートアップ・コンサル領域に特化し、20〜30代のキャリア支援を行う。（厚生労働大臣許可 13-ユ-316964）</p></div>
+<section class="related"><h2>関連する記事</h2><ul><li><a href="seido-shitsugyo-daikae.html">「退職手当が失業給付の代わり」の正確なところ</a></li><li><a href="seido-shitsugyo-hellowork.html">ハローワークで公務員が使える制度</a></li><li><a href="seido-shitsugyo-kyufu.html">退職手当が一定額に満たない場合の給付</a></li><li><a href="seido-shitsugyo-nashi.html">公務員に雇用保険がない理由</a></li><li><a href="seido-zei-fukugyo.html">副業収入がある場合の申告</a></li><li><a href="seido-zei-furusato.html">ふるさと納税と退職の関係</a></li></ul></section>
+<section class="cta"><h2>「自分の経験に、どこで値段が付くのか」から相談できます</h2>
+<p>在職中でも、情報収集だけでも構いません。応募する求人が決まっていない段階のほうが、むしろ整理する意味があります。ご利用はすべて無料です。</p>
+<div class="cta__btns"><a class="cta__pri" href="../apply.html">無料で相談する</a>
+<a class="cta__sec" href="../">求人を見る</a>
+<a class="cta__sec" href="https://line.me/R/ti/p/@697nxhbt" target="_blank" rel="noopener noreferrer" data-line-cta="media-cta">LINEで相談する</a></div></section>
+</main>
+<footer class="site-foot"><div class="foot__inner">
+<strong>財政課転職 — 公務員のための求人サイト</strong><br>
+<span>人材紹介サービス「エージェントベスト」が運営しています。ご利用はすべて無料です（紹介手数料は採用企業からいただきます）。</span>
+<nav class="foot__links"><a href="../">求人を探す</a><a href="../zukan.html">部署別 仕事ガイド</a>
+<a href="./">記事</a><a href="../apply.html">転職支援サービス</a><a href="../terms.html">利用規約</a>
+<a href="../privacy.html">プライバシーポリシー（人材紹介）</a><a href="../privacy-ad.html">プライバシーポリシー（求人広告）</a>
+<a href="https://www.agent-best.net/" target="_blank" rel="noopener">運営会社サイト</a></nav>
+<p class="foot__copy">&copy; 株式会社エージェントベスト</p></div></footer>
+</body>
+</html>
