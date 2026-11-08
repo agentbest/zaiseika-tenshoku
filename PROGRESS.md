@@ -1348,7 +1348,7 @@ node tools/next.js A         # 自分のレーンの次の3本を引く（レー
 
 サブエージェント執筆、一次情報URL実際に開いて確認、条文egov.js。親全文レビューで1100の一括徴収を1月1日〜4月30日・5月31日までの支払・未徴収額を超える条件へ明確化後、生成・公開。
 検査：check OK1060 / NG0。build1060本。hrefcheck html1061 / md1060、MISS=0 JSONLD_NG=0 BOLD=0 ALIEN=0 MISLINK=0。
-同時公開のjutaku→shokyoリンク確認。保留なし。残り940本（レーンA515／レーンB425）。
+同時公開のjutaku→shokyoリンク確認。公開時のrebaseで別端末のサイト名変更（dcde1d1）を取り込み、最新build-articles.jsで新規3本を再生成。hrefcheck全項目0を再確認。保留なし。残り940本（レーンA515／レーンB425）。
 
 
 ### 最終更新：執筆端末 自動運転19回目（No.1095-1097）レーンA
