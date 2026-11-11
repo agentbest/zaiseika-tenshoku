@@ -85,10 +85,13 @@ const EXP_RE  = /公務員|官公庁出身|自治体出身|行政経験|役所/g
 const FIN_RE  = /公会計|地方財政|地方交付税|予算編成|財政|CFO|経営企画|管理会計|財務|経理|IR|資金調達|補助金|交付金/;
 /* 一覧の先頭に固定する求人（求人DBのレコードID）。並べた順に上から出る。
    既定の並び（新着順・おすすめ順）のときだけ効く。年収順・企業名順を選んだ人には効かせない。
-   2026-10-01 松岡さん指示: WiseVine の 行政DXパートナー（ドメインスペシャリストは 2026-11-11 に追加。FO は求人DBに登録後に足す）
+   2026-10-01 松岡さん指示: WiseVine の 行政DXパートナー（2026-11-11 にドメインスペシャリスト・FO を追加）
+   ⚠ ここに並べた求人は govScore が足りなくても掲載する（publicSectorOnly で素通し）
    カードには「PR」ラベルが付く（template.html の rowHtml の isPR） */
 const PINNED_JOBS = [
-  'rec91G5Rm9kjYtZNz', // WiseVine Domain Specialist（自治体財政スペシャリスト）2026-11-11 ハチワレさん指示: PR枠の一番上
+  'recTwNhKiZUwD18NB', // WiseVine Domain Specialist（自治体財政スペシャリスト）2026-11-11 ハチワレさん指示: PR枠の一番上
+  'recq5EEBdv3P7lmef', // WiseVine Function Owner（PdM）新規プロダクトFO候補
+  'recNWDsXzWR1URBl2', // WiseVine Function Owner（PdM）プロダクト責任者候補（点数が足りないので PINNED_JOBS で掲載させている）
   'recGuUBtR6RnQIcyH', // WiseVine 行政DXパートナー（技術営業/プリセールス）
   'recl9wJk6fSmoGli2', // WiseVine 行政DXパートナー（Sales）
 ];
@@ -108,7 +111,7 @@ function publicSectorOnly(jobs){
   for(const j of jobs){
     const s = govScore(j);
     const byCompany = GOV_COMPANIES.includes(j.company);
-    if(s < GOV_MIN_SCORE && !byCompany) continue;
+    if(s < GOV_MIN_SCORE && !byCompany && !PINNED_JOBS.includes(j.id)) continue;
     j.govScore = Math.round(s * 10) / 10;
     /* 見出しに行政が出る＝行政が相手だと一目で分かる求人。カードに印を出す */
     j.govFront = /自治体|官公庁|省庁|公共|行政/.test([j.title, j.position, j.jobCategory].filter(Boolean).join(' '));
