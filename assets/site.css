@@ -328,6 +328,12 @@
     flex:none; font-size:10.5px; font-weight:800; letter-spacing:.08em; line-height:1;
     padding:4px 7px; border-radius:5px; background:var(--cta); color:var(--cta-ink);
   }
+  /* PR枠（rebuild.js の PINNED_JOBS）。既定の並びで先頭に出ているときだけ印を付ける */
+  .jrow--pr{border-color:color-mix(in srgb,var(--gold) 60%, var(--line)); background:var(--gold-soft)}
+  .jrow__pr{
+    flex:none; font-size:10.5px; font-weight:800; letter-spacing:.08em; line-height:1;
+    padding:3px 6px; border-radius:5px; border:1px solid var(--gold); color:var(--gold);
+  }
   .jrow__co{font-size:13px; font-weight:700; color:var(--accent); min-width:0; overflow-wrap:anywhere}
   /* 企業ロゴ。画像が無い企業は社名の頭文字タイルにする。
      ⚠ 外部の favicon サービスは使わない（訪問者の閲覧履歴が第三者に渡るため）。 */

@@ -85,8 +85,10 @@ const EXP_RE  = /公務員|官公庁出身|自治体出身|行政経験|役所/g
 const FIN_RE  = /公会計|地方財政|地方交付税|予算編成|財政|CFO|経営企画|管理会計|財務|経理|IR|資金調達|補助金|交付金/;
 /* 一覧の先頭に固定する求人（求人DBのレコードID）。並べた順に上から出る。
    既定の並び（新着順・おすすめ順）のときだけ効く。年収順・企業名順を選んだ人には効かせない。
-   2026-10-01 松岡さん指示: WiseVine の 行政DXパートナー（ドメインスペシャリスト・FO は求人DBに登録後に足す） */
+   2026-10-01 松岡さん指示: WiseVine の 行政DXパートナー（ドメインスペシャリストは 2026-11-11 に追加。FO は求人DBに登録後に足す）
+   カードには「PR」ラベルが付く（template.html の rowHtml の isPR） */
 const PINNED_JOBS = [
+  'rec91G5Rm9kjYtZNz', // WiseVine Domain Specialist（自治体財政スペシャリスト）2026-11-11 ハチワレさん指示: PR枠の一番上
   'recGuUBtR6RnQIcyH', // WiseVine 行政DXパートナー（技術営業/プリセールス）
   'recl9wJk6fSmoGli2', // WiseVine 行政DXパートナー（Sales）
 ];
