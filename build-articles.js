@@ -249,8 +249,179 @@ const CSS = [
 '.idx__grp{margin:30px 0 0}',
 '.idx__grp h2{font-size:17px}',
 '.idx__cnt{font-size:12px;color:var(--ink-3);font-weight:400;margin-left:8px}',
-'@media(max-width:640px){h1{font-size:22px}h2{font-size:18px}.wrap{padding:18px 14px 44px}}'
+'@media(max-width:640px){h1{font-size:22px}h2{font-size:18px}.wrap{padding:18px 14px 44px}}',
+// ---- ポータル風レイアウト（記事トップ・記事ページ共通。2026-11-14） ----
+'.wrap--wide{max-width:1080px}',
+'.layout{display:grid;gap:36px;grid-template-columns:minmax(0,1fr)}',
+'.layout>*{min-width:0}',
+'@media(min-width:1024px){.layout{grid-template-columns:minmax(0,1fr) 300px}.layout--post{grid-template-columns:minmax(0,720px) 300px;justify-content:space-between}}',
+'.tabs{display:flex;gap:6px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin;margin:0 0 22px;padding:2px 0 8px;border-bottom:1px solid var(--line)}',
+'.tabs a{flex:0 0 auto;font-size:13px;font-weight:700;color:var(--ink-2);text-decoration:none;background:var(--surface);border:1px solid var(--line);padding:6px 13px;border-radius:var(--r-pill);white-space:nowrap}',
+'.tabs a:hover{color:var(--accent-ink);border-color:var(--accent)}',
+'.tabs a[aria-current]{background:var(--accent);border-color:var(--accent);color:var(--surface)}',
+'.tabs__n{font-weight:400;opacity:.75;margin-left:4px;font-size:11.5px}',
+'.sec{margin:0 0 38px}',
+'.sec__h{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;font-size:18px;line-height:1.5;margin:0 0 14px;padding:0 0 8px;border:0;border-bottom:2px solid var(--ink)}',
+'.sec__h .idx__cnt{margin-left:0}',
+'.sec__more{margin-left:auto;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap}',
+'.sec__more:hover{text-decoration:underline}',
+'.sec__dot{display:inline-block;width:10px;height:10px;border-radius:3px;background:var(--th);align-self:center}',
+// サムネイル（CSSだけ。カテゴリごとに固定色）
+'.th{position:relative;aspect-ratio:16/9;border-radius:10px;overflow:hidden;color:#fff;background:var(--th);background:linear-gradient(135deg,var(--th),color-mix(in srgb,var(--th) 62%,#000));display:flex;flex-direction:column;justify-content:flex-end;padding:10px 12px}',
+'.th__cat{position:absolute;top:9px;left:10px;font-size:10.5px;font-weight:800;letter-spacing:.06em;background:rgba(255,255,255,.2);padding:2px 8px;border-radius:var(--r-pill)}',
+'.th__ch{position:absolute;right:-6px;bottom:-22px;font-size:96px;font-weight:900;line-height:1;opacity:.14}',
+'.th__kw{position:relative;font-size:17px;font-weight:800;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}',
+'.card{display:flex;flex-direction:column;gap:9px;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);padding:10px}',
+'.card:hover{border-color:var(--accent)}',
+'.card:hover .card__t{text-decoration:underline}',
+'.card__meta{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;font-size:11.5px;color:var(--ink-3);margin:0}',
+'.lbl{font-weight:700;color:var(--accent-ink)}',
+'.card__t{font-size:14px;font-weight:700;line-height:1.6;margin:0;color:var(--ink);overflow-wrap:anywhere}',
+'.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));gap:14px}',
+// 注目枠（大1＋小）
+'.feat{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}',
+'@media(min-width:720px){.feat{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}}',
+'.feat__big .th{aspect-ratio:16/9}',
+'.feat__big .th__kw{font-size:24px}',
+'.feat__big .card__t{font-size:17px}',
+'.feat__list{display:grid;gap:10px;align-content:start}',
+'.mini{display:grid;grid-template-columns:104px minmax(0,1fr);gap:11px;align-items:start;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:8px}',
+'.mini:hover{border-color:var(--accent)}',
+'.mini:hover .card__t{text-decoration:underline}',
+'.mini .th{padding:6px 7px;border-radius:7px}',
+'.mini .th__cat{display:none}',
+'.mini .th__ch{font-size:54px;bottom:-12px}',
+'.mini .th__kw{font-size:12px}',
+'.mini .card__t{font-size:13px;line-height:1.55}',
+'.mini .card__meta{margin:0 0 3px}',
+// すべての記事（折りたたみ）
+'.more{margin:14px 0 0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card)}',
+'.more>summary{cursor:pointer;padding:11px 16px;font-size:13.5px;font-weight:700;color:var(--accent-ink)}',
+'.more__body{padding:0 16px 10px}',
+'.more__body h3{font-size:14px;margin:16px 0 4px;scroll-margin-top:70px}',
+'.more__body ul{list-style:none;padding:0;margin:0}',
+'.more__body li{border-bottom:1px solid var(--line-2);padding:7px 0;margin:0;font-size:14px;line-height:1.7}',
+'.more__body a{text-decoration:none}',
+'.more__body a:hover{text-decoration:underline}',
+'[id^="cat-"]{scroll-margin-top:70px}',
+// サイドバー
+'.side{display:flex;flex-direction:column;gap:22px}',
+'.side__box{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);padding:14px 16px}',
+'.side__h{font-size:14px;font-weight:800;margin:0 0 8px;padding:0 0 7px;border:0;border-bottom:1px solid var(--line)}',
+'.side__rank{list-style:none;counter-reset:r;padding:0;margin:0}',
+'.side__rank li{counter-increment:r;display:grid;grid-template-columns:24px minmax(0,1fr);gap:8px;padding:8px 0;margin:0;border-bottom:1px solid var(--line-2);font-size:13px;line-height:1.6}',
+'.side__rank li:last-child{border-bottom:0}',
+'.side__rank li::before{content:counter(r);font-weight:900;color:var(--accent-ink);font-size:15px;line-height:1.4}',
+'.side__rank a,.side__cats a{text-decoration:none;color:var(--ink)}',
+'.side__rank a:hover,.side__cats a:hover{text-decoration:underline;color:var(--accent-ink)}',
+'.side__cats{list-style:none;padding:0;margin:0}',
+'.side__cats li{display:flex;justify-content:space-between;gap:8px;padding:7px 0;margin:0;border-bottom:1px solid var(--line-2);font-size:13.5px}',
+'.side__cats li:last-child{border-bottom:0}',
+'.side__cats span{color:var(--ink-3);font-size:12px}',
+'.side__mini{display:grid;gap:9px}',
+'.side__mini .mini{grid-template-columns:84px minmax(0,1fr);padding:6px;border-radius:10px}',
+'.side__mini .th__kw{font-size:11px}',
+'.side__mini .card__t{font-size:12.5px}',
+'.chips{display:flex;flex-wrap:wrap;gap:6px}',
+'.chips a{font-size:12px;color:var(--ink-2);text-decoration:none;background:var(--surface-2);padding:4px 10px;border-radius:var(--r-pill)}',
+'.chips a:hover{color:var(--accent-ink);text-decoration:underline}',
+'.side__cta{background:var(--accent-soft);border-color:var(--accent)}',
+'.side__cta p{font-size:13px;line-height:1.75;color:var(--ink-2);margin:0 0 10px}',
+'.side__cta .cta__pri,.side__cta .cta__sec{display:block;text-align:center;font-size:13.5px;padding:9px 12px;margin-top:7px}',
+'@media(min-width:1024px){.side__sticky{position:sticky;top:76px}}',
+'.post__tags{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;margin:0 0 10px}',
+'.post__tags .post__eyebrow{margin:0}',
+'.post__date{font-size:12px;color:var(--ink-3)}',
+'.related .cards{margin-top:4px}',
+'.related__more{margin:14px 0 0;text-align:right;font-size:13.5px;font-weight:700}',
+'.related__more a{text-decoration:none}',
+'.related__more a:hover{text-decoration:underline}'
 ].join('\n');
+
+// ---------- ポータル部品 ----------
+// カテゴリ（記事の種別）→ アンカーと色。色は固定表（毎回同じ）。表に無い種別は名前のハッシュで決める
+const KIND_ORDER = ['自治体別', '部署別', '選考対策', '業界研究', '制度とお金', '資格・スキル'];
+const KIND_INFO = {
+  '自治体別': { id: 'cat-city', color: '#1E3A8A' },
+  '部署別': { id: 'cat-dept', color: '#0F766E' },
+  '選考対策': { id: 'cat-senkou', color: '#B4530A' },
+  '業界研究': { id: 'cat-industry', color: '#6D28D9' },
+  '制度とお金': { id: 'cat-seido', color: '#047857' },
+  '資格・スキル': { id: 'cat-skill', color: '#BE185D' }
+};
+const EXTRA_COLORS = ['#0E7490', '#9A3412', '#4D7C0F', '#7C2D12', '#1D4ED8', '#86198F'];
+function kindInfo(k) {
+  if (KIND_INFO[k]) return KIND_INFO[k];
+  let h = 0;
+  for (const ch of String(k)) h = (h * 31 + ch.codePointAt(0)) >>> 0;
+  return { id: 'cat-x' + h.toString(36), color: EXTRA_COLORS[h % EXTRA_COLORS.length] };
+}
+
+// asof（「2026年9月」「2026-11」）の表示と並べ替え。値が無ければ何も出さない
+function asofLabel(v) {
+  if (!v) return '';
+  const m = String(v).match(/^(\d{4})-(\d{1,2})$/);
+  return (m ? m[1] + '年' + (+m[2]) + '月' : String(v)) + '時点';
+}
+function asofKey(v) {
+  const m = String(v || '').match(/(\d{4})\D+(\d{1,2})/);
+  return m ? (+m[1]) * 100 + (+m[2]) : 0;
+}
+// 情報時点の新しい順 → 同じなら No の小さい順（決定的）
+function byFresh(a, b) {
+  return (asofKey(b.meta.asof) - asofKey(a.meta.asof)) || ((+a.meta.no) - (+b.meta.no));
+}
+
+function thumbKeyword(meta) {
+  const t = String(meta.target || '');
+  return (t && t.length <= 14) ? t : (meta.area || meta.kind || '');
+}
+function thumbHtml(meta) {
+  const ki = kindInfo(meta.kind);
+  const kw = thumbKeyword(meta);
+  return '<div class="th" style="--th:' + ki.color + '" aria-hidden="true">'
+    + '<span class="th__cat">' + esc(meta.kind || '') + '</span>'
+    + '<span class="th__ch">' + esc(Array.from(kw)[0] || '') + '</span>'
+    + '<span class="th__kw">' + esc(kw) + '</span></div>';
+}
+function metaLine(meta) {
+  const d = asofLabel(meta.asof);
+  return '<p class="card__meta"><span class="lbl">' + esc(meta.kind || '') + '</span>'
+    + (d ? '<span>' + esc(d) + '</span>' : '') + '</p>';
+}
+function cardHtml(meta, cls) {
+  return '<a class="' + (cls || 'card') + '" href="' + meta.slug + '.html">' + thumbHtml(meta)
+    + '<div>' + metaLine(meta) + '<p class="card__t">' + esc(meta.title) + '</p></div></a>';
+}
+function miniHtml(meta) { return cardHtml(meta, 'mini'); }
+
+function kindsOf(arts) {
+  const groups = {};
+  for (const a of arts) (groups[a.meta.kind] = groups[a.meta.kind] || []).push(a);
+  const kinds = KIND_ORDER.filter(k => groups[k]).concat(Object.keys(groups).filter(k => KIND_ORDER.indexOf(k) < 0));
+  return { groups, kinds };
+}
+
+function tabsHtml(kinds, groups, current) {
+  return '<nav class="tabs" aria-label="記事のカテゴリ">'
+    + '<a href="./"' + (current === '' ? ' aria-current="page"' : '') + '>すべて</a>'
+    + kinds.map(k => '<a href="./#' + kindInfo(k).id + '">' + esc(k)
+      + '<span class="tabs__n">' + groups[k].length + '</span></a>').join('')
+    + '</nav>';
+}
+
+function sideCatsHtml(kinds, groups) {
+  return '<section class="side__box"><h2 class="side__h">カテゴリ</h2><ul class="side__cats">'
+    + kinds.map(k => '<li><a href="./#' + kindInfo(k).id + '">' + esc(k) + '</a><span>' + groups[k].length + '本</span></li>').join('')
+    + '</ul></section>';
+}
+
+// 既存の相談CTA（記事末尾の CTA_END）と同じ行き先・文言の小型版
+const SIDE_CTA = '<section class="side__box side__cta"><h2 class="side__h">転職の相談</h2>'
+  + '<p>在職中でも、情報収集だけでも構いません。ご利用はすべて無料です。</p>'
+  + '<a class="cta__pri" href="../apply.html">無料で相談する</a>'
+  + '<a class="cta__sec" href="../">求人を見る</a>'
+  + '<a class="cta__sec" href="' + LINE_URL + '" target="_blank" rel="noopener noreferrer" data-line-cta="media-side">LINEで相談する</a></section>';
 
 const GA = '<script async src="https://www.googletagmanager.com/gtag/js?id=G-1XXMP8Y1B4"></' + 'script>\n'
   + '<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}'
@@ -299,7 +470,7 @@ function ldJson(obj) {
 }
 
 // ---------- 記事ページ ----------
-function renderArticle(meta, bodyHtml, faq, related) {
+function renderArticle(meta, bodyHtml, faq, related, ctx) {
   const url = SITE + '/media/' + meta.slug + '.html';
   const ld = [{
     '@context': 'https://schema.org', '@type': 'Article', headline: meta.title,
@@ -326,11 +497,29 @@ function renderArticle(meta, bodyHtml, faq, related) {
     }).join('') + '</ol></section>'
     : '';
 
+  // related は {slug,title} か、カード用に meta を持つもの（main() で meta を渡している）
+  ctx = ctx || null;
+  const kid = kindInfo(meta.kind).id;
   const relHtml = related.length
-    ? '<section class="related"><h2>関連する記事</h2><ul>' + related.map(function (r) {
-      return '<li><a href="' + r.slug + '.html">' + esc(r.title) + '</a></li>';
-    }).join('') + '</ul></section>'
+    ? '<section class="related"><h2>関連する記事</h2><div class="cards">' + related.map(function (r) {
+      return r.meta ? cardHtml(r.meta) : '<a class="card" href="' + r.slug + '.html"><p class="card__t">' + esc(r.title) + '</p></a>';
+    }).join('') + '</div>'
+    + (ctx ? '<p class="related__more"><a href="./#' + kid + '">' + esc(meta.kind || '') + 'の記事をもっと見る &rarr;</a></p>' : '')
+    + '</section>'
     : '';
+
+  const sideHtml = ctx
+    ? '<aside class="side" aria-label="サイドバー">\n'
+      + (ctx.sameKind.length
+        ? '<section class="side__box"><h2 class="side__h">' + esc(meta.kind || '') + 'の記事</h2><div class="side__mini">'
+          + ctx.sameKind.map(miniHtml).join('') + '</div>'
+          + '<p class="related__more"><a href="./#' + kid + '">もっと見る &rarr;</a></p></section>\n'
+        : '')
+      + sideCatsHtml(ctx.kinds, ctx.groups) + '\n'
+      + '<div class="side__sticky">' + SIDE_CTA + '</div>\n'
+      + '</aside>\n'
+    : '';
+  const dateLbl = asofLabel(meta.asof);
 
   const asof = meta.asof
     ? esc(meta.asof) + '時点の公開情報にもとづきます。制度や募集要項は変わることがあるため、手続きの前に各機関の公式情報をご確認ください。'
@@ -360,11 +549,15 @@ function renderArticle(meta, bodyHtml, faq, related) {
     + '<script type="application/ld+json">' + ldJson(ld) + '</' + 'script>\n'
     + '</head>\n<body>\n'
     + header() + '\n'
-    + '<main class="wrap">\n'
-    + '<nav class="crumb"><a href="../">エージェントベストジョブ財政課転職</a> &rsaquo; <a href="./">記事</a> &rsaquo; ' + esc(meta.kind || '') + '</nav>\n'
+    + '<main class="wrap' + (ctx ? ' wrap--wide' : '') + '">\n'
+    + (ctx ? tabsHtml(ctx.kinds, ctx.groups, null) + '\n' : '')
+    + '<nav class="crumb"><a href="../">エージェントベストジョブ財政課転職</a> &rsaquo; <a href="./">記事</a> &rsaquo; '
+    + (ctx ? '<a href="./#' + kid + '">' + esc(meta.kind || '') + '</a>' : esc(meta.kind || '')) + '</nav>\n'
+    + (ctx ? '<div class="layout layout--post">\n<div>\n' : '')
     + '<article class="post">\n'
-    + '<p class="post__eyebrow">' + esc(meta.kind || '')
-    + (meta.area && meta.area !== meta.kind ? ' / ' + esc(meta.area) : '') + '</p>\n'
+    + '<div class="post__tags"><p class="post__eyebrow">' + esc(meta.kind || '')
+    + (meta.area && meta.area !== meta.kind ? ' / ' + esc(meta.area) : '') + '</p>'
+    + (dateLbl ? '<span class="post__date">' + esc(dateLbl) + 'の情報</span>' : '') + '</div>\n'
     + '<h1>' + esc(meta.title) + '</h1>\n'
     + '<p class="post__meta">' + asof + '</p>\n'
     + bodyHtml + '\n'
@@ -373,23 +566,98 @@ function renderArticle(meta, bodyHtml, faq, related) {
     + AUTHOR + '\n'
     + relHtml + '\n'
     + CTA_END + '\n'
+    + (ctx ? '</div>\n' + sideHtml + '</div>\n' : '')
     + '</main>\n'
     + footer() + '\n'
     + '</body>\n</html>';
 }
 
 // ---------- 記事一覧 ----------
+// 構成（記事が少ないときは各枠を自動で縮める／空の枠は出さない）
+//   カテゴリのタブ → 注目の記事（大1＋小最大4。各カテゴリの情報時点がいちばん新しい記事）
+//   → 情報が新しい記事（カード最大8） → カテゴリ別（カード最大6＋「すべて見る」に全記事を領域別で）
+//   右サイドバー（1024px以上。未満は本文の下）：注目の記事（番号付き）・カテゴリ・相談CTA・テーマ
+// ⚠ アクセス数のデータは無いので「人気」「ランキング」「よく読まれている」とは書かない
+// ⚠ 全記事へのリンクは「すべて見る」の中に残す（一覧から張っている内部リンクを減らさない）
 function renderIndex(arts) {
-  const order = ['自治体別', '部署別', '選考対策', '業界研究', '制度とお金', '資格・スキル'];
-  const groups = {};
-  for (const a of arts) (groups[a.meta.kind] = groups[a.meta.kind] || []).push(a);
-  const kinds = order.filter(k => groups[k]).concat(Object.keys(groups).filter(k => order.indexOf(k) < 0));
-  const body = kinds.map(function (k) {
-    const list = groups[k].sort((a, b) => (+a.meta.no) - (+b.meta.no));
-    return '<section class="idx__grp"><h2>' + esc(k) + '<span class="idx__cnt">' + list.length + '本</span></h2>\n<ul>'
-      + list.map(a => '<li><a href="' + a.meta.slug + '.html">' + esc(a.meta.title) + '</a></li>').join('')
-      + '</ul></section>';
+  const { groups, kinds } = kindsOf(arts);
+  for (const k of kinds) groups[k].sort(byFresh);
+  const shown = new Set();
+  const take = (list, n) => { const r = []; for (const a of list) { if (r.length >= n) break; if (!shown.has(a)) { r.push(a); shown.add(a); } } return r; };
+
+  // 注目の記事：各カテゴリの先頭（情報時点が新しい → No順）を1本ずつ
+  const feat = arts.length >= 5 ? take(kinds.map(k => groups[k][0]), 5) : [];
+  const featHtml = feat.length
+    ? '<section class="sec" aria-labelledby="h-feat"><h2 class="sec__h" id="h-feat">注目の記事</h2><div class="feat">'
+      + '<div class="feat__big">' + cardHtml(feat[0].meta) + '</div>'
+      + (feat.length > 1 ? '<div class="feat__list">' + feat.slice(1).map(a => miniHtml(a.meta)).join('') + '</div>' : '')
+      + '</div></section>'
+    : '';
+
+  // 情報が新しい記事（全体を情報時点の新しい順に）。記事が少ないときは出さない
+  const fresh = arts.length > 12 ? take(arts.slice().sort(byFresh), 8) : [];
+  const freshHtml = fresh.length
+    ? '<section class="sec" aria-labelledby="h-fresh"><h2 class="sec__h" id="h-fresh">情報が新しい記事</h2><div class="cards">'
+      + fresh.map(a => cardHtml(a.meta)).join('') + '</div></section>'
+    : '';
+
+  // カテゴリ別
+  const areaIds = {};
+  const body = kinds.map(function (k, ki) {
+    const ki2 = kindInfo(k);
+    const list = groups[k];
+    const pick = take(list, 6);
+    const cards = (pick.length ? pick : list.slice(0, 6));
+    // 全記事は領域ごとに No 順で（従来の一覧と同じリンクをすべて持つ）
+    const byArea = {};
+    const areaOrder = [];
+    for (const a of list.slice().sort((x, y) => (+x.meta.no) - (+y.meta.no))) {
+      const ar = a.meta.area || k;
+      if (!byArea[ar]) { byArea[ar] = []; areaOrder.push(ar); }
+      byArea[ar].push(a);
+    }
+    const allHtml = '<details class="more" id="all-' + ki2.id + '"><summary>' + esc(k) + 'の記事をすべて見る（' + list.length + '本）</summary><div class="more__body">'
+      + areaOrder.map(function (ar, ai) {
+        const id = 'a-' + ki + '-' + ai;
+        areaIds[k + '\u0000' + ar] = { id, area: ar, kind: k, n: byArea[ar].length };
+        return (areaOrder.length > 1 ? '<h3 id="' + id + '">' + esc(ar) + '<span class="idx__cnt">' + byArea[ar].length + '本</span></h3>' : '')
+          + '<ul>' + byArea[ar].map(a => '<li><a href="' + a.meta.slug + '.html">' + esc(a.meta.title) + '</a></li>').join('') + '</ul>';
+      }).join('') + '</div></details>';
+    return '<section class="sec" id="' + ki2.id + '" style="--th:' + ki2.color + '"><h2 class="sec__h"><span class="sec__dot" aria-hidden="true"></span>' + esc(k)
+      + '<span class="idx__cnt">' + list.length + '本</span>'
+      + (list.length > cards.length ? '<a class="sec__more" href="#all-' + ki2.id + '">もっと見る &rarr;</a>' : '') + '</h2>\n'
+      + '<div class="cards">' + cards.map(a => cardHtml(a.meta)).join('') + '</div>\n'
+      + (list.length > cards.length ? allHtml : '')
+      + '</section>';
   }).join('\n');
+
+  // サイドバー：注目の記事（番号付き。各カテゴリの2本目以降から、本文に出ていないもの）
+  const sidePick = [];
+  for (let r = 1; sidePick.length < 6 && r < 50; r++) {
+    for (const k of kinds) { const a = groups[k][r]; if (a && !feat.includes(a) && !fresh.includes(a) && sidePick.length < 6 && !sidePick.includes(a)) sidePick.push(a); }
+    if (kinds.every(k => groups[k].length <= r)) break;
+  }
+  // テーマ：領域が少なめのカテゴリ（15以下）の領域を、全記事リストの見出しへ
+  const themes = Object.values(areaIds).filter(t => {
+    const n = Object.values(areaIds).filter(u => u.kind === t.kind).length;
+    return n > 1 && n <= 15;
+  });
+  const side = '<aside class="side" aria-label="サイドバー">\n'
+    + (sidePick.length ? '<section class="side__box"><h2 class="side__h">注目の記事</h2><ol class="side__rank">'
+      + sidePick.map(a => '<li><a href="' + a.meta.slug + '.html">' + esc(a.meta.title) + '</a></li>').join('') + '</ol></section>\n' : '')
+    + sideCatsHtml(kinds, groups) + '\n'
+    + SIDE_CTA + '\n'
+    + (themes.length ? '<section class="side__box"><h2 class="side__h">テーマから探す</h2><div class="chips">'
+      + themes.map(t => '<a href="#' + t.id + '">' + esc(t.area) + '</a>').join('') + '</div></section>\n' : '')
+    + '</aside>\n';
+
+  // 「もっと見る」「テーマ」から飛んだとき、閉じている「すべて見る」を開く
+  const openJs = '<script>(function(){function o(){var h=decodeURIComponent(location.hash.slice(1));if(!h)return;'
+    + 'var e=document.getElementById(h);if(!e)return;var d=e.tagName==="DETAILS"?e:e.closest("details");'
+    + 'if(d&&!d.open){d.open=true;e.scrollIntoView();}}'
+    + 'window.addEventListener("hashchange",o);o();'
+    + 'document.addEventListener("click",function(ev){var a=ev.target.closest&&ev.target.closest(\'a[href^="#"]\');'
+    + 'if(a&&a.getAttribute("href")===location.hash)setTimeout(o,0);});})();</' + 'script>';
 
   return '<!doctype html>\n<html lang="ja">\n<head>\n'
     + '<meta charset="utf-8">\n'
@@ -409,14 +677,22 @@ function renderIndex(arts) {
     + '<style>' + CSS + '</style>\n'
     + '</head>\n<body>\n'
     + header() + '\n'
-    + '<main class="wrap">\n'
+    + '<main class="wrap wrap--wide">\n'
     + '<nav class="crumb"><a href="../">エージェントベストジョブ財政課転職</a> &rsaquo; 記事</nav>\n'
     + '<h1>記事一覧</h1>\n'
     + '<p class="post__meta">庁内では当たり前だった仕事が、民間側で何と呼ばれ、どう評価されるのか。制度の手続きまで含めて整理しています。</p>\n'
+    + tabsHtml(kinds, groups, '') + '\n'
+    + '<div class="layout">\n<div>\n'
+    + featHtml + '\n'
+    + freshHtml + '\n'
     + body + '\n'
     + CTA_END + '\n'
+    + '</div>\n'
+    + side
+    + '</div>\n'
     + '</main>\n'
     + footer() + '\n'
+    + openJs + '\n'
     + '</body>\n</html>';
 }
 
@@ -449,11 +725,25 @@ function main() {
   for (const a of arts) {
     const same = arts.filter(b => b !== a && b.meta.area === a.meta.area);
     const kin = arts.filter(b => b !== a && b.meta.kind === a.meta.kind && same.indexOf(b) < 0);
-    a.related = same.concat(kin).slice(0, 6).map(b => ({ slug: b.meta.slug, title: b.meta.title }));
+    a.related = same.concat(kin).slice(0, 6).map(b => ({ slug: b.meta.slug, title: b.meta.title, meta: b.meta }));
   }
 
+  // サイドバー用：同じ種別の記事を No 順に並べ、自分の次から5本（関連記事と重ならないもの）
+  const { groups, kinds } = kindsOf(arts);
+  const byNo = {};
+  for (const k of kinds) byNo[k] = groups[k].slice().sort((x, y) => (+x.meta.no) - (+y.meta.no));
+
   for (const a of arts) {
-    const html = renderArticle(a.meta, md2html(a.body), a.faq, a.related);
+    const list = byNo[a.meta.kind];
+    const at = list.indexOf(a);
+    const relSlugs = new Set(a.related.map(r => r.slug));
+    const sameKind = [];
+    for (let i = 1; i < list.length && sameKind.length < 5; i++) {
+      const b = list[(at + i) % list.length];
+      if (!relSlugs.has(b.meta.slug)) sameKind.push(b.meta);
+    }
+    const ctx = { kinds, groups, sameKind };
+    const html = renderArticle(a.meta, md2html(a.body), a.faq, a.related, ctx);
     fs.writeFileSync(path.join(MEDIA, a.meta.slug + '.html'), html.replace(/\r?\n/g, '\r\n'));
   }
   fs.writeFileSync(path.join(MEDIA, 'index.html'), renderIndex(arts).replace(/\r?\n/g, '\r\n'));

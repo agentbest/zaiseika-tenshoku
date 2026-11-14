@@ -95,7 +95,88 @@ blockquote p:last-child{margin-bottom:0}
 .idx__grp{margin:30px 0 0}
 .idx__grp h2{font-size:17px}
 .idx__cnt{font-size:12px;color:var(--ink-3);font-weight:400;margin-left:8px}
-@media(max-width:640px){h1{font-size:22px}h2{font-size:18px}.wrap{padding:18px 14px 44px}}</style>
+@media(max-width:640px){h1{font-size:22px}h2{font-size:18px}.wrap{padding:18px 14px 44px}}
+.wrap--wide{max-width:1080px}
+.layout{display:grid;gap:36px;grid-template-columns:minmax(0,1fr)}
+.layout>*{min-width:0}
+@media(min-width:1024px){.layout{grid-template-columns:minmax(0,1fr) 300px}.layout--post{grid-template-columns:minmax(0,720px) 300px;justify-content:space-between}}
+.tabs{display:flex;gap:6px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin;margin:0 0 22px;padding:2px 0 8px;border-bottom:1px solid var(--line)}
+.tabs a{flex:0 0 auto;font-size:13px;font-weight:700;color:var(--ink-2);text-decoration:none;background:var(--surface);border:1px solid var(--line);padding:6px 13px;border-radius:var(--r-pill);white-space:nowrap}
+.tabs a:hover{color:var(--accent-ink);border-color:var(--accent)}
+.tabs a[aria-current]{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+.tabs__n{font-weight:400;opacity:.75;margin-left:4px;font-size:11.5px}
+.sec{margin:0 0 38px}
+.sec__h{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;font-size:18px;line-height:1.5;margin:0 0 14px;padding:0 0 8px;border:0;border-bottom:2px solid var(--ink)}
+.sec__h .idx__cnt{margin-left:0}
+.sec__more{margin-left:auto;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap}
+.sec__more:hover{text-decoration:underline}
+.sec__dot{display:inline-block;width:10px;height:10px;border-radius:3px;background:var(--th);align-self:center}
+.th{position:relative;aspect-ratio:16/9;border-radius:10px;overflow:hidden;color:#fff;background:var(--th);background:linear-gradient(135deg,var(--th),color-mix(in srgb,var(--th) 62%,#000));display:flex;flex-direction:column;justify-content:flex-end;padding:10px 12px}
+.th__cat{position:absolute;top:9px;left:10px;font-size:10.5px;font-weight:800;letter-spacing:.06em;background:rgba(255,255,255,.2);padding:2px 8px;border-radius:var(--r-pill)}
+.th__ch{position:absolute;right:-6px;bottom:-22px;font-size:96px;font-weight:900;line-height:1;opacity:.14}
+.th__kw{position:relative;font-size:17px;font-weight:800;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
+.card{display:flex;flex-direction:column;gap:9px;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);padding:10px}
+.card:hover{border-color:var(--accent)}
+.card:hover .card__t{text-decoration:underline}
+.card__meta{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;font-size:11.5px;color:var(--ink-3);margin:0}
+.lbl{font-weight:700;color:var(--accent-ink)}
+.card__t{font-size:14px;font-weight:700;line-height:1.6;margin:0;color:var(--ink);overflow-wrap:anywhere}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));gap:14px}
+.feat{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:720px){.feat{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}}
+.feat__big .th{aspect-ratio:16/9}
+.feat__big .th__kw{font-size:24px}
+.feat__big .card__t{font-size:17px}
+.feat__list{display:grid;gap:10px;align-content:start}
+.mini{display:grid;grid-template-columns:104px minmax(0,1fr);gap:11px;align-items:start;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:8px}
+.mini:hover{border-color:var(--accent)}
+.mini:hover .card__t{text-decoration:underline}
+.mini .th{padding:6px 7px;border-radius:7px}
+.mini .th__cat{display:none}
+.mini .th__ch{font-size:54px;bottom:-12px}
+.mini .th__kw{font-size:12px}
+.mini .card__t{font-size:13px;line-height:1.55}
+.mini .card__meta{margin:0 0 3px}
+.more{margin:14px 0 0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card)}
+.more>summary{cursor:pointer;padding:11px 16px;font-size:13.5px;font-weight:700;color:var(--accent-ink)}
+.more__body{padding:0 16px 10px}
+.more__body h3{font-size:14px;margin:16px 0 4px;scroll-margin-top:70px}
+.more__body ul{list-style:none;padding:0;margin:0}
+.more__body li{border-bottom:1px solid var(--line-2);padding:7px 0;margin:0;font-size:14px;line-height:1.7}
+.more__body a{text-decoration:none}
+.more__body a:hover{text-decoration:underline}
+[id^="cat-"]{scroll-margin-top:70px}
+.side{display:flex;flex-direction:column;gap:22px}
+.side__box{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);padding:14px 16px}
+.side__h{font-size:14px;font-weight:800;margin:0 0 8px;padding:0 0 7px;border:0;border-bottom:1px solid var(--line)}
+.side__rank{list-style:none;counter-reset:r;padding:0;margin:0}
+.side__rank li{counter-increment:r;display:grid;grid-template-columns:24px minmax(0,1fr);gap:8px;padding:8px 0;margin:0;border-bottom:1px solid var(--line-2);font-size:13px;line-height:1.6}
+.side__rank li:last-child{border-bottom:0}
+.side__rank li::before{content:counter(r);font-weight:900;color:var(--accent-ink);font-size:15px;line-height:1.4}
+.side__rank a,.side__cats a{text-decoration:none;color:var(--ink)}
+.side__rank a:hover,.side__cats a:hover{text-decoration:underline;color:var(--accent-ink)}
+.side__cats{list-style:none;padding:0;margin:0}
+.side__cats li{display:flex;justify-content:space-between;gap:8px;padding:7px 0;margin:0;border-bottom:1px solid var(--line-2);font-size:13.5px}
+.side__cats li:last-child{border-bottom:0}
+.side__cats span{color:var(--ink-3);font-size:12px}
+.side__mini{display:grid;gap:9px}
+.side__mini .mini{grid-template-columns:84px minmax(0,1fr);padding:6px;border-radius:10px}
+.side__mini .th__kw{font-size:11px}
+.side__mini .card__t{font-size:12.5px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips a{font-size:12px;color:var(--ink-2);text-decoration:none;background:var(--surface-2);padding:4px 10px;border-radius:var(--r-pill)}
+.chips a:hover{color:var(--accent-ink);text-decoration:underline}
+.side__cta{background:var(--accent-soft);border-color:var(--accent)}
+.side__cta p{font-size:13px;line-height:1.75;color:var(--ink-2);margin:0 0 10px}
+.side__cta .cta__pri,.side__cta .cta__sec{display:block;text-align:center;font-size:13.5px;padding:9px 12px;margin-top:7px}
+@media(min-width:1024px){.side__sticky{position:sticky;top:76px}}
+.post__tags{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;margin:0 0 10px}
+.post__tags .post__eyebrow{margin:0}
+.post__date{font-size:12px;color:var(--ink-3)}
+.related .cards{margin-top:4px}
+.related__more{margin:14px 0 0;text-align:right;font-size:13.5px;font-weight:700}
+.related__more a{text-decoration:none}
+.related__more a:hover{text-decoration:underline}</style>
 <script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"政治的行為の制限","description":"地方公務員法第36条の政治的行為の制限は在職中の規定で、退職後には及びません。政治団体の役員、選挙運動、区域外の例外、国家公務員との違い（罰則の有無）、政治や選挙に関わる転職先へ移る場合の在職中の線引きを条文で整理しました。","mainEntityOfPage":"https://zaiseikatenshoku.com/media/seido-fukumu-seiji.html","author":{"@type":"Organization","name":"株式会社エージェントベスト"},"publisher":{"@type":"Organization","name":"エージェントベストジョブ財政課転職"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"エージェントベストジョブ財政課転職","item":"https://zaiseikatenshoku.com/"},{"@type":"ListItem","position":2,"name":"記事","item":"https://zaiseikatenshoku.com/media/"},{"@type":"ListItem","position":3,"name":"政治的行為の制限","item":"https://zaiseikatenshoku.com/media/seido-fukumu-seiji.html"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"議員の秘書への転職を考えています。在職中にその議員の後援会に入ってよいですか","acceptedAnswer":{"@type":"Answer","text":"後援会が「政治的団体」に当たる場合、構成員になること自体は第36条第1項の対象ではありませんが、役員になることと、他の人を勧誘することは第1項に触れます。第1項が禁じるのは、政治的団体の結成への関与、役員への就任、構成員になるように・ならないようにする勧誘運動です。単に構成員になることは、条文上は禁じられていません。ただし、後援会の活動として選挙の際に投票の勧誘運動や寄附金の募集に関与すれば、自分の自治体の区域内では第2項に触れます。その議員が自分の自治体の区域で活動している場合、後援会の活動の多くが区域内の政治的行為に当たる可能性があるので、在職中は後援会の活動には関わらず、加入も退職後に回すのが安全です。応募と面接は政治的行為ではないので、在職中に進められます。転職先の議員の事務所にも、公務員の事情として「在職中は政治的行為の制限があるので、活動は退職後から」と伝えれば理解されます。"}},{"@type":"Question","name":"政策提言を行うシンクタンクへの転職を考えています。在職中に無償で研究会に参加してよいですか","acceptedAnswer":{"@type":"Answer","text":"団体が「政治的団体」に当たらず、活動が特定の政党や候補者を支持・反対する目的を持たなければ、第36条の対象ではありません。第1項の対象は「政党その他の政治的団体」で、政策の研究や提言を行う団体が直ちにこれに当たるわけではありません。第2項の対象は、特定の政党・執行機関・候補者を支持または反対する目的を持つ行為で、政治的な目的を持たない政策研究は対象外です。ただし、団体の性格や活動の内容によって判断が分かれるので、参加の前に人事の担当課に「この団体の研究会への参加は第36条の対象か」を確かめてください。第36条とは別に、無償であっても勤務時間外に行うこと（第35条）、職務上知り得た秘密を研究に使わないこと（第34条）、報酬を得る場合は第38条の許可が要ることは守ります。政策提言の団体への転職は、財政課の経験が直接生きる転職先の1つなので、在職中に研究会で顔を知られておくことは、選考の面でも有利に働きます。"}},{"@type":"Question","name":"退職後に、自分の自治体の議員選挙に立候補できますか","acceptedAnswer":{"@type":"Answer","text":"退職後なら、第36条の制限はありません。第36条は在職中の規定で、退職すれば政治的行為の制限は及ばず、立候補も選挙運動も自由です。在職中に立候補することはできず、立候補の届出をした日に退職したものとみなされる仕組みが公職選挙法にあります。立候補と退職の関係は公職への立候補と失職に書いています。退職後の立候補で注意するのは、第34条の守秘義務が退職後も続くことです。在職中に知った非公開の情報を選挙運動や議員活動に使うことはできません。公表されている情報と、自分の経験に基づく政策の主張は自由です。また、在職中に選挙の準備として後援会の役員に就いたり、区域内で支持を求める活動をしたりすれば第36条に触れるので、準備は退職後に、在職中は政策の勉強と、退職の段取りに絞ってください。"}}]}]</script>
 </head>
 <body>
@@ -109,10 +190,13 @@ blockquote p:last-child{margin-bottom:0}
 <a href="./" aria-current="page">記事</a>
 <a href="../apply.html">転職支援サービス</a></nav>
 <a class="btn-head" href="../apply.html">無料で相談する</a></div></header>
-<main class="wrap">
-<nav class="crumb"><a href="../">エージェントベストジョブ財政課転職</a> &rsaquo; <a href="./">記事</a> &rsaquo; 制度とお金</nav>
+<main class="wrap wrap--wide">
+<nav class="tabs" aria-label="記事のカテゴリ"><a href="./">すべて</a><a href="./#cat-city">自治体別<span class="tabs__n">350</span></a><a href="./#cat-dept">部署別<span class="tabs__n">200</span></a><a href="./#cat-senkou">選考対策<span class="tabs__n">150</span></a><a href="./#cat-industry">業界研究<span class="tabs__n">150</span></a><a href="./#cat-seido">制度とお金<span class="tabs__n">370</span></a><a href="./#cat-skill">資格・スキル<span class="tabs__n">50</span></a></nav>
+<nav class="crumb"><a href="../">エージェントベストジョブ財政課転職</a> &rsaquo; <a href="./">記事</a> &rsaquo; <a href="./#cat-seido">制度とお金</a></nav>
+<div class="layout layout--post">
+<div>
 <article class="post">
-<p class="post__eyebrow">制度とお金 / 服務</p>
+<div class="post__tags"><p class="post__eyebrow">制度とお金 / 服務</p><span class="post__date">2026年9月時点の情報</span></div>
 <h1>政治的行為の制限</h1>
 <p class="post__meta">2026年9月時点の公開情報にもとづきます。制度や募集要項は変わることがあるため、手続きの前に各機関の公式情報をご確認ください。</p>
 <p>公務員の服務のうち、転職の場面で意外に効いてくるのが、<b>第36条の政治的行為の制限</b>です。政治や選挙に関わる転職先——政党の職員、議員の秘書、政治団体、選挙の支援を業とする企業、政策提言を行う団体——を考える方にとって、<b>在職中にどこまで関われるか</b>が問題になります。</p>
@@ -210,12 +294,19 @@ blockquote p:last-child{margin-bottom:0}
 <div class="author"><p class="author__lbl">監修</p>
 <p class="author__name"><a href="https://www.agent-best.net/profile" target="_blank" rel="noopener">松岡 良次</a></p>
 <p class="author__bio">株式会社エージェントベスト代表。大手人材会社およびスタートアップ人材企業にて、IT・スタートアップ・メガベンチャー企業の採用支援に従事。独立後はIT・スタートアップ・コンサル領域に特化し、20〜30代のキャリア支援を行う。（厚生労働大臣許可 13-ユ-316964）</p></div>
-<section class="related"><h2>関連する記事</h2><ul><li><a href="seido-fukumu-38jo.html">地方公務員法第38条（営利企業への従事等の制限）の条文と解説｜許可が要る3つの行為と転職との関係</a></li><li><a href="seido-fukumu-chihou.html">地方公務員に再就職規制はあるのか</a></li><li><a href="seido-fukumu-eiri.html">公務員は退職後に営利企業へ就職できる？「就職制限」の正体は3つの規定の混同</a></li><li><a href="seido-fukumu-fukugyo.html">在職中の副業・兼業の許可</a></li><li><a href="seido-fukumu-himitsu.html">守秘義務は退職後も続くのか</a></li><li><a href="seido-fukumu-jizen.html">退職前に転職先と条件を詰めてよいか</a></li></ul></section>
+<section class="related"><h2>関連する記事</h2><div class="cards"><a class="card" href="seido-fukumu-38jo.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">服</span><span class="th__kw">服務</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年10月時点</span></p><p class="card__t">地方公務員法第38条（営利企業への従事等の制限）の条文と解説｜許可が要る3つの行為と転職との関係</p></div></a><a class="card" href="seido-fukumu-chihou.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">服</span><span class="th__kw">服務</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年11月時点</span></p><p class="card__t">地方公務員に再就職規制はあるのか</p></div></a><a class="card" href="seido-fukumu-eiri.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">服</span><span class="th__kw">服務</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年10月時点</span></p><p class="card__t">公務員は退職後に営利企業へ就職できる？「就職制限」の正体は3つの規定の混同</p></div></a><a class="card" href="seido-fukumu-fukugyo.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">服</span><span class="th__kw">服務</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年9月時点</span></p><p class="card__t">在職中の副業・兼業の許可</p></div></a><a class="card" href="seido-fukumu-himitsu.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">服</span><span class="th__kw">服務</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年9月時点</span></p><p class="card__t">守秘義務は退職後も続くのか</p></div></a><a class="card" href="seido-fukumu-jizen.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">服</span><span class="th__kw">服務</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年9月時点</span></p><p class="card__t">退職前に転職先と条件を詰めてよいか</p></div></a></div><p class="related__more"><a href="./#cat-seido">制度とお金の記事をもっと見る &rarr;</a></p></section>
 <section class="cta"><h2>「自分の経験に、どこで値段が付くのか」から相談できます</h2>
 <p>在職中でも、情報収集だけでも構いません。応募する求人が決まっていない段階のほうが、むしろ整理する意味があります。ご利用はすべて無料です。</p>
 <div class="cta__btns"><a class="cta__pri" href="../apply.html">無料で相談する</a>
 <a class="cta__sec" href="../">求人を見る</a>
 <a class="cta__sec" href="https://line.me/R/ti/p/@697nxhbt" target="_blank" rel="noopener noreferrer" data-line-cta="media-cta">LINEで相談する</a></div></section>
+</div>
+<aside class="side" aria-label="サイドバー">
+<section class="side__box"><h2 class="side__h">制度とお金の記事</h2><div class="side__mini"><a class="mini" href="seido-fukumu-sogi.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">服</span><span class="th__kw">服務</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年9月時点</span></p><p class="card__t">争議行為の禁止</p></div></a><a class="mini" href="seido-fukumu-koushoku.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">服</span><span class="th__kw">服務</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年9月時点</span></p><p class="card__t">公職への立候補と失職</p></div></a><a class="mini" href="seido-fukumu-joho.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">服</span><span class="th__kw">服務</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年9月時点</span></p><p class="card__t">在職中に得た情報の持ち出し</p></div></a><a class="mini" href="seido-fukumu-meishi.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">服</span><span class="th__kw">服務</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年10月時点</span></p><p class="card__t">公務員を辞めるとき名刺は持ち出せる？退職後の人脈の使い方と、個人情報保護法67条・再就職規制の線</p></div></a><a class="mini" href="seido-fukumu-torihikisaki.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">服</span><span class="th__kw">服務</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年9月時点</span></p><p class="card__t">前職の取引先へ営業してよいか</p></div></a></div><p class="related__more"><a href="./#cat-seido">もっと見る &rarr;</a></p></section>
+<section class="side__box"><h2 class="side__h">カテゴリ</h2><ul class="side__cats"><li><a href="./#cat-city">自治体別</a><span>350本</span></li><li><a href="./#cat-dept">部署別</a><span>200本</span></li><li><a href="./#cat-senkou">選考対策</a><span>150本</span></li><li><a href="./#cat-industry">業界研究</a><span>150本</span></li><li><a href="./#cat-seido">制度とお金</a><span>370本</span></li><li><a href="./#cat-skill">資格・スキル</a><span>50本</span></li></ul></section>
+<div class="side__sticky"><section class="side__box side__cta"><h2 class="side__h">転職の相談</h2><p>在職中でも、情報収集だけでも構いません。ご利用はすべて無料です。</p><a class="cta__pri" href="../apply.html">無料で相談する</a><a class="cta__sec" href="../">求人を見る</a><a class="cta__sec" href="https://line.me/R/ti/p/@697nxhbt" target="_blank" rel="noopener noreferrer" data-line-cta="media-side">LINEで相談する</a></section></div>
+</aside>
+</div>
 </main>
 <footer class="site-foot"><div class="foot__inner">
 <strong>エージェントベストジョブ財政課転職 — 公務員のための求人サイト</strong><br>

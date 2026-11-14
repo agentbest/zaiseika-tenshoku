@@ -95,7 +95,88 @@ blockquote p:last-child{margin-bottom:0}
 .idx__grp{margin:30px 0 0}
 .idx__grp h2{font-size:17px}
 .idx__cnt{font-size:12px;color:var(--ink-3);font-weight:400;margin-left:8px}
-@media(max-width:640px){h1{font-size:22px}h2{font-size:18px}.wrap{padding:18px 14px 44px}}</style>
+@media(max-width:640px){h1{font-size:22px}h2{font-size:18px}.wrap{padding:18px 14px 44px}}
+.wrap--wide{max-width:1080px}
+.layout{display:grid;gap:36px;grid-template-columns:minmax(0,1fr)}
+.layout>*{min-width:0}
+@media(min-width:1024px){.layout{grid-template-columns:minmax(0,1fr) 300px}.layout--post{grid-template-columns:minmax(0,720px) 300px;justify-content:space-between}}
+.tabs{display:flex;gap:6px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin;margin:0 0 22px;padding:2px 0 8px;border-bottom:1px solid var(--line)}
+.tabs a{flex:0 0 auto;font-size:13px;font-weight:700;color:var(--ink-2);text-decoration:none;background:var(--surface);border:1px solid var(--line);padding:6px 13px;border-radius:var(--r-pill);white-space:nowrap}
+.tabs a:hover{color:var(--accent-ink);border-color:var(--accent)}
+.tabs a[aria-current]{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+.tabs__n{font-weight:400;opacity:.75;margin-left:4px;font-size:11.5px}
+.sec{margin:0 0 38px}
+.sec__h{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;font-size:18px;line-height:1.5;margin:0 0 14px;padding:0 0 8px;border:0;border-bottom:2px solid var(--ink)}
+.sec__h .idx__cnt{margin-left:0}
+.sec__more{margin-left:auto;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap}
+.sec__more:hover{text-decoration:underline}
+.sec__dot{display:inline-block;width:10px;height:10px;border-radius:3px;background:var(--th);align-self:center}
+.th{position:relative;aspect-ratio:16/9;border-radius:10px;overflow:hidden;color:#fff;background:var(--th);background:linear-gradient(135deg,var(--th),color-mix(in srgb,var(--th) 62%,#000));display:flex;flex-direction:column;justify-content:flex-end;padding:10px 12px}
+.th__cat{position:absolute;top:9px;left:10px;font-size:10.5px;font-weight:800;letter-spacing:.06em;background:rgba(255,255,255,.2);padding:2px 8px;border-radius:var(--r-pill)}
+.th__ch{position:absolute;right:-6px;bottom:-22px;font-size:96px;font-weight:900;line-height:1;opacity:.14}
+.th__kw{position:relative;font-size:17px;font-weight:800;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
+.card{display:flex;flex-direction:column;gap:9px;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);padding:10px}
+.card:hover{border-color:var(--accent)}
+.card:hover .card__t{text-decoration:underline}
+.card__meta{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;font-size:11.5px;color:var(--ink-3);margin:0}
+.lbl{font-weight:700;color:var(--accent-ink)}
+.card__t{font-size:14px;font-weight:700;line-height:1.6;margin:0;color:var(--ink);overflow-wrap:anywhere}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));gap:14px}
+.feat{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:720px){.feat{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}}
+.feat__big .th{aspect-ratio:16/9}
+.feat__big .th__kw{font-size:24px}
+.feat__big .card__t{font-size:17px}
+.feat__list{display:grid;gap:10px;align-content:start}
+.mini{display:grid;grid-template-columns:104px minmax(0,1fr);gap:11px;align-items:start;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:8px}
+.mini:hover{border-color:var(--accent)}
+.mini:hover .card__t{text-decoration:underline}
+.mini .th{padding:6px 7px;border-radius:7px}
+.mini .th__cat{display:none}
+.mini .th__ch{font-size:54px;bottom:-12px}
+.mini .th__kw{font-size:12px}
+.mini .card__t{font-size:13px;line-height:1.55}
+.mini .card__meta{margin:0 0 3px}
+.more{margin:14px 0 0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card)}
+.more>summary{cursor:pointer;padding:11px 16px;font-size:13.5px;font-weight:700;color:var(--accent-ink)}
+.more__body{padding:0 16px 10px}
+.more__body h3{font-size:14px;margin:16px 0 4px;scroll-margin-top:70px}
+.more__body ul{list-style:none;padding:0;margin:0}
+.more__body li{border-bottom:1px solid var(--line-2);padding:7px 0;margin:0;font-size:14px;line-height:1.7}
+.more__body a{text-decoration:none}
+.more__body a:hover{text-decoration:underline}
+[id^="cat-"]{scroll-margin-top:70px}
+.side{display:flex;flex-direction:column;gap:22px}
+.side__box{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);padding:14px 16px}
+.side__h{font-size:14px;font-weight:800;margin:0 0 8px;padding:0 0 7px;border:0;border-bottom:1px solid var(--line)}
+.side__rank{list-style:none;counter-reset:r;padding:0;margin:0}
+.side__rank li{counter-increment:r;display:grid;grid-template-columns:24px minmax(0,1fr);gap:8px;padding:8px 0;margin:0;border-bottom:1px solid var(--line-2);font-size:13px;line-height:1.6}
+.side__rank li:last-child{border-bottom:0}
+.side__rank li::before{content:counter(r);font-weight:900;color:var(--accent-ink);font-size:15px;line-height:1.4}
+.side__rank a,.side__cats a{text-decoration:none;color:var(--ink)}
+.side__rank a:hover,.side__cats a:hover{text-decoration:underline;color:var(--accent-ink)}
+.side__cats{list-style:none;padding:0;margin:0}
+.side__cats li{display:flex;justify-content:space-between;gap:8px;padding:7px 0;margin:0;border-bottom:1px solid var(--line-2);font-size:13.5px}
+.side__cats li:last-child{border-bottom:0}
+.side__cats span{color:var(--ink-3);font-size:12px}
+.side__mini{display:grid;gap:9px}
+.side__mini .mini{grid-template-columns:84px minmax(0,1fr);padding:6px;border-radius:10px}
+.side__mini .th__kw{font-size:11px}
+.side__mini .card__t{font-size:12.5px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips a{font-size:12px;color:var(--ink-2);text-decoration:none;background:var(--surface-2);padding:4px 10px;border-radius:var(--r-pill)}
+.chips a:hover{color:var(--accent-ink);text-decoration:underline}
+.side__cta{background:var(--accent-soft);border-color:var(--accent)}
+.side__cta p{font-size:13px;line-height:1.75;color:var(--ink-2);margin:0 0 10px}
+.side__cta .cta__pri,.side__cta .cta__sec{display:block;text-align:center;font-size:13.5px;padding:9px 12px;margin-top:7px}
+@media(min-width:1024px){.side__sticky{position:sticky;top:76px}}
+.post__tags{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;margin:0 0 10px}
+.post__tags .post__eyebrow{margin:0}
+.post__date{font-size:12px;color:var(--ink-3)}
+.related .cards{margin-top:4px}
+.related__more{margin:14px 0 0;text-align:right;font-size:13.5px;font-weight:700}
+.related__more a{text-decoration:none}
+.related__more a:hover{text-decoration:underline}</style>
 <script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"定年前再任用短時間勤務とは｜60歳以降に短時間で働く制度の任期・勤務時間・給与・退職手当","description":"定年前再任用短時間勤務とは、60歳（条例年齢）以降に退職した職員を、選考で定年退職日相当日まで短時間勤務の職に採用する制度です（地方公務員法22条の4）。退職手当はいったん退職した時点で支給。勤務時間・給与・転職との比較を整理。","mainEntityOfPage":"https://zaiseikatenshoku.com/media/seido-ninyo-teinenmae.html","author":{"@type":"Organization","name":"株式会社エージェントベスト"},"publisher":{"@type":"Organization","name":"エージェントベストジョブ財政課転職"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"エージェントベストジョブ財政課転職","item":"https://zaiseikatenshoku.com/"},{"@type":"ListItem","position":2,"name":"記事","item":"https://zaiseikatenshoku.com/media/"},{"@type":"ListItem","position":3,"name":"定年前再任用短時間勤務とは｜60歳以降に短時間で働く制度の任期・勤務時間・給与・退職手当","item":"https://zaiseikatenshoku.com/media/seido-ninyo-teinenmae.html"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"定年前再任用短時間勤務の給与は、どのくらいになりますか","acceptedAnswer":{"@type":"Answer","text":"短時間勤務の職の給与で、勤務時間に応じた額になります。具体額は条例によるので、人事担当課に見込みを照会してください。国家公務員の例では、職務の級ごとに定められた基準俸給月額に、週の勤務時間をフルタイム（週38時間45分）で割った割合を掛けて俸給月額を出します（人事院）。自治体も条例で同様の仕組みを置いていることが多いですが、額は自治体ごとです。期末手当・勤勉手当、通勤手当などの扱いも条例で定められます。転職先の60歳以降の給与と比べるときは、年間の額と、勤務時間あたりの額の両方で並べると、働く時間の違いを踏まえた比較になります。"}},{"@type":"Question","name":"短時間勤務の期間中に、民間に転職することはできますか","acceptedAnswer":{"@type":"Answer","text":"できます。任期の途中で退職することを禁じる規定はありません。退職手当は最初に退職した時点で受け取っているので、途中で辞めても追加や減額はありません。在職中は地方公務員法の服務（職務専念義務、守秘義務、営利企業への従事等の制限）が及び、退職後は再就職者の働きかけの規制（第38条の2）が及びます。「まず短時間で残り、その間に転職先を落ち着いて探す」という進め方は、時間に余裕を持てる点で合理的です。"}},{"@type":"Question","name":"定年前再任用短時間勤務と、定年後の再任用（暫定再任用）は何が違いますか","acceptedAnswer":{"@type":"Answer","text":"採用される時期と任期が違います。定年前再任用短時間勤務は、定年より前に60歳以降で退職した人を、定年退職日相当日までの任期で短時間勤務の職に採用する制度です。暫定再任用は、定年の段階的な引上げの経過期間に設けられたもので、定年退職等をした人を、65歳までの間、1年以内の任期で採用する制度です（人事院の説明）。どちらが使えるかは、生年月日と自治体の定年の引上げのスケジュールで変わるので、60歳の前年度の情報提供の際に確かめてください。"}}]}]</script>
 </head>
 <body>
@@ -109,10 +190,13 @@ blockquote p:last-child{margin-bottom:0}
 <a href="./" aria-current="page">記事</a>
 <a href="../apply.html">転職支援サービス</a></nav>
 <a class="btn-head" href="../apply.html">無料で相談する</a></div></header>
-<main class="wrap">
-<nav class="crumb"><a href="../">エージェントベストジョブ財政課転職</a> &rsaquo; <a href="./">記事</a> &rsaquo; 制度とお金</nav>
+<main class="wrap wrap--wide">
+<nav class="tabs" aria-label="記事のカテゴリ"><a href="./">すべて</a><a href="./#cat-city">自治体別<span class="tabs__n">350</span></a><a href="./#cat-dept">部署別<span class="tabs__n">200</span></a><a href="./#cat-senkou">選考対策<span class="tabs__n">150</span></a><a href="./#cat-industry">業界研究<span class="tabs__n">150</span></a><a href="./#cat-seido">制度とお金<span class="tabs__n">370</span></a><a href="./#cat-skill">資格・スキル<span class="tabs__n">50</span></a></nav>
+<nav class="crumb"><a href="../">エージェントベストジョブ財政課転職</a> &rsaquo; <a href="./">記事</a> &rsaquo; <a href="./#cat-seido">制度とお金</a></nav>
+<div class="layout layout--post">
+<div>
 <article class="post">
-<p class="post__eyebrow">制度とお金 / 任用</p>
+<div class="post__tags"><p class="post__eyebrow">制度とお金 / 任用</p><span class="post__date">2026年10月時点の情報</span></div>
 <h1>定年前再任用短時間勤務とは｜60歳以降に短時間で働く制度の任期・勤務時間・給与・退職手当</h1>
 <p class="post__meta">2026年10月時点の公開情報にもとづきます。制度や募集要項は変わることがあるため、手続きの前に各機関の公式情報をご確認ください。</p>
 <p><b>結論から書きます。定年前再任用短時間勤務とは、60歳（条例で定める年齢）以降に定年より前に退職した職員を、本人の希望と選考により、定年退職日相当日まで「短時間勤務の職」に採用する制度です</b>（地方公務員法第22条の4）。定年が65歳へ段階的に引き上げられるのに合わせて設けられました。</p>
@@ -204,12 +288,19 @@ blockquote p:last-child{margin-bottom:0}
 <div class="author"><p class="author__lbl">監修</p>
 <p class="author__name"><a href="https://www.agent-best.net/profile" target="_blank" rel="noopener">松岡 良次</a></p>
 <p class="author__bio">株式会社エージェントベスト代表。大手人材会社およびスタートアップ人材企業にて、IT・スタートアップ・メガベンチャー企業の採用支援に従事。独立後はIT・スタートアップ・コンサル領域に特化し、20〜30代のキャリア支援を行う。（厚生労働大臣許可 13-ユ-316964）</p></div>
-<section class="related"><h2>関連する記事</h2><ul><li><a href="seido-ninyo-dokuritsu.html">独立行政法人・公社への転職</a></li><li><a href="seido-ninyo-gaikaku.html">外郭団体への転籍</a></li><li><a href="seido-ninyo-hijokin.html">非常勤職員と常勤職員の違い</a></li><li><a href="seido-ninyo-kaikeinendo.html">会計年度任用職員とは</a></li><li><a href="seido-ninyo-keikensha.html">辞めた公務員は戻れる？経験者採用で戻るときの給与・退職手当・条件付採用</a></li><li><a href="seido-ninyo-kimatsu.html">会計年度任用職員の期末手当・勤勉手当</a></li></ul></section>
+<section class="related"><h2>関連する記事</h2><div class="cards"><a class="card" href="seido-ninyo-dokuritsu.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">任</span><span class="th__kw">任用</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年9月時点</span></p><p class="card__t">独立行政法人・公社への転職</p></div></a><a class="card" href="seido-ninyo-gaikaku.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">任</span><span class="th__kw">任用</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年9月時点</span></p><p class="card__t">外郭団体への転籍</p></div></a><a class="card" href="seido-ninyo-hijokin.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">任</span><span class="th__kw">任用</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年9月時点</span></p><p class="card__t">非常勤職員と常勤職員の違い</p></div></a><a class="card" href="seido-ninyo-kaikeinendo.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">任</span><span class="th__kw">任用</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年9月時点</span></p><p class="card__t">会計年度任用職員とは</p></div></a><a class="card" href="seido-ninyo-keikensha.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">任</span><span class="th__kw">任用</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年10月時点</span></p><p class="card__t">辞めた公務員は戻れる？経験者採用で戻るときの給与・退職手当・条件付採用</p></div></a><a class="card" href="seido-ninyo-kimatsu.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">任</span><span class="th__kw">任用</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年9月時点</span></p><p class="card__t">会計年度任用職員の期末手当・勤勉手当</p></div></a></div><p class="related__more"><a href="./#cat-seido">制度とお金の記事をもっと見る &rarr;</a></p></section>
 <section class="cta"><h2>「自分の経験に、どこで値段が付くのか」から相談できます</h2>
 <p>在職中でも、情報収集だけでも構いません。応募する求人が決まっていない段階のほうが、むしろ整理する意味があります。ご利用はすべて無料です。</p>
 <div class="cta__btns"><a class="cta__pri" href="../apply.html">無料で相談する</a>
 <a class="cta__sec" href="../">求人を見る</a>
 <a class="cta__sec" href="https://line.me/R/ti/p/@697nxhbt" target="_blank" rel="noopener noreferrer" data-line-cta="media-cta">LINEで相談する</a></div></section>
+</div>
+<aside class="side" aria-label="サイドバー">
+<section class="side__box"><h2 class="side__h">制度とお金の記事</h2><div class="side__mini"><a class="mini" href="seido-ninyo-sainiyo.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">任</span><span class="th__kw">任用</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年10月時点</span></p><p class="card__t">60歳からは再任用か民間転職か｜公務員の4つの選択肢を給与・退職手当・働ける期間で比べる</p></div></a><a class="mini" href="seido-ninyo-kobo.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">任</span><span class="th__kw">任用</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年9月時点</span></p><p class="card__t">公募と再度の任用</p></div></a><a class="mini" href="seido-ninyo-ninkitsuki.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">任</span><span class="th__kw">任用</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年9月時点</span></p><p class="card__t">任期付職員の制度</p></div></a><a class="mini" href="seido-ninyo-tokutei.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">任</span><span class="th__kw">任用</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年9月時点</span></p><p class="card__t">特定任期付職員（専門的知識を持つ職員）</p></div></a><a class="mini" href="seido-ninyo-shokushu.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">任</span><span class="th__kw">任用</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年9月時点</span></p><p class="card__t">事務・技術・専門職で任用はどう違うか</p></div></a></div><p class="related__more"><a href="./#cat-seido">もっと見る &rarr;</a></p></section>
+<section class="side__box"><h2 class="side__h">カテゴリ</h2><ul class="side__cats"><li><a href="./#cat-city">自治体別</a><span>350本</span></li><li><a href="./#cat-dept">部署別</a><span>200本</span></li><li><a href="./#cat-senkou">選考対策</a><span>150本</span></li><li><a href="./#cat-industry">業界研究</a><span>150本</span></li><li><a href="./#cat-seido">制度とお金</a><span>370本</span></li><li><a href="./#cat-skill">資格・スキル</a><span>50本</span></li></ul></section>
+<div class="side__sticky"><section class="side__box side__cta"><h2 class="side__h">転職の相談</h2><p>在職中でも、情報収集だけでも構いません。ご利用はすべて無料です。</p><a class="cta__pri" href="../apply.html">無料で相談する</a><a class="cta__sec" href="../">求人を見る</a><a class="cta__sec" href="https://line.me/R/ti/p/@697nxhbt" target="_blank" rel="noopener noreferrer" data-line-cta="media-side">LINEで相談する</a></section></div>
+</aside>
+</div>
 </main>
 <footer class="site-foot"><div class="foot__inner">
 <strong>エージェントベストジョブ財政課転職 — 公務員のための求人サイト</strong><br>

@@ -95,7 +95,88 @@ blockquote p:last-child{margin-bottom:0}
 .idx__grp{margin:30px 0 0}
 .idx__grp h2{font-size:17px}
 .idx__cnt{font-size:12px;color:var(--ink-3);font-weight:400;margin-left:8px}
-@media(max-width:640px){h1{font-size:22px}h2{font-size:18px}.wrap{padding:18px 14px 44px}}</style>
+@media(max-width:640px){h1{font-size:22px}h2{font-size:18px}.wrap{padding:18px 14px 44px}}
+.wrap--wide{max-width:1080px}
+.layout{display:grid;gap:36px;grid-template-columns:minmax(0,1fr)}
+.layout>*{min-width:0}
+@media(min-width:1024px){.layout{grid-template-columns:minmax(0,1fr) 300px}.layout--post{grid-template-columns:minmax(0,720px) 300px;justify-content:space-between}}
+.tabs{display:flex;gap:6px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin;margin:0 0 22px;padding:2px 0 8px;border-bottom:1px solid var(--line)}
+.tabs a{flex:0 0 auto;font-size:13px;font-weight:700;color:var(--ink-2);text-decoration:none;background:var(--surface);border:1px solid var(--line);padding:6px 13px;border-radius:var(--r-pill);white-space:nowrap}
+.tabs a:hover{color:var(--accent-ink);border-color:var(--accent)}
+.tabs a[aria-current]{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+.tabs__n{font-weight:400;opacity:.75;margin-left:4px;font-size:11.5px}
+.sec{margin:0 0 38px}
+.sec__h{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;font-size:18px;line-height:1.5;margin:0 0 14px;padding:0 0 8px;border:0;border-bottom:2px solid var(--ink)}
+.sec__h .idx__cnt{margin-left:0}
+.sec__more{margin-left:auto;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap}
+.sec__more:hover{text-decoration:underline}
+.sec__dot{display:inline-block;width:10px;height:10px;border-radius:3px;background:var(--th);align-self:center}
+.th{position:relative;aspect-ratio:16/9;border-radius:10px;overflow:hidden;color:#fff;background:var(--th);background:linear-gradient(135deg,var(--th),color-mix(in srgb,var(--th) 62%,#000));display:flex;flex-direction:column;justify-content:flex-end;padding:10px 12px}
+.th__cat{position:absolute;top:9px;left:10px;font-size:10.5px;font-weight:800;letter-spacing:.06em;background:rgba(255,255,255,.2);padding:2px 8px;border-radius:var(--r-pill)}
+.th__ch{position:absolute;right:-6px;bottom:-22px;font-size:96px;font-weight:900;line-height:1;opacity:.14}
+.th__kw{position:relative;font-size:17px;font-weight:800;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
+.card{display:flex;flex-direction:column;gap:9px;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);padding:10px}
+.card:hover{border-color:var(--accent)}
+.card:hover .card__t{text-decoration:underline}
+.card__meta{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;font-size:11.5px;color:var(--ink-3);margin:0}
+.lbl{font-weight:700;color:var(--accent-ink)}
+.card__t{font-size:14px;font-weight:700;line-height:1.6;margin:0;color:var(--ink);overflow-wrap:anywhere}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));gap:14px}
+.feat{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:720px){.feat{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}}
+.feat__big .th{aspect-ratio:16/9}
+.feat__big .th__kw{font-size:24px}
+.feat__big .card__t{font-size:17px}
+.feat__list{display:grid;gap:10px;align-content:start}
+.mini{display:grid;grid-template-columns:104px minmax(0,1fr);gap:11px;align-items:start;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:8px}
+.mini:hover{border-color:var(--accent)}
+.mini:hover .card__t{text-decoration:underline}
+.mini .th{padding:6px 7px;border-radius:7px}
+.mini .th__cat{display:none}
+.mini .th__ch{font-size:54px;bottom:-12px}
+.mini .th__kw{font-size:12px}
+.mini .card__t{font-size:13px;line-height:1.55}
+.mini .card__meta{margin:0 0 3px}
+.more{margin:14px 0 0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card)}
+.more>summary{cursor:pointer;padding:11px 16px;font-size:13.5px;font-weight:700;color:var(--accent-ink)}
+.more__body{padding:0 16px 10px}
+.more__body h3{font-size:14px;margin:16px 0 4px;scroll-margin-top:70px}
+.more__body ul{list-style:none;padding:0;margin:0}
+.more__body li{border-bottom:1px solid var(--line-2);padding:7px 0;margin:0;font-size:14px;line-height:1.7}
+.more__body a{text-decoration:none}
+.more__body a:hover{text-decoration:underline}
+[id^="cat-"]{scroll-margin-top:70px}
+.side{display:flex;flex-direction:column;gap:22px}
+.side__box{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);padding:14px 16px}
+.side__h{font-size:14px;font-weight:800;margin:0 0 8px;padding:0 0 7px;border:0;border-bottom:1px solid var(--line)}
+.side__rank{list-style:none;counter-reset:r;padding:0;margin:0}
+.side__rank li{counter-increment:r;display:grid;grid-template-columns:24px minmax(0,1fr);gap:8px;padding:8px 0;margin:0;border-bottom:1px solid var(--line-2);font-size:13px;line-height:1.6}
+.side__rank li:last-child{border-bottom:0}
+.side__rank li::before{content:counter(r);font-weight:900;color:var(--accent-ink);font-size:15px;line-height:1.4}
+.side__rank a,.side__cats a{text-decoration:none;color:var(--ink)}
+.side__rank a:hover,.side__cats a:hover{text-decoration:underline;color:var(--accent-ink)}
+.side__cats{list-style:none;padding:0;margin:0}
+.side__cats li{display:flex;justify-content:space-between;gap:8px;padding:7px 0;margin:0;border-bottom:1px solid var(--line-2);font-size:13.5px}
+.side__cats li:last-child{border-bottom:0}
+.side__cats span{color:var(--ink-3);font-size:12px}
+.side__mini{display:grid;gap:9px}
+.side__mini .mini{grid-template-columns:84px minmax(0,1fr);padding:6px;border-radius:10px}
+.side__mini .th__kw{font-size:11px}
+.side__mini .card__t{font-size:12.5px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips a{font-size:12px;color:var(--ink-2);text-decoration:none;background:var(--surface-2);padding:4px 10px;border-radius:var(--r-pill)}
+.chips a:hover{color:var(--accent-ink);text-decoration:underline}
+.side__cta{background:var(--accent-soft);border-color:var(--accent)}
+.side__cta p{font-size:13px;line-height:1.75;color:var(--ink-2);margin:0 0 10px}
+.side__cta .cta__pri,.side__cta .cta__sec{display:block;text-align:center;font-size:13.5px;padding:9px 12px;margin-top:7px}
+@media(min-width:1024px){.side__sticky{position:sticky;top:76px}}
+.post__tags{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;margin:0 0 10px}
+.post__tags .post__eyebrow{margin:0}
+.post__date{font-size:12px;color:var(--ink-3)}
+.related .cards{margin-top:4px}
+.related__more{margin:14px 0 0;text-align:right;font-size:13.5px;font-weight:700}
+.related__more a{text-decoration:none}
+.related__more a:hover{text-decoration:underline}</style>
 <script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"出向・派遣の仕組み","description":"公務員の出向・派遣は根拠ごとに身分と給与の扱いが違います。自治体間の派遣（地方自治法第252条の17）、国への出向（退職と採用の形）、公益的法人等への派遣、研修派遣（地方公務員法第39条）を並べ、転職前に外を経験する道として整理しました。","mainEntityOfPage":"https://zaiseikatenshoku.com/media/seido-ninyo-shukko.html","author":{"@type":"Organization","name":"株式会社エージェントベスト"},"publisher":{"@type":"Organization","name":"エージェントベストジョブ財政課転職"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"エージェントベストジョブ財政課転職","item":"https://zaiseikatenshoku.com/"},{"@type":"ListItem","position":2,"name":"記事","item":"https://zaiseikatenshoku.com/media/"},{"@type":"ListItem","position":3,"name":"出向・派遣の仕組み","item":"https://zaiseikatenshoku.com/media/seido-ninyo-shukko.html"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"県への派遣中です。派遣先の県の職員として転職（県の採用試験を受験）できますか","acceptedAnswer":{"@type":"Answer","text":"派遣中に県の採用試験を受けることを禁じる規定はありませんが、派遣は両方の身分をあわせ有する形なので、派遣元との関係と派遣の趣旨から、派遣の期間の満了後に考えるのが自然です。地方自治法第252条の17による派遣は、派遣元の職員の身分を保ったまま、派遣先の職員の身分をあわせ有する形で、派遣先（派遣を求めた）の自治体の事務の処理のための派遣です。派遣中に派遣先の採用試験（経験者採用など）を受けて採用されれば、派遣元を退職して派遣先の職員になることは制度上可能ですが、派遣元の自治体にとっては、派遣した職員を失う形になり、派遣の趣旨に反すると受け取られます。実務上は、派遣の期間を満了して派遣元に戻り、一定の期間を置いてから、派遣先の経験者採用に応募する形が、双方との関係を保つ形です。派遣先での業務の実績は、経験者採用の選考で評価されるので、派遣中は業務に専念して実績を作り、応募は戻ってから、という順序が有利です。派遣先の県から「来ないか」と誘われた場合も、派遣元の人事の担当課に相談してから決めてください。"}},{"@type":"Question","name":"国に出向していた経歴は、転職先でどう評価されますか","acceptedAnswer":{"@type":"Answer","text":"国の制度の運用を内側から見た経験として、自治体向けの企業、シンクタンク、コンサルティングで評価されます。根拠と役割を事実で説明してください。国への出向は、形式上は自治体を退職して国家公務員として採用され、国の省庁で制度の企画・運用に携わる形です。財政課の職員が総務省や財務省に出向し、地方財政の制度の運用や、交付税の算定、財政の分析に携わる例があり、この経験は、自治体の側から見た制度と、国の側から見た制度の両方を知る人材として、自治体向けの業務で価値があります。転職先への説明は、「○年から○年まで、○○省に出向し、○○の業務を担当。自治体に戻って財政課で○○を担当」のように、期間、省庁、業務、役割を事実で示します。「出向」の一言では、民間の関連会社への出向と混同されるので、国の省庁での制度の業務であることを明示してください。出向中に知った非公開の情報は守秘義務（国家公務員法と地方公務員法の両方）の対象なので、公表されている制度の範囲で語ります。"}},{"@type":"Question","name":"民間企業への研修派遣に行きたいです。どうすればよいですか","acceptedAnswer":{"@type":"Answer","text":"自治体の研修派遣の制度（対象の企業、期間、選考の方法）を人事の担当課で確かめ、希望を伝えてください。決めるのは自治体です。地方公務員の民間企業への派遣は、国の官民人事交流法のような法律の制度がなく、地方公務員法第39条の研修として、自治体が企業と協定を結んで職員を派遣する形が一般的です。対象の企業（自治体と関係の深い企業、地域の企業、大手企業など）、期間（数か月から1〜2年程度）、対象の職員（年齢、職種、経験）、選考の方法は自治体の運用によります。希望を伝える際は、「民間企業の業務の進め方を学び、財政課の業務に生かしたい」のように、公務に生かす目的で伝えるのが自然です。派遣中は職員の身分のままで、給与は自治体が支給し、服務は地方公務員法が及びます。派遣先の企業への転職は、派遣の趣旨と、再就職者の働きかけの規制（第38条の2）の両面で慎重に考える必要があり、派遣の直後の転職は避け、自治体に戻って一定の期間を置いてから、というのが安全な形です。研修派遣で得た民間の経験は、他の転職先でも「民間の業務を知る公務員」として評価されます。"}}]}]</script>
 </head>
 <body>
@@ -109,10 +190,13 @@ blockquote p:last-child{margin-bottom:0}
 <a href="./" aria-current="page">記事</a>
 <a href="../apply.html">転職支援サービス</a></nav>
 <a class="btn-head" href="../apply.html">無料で相談する</a></div></header>
-<main class="wrap">
-<nav class="crumb"><a href="../">エージェントベストジョブ財政課転職</a> &rsaquo; <a href="./">記事</a> &rsaquo; 制度とお金</nav>
+<main class="wrap wrap--wide">
+<nav class="tabs" aria-label="記事のカテゴリ"><a href="./">すべて</a><a href="./#cat-city">自治体別<span class="tabs__n">350</span></a><a href="./#cat-dept">部署別<span class="tabs__n">200</span></a><a href="./#cat-senkou">選考対策<span class="tabs__n">150</span></a><a href="./#cat-industry">業界研究<span class="tabs__n">150</span></a><a href="./#cat-seido">制度とお金<span class="tabs__n">370</span></a><a href="./#cat-skill">資格・スキル<span class="tabs__n">50</span></a></nav>
+<nav class="crumb"><a href="../">エージェントベストジョブ財政課転職</a> &rsaquo; <a href="./">記事</a> &rsaquo; <a href="./#cat-seido">制度とお金</a></nav>
+<div class="layout layout--post">
+<div>
 <article class="post">
-<p class="post__eyebrow">制度とお金 / 任用</p>
+<div class="post__tags"><p class="post__eyebrow">制度とお金 / 任用</p><span class="post__date">2026年9月時点の情報</span></div>
 <h1>出向・派遣の仕組み</h1>
 <p class="post__meta">2026年9月時点の公開情報にもとづきます。制度や募集要項は変わることがあるため、手続きの前に各機関の公式情報をご確認ください。</p>
 <p>財政課にいると、「県に出向していた」「国に派遣されていた」「県から市に来ている」という職員に出会います。<b>出向・派遣は、公務員が身分を保ったまま、または一時的に身分を変えて、他の組織で働く仕組み</b>で、根拠が複数あり、根拠ごとに身分・給与・退職手当の扱いが違います。</p>
@@ -215,12 +299,19 @@ blockquote p:last-child{margin-bottom:0}
 <div class="author"><p class="author__lbl">監修</p>
 <p class="author__name"><a href="https://www.agent-best.net/profile" target="_blank" rel="noopener">松岡 良次</a></p>
 <p class="author__bio">株式会社エージェントベスト代表。大手人材会社およびスタートアップ人材企業にて、IT・スタートアップ・メガベンチャー企業の採用支援に従事。独立後はIT・スタートアップ・コンサル領域に特化し、20〜30代のキャリア支援を行う。（厚生労働大臣許可 13-ユ-316964）</p></div>
-<section class="related"><h2>関連する記事</h2><ul><li><a href="seido-ninyo-dokuritsu.html">独立行政法人・公社への転職</a></li><li><a href="seido-ninyo-gaikaku.html">外郭団体への転籍</a></li><li><a href="seido-ninyo-hijokin.html">非常勤職員と常勤職員の違い</a></li><li><a href="seido-ninyo-kaikeinendo.html">会計年度任用職員とは</a></li><li><a href="seido-ninyo-keikensha.html">辞めた公務員は戻れる？経験者採用で戻るときの給与・退職手当・条件付採用</a></li><li><a href="seido-ninyo-kimatsu.html">会計年度任用職員の期末手当・勤勉手当</a></li></ul></section>
+<section class="related"><h2>関連する記事</h2><div class="cards"><a class="card" href="seido-ninyo-dokuritsu.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">任</span><span class="th__kw">任用</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年9月時点</span></p><p class="card__t">独立行政法人・公社への転職</p></div></a><a class="card" href="seido-ninyo-gaikaku.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">任</span><span class="th__kw">任用</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年9月時点</span></p><p class="card__t">外郭団体への転籍</p></div></a><a class="card" href="seido-ninyo-hijokin.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">任</span><span class="th__kw">任用</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年9月時点</span></p><p class="card__t">非常勤職員と常勤職員の違い</p></div></a><a class="card" href="seido-ninyo-kaikeinendo.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">任</span><span class="th__kw">任用</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年9月時点</span></p><p class="card__t">会計年度任用職員とは</p></div></a><a class="card" href="seido-ninyo-keikensha.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">任</span><span class="th__kw">任用</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年10月時点</span></p><p class="card__t">辞めた公務員は戻れる？経験者採用で戻るときの給与・退職手当・条件付採用</p></div></a><a class="card" href="seido-ninyo-kimatsu.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">任</span><span class="th__kw">任用</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年9月時点</span></p><p class="card__t">会計年度任用職員の期末手当・勤勉手当</p></div></a></div><p class="related__more"><a href="./#cat-seido">制度とお金の記事をもっと見る &rarr;</a></p></section>
 <section class="cta"><h2>「自分の経験に、どこで値段が付くのか」から相談できます</h2>
 <p>在職中でも、情報収集だけでも構いません。応募する求人が決まっていない段階のほうが、むしろ整理する意味があります。ご利用はすべて無料です。</p>
 <div class="cta__btns"><a class="cta__pri" href="../apply.html">無料で相談する</a>
 <a class="cta__sec" href="../">求人を見る</a>
 <a class="cta__sec" href="https://line.me/R/ti/p/@697nxhbt" target="_blank" rel="noopener noreferrer" data-line-cta="media-cta">LINEで相談する</a></div></section>
+</div>
+<aside class="side" aria-label="サイドバー">
+<section class="side__box"><h2 class="side__h">制度とお金の記事</h2><div class="side__mini"><a class="mini" href="seido-kyuyo-kyuryohyo.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">給</span><span class="th__kw">給与・手当</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年11月時点</span></p><p class="card__t">給料表の読み方｜級と号給で何が決まるか</p></div></a><a class="mini" href="seido-kyuyo-shokyu.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">給</span><span class="th__kw">給与・手当</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年11月時点</span></p><p class="card__t">昇給の仕組み｜年に何号給上がるのか</p></div></a><a class="mini" href="seido-kyuyo-shokaku.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">給</span><span class="th__kw">給与・手当</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年11月時点</span></p><p class="card__t">昇格と昇給の違い｜級が上がるとき</p></div></a><a class="mini" href="seido-kyuyo-kyuryo-keisan.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">給</span><span class="th__kw">給与・手当</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年11月時点</span></p><p class="card__t">月給の計算｜給料と手当はどう分かれているか</p></div></a><a class="mini" href="seido-kyuyo-chiiki.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">給</span><span class="th__kw">給与・手当</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年11月時点</span></p><p class="card__t">地域手当とは｜支給割合は何で決まるか</p></div></a></div><p class="related__more"><a href="./#cat-seido">もっと見る &rarr;</a></p></section>
+<section class="side__box"><h2 class="side__h">カテゴリ</h2><ul class="side__cats"><li><a href="./#cat-city">自治体別</a><span>350本</span></li><li><a href="./#cat-dept">部署別</a><span>200本</span></li><li><a href="./#cat-senkou">選考対策</a><span>150本</span></li><li><a href="./#cat-industry">業界研究</a><span>150本</span></li><li><a href="./#cat-seido">制度とお金</a><span>370本</span></li><li><a href="./#cat-skill">資格・スキル</a><span>50本</span></li></ul></section>
+<div class="side__sticky"><section class="side__box side__cta"><h2 class="side__h">転職の相談</h2><p>在職中でも、情報収集だけでも構いません。ご利用はすべて無料です。</p><a class="cta__pri" href="../apply.html">無料で相談する</a><a class="cta__sec" href="../">求人を見る</a><a class="cta__sec" href="https://line.me/R/ti/p/@697nxhbt" target="_blank" rel="noopener noreferrer" data-line-cta="media-side">LINEで相談する</a></section></div>
+</aside>
+</div>
 </main>
 <footer class="site-foot"><div class="foot__inner">
 <strong>エージェントベストジョブ財政課転職 — 公務員のための求人サイト</strong><br>

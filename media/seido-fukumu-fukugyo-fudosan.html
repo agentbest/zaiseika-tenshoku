@@ -95,7 +95,88 @@ blockquote p:last-child{margin-bottom:0}
 .idx__grp{margin:30px 0 0}
 .idx__grp h2{font-size:17px}
 .idx__cnt{font-size:12px;color:var(--ink-3);font-weight:400;margin-left:8px}
-@media(max-width:640px){h1{font-size:22px}h2{font-size:18px}.wrap{padding:18px 14px 44px}}</style>
+@media(max-width:640px){h1{font-size:22px}h2{font-size:18px}.wrap{padding:18px 14px 44px}}
+.wrap--wide{max-width:1080px}
+.layout{display:grid;gap:36px;grid-template-columns:minmax(0,1fr)}
+.layout>*{min-width:0}
+@media(min-width:1024px){.layout{grid-template-columns:minmax(0,1fr) 300px}.layout--post{grid-template-columns:minmax(0,720px) 300px;justify-content:space-between}}
+.tabs{display:flex;gap:6px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin;margin:0 0 22px;padding:2px 0 8px;border-bottom:1px solid var(--line)}
+.tabs a{flex:0 0 auto;font-size:13px;font-weight:700;color:var(--ink-2);text-decoration:none;background:var(--surface);border:1px solid var(--line);padding:6px 13px;border-radius:var(--r-pill);white-space:nowrap}
+.tabs a:hover{color:var(--accent-ink);border-color:var(--accent)}
+.tabs a[aria-current]{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+.tabs__n{font-weight:400;opacity:.75;margin-left:4px;font-size:11.5px}
+.sec{margin:0 0 38px}
+.sec__h{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;font-size:18px;line-height:1.5;margin:0 0 14px;padding:0 0 8px;border:0;border-bottom:2px solid var(--ink)}
+.sec__h .idx__cnt{margin-left:0}
+.sec__more{margin-left:auto;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap}
+.sec__more:hover{text-decoration:underline}
+.sec__dot{display:inline-block;width:10px;height:10px;border-radius:3px;background:var(--th);align-self:center}
+.th{position:relative;aspect-ratio:16/9;border-radius:10px;overflow:hidden;color:#fff;background:var(--th);background:linear-gradient(135deg,var(--th),color-mix(in srgb,var(--th) 62%,#000));display:flex;flex-direction:column;justify-content:flex-end;padding:10px 12px}
+.th__cat{position:absolute;top:9px;left:10px;font-size:10.5px;font-weight:800;letter-spacing:.06em;background:rgba(255,255,255,.2);padding:2px 8px;border-radius:var(--r-pill)}
+.th__ch{position:absolute;right:-6px;bottom:-22px;font-size:96px;font-weight:900;line-height:1;opacity:.14}
+.th__kw{position:relative;font-size:17px;font-weight:800;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
+.card{display:flex;flex-direction:column;gap:9px;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);padding:10px}
+.card:hover{border-color:var(--accent)}
+.card:hover .card__t{text-decoration:underline}
+.card__meta{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;font-size:11.5px;color:var(--ink-3);margin:0}
+.lbl{font-weight:700;color:var(--accent-ink)}
+.card__t{font-size:14px;font-weight:700;line-height:1.6;margin:0;color:var(--ink);overflow-wrap:anywhere}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));gap:14px}
+.feat{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:720px){.feat{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}}
+.feat__big .th{aspect-ratio:16/9}
+.feat__big .th__kw{font-size:24px}
+.feat__big .card__t{font-size:17px}
+.feat__list{display:grid;gap:10px;align-content:start}
+.mini{display:grid;grid-template-columns:104px minmax(0,1fr);gap:11px;align-items:start;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:8px}
+.mini:hover{border-color:var(--accent)}
+.mini:hover .card__t{text-decoration:underline}
+.mini .th{padding:6px 7px;border-radius:7px}
+.mini .th__cat{display:none}
+.mini .th__ch{font-size:54px;bottom:-12px}
+.mini .th__kw{font-size:12px}
+.mini .card__t{font-size:13px;line-height:1.55}
+.mini .card__meta{margin:0 0 3px}
+.more{margin:14px 0 0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card)}
+.more>summary{cursor:pointer;padding:11px 16px;font-size:13.5px;font-weight:700;color:var(--accent-ink)}
+.more__body{padding:0 16px 10px}
+.more__body h3{font-size:14px;margin:16px 0 4px;scroll-margin-top:70px}
+.more__body ul{list-style:none;padding:0;margin:0}
+.more__body li{border-bottom:1px solid var(--line-2);padding:7px 0;margin:0;font-size:14px;line-height:1.7}
+.more__body a{text-decoration:none}
+.more__body a:hover{text-decoration:underline}
+[id^="cat-"]{scroll-margin-top:70px}
+.side{display:flex;flex-direction:column;gap:22px}
+.side__box{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);padding:14px 16px}
+.side__h{font-size:14px;font-weight:800;margin:0 0 8px;padding:0 0 7px;border:0;border-bottom:1px solid var(--line)}
+.side__rank{list-style:none;counter-reset:r;padding:0;margin:0}
+.side__rank li{counter-increment:r;display:grid;grid-template-columns:24px minmax(0,1fr);gap:8px;padding:8px 0;margin:0;border-bottom:1px solid var(--line-2);font-size:13px;line-height:1.6}
+.side__rank li:last-child{border-bottom:0}
+.side__rank li::before{content:counter(r);font-weight:900;color:var(--accent-ink);font-size:15px;line-height:1.4}
+.side__rank a,.side__cats a{text-decoration:none;color:var(--ink)}
+.side__rank a:hover,.side__cats a:hover{text-decoration:underline;color:var(--accent-ink)}
+.side__cats{list-style:none;padding:0;margin:0}
+.side__cats li{display:flex;justify-content:space-between;gap:8px;padding:7px 0;margin:0;border-bottom:1px solid var(--line-2);font-size:13.5px}
+.side__cats li:last-child{border-bottom:0}
+.side__cats span{color:var(--ink-3);font-size:12px}
+.side__mini{display:grid;gap:9px}
+.side__mini .mini{grid-template-columns:84px minmax(0,1fr);padding:6px;border-radius:10px}
+.side__mini .th__kw{font-size:11px}
+.side__mini .card__t{font-size:12.5px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips a{font-size:12px;color:var(--ink-2);text-decoration:none;background:var(--surface-2);padding:4px 10px;border-radius:var(--r-pill)}
+.chips a:hover{color:var(--accent-ink);text-decoration:underline}
+.side__cta{background:var(--accent-soft);border-color:var(--accent)}
+.side__cta p{font-size:13px;line-height:1.75;color:var(--ink-2);margin:0 0 10px}
+.side__cta .cta__pri,.side__cta .cta__sec{display:block;text-align:center;font-size:13.5px;padding:9px 12px;margin-top:7px}
+@media(min-width:1024px){.side__sticky{position:sticky;top:76px}}
+.post__tags{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;margin:0 0 10px}
+.post__tags .post__eyebrow{margin:0}
+.post__date{font-size:12px;color:var(--ink-3)}
+.related .cards{margin-top:4px}
+.related__more{margin:14px 0 0;text-align:right;font-size:13.5px;font-weight:700}
+.related__more a{text-decoration:none}
+.related__more a:hover{text-decoration:underline}</style>
 <script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"不動産賃貸は副業にあたるか","description":"公務員の不動産賃貸について、国の現行の棟数・室数・駐車台数・賃貸料収入の基準、管理委託と承認、相続時の相談、地方制度との違いを整理します。","mainEntityOfPage":"https://zaiseikatenshoku.com/media/seido-fukumu-fukugyo-fudosan.html","author":{"@type":"Organization","name":"株式会社エージェントベスト"},"publisher":{"@type":"Organization","name":"エージェントベストジョブ財政課転職"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"エージェントベストジョブ財政課転職","item":"https://zaiseikatenshoku.com/"},{"@type":"ListItem","position":2,"name":"記事","item":"https://zaiseikatenshoku.com/media/"},{"@type":"ListItem","position":3,"name":"不動産賃貸は副業にあたるか","item":"https://zaiseikatenshoku.com/media/seido-fukumu-fukugyo-fudosan.html"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"一室だけ貸すなら申請は不要ですか","acceptedAnswer":{"@type":"Answer","text":"室数だけでは決まりません。物件の種類、設備、他の賃貸、収入等を確認します。国の表の基準を地方へ一律適用せず、本人の担当へ照会してください。"}},{"@type":"Question","name":"管理会社に任せれば兼業に当たりませんか","acceptedAnswer":{"@type":"Answer","text":"委託は職務への支障を確認する材料であり、自営該当性を一律になくすものではありません。規模等による判定と、承認のための管理方法を分けて確認します。"}},{"@type":"Question","name":"相続した物件も報告が必要ですか","acceptedAnswer":{"@type":"Answer","text":"相続の事情と現在の運営を担当へ伝え、必要な承認・届出を確認します。家族名義や本人が望まず取得したことだけで、全国一律に手続き不要とはいえません。相談方法の確認にはLINEの案内も利用できます。物件契約や入居者情報を送る必要はなく、進路の情報収集として利用してください。"}}]}]</script>
 </head>
 <body>
@@ -109,10 +190,13 @@ blockquote p:last-child{margin-bottom:0}
 <a href="./" aria-current="page">記事</a>
 <a href="../apply.html">転職支援サービス</a></nav>
 <a class="btn-head" href="../apply.html">無料で相談する</a></div></header>
-<main class="wrap">
-<nav class="crumb"><a href="../">エージェントベストジョブ財政課転職</a> &rsaquo; <a href="./">記事</a> &rsaquo; 制度とお金</nav>
+<main class="wrap wrap--wide">
+<nav class="tabs" aria-label="記事のカテゴリ"><a href="./">すべて</a><a href="./#cat-city">自治体別<span class="tabs__n">350</span></a><a href="./#cat-dept">部署別<span class="tabs__n">200</span></a><a href="./#cat-senkou">選考対策<span class="tabs__n">150</span></a><a href="./#cat-industry">業界研究<span class="tabs__n">150</span></a><a href="./#cat-seido">制度とお金<span class="tabs__n">370</span></a><a href="./#cat-skill">資格・スキル<span class="tabs__n">50</span></a></nav>
+<nav class="crumb"><a href="../">エージェントベストジョブ財政課転職</a> &rsaquo; <a href="./">記事</a> &rsaquo; <a href="./#cat-seido">制度とお金</a></nav>
+<div class="layout layout--post">
+<div>
 <article class="post">
-<p class="post__eyebrow">制度とお金 / 服務と法令上の制限</p>
+<div class="post__tags"><p class="post__eyebrow">制度とお金 / 服務と法令上の制限</p><span class="post__date">2026年11月時点の情報</span></div>
 <h1>不動産賃貸は副業にあたるか</h1>
 <p class="post__meta">2026-11時点の公開情報にもとづきます。制度や募集要項は変わることがあるため、手続きの前に各機関の公式情報をご確認ください。</p>
 <p>不動産を持っていることと、賃貸事業が兼業規制上の自営に当たることは分けて確認します。貸している建物や土地、駐車場の規模、賃貸料収入、設備、本人の関与を整理し、所属の担当へ相談します。管理会社に任せている、相続した物件であるというだけで、承認の確認が不要になるわけではありません。</p>
@@ -179,12 +263,19 @@ blockquote p:last-child{margin-bottom:0}
 <div class="author"><p class="author__lbl">監修</p>
 <p class="author__name"><a href="https://www.agent-best.net/profile" target="_blank" rel="noopener">松岡 良次</a></p>
 <p class="author__bio">株式会社エージェントベスト代表。大手人材会社およびスタートアップ人材企業にて、IT・スタートアップ・メガベンチャー企業の採用支援に従事。独立後はIT・スタートアップ・コンサル領域に特化し、20〜30代のキャリア支援を行う。（厚生労働大臣許可 13-ユ-316964）</p></div>
-<section class="related"><h2>関連する記事</h2><ul><li><a href="seido-fukumu-dantai-katsudo.html">職員団体の活動と服務</a></li><li><a href="seido-fukumu-fukugyo-kabu.html">株式投資・資産運用は兼業か</a></li><li><a href="seido-fukumu-fukugyo-kanwa.html">兼業規制の緩和の動き</a></li><li><a href="seido-fukumu-fukugyo-kouen.html">講演・執筆の報酬は許可が要るか</a></li><li><a href="seido-fukumu-fukugyo-net.html">ネット上の収入（アフィリエイト等）と兼業規制</a></li><li><a href="seido-fukumu-fukugyo-nougyo.html">農業・家業の手伝いと兼業規制</a></li></ul></section>
+<section class="related"><h2>関連する記事</h2><div class="cards"><a class="card" href="seido-fukumu-dantai-katsudo.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">服</span><span class="th__kw">服務と法令上の制限</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年11月時点</span></p><p class="card__t">職員団体の活動と服務</p></div></a><a class="card" href="seido-fukumu-fukugyo-kabu.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">服</span><span class="th__kw">服務と法令上の制限</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年11月時点</span></p><p class="card__t">株式投資・資産運用は兼業か</p></div></a><a class="card" href="seido-fukumu-fukugyo-kanwa.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">服</span><span class="th__kw">服務と法令上の制限</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年11月時点</span></p><p class="card__t">兼業規制の緩和の動き</p></div></a><a class="card" href="seido-fukumu-fukugyo-kouen.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">服</span><span class="th__kw">服務と法令上の制限</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年11月時点</span></p><p class="card__t">講演・執筆の報酬は許可が要るか</p></div></a><a class="card" href="seido-fukumu-fukugyo-net.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">服</span><span class="th__kw">服務と法令上の制限</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年11月時点</span></p><p class="card__t">ネット上の収入（アフィリエイト等）と兼業規制</p></div></a><a class="card" href="seido-fukumu-fukugyo-nougyo.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">服</span><span class="th__kw">服務と法令上の制限</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年11月時点</span></p><p class="card__t">農業・家業の手伝いと兼業規制</p></div></a></div><p class="related__more"><a href="./#cat-seido">制度とお金の記事をもっと見る &rarr;</a></p></section>
 <section class="cta"><h2>「自分の経験に、どこで値段が付くのか」から相談できます</h2>
 <p>在職中でも、情報収集だけでも構いません。応募する求人が決まっていない段階のほうが、むしろ整理する意味があります。ご利用はすべて無料です。</p>
 <div class="cta__btns"><a class="cta__pri" href="../apply.html">無料で相談する</a>
 <a class="cta__sec" href="../">求人を見る</a>
 <a class="cta__sec" href="https://line.me/R/ti/p/@697nxhbt" target="_blank" rel="noopener noreferrer" data-line-cta="media-cta">LINEで相談する</a></div></section>
+</div>
+<aside class="side" aria-label="サイドバー">
+<section class="side__box"><h2 class="side__h">制度とお金の記事</h2><div class="side__mini"><a class="mini" href="seido-fukumu-fukugyo-shinsei.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">服</span><span class="th__kw">服務と法令上の制限</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年11月時点</span></p><p class="card__t">兼業許可の申請手続き</p></div></a><a class="mini" href="seido-fukumu-kigyo-junbi.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">服</span><span class="th__kw">服務と法令上の制限</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年11月時点</span></p><p class="card__t">在職中の起業準備はどこまで可能か</p></div></a><a class="mini" href="seido-fukumu-himitsu-hanni.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">服</span><span class="th__kw">服務と法令上の制限</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年11月時点</span></p><p class="card__t">守秘義務の範囲｜何が秘密か</p></div></a><a class="mini" href="seido-fukumu-koeki-tsuho.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">服</span><span class="th__kw">服務と法令上の制限</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年11月時点</span></p><p class="card__t">公益通報者保護</p></div></a><a class="mini" href="seido-fukumu-harassment.html"><div class="th" style="--th:#047857" aria-hidden="true"><span class="th__cat">制度とお金</span><span class="th__ch">服</span><span class="th__kw">服務と法令上の制限</span></div><div><p class="card__meta"><span class="lbl">制度とお金</span><span>2026年11月時点</span></p><p class="card__t">ハラスメント相談窓口</p></div></a></div><p class="related__more"><a href="./#cat-seido">もっと見る &rarr;</a></p></section>
+<section class="side__box"><h2 class="side__h">カテゴリ</h2><ul class="side__cats"><li><a href="./#cat-city">自治体別</a><span>350本</span></li><li><a href="./#cat-dept">部署別</a><span>200本</span></li><li><a href="./#cat-senkou">選考対策</a><span>150本</span></li><li><a href="./#cat-industry">業界研究</a><span>150本</span></li><li><a href="./#cat-seido">制度とお金</a><span>370本</span></li><li><a href="./#cat-skill">資格・スキル</a><span>50本</span></li></ul></section>
+<div class="side__sticky"><section class="side__box side__cta"><h2 class="side__h">転職の相談</h2><p>在職中でも、情報収集だけでも構いません。ご利用はすべて無料です。</p><a class="cta__pri" href="../apply.html">無料で相談する</a><a class="cta__sec" href="../">求人を見る</a><a class="cta__sec" href="https://line.me/R/ti/p/@697nxhbt" target="_blank" rel="noopener noreferrer" data-line-cta="media-side">LINEで相談する</a></section></div>
+</aside>
+</div>
 </main>
 <footer class="site-foot"><div class="foot__inner">
 <strong>エージェントベストジョブ財政課転職 — 公務員のための求人サイト</strong><br>
