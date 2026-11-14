@@ -327,7 +327,9 @@
   <url><loc>https://zaiseikatenshoku.com/media/dept-hoken-mensetsu.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/dept-hoken-shokumu.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/dept-hoken-tenshokusaki.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zaiseikatenshoku.com/media/dept-jido-sodan-hatarakikata.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/dept-jido-sodan-honyaku.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zaiseikatenshoku.com/media/dept-jido-sodan-mensetsu.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/dept-jido-sodan-shokumu.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/dept-jido-sodan-tenshokusaki.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/dept-jinji-hatarakikata.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -428,6 +430,7 @@
   <url><loc>https://zaiseikatenshoku.com/media/dept-kotsu-hatarakikata.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/dept-kotsu-honyaku.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/dept-kotsu-mensetsu.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zaiseikatenshoku.com/media/dept-kotsu-seisaku-honyaku.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/dept-kotsu-shokumu.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/dept-kotsu-tenshokusaki.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/dept-kyoiku-hatarakikata.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
