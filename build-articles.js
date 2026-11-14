@@ -569,7 +569,7 @@ function renderArticle(meta, bodyHtml, faq, related, ctx) {
     + (ctx ? '</div>\n' + sideHtml + '</div>\n' : '')
     + '</main>\n'
     + footer() + '\n'
-    + '</body>\n</html>';
+    + '<!-- ab-chat:start --><script src="/ab-chat.js" defer data-ab-chat data-site="zaiseika" data-mode="seeker" data-label="財政課転職"></script><!-- ab-chat:end --></body>\n</html>';
 }
 
 // ---------- 記事一覧 ----------
@@ -693,7 +693,7 @@ function renderIndex(arts) {
     + '</main>\n'
     + footer() + '\n'
     + openJs + '\n'
-    + '</body>\n</html>';
+    + '<!-- ab-chat:start --><script src="/ab-chat.js" defer data-ab-chat data-site="zaiseika" data-mode="seeker" data-label="財政課転職"></script><!-- ab-chat:end --></body>\n</html>';
 }
 
 // ---------- sitemap ----------
