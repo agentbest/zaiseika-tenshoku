@@ -1331,6 +1331,8 @@
   <url><loc>https://zaiseikatenshoku.com/media/senko-pos-byoin.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/senko-pos-chihou-tokyo.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/senko-pos-chokai-reki.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zaiseikatenshoku.com/media/senko-pos-daigakuin.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zaiseikatenshoku.com/media/senko-pos-freelance.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/senko-pos-fuan.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/senko-pos-fukugyo-kara.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/senko-pos-fukusuu-tenshoku.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -1353,6 +1355,7 @@
   <url><loc>https://zaiseikatenshoku.com/media/senko-pos-nokoru.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/senko-pos-saininyo.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/senko-pos-senmon.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zaiseikatenshoku.com/media/senko-pos-shikaku-tori.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/senko-pos-tanki-rishoku.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/senko-pos-teinen-go.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/senko-pos-tokyo-chihou.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
