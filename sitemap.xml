@@ -322,6 +322,7 @@
   <url><loc>https://zaiseikatenshoku.com/media/dept-gikai-mensetsu.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/dept-gikai-shokumu.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/dept-gikai-tenshokusaki.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zaiseikatenshoku.com/media/dept-gyokaku-hatarakikata.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/dept-gyokaku-honyaku.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/dept-gyokaku-mensetsu.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/dept-gyokaku-shokumu.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -336,6 +337,8 @@
   <url><loc>https://zaiseikatenshoku.com/media/dept-hakubutsukan-mensetsu.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/dept-hakubutsukan-shokumu.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/dept-hakubutsukan-tenshokusaki.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zaiseikatenshoku.com/media/dept-hisho-honyaku.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://zaiseikatenshoku.com/media/dept-hisho-tenshokusaki.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/dept-hoiku-hatarakikata.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/dept-hoiku-honyaku.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zaiseikatenshoku.com/media/dept-hoiku-mensetsu.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
