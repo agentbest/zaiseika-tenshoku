@@ -236,6 +236,7 @@
   /* いまの条件では0件になる選択肢。押しても結果が変わらないので押せなくする。
      消さずに残すのは、その条件が「無い」のか「今の条件では0件」なのかを見分けられるようにするため。 */
   .opt.is-zero{opacity:.45; cursor:default}
+  .fgroup[data-key="cities"] .opt.is-zero{display:none}
   .opt.is-zero:hover{background:none}
   .opt.is-zero .lbl{color:var(--ink-3)}
   .fchip:disabled{opacity:.45; cursor:default}
