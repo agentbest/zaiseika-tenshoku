@@ -292,10 +292,10 @@ function jobPage(C, tpl, j, related){
     { '@type': 'ListItem', position: 2, name, item: canon },
   ]};
 
-  const title = `${name}｜${co}（${fmtSalary(j)}） - エージェントベストジョブ財政課転職`;
+  const title = `${name}｜${co}（${fmtSalary(j)}）｜財政課転職`;
   const desc = plain(j.jobContent || j.must || j.companyInfo, 110) || `${co}の${name}の求人。`;
   return tpl
-    .replace('__TITLE__', () => esc(title.length > 70 ? `${name}｜${co} - エージェントベストジョブ財政課転職` : title))
+    .replace('__TITLE__', () => esc(title.length > 70 ? `${name}｜${co}｜財政課転職` : title))
     .replace(/__OGTITLE__/g, () => esc(`${name}｜${co}（${fmtSalary(j)}）`))
     .replace(/__DESC__/g, () => esc(desc))
     .replace(/__CANON__/g, () => esc(canon))
