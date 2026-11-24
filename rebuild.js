@@ -262,8 +262,10 @@ function plainLead(src){
    template.html 側で展開する（JOBS の定義と JOBS.forEach の中）。 */
 const LIGHT_KEYS = ['id','company','position','title','employment','kubun','salaryMin','salaryMax','location',
   'jobCategory','industry','url','listedStatus','createdAt','gradYear','t','logo','employees','employeeCount','areas','remote','lead',
-  'govScore','govFront','finFit','pin'];
+  'govScore','govFront','finFit','pin','cities'];
 function lighten(full){
+  /* 市区町村（検索画面の「市区町村」の絞り込み）。static-pages.js の jobCities（jobs と同じ規則・2026-11-25） */
+  const { jobCities } = require('./static-pages');
   const tagPath = path.join(dir, 'data', 'tags.json');
   const tagIdx = new Map();
   if(fs.existsSync(tagPath)) JSON.parse(fs.readFileSync(tagPath, 'utf8')).forEach((t, i) => tagIdx.set(t.name, i));
@@ -278,6 +280,7 @@ function lighten(full){
     o.t = (j.tags || []).map(n => tagIdx.get(n)).filter(i => i !== undefined);
     const loc = j.location || '';
     o.areas = areasOf(loc);
+    { const cs = jobCities(j); if(cs.length) o.cities = cs; }
     o.remote = /在宅|リモート|テレワーク|フルリモート/.test(loc + ' ' + (j.jobContent || '') + ' ' + (j.benefits || ''));
     const lead = plainLead(j.jobContent || j.must || j.companyInfo || '');
     o.lead = lead.length > 72 ? lead.slice(0, 72) + '…' : lead;

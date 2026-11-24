@@ -270,6 +270,7 @@
   /* いまの条件では0件になる選択肢。押しても結果が変わらないので押せなくする。
      消さずに残すのは、その条件が「無い」のか「今の条件では0件」なのかを見分けられるようにするため。 */
   .opt.is-zero{opacity:.45; cursor:default}
+  .fgroup[data-key="cities"] .opt.is-zero{display:none}
   .opt.is-zero:hover{background:none}
   .opt.is-zero .lbl{color:var(--ink-3)}
   .fchip:disabled{opacity:.45; cursor:default}
@@ -1725,6 +1726,10 @@ const facetDefs=[
   {key:"areas", title:"勤務地", type:"tree", searchable:true,
    leaf:j=>j.areas||[], parentOf:p=>AREA_BLOCK_OF[p]||"その他",
    parentOrder:AREA_BLOCKS.map(b=>b[0]), childOrder:AREA_BLOCKS.reduce((a,b)=>a.concat(b[1]),[])},
+  /* 市区町村（2026-11-24）。値は「東京都港区」（政令市は区をまとめて「大阪府大阪市」）。rebuild.js が list.json の cities 列に入れる。
+     勤務地で都道府県を選ぶと、その中の市区町村だけが残る（0件の選択肢はこの箱だけ隠す＝CSS の .fgroup[data-key="cities"]） */
+  {key:"cities", title:"市区町村", type:"check", searchable:true, get:j=>j.cities||[],
+   labelOf:v=>{ const m=v.match(/^(北海道|東京都|大阪府|京都府|.{2,3}県)(.+)$/); return m?m[2]+"（"+m[1]+"）":v; }},
   {key:"jobCategory", title:"職種", type:"tree", searchable:true,
    leaf:j=>j.jobCategory?[j.jobCategory]:[], parentOf:v=>jobGroupOf(v),
    labelOf:v=>v.replace(/（[^（）]+）\s*$/,"")},
@@ -2122,10 +2127,15 @@ function buildFilters(){
    「押したら0件」を無くすのがこの絞り込みの肝。0件になる選択肢は薄くして押せなくする
    （消さないのは、その条件が"無い"のか"今の条件では0件"なのかを見分けられるようにするため）。 */
 function paintCounts(counts){
+  /* 市区町村の箱は、勤務地で都道府県（ブロック）を選んでいればその中の市区町村だけ出す。
+     大阪と東京の両方に勤務地がある求人があるので、件数だけで判定すると大阪府を選んでも港区が残るため（2026-11-24） */
+  const selPrefs=new Set();
+  state.sel.areas.forEach(v=>{ const blk=AREA_BLOCKS.find(b=>b[0]===v); (blk?blk[1]:[v]).forEach(p=>selPrefs.add(p)); });
+  const outOfArea=v=>selPrefs.size>0 && ![...selPrefs].some(p=>v.startsWith(p));
   for(const key in CNT_EL){
     const m=counts[key], sel=state.sel[key];
     CNT_EL[key].forEach((r,v)=>{
-      const n=(m&&m.get(v))||0;
+      const n=(key==="cities" && outOfArea(v)) ? 0 : ((m&&m.get(v))||0);
       if(r.cnt) r.cnt.textContent=n.toLocaleString("ja-JP");
       const dead=n===0 && !sel.has(v);
       r.row.classList.toggle("is-zero",dead);

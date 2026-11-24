@@ -61,6 +61,10 @@ const F = {
   gradYear:         'fldPJIVJ0Tv4TQwaN', // 新卒サイトが使う。落とさないこと
   tags:             'fldYNSqarLLDERI0a', // タグ（複数選択）。タグ検索の元。落とさないこと
   prefs:            'flddnoD5qZtuAISOO', // 勤務地（都道府県）。複数選択。エリア絞り込みの正データ（2026-09-22新設）
+  addrZip:          'fld9kUdNiRQk8y9MP', // 勤務地_郵便番号（2026-11-24新設。主な勤務地の住所を4列に分けたもの＝構造化データの住所の正）
+  addrPref:         'fldXJHqmxCSu7EKBL', // 勤務地_都道府県（単一選択）
+  addrCity:         'fld9UJZuRs9AMFL5c', // 勤務地_市区町村
+  addrStreet:       'fldfXqgtB0KhDgGx4', // 勤務地_番地・建物
   status:           'fldLFxYGKjXQPoZsd', // 募集状況（空／募集中／募集停止）。募集停止はサイトに載せない（2026-10-11新設）
   hidden:           'fldHvKsNpzFCEEjRV', // サイトに掲載しない（チェック）。募集中のまま公開だけしない求人（2026-10-16新設）
 };
@@ -218,6 +222,9 @@ function flat(v){
     /* 勤務地（都道府県）。⚠ サイトはこの列が入っている求人では本文からの推測をしない */
     const pf = (f[F.prefs] || []).map(x => (typeof x === 'object' ? x.name : x)).filter(Boolean);
     if(pf.length) job.prefs = pf;
+    /* 勤務地_郵便番号／都道府県／市区町村／番地・建物（2026-11-24〜）。都道府県が入っているときだけ addr にする */
+    const av = k => { const v = f[F[k]]; return String(v && typeof v === 'object' ? (v.name || '') : (v || '')).trim(); };
+    if(av('addrPref')) job.addr = { zip: av('addrZip').replace(/^〒\s*/, ''), pref: av('addrPref'), city: av('addrCity'), street: av('addrStreet') };
     for(const k of TEXT_KEYS) job[k] = sanitize(job[k], r.id, k);
     jobs.push(job);
   }
