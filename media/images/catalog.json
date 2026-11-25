@@ -1,0 +1,130 @@
+{
+  "version": 1,
+  "assets": {
+    "generated-municipal": {
+      "id": "generated-municipal",
+      "type": "generated",
+      "alt": "窓口の資料を確認する架空の職員と街並みのイラスト",
+      "generator": "OpenAI built-in image generation",
+      "sourceFile": "exec-3a01ca56-5ec2-4b63-8c8c-836439cadc22.png",
+      "sourceSha256": "60a094be8a90c0f94b5adbba962cac2e023533fe9af16d5c8b71e3a62e44933c",
+      "checkedAt": "2026-11-25",
+      "transform": "3:2 crop, resize, WebP compression"
+    },
+    "generated-department": {
+      "id": "generated-department",
+      "type": "generated",
+      "alt": "模型と資料を囲んで打ち合わせる架空の行政チームのイラスト",
+      "generator": "OpenAI built-in image generation",
+      "sourceFile": "exec-7a4da810-d309-4aa9-94e3-bd5b14ff48d8.png",
+      "sourceSha256": "abc3d6968bb297f41dee675e87981cb77edc703ada71f41c0be4e232d02c0d45",
+      "checkedAt": "2026-11-25",
+      "transform": "3:2 crop, resize, WebP compression"
+    },
+    "generated-selection": {
+      "id": "generated-selection",
+      "type": "generated",
+      "alt": "机を挟んで職歴について話す架空の二人のイラスト",
+      "generator": "OpenAI built-in image generation",
+      "sourceFile": "exec-79466a8f-0ecb-49d5-892e-734c580c6b24.png",
+      "sourceSha256": "60aa14be56d69fa4a9dc2aadb63cf3211edc394314df52d4ea8b16223f04e26d",
+      "checkedAt": "2026-11-25",
+      "transform": "3:2 crop, resize, WebP compression"
+    },
+    "generated-industry": {
+      "id": "generated-industry",
+      "type": "generated",
+      "alt": "事務所、工房、物流、技術の職場を描いたイラスト",
+      "generator": "OpenAI built-in image generation",
+      "sourceFile": "exec-82fcb93a-7292-4bd9-8ae9-0a339b6fb2f8.png",
+      "sourceSha256": "3f7a33c8c03325edb9b4150afa16a0ad5819b8fbf6013653a50f7240d8c462ce",
+      "checkedAt": "2026-11-25",
+      "transform": "3:2 crop, resize, WebP compression"
+    },
+    "generated-money": {
+      "id": "generated-money",
+      "type": "generated",
+      "alt": "書類、電卓、カレンダーを並べて確認する机のイラスト",
+      "generator": "OpenAI built-in image generation",
+      "sourceFile": "exec-91a94620-8992-48ab-b4a0-36d594a93c04.png",
+      "sourceSha256": "73b5bc420262cbb116a520009923ef47af1688ab69a07606fcd1ec46cbf09f68",
+      "checkedAt": "2026-11-25",
+      "transform": "3:2 crop, resize, WebP compression"
+    },
+    "generated-skills": {
+      "id": "generated-skills",
+      "type": "generated",
+      "alt": "本とノート、パソコンで学ぶ架空の人物のイラスト",
+      "generator": "OpenAI built-in image generation",
+      "sourceFile": "exec-949b6f7c-aae2-4bbd-b002-d2646933e74f.png",
+      "sourceSha256": "d5f929ec6f45ebd195baaafcec8a334f22375c994480b581f4f7d3eb4dbd1351",
+      "checkedAt": "2026-11-25",
+      "transform": "3:2 crop, resize, WebP compression"
+    },
+    "photo-finance": {
+      "id": "photo-finance",
+      "type": "stock",
+      "alt": "書類フォルダーと電卓を置いた机",
+      "author": "Mikhail Nilov",
+      "source": "https://www.pexels.com/photo/a-calculator-and-documents-on-the-table-8296948/",
+      "download": "https://images.pexels.com/photos/8296948/pexels-photo-8296948.jpeg",
+      "license": "Pexels License",
+      "licenseUrl": "https://www.pexels.com/license/",
+      "sourceSha256": "7c7218a019f3119da7d88a28324b96e6a0cd9254ebd5651f4fb269eb5dbfa445",
+      "checkedAt": "2026-11-25",
+      "transform": "3:2 crop, resize, WebP compression"
+    },
+    "photo-collaboration": {
+      "id": "photo-collaboration",
+      "type": "stock",
+      "alt": "机で資料を一緒に確認する二人",
+      "author": "Artem Podrez",
+      "source": "https://www.pexels.com/photo/women-checking-on-documents-at-work-8512387/",
+      "download": "https://images.pexels.com/photos/8512387/pexels-photo-8512387.jpeg",
+      "license": "Pexels License",
+      "licenseUrl": "https://www.pexels.com/license/",
+      "sourceSha256": "c8bf856bc6c1ab6ae52555f130bd1caf95369de2e34a055f3cf799688a73eff8",
+      "checkedAt": "2026-11-25",
+      "transform": "3:2 crop, resize, WebP compression"
+    },
+    "photo-study": {
+      "id": "photo-study",
+      "type": "stock",
+      "alt": "開いた本とノートを並べた学習用の机",
+      "author": "Tima Miroshnichenko",
+      "source": "https://www.pexels.com/photo/notebook-and-books-on-wooden-desk-6550408/",
+      "download": "https://images.pexels.com/photos/6550408/pexels-photo-6550408.jpeg",
+      "license": "Pexels License",
+      "licenseUrl": "https://www.pexels.com/license/",
+      "sourceSha256": "cd22fd1aa03c5791ef58e2dac507b32222e668a1f60454506343f8843e603749",
+      "checkedAt": "2026-11-25",
+      "transform": "3:2 crop, resize, WebP compression"
+    },
+    "photo-documents": {
+      "id": "photo-documents",
+      "type": "stock",
+      "alt": "机で書類を確認する人物",
+      "author": "Tima Miroshnichenko",
+      "source": "https://www.pexels.com/photo/a-businesswoman-working-with-papers-in-the-office-6694547/",
+      "download": "https://images.pexels.com/photos/6694547/pexels-photo-6694547.jpeg",
+      "license": "Pexels License",
+      "licenseUrl": "https://www.pexels.com/license/",
+      "sourceSha256": "e83d1514acf3c55555f0ae019e91d8ce8920cb464d7d6f27855cdbb8e2e3e522",
+      "checkedAt": "2026-11-25",
+      "transform": "3:2 crop, resize, WebP compression"
+    },
+    "photo-technology": {
+      "id": "photo-technology",
+      "type": "stock",
+      "alt": "コードを表示したノートパソコンと作業机",
+      "author": "Daniil Komov",
+      "source": "https://www.pexels.com/photo/modern-workspace-with-laptop-and-code-display-34804003/",
+      "download": "https://images.pexels.com/photos/34804003/pexels-photo-34804003.jpeg",
+      "license": "Pexels License",
+      "licenseUrl": "https://www.pexels.com/license/",
+      "sourceSha256": "0a20f39c378d27e0338d8e3651cdcb0e36ea15a688a9f4ad5a78d7eafc6644c8",
+      "checkedAt": "2026-11-25",
+      "transform": "3:2 crop, resize, WebP compression"
+    }
+  }
+}

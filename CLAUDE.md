@@ -104,7 +104,7 @@ out/{slug}.md を書く（data/article_plan.tsv の行を引く）
 - ⚠ **1セッションで書くのは3〜5本。** それ以上は品質が落ちる（`media-gen` の実績）
 - 記事トップ・記事ページは**ポータル風**（2026-11-14。共通方針は `C:\Users\user\site-network\portal-brief.md`）。
   カテゴリのタブ／注目の記事／情報が新しい記事／カテゴリ別カード＋「すべて見る」（全記事リンクはここに残す）／右サイドバー（1024px以上）。
-  サムネイルはCSSだけ（`KIND_INFO` の固定色）。⚠ **アクセス数のデータが無いので「人気」「ランキング」と書かない**。
+  サムネイルはテーマ別の生成画像を使用（2026-11-25、全記事の画像追加依頼）。`media/images/catalog.json` と `tools/article-visuals.js` で画像・利用条件を管理する。⚠ **アクセス数のデータが無いので「人気」「ランキング」と書かない**。
   日付は frontmatter の `asof`（情報の時点）だけで、公開日は持っていない
 - 記事の一覧は `media/index.html`。ヘッダーnav（`template.html` / `apply-template.html` / `zukan.html`）と
   `zukan.html` のフッターから「記事」でつながっている。**navを消すと記事が孤立する**

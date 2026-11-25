@@ -9,6 +9,7 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
+const articleVisuals = require('./tools/article-visuals');
 
 const ROOT = __dirname;
 const OUT = path.join(ROOT, 'out');
@@ -335,7 +336,12 @@ const CSS = [
 '.related .cards{margin-top:4px}',
 '.related__more{margin:14px 0 0;text-align:right;font-size:13.5px;font-weight:700}',
 '.related__more a{text-decoration:none}',
-'.related__more a:hover{text-decoration:underline}'
+'.related__more a:hover{text-decoration:underline}',
+'.article-visual{margin:24px 0 30px}.article-visual img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:12px;background:var(--surface-2)}',
+'.article-visual figcaption{font-size:11px;line-height:1.7;color:var(--ink-3);margin-top:8px}.article-visual figcaption a{color:inherit;text-underline-offset:2px}',
+'.article-visual--inline{margin:34px 0}.th img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.th::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,25,40,.08) 10%,rgba(10,25,40,.78) 100%)}',
+'.th__cat,.th__kw{z-index:1}.th__cat{background:rgba(10,25,40,.72)}.th__ch{display:none}',
+'@media(max-width:640px){.topbar__inner{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 12px}.brand{min-width:0}.brand__mark{flex-shrink:0}.brand__name,.brand__sub{white-space:nowrap}.btn-head{grid-column:2;grid-row:1;font-size:12px;padding:8px 12px}.gnav{grid-column:1/-1;grid-row:2;margin:0;gap:5px 14px}.gnav a{font-size:12px}}'
 ].join('\n');
 
 // ---------- ポータル部品 ----------
@@ -380,6 +386,7 @@ function thumbHtml(meta) {
   const ki = kindInfo(meta.kind);
   const kw = thumbKeyword(meta);
   return '<div class="th" style="--th:' + ki.color + '" aria-hidden="true">'
+    + articleVisuals.imageHtml(articleVisuals.visuals(meta).hero, 'thumb')
     + '<span class="th__cat">' + esc(meta.kind || '') + '</span>'
     + '<span class="th__ch">' + esc(Array.from(kw)[0] || '') + '</span>'
     + '<span class="th__kw">' + esc(kw) + '</span></div>';
@@ -471,10 +478,13 @@ function ldJson(obj) {
 
 // ---------- 記事ページ ----------
 function renderArticle(meta, bodyHtml, faq, related, ctx) {
+  const visual = articleVisuals.visuals(meta);
+  const visualUrl = SITE + '/media/images/' + visual.hero.id + '-1200.webp';
+  bodyHtml = articleVisuals.withInlineVisual(meta, bodyHtml);
   const url = SITE + '/media/' + meta.slug + '.html';
   const ld = [{
     '@context': 'https://schema.org', '@type': 'Article', headline: meta.title,
-    description: meta.description || '', mainEntityOfPage: url,
+    description: meta.description || '', mainEntityOfPage: url, image: [visualUrl],
     author: { '@type': 'Organization', name: '株式会社エージェントベスト' },
     publisher: { '@type': 'Organization', name: 'エージェントベストジョブ財政課転職' }
   }, {
@@ -541,9 +551,10 @@ function renderArticle(meta, bodyHtml, faq, related, ctx) {
     + '<meta property="og:description" content="' + esc(meta.description || '') + '">\n'
     + '<meta property="og:url" content="' + url + '">\n'
     + '<meta property="og:locale" content="ja_JP">\n'
-    + '<meta property="og:image" content="' + SITE + '/assets/ogp.jpg">\n'
+    + '<meta property="og:image" content="' + visualUrl + '">\n'
+    + '<meta property="og:image:alt" content="' + esc(visual.hero.alt) + '">\n'
     + '<meta name="twitter:card" content="summary_large_image">\n'
-    + '<meta name="twitter:image" content="' + SITE + '/assets/ogp.jpg">\n'
+    + '<meta name="twitter:image" content="' + visualUrl + '">\n'
     + GA + '\n'
     + '<style>' + CSS + '</style>\n'
     + '<script type="application/ld+json">' + ldJson(ld) + '</' + 'script>\n'
@@ -560,6 +571,7 @@ function renderArticle(meta, bodyHtml, faq, related, ctx) {
     + (dateLbl ? '<span class="post__date">' + esc(dateLbl) + 'の情報</span>' : '') + '</div>\n'
     + '<h1>' + esc(meta.title) + '</h1>\n'
     + '<p class="post__meta">' + asof + '</p>\n'
+    + articleVisuals.figure(visual.hero, 'hero')
     + bodyHtml + '\n'
     + srcHtml + '\n'
     + '</article>\n'
@@ -709,6 +721,7 @@ function updateSitemap(slugs) {
 
 // ---------- main ----------
 function main() {
+  articleVisuals.validateAssets();
   if (!fs.existsSync(OUT)) { console.log('out/ がありません。記事を書いてから実行してください。'); return; }
   const files = fs.readdirSync(OUT).filter(f => f.endsWith('.md'));
   if (!files.length) { console.log('out/ に記事がありません。'); return; }
