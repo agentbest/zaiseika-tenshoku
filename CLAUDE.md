@@ -109,6 +109,7 @@ out/{slug}.md を書く（data/article_plan.tsv の行を引く）
 - 記事の一覧は `media/index.html`。ヘッダーnav（`template.html` / `apply-template.html` / `zukan.html`）と
   `zukan.html` のフッターから「記事」でつながっている。**navを消すと記事が孤立する**
 - 進捗は `PROGRESS.md` に1行ずつ足す
+- **記事の本文中に「この記事に合う求人」3件を自動で差し込む**（2026-11-25 ハチワレさん指示・`tools/article-jobs.js`）。部署別・業界研究は `TERMS`（部署名/業界名→照合語）、自治体別は勤務地の都道府県で選ぶ。出し方を直すときは `TERMS` を直す。⚠ 求人は毎朝入れ替わるので、`update-jobs.yml` で `rebuild.js` の後に `build-articles.js` も回している（外すと掲載終了の求人＝404へのリンクが記事に残る）
 
 ### 4-3. 記事の自動運転（2026-09-10 に松岡さんが承認）
 
