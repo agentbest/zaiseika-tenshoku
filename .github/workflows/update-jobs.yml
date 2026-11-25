@@ -52,7 +52,11 @@ jobs:
           node fetch-employees.js
 
       - name: 再生成
-        run: node rebuild.js
+        run: |
+          node rebuild.js
+          # 記事中の「この記事に合う求人」を掲載中の求人で選び直す（tools/article-jobs.js）。
+          # 回さないと、掲載が終わった求人（404）へのリンクが記事に残る
+          node build-articles.js
 
       - name: 件数の急減を検知（20% 以上減っていたら push しない）
         run: |

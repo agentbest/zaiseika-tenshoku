@@ -10,6 +10,7 @@
 const fs = require('fs');
 const path = require('path');
 const articleVisuals = require('./tools/article-visuals');
+const articleJobs = require('./tools/article-jobs');
 
 const ROOT = __dirname;
 const OUT = path.join(ROOT, 'out');
@@ -556,7 +557,7 @@ function renderArticle(meta, bodyHtml, faq, related, ctx) {
     + '<meta name="twitter:card" content="summary_large_image">\n'
     + '<meta name="twitter:image" content="' + visualUrl + '">\n'
     + GA + '\n'
-    + '<style>' + CSS + '</style>\n'
+    + '<style>' + CSS + articleJobs.CSS + '</style>\n'
     + '<script type="application/ld+json">' + ldJson(ld) + '</' + 'script>\n'
     + '</head>\n<body>\n'
     + header() + '\n'
@@ -756,7 +757,7 @@ function main() {
       if (!relSlugs.has(b.meta.slug)) sameKind.push(b.meta);
     }
     const ctx = { kinds, groups, sameKind };
-    const html = renderArticle(a.meta, md2html(a.body), a.faq, a.related, ctx);
+    const html = renderArticle(a.meta, articleJobs.insert(md2html(a.body), a.meta, a.body), a.faq, a.related, ctx);
     fs.writeFileSync(path.join(MEDIA, a.meta.slug + '.html'), html.replace(/\r?\n/g, '\r\n'));
   }
   fs.writeFileSync(path.join(MEDIA, 'index.html'), renderIndex(arts).replace(/\r?\n/g, '\r\n'));
