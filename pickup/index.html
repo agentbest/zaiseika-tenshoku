@@ -48,6 +48,7 @@ a{color:inherit}
 .hero p{max-width:600px;color:#D7DBE6;margin:0 0 28px}
 .hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
 .strip{position:relative;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.22);margin-top:44px}
+.strip.strip--3{grid-template-columns:repeat(3,1fr)}
 .strip div{padding:18px 18px 0 0}
 .strip b{font-family:var(--serif);font-size:clamp(24px,3vw,36px);display:block;line-height:1.2}
 .strip b small{font-size:.45em;margin-left:2px}
@@ -157,6 +158,35 @@ footer dl{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;margin:0 0 14
 footer dt{font-weight:700}footer dd{margin:0}
 .float{position:fixed;right:16px;bottom:16px;z-index:20;box-shadow:0 10px 30px rgba(0,0,0,.3)}
 @media (min-width:761px){.float{display:none}}
+
+/* growth（この会社が伸びている理由）2026-11-15 */
+.gr-hl{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));border-top:2px solid var(--navy);margin:32px 0 8px}
+.gr-hl div{padding:22px 20px 18px 0;border-bottom:1px solid var(--line)}
+.gr-hl b{font-family:var(--serif);font-size:clamp(28px,3.6vw,44px);color:var(--navy);display:block;line-height:1.15}
+.gr-hl b small{font-size:.42em;margin-left:3px}
+.gr-hl span{display:block;font-size:13px;color:var(--ink-soft);line-height:1.6;margin-top:6px}
+.gr-st{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin:36px 0}
+.gr-st div{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--gold);padding:22px 20px}
+.gr-st .n{font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--gold)}
+.gr-st b{display:block;font-size:17px;margin:6px 0 8px;line-height:1.5}
+.gr-st p{margin:0;font-size:14.5px;line-height:1.85;color:var(--ink-soft)}
+.gr-mk{display:grid;grid-template-columns:minmax(200px,1fr) 2fr;gap:28px;background:var(--navy);color:#fff;padding:30px 28px;margin:8px 0 28px}
+.gr-mk__h small{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--gold-soft)}
+.gr-mk__h b{display:block;font-family:var(--serif);font-size:clamp(30px,4vw,46px);line-height:1.15;margin-top:8px}
+.gr-mk__h span{display:block;font-size:12.5px;color:#C9CEDA;margin-top:6px;line-height:1.6}
+.gr-mk p{margin:0;line-height:1.95;font-size:15px}
+.gr-dh{font-size:18px;margin:8px 0 14px}
+.gr-st--more{margin-top:0}
+.gr-st--more div{border-top-color:var(--navy)}
+.decks{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:20px}
+.deck{background:var(--surface);border:1px solid var(--line)}
+.deck__frame{position:relative;aspect-ratio:16/9.6;background:#0b1020}
+.deck__frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.deck__meta{margin:0;padding:12px 14px;display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;font-size:13px}
+.deck__meta b{font-size:14px;flex-basis:100%}
+.deck__meta span{color:var(--ink-faint)}
+.deck__meta a{margin-left:auto;color:var(--navy)}
+@media (max-width:760px){.gr-hl{grid-template-columns:1fr 1fr}.gr-st,.decks,.gr-mk{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -169,7 +199,7 @@ footer dt{font-weight:700}footer dd{margin:0}
   <h1>財政課の経験を、<br>民間のプロダクトで活かす。</h1>
   <p>自治体の財政課で予算編成や行財政の実務に携わってきた方に向けて、その経験を民間企業で活かせるポジションをまとめました。</p>
   <div class="ctas"><a class="btn" href="https://calendly.com/r_matsuoka?utm_source=lp-zaiseika&utm_campaign=feature-zaiseika" target="_blank" rel="noopener" data-consult="lp-zaiseika-feature-zaiseika">財政課からの転職を相談する（無料）</a><a class="btn btn--line" href="#companies">掲載企業を見る</a></div>
-  <div class="strip"><div><b>1<small>社</small></b><span>掲載企業</span></div><div><b>3<small>件</small></b><span>テーマに合うポジション</span></div><div><b>成長中</b><span>の会社を中心に</span></div><div><b>無料</b><span>ご相談</span></div></div>
+  <div class="strip strip--3"><div><b>3<small>件</small></b><span>テーマに合うポジション</span></div><div><b>成長中</b><span>の会社を中心に</span></div><div><b>無料</b><span>ご相談</span></div></div>
   <p class="cap">写真はイメージです</p>
 </div></section>
 <section class="sec"><div class="wrap split">
@@ -212,7 +242,7 @@ footer dt{font-weight:700}footer dd{margin:0}
   <p>掲載している内容は、各社の公開求人票・公式サイト（2026年11月時点）にもとづきます。求人は毎朝更新し、掲載が終わったものは外しています。最新の条件はご相談時にご確認ください。写真はイメージで、各社とは関係ありません。</p>
   <p>写真：Unsplash（Dmitrijs Tokyo／Sho Shimada／Marek Okon）</p>
   <p><a href="https://jobs.agent-best.net/pickup/">厳選特集の一覧</a>｜<a href="https://zaiseikatenshoku.com/">財政課転職のトップへ</a>｜<a href="https://jobs.agent-best.net/">求人を探す</a>｜<a href="https://jobs.agent-best.net/company/">企業を探す</a></p>
-<!-- ab-network:start --><nav class="abn" aria-label="エージェントベストのサイト一覧"><style>.abn{margin:32px 0 0;padding:24px 0 0;border-top:1px solid rgba(127,127,127,.28);font-size:13px;line-height:1.6;text-align:left;color:inherit}.abn-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:20px 32px}.abn-h{margin:0 0 8px;font-size:12px;font-weight:700;letter-spacing:.06em;opacity:.9}.abn ul{list-style:none;margin:0;padding:0}.abn li{margin:0 0 4px;padding:0}.abn li:before{content:none}.abn a{color:inherit;opacity:.78;text-decoration:none;border:0;background:none}.abn a:hover,.abn a:focus-visible{opacity:1;text-decoration:underline}.abn-op{margin:16px 0 0;font-size:12px;opacity:.75}</style><div class="abn-grid"><div><p class="abn-h">転職のご相談（特化サイト）</p><ul><li><a href="https://lp.pmtenshoku.com/" target="_blank" rel="noopener">PM・プロジェクトマネージャーの転職</a></li><li><a href="https://eng.agent-best.net/" target="_blank" rel="noopener">エンジニアからコンサルへの転職</a></li><li><a href="https://lp.matenshoku.com/" target="_blank" rel="noopener">未経験からM&amp;A業界へ</a></li><li><a href="https://lp.consultenshoku.com/" target="_blank" rel="noopener">未経験からコンサルへ</a></li><li><a href="https://engineertenshoku.com/" target="_blank" rel="noopener">未経験からエンジニアへ</a></li><li><a href="https://lp.kumikomitenshoku.com/" target="_blank" rel="noopener">IoT・組込みエンジニアの転職</a></li><li><a href="https://fde.agent-best.net/" target="_blank" rel="noopener">FDE（フォワードデプロイドエンジニア）</a></li><li><a href="https://consultingcareerchange50.agent-best.net/" target="_blank" rel="noopener">コンサルファーム出身者の次のキャリア</a></li><li><a href="https://student.agent-best.net/" target="_blank" rel="noopener">学生のキャリア支援</a></li><li><a href="https://skill.agent-best.net/genba/" target="_blank" rel="noopener">医療・介護・現場の仕事からの転職</a></li></ul></div><div><p class="abn-h">求人・情報を探す</p><ul><li><a href="https://jobs.agent-best.net/" target="_blank" rel="noopener">中途・ハイクラスの求人</a></li><li><a href="https://skill.agent-best.net/" target="_blank" rel="noopener">未経験・第二新卒の求人</a></li><li><a href="https://shinsotsu.agent-best.net/" target="_blank" rel="noopener">新卒・インターンの求人</a></li><li><a href="https://freelanceanken.com/" target="_blank" rel="noopener">フリーランス案件（エンジニア・コンサル）</a></li><li><a href="https://www.pmtenshoku.com/" target="_blank" rel="noopener">PM転職の求人検索</a></li><li><a href="https://www.consultenshoku.com/" target="_blank" rel="noopener">コンサル転職の求人検索</a></li><li><a href="https://www.matenshoku.com/" target="_blank" rel="noopener">M&amp;A転職の求人検索</a></li><li><a href="https://www.eigyotenshoku.com/" target="_blank" rel="noopener">営業転職の求人検索</a></li><li><a href="https://www.kumikomitenshoku.com/" target="_blank" rel="noopener">IoT・組込み転職の求人検索</a></li><li><a href="https://www.agent-best.net/media/" target="_blank" rel="noopener">転職メディア</a></li><li><a href="https://www.agent-best.net/cases/" target="_blank" rel="noopener">転職事例集</a></li><li><a href="https://www.agent-hi-kaku.com/" target="_blank" rel="noopener">転職エージェント比較</a></li></ul></div><div><p class="abn-h">採用ご担当者さまへ</p><ul><li><a href="https://www.agent-best.net/business/" target="_blank" rel="noopener">人材紹介（求人のご依頼）</a></li><li><a href="https://scout.agent-best.net/" target="_blank" rel="noopener">スカウト代行</a></li><li><a href="https://offerboxapp.com/" target="_blank" rel="noopener">OfferBox運用代行</a></li><li><a href="https://green.agent-best.net/" target="_blank" rel="noopener">Green運用代行</a></li><li><a href="https://infra.agent-best.net/" target="_blank" rel="noopener">長期インターン採用（Infra）</a></li><li><a href="https://saiyo-media.agent-best.net/" target="_blank" rel="noopener">求人広告代理店（求人媒体の比較・申込）</a></li><li><a href="https://eraberusaiyodaiko.com/" target="_blank" rel="noopener">採用代行の担当者を選ぶ「エラベル」</a></li></ul></div></div><p class="abn-op">運営：<a href="https://www.agent-best.net/" target="_blank" rel="noopener">株式会社エージェントベスト</a></p></nav><!-- ab-network:end --></div></footer>
+</div></footer>
 <a class="btn float" href="https://calendly.com/r_matsuoka?utm_source=lp-zaiseika&utm_campaign=feature-zaiseika" target="_blank" rel="noopener" data-consult="lp-zaiseika-feature-zaiseika">無料で相談する</a>
 <style>
 .fcos{display:grid;gap:24px}
